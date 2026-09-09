@@ -1,0 +1,2655 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+    அனைப்பாடி அரசு தொடக்கப்பள்ளி - வீட்டுப்பாடம்
+</title>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body {
+
+    margin: 0;
+
+    padding: 20px;
+
+    background: #eef3f8;
+
+    color: #222;
+
+    font-family:
+        "Noto Sans Tamil",
+        "Latha",
+        Arial,
+        sans-serif;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card {
+
+    background: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.12);
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
+
+.main-title {
+
+    text-align: center;
+
+    color: #174ea6;
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   SCHOOL HEADER
+===================================================== */
+
+.school-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    text-align: center;
+
+    border-bottom: 2px solid #174ea6;
+
+    padding-bottom: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+.govt-logo {
+
+    width: 90px;
+
+    height: 90px;
+
+    object-fit: contain;
+}
+
+
+.school-details h1 {
+
+    margin: 0;
+
+    color: #174ea6;
+
+    font-size: 30px;
+
+    line-height: 1.4;
+}
+
+
+.school-details h2 {
+
+    margin: 8px 0 0;
+
+    color: #333;
+
+    font-size: 23px;
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.info {
+
+    background: #e8f2ff;
+
+    border-left: 5px solid #174ea6;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+
+    line-height: 1.9;
+}
+
+
+.info code {
+
+    background: white;
+
+    color: #c7254e;
+
+    padding: 3px 7px;
+
+    border-radius: 4px;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 16px;
+}
+
+
+.field {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.field label {
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 8px;
+
+    font-size: 17px;
+
+    font-family: inherit;
+
+    outline: none;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    border-color: #174ea6;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(23, 78, 166, .12);
+}
+
+
+textarea {
+
+    min-height: 80px;
+
+    resize: vertical;
+}
+
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+.question-row {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+    align-items: flex-start;
+}
+
+
+.question-number {
+
+    width: 42px;
+
+    min-width: 42px;
+
+    height: 46px;
+
+    border-radius: 7px;
+
+    background: #174ea6;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+
+.question-input {
+
+    flex: 1;
+}
+
+
+.delete-button {
+
+    width: 45px;
+
+    min-width: 45px;
+
+    height: 46px;
+
+    padding: 0;
+
+    background: #dc3545;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+button {
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 12px 18px;
+
+    color: white;
+
+    background: #174ea6;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+
+    opacity: .9;
+}
+
+
+.add-button {
+
+    background: #198754;
+}
+
+
+.clear-button {
+
+    background: #6c757d;
+}
+
+
+.generate-button {
+
+    background: #174ea6;
+}
+
+
+.pdf-button {
+
+    background: #dc3545;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status {
+
+    margin-top: 12px;
+
+    color: #198754;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   HOMEWORK PREVIEW
+===================================================== */
+
+#homework {
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, .12);
+
+    min-height: 500px;
+}
+
+
+/* =====================================================
+   PREVIEW HEADER
+===================================================== */
+
+.preview-school-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    text-align: center;
+
+    border-bottom: 2px solid #000;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.preview-logo {
+
+    width: 75px;
+
+    height: 75px;
+
+    object-fit: contain;
+}
+
+
+.preview-school-name {
+
+    margin: 0;
+
+    font-size: 27px;
+
+    color: #174ea6;
+}
+
+
+.preview-title {
+
+    margin: 6px 0 0;
+
+    font-size: 21px;
+}
+
+
+/* =====================================================
+   HOMEWORK INFO
+===================================================== */
+
+.homework-info {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    background: #f5f8ff;
+
+    border-radius: 8px;
+
+    margin: 20px 0;
+}
+
+
+.homework-info div {
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   QUESTIONS PREVIEW
+===================================================== */
+
+.preview-question {
+
+    margin: 25px 0;
+
+    line-height: 1.9;
+
+    page-break-inside: avoid;
+
+    font-size: 18px;
+}
+
+
+.answer-line {
+
+    height: 32px;
+
+    border-bottom:
+        1px solid #555;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px) {
+
+    body {
+
+        padding: 10px;
+    }
+
+
+    .card {
+
+        padding: 15px;
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .homework-info {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    #homework {
+
+        padding: 20px;
+    }
+
+
+    .school-header {
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .school-details h1 {
+
+        font-size: 24px;
+    }
+
+
+    .question-row {
+
+        gap: 5px;
+    }
+
+
+    .question-number {
+
+        width: 35px;
+
+        min-width: 35px;
+    }
+
+
+    .delete-button {
+
+        width: 38px;
+
+        min-width: 38px;
+    }
+}
+
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@page {
+
+    size: A4;
+
+    margin: 15mm;
+}
+
+
+@media print {
+
+    body {
+
+        background: white;
+
+        padding: 0;
+    }
+
+
+    .no-print {
+
+        display: none !important;
+    }
+
+
+    .container {
+
+        max-width: 100%;
+    }
+
+
+    #homework {
+
+        box-shadow: none;
+
+        padding: 0;
+
+        border-radius: 0;
+    }
+
+
+    .preview-question {
+
+        page-break-inside: avoid;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- ===================================================
+     INPUT PANEL
+=================================================== -->
+
+<div class="card no-print">
+
+
+<h1 class="main-title">
+
+    📚 தமிழ் வீட்டுப்பாடம் உருவாக்கி
+
+</h1>
+
+
+<!-- ===================================================
+     TYPING HELP
+=================================================== -->
+
+<div class="info">
+
+    <strong>
+        ⌨️ Tanglish → தமிழ்
+    </strong>
+
+    <br>
+
+    English keyboard-ல் Tanglish-ஆக type செய்யலாம்.
+    Space அல்லது punctuation கொடுக்கும்போது
+    தமிழ் வார்த்தையாக மாற்றப்படும்.
+
+    <br><br>
+
+    <code>vanakkam</code>
+    →
+    <b>வணக்கம்</b>
+
+    <br>
+
+    <code>en peyar arun</code>
+    →
+    <b>என் பெயர் அருண்</b>
+
+    <br>
+
+    <code>html endral enna</code>
+    →
+    <b>HTML என்றால் என்ன</b>
+
+    <br>
+
+    <code>css etharku payanpadugirathu</code>
+    →
+    <b>CSS எதற்குப் பயன்படுகிறது</b>
+
+    <br>
+
+    <code>javascript enraal enna</code>
+    →
+    <b>JavaScript என்றால் என்ன</b>
+
+</div>
+
+
+<!-- ===================================================
+     HOMEWORK SETTINGS
+=================================================== -->
+
+<h2>
+    📝 வீட்டுப்பாட விவரங்கள்
+</h2>
+
+
+<div class="form-grid">
+
+
+    <div class="field">
+
+        <label>
+            வகுப்பு
+        </label>
+
+        <select id="standard">
+
+            <option value="1">
+                1ஆம் வகுப்பு
+            </option>
+
+            <option value="2">
+                2ஆம் வகுப்பு
+            </option>
+
+            <option value="3">
+                3ஆம் வகுப்பு
+            </option>
+
+            <option value="4">
+                4ஆம் வகுப்பு
+            </option>
+
+            <option value="5">
+                5ஆம் வகுப்பு
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="field">
+
+        <label>
+            பாடம்
+        </label>
+
+        <select id="subject">
+
+          
+
+            <option value="computer">
+                கணினி அறிவியல்
+            </option>
+
+            <option value="tamil">
+                தமிழ்
+            </option>
+
+            <option value="english">
+                ஆங்கிலம்
+            </option>
+
+            <option value="math">
+                கணிதம்
+            </option>
+
+            <option value="science">
+                அறிவியல்
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="field">
+
+        <label>
+            தேதி
+        </label>
+
+        <input
+            type="date"
+            id="homeworkDate">
+
+    </div>
+
+
+    <div class="field">
+
+        <label>
+            ஆசிரியர் பெயர்
+        </label>
+
+        <input
+            type="text"
+            id="teacherName"
+            placeholder="உதா: aasiriyar peyar"
+            autocomplete="off">
+
+    </div>
+
+</div>
+
+
+<!-- ===================================================
+     QUESTIONS
+=================================================== -->
+
+<h2>
+    ✏️ கேள்விகளை உள்ளிடுக
+</h2>
+
+
+<div id="questions"></div>
+
+
+<div class="buttons">
+
+
+    <button
+        class="add-button"
+        onclick="addQuestion()">
+
+        ➕ கேள்வி சேர்க்க
+
+    </button>
+
+
+    <button
+        class="clear-button"
+        onclick="clearQuestions()">
+
+        🗑️ கேள்விகளை அழிக்க
+
+    </button>
+
+
+</div>
+
+
+<!-- ===================================================
+     INSTRUCTIONS
+=================================================== -->
+
+<h2>
+    📌 ஆசிரியர் அறிவுரை
+</h2>
+
+
+<textarea
+    id="instructions"
+    placeholder="உதா: anaiththu kelvigalukkum pathilalikkavum."></textarea>
+
+
+<!-- ===================================================
+     ACTION BUTTONS
+=================================================== -->
+
+<div class="buttons">
+
+
+    <button
+        class="generate-button"
+        onclick="generateHomework()">
+
+        📝 Homework உருவாக்கு
+
+    </button>
+
+
+    <button
+        class="pdf-button"
+        onclick="savePDF()">
+
+        📄 PDF Save
+
+    </button>
+
+
+</div>
+
+
+<div
+    id="status"
+    class="status">
+</div>
+
+
+</div>
+
+
+<!-- ===================================================
+     PREVIEW
+=================================================== -->
+
+<div id="homework">
+
+
+    <div class="preview-school-header">
+
+
+        <img
+            src="govt-logo.png"
+            class="preview-logo"
+            alt="அரசு சின்னம்">
+
+
+        <div>
+
+            <h1 class="preview-school-name">
+
+                அனைப்பாடி அரசு தொடக்கப்பள்ளி
+
+            </h1>
+
+
+            <h2 class="preview-title">
+
+                📚 வீட்டுப்பாடம்
+
+            </h2>
+
+        </div>
+
+
+    </div>
+
+
+    <p style="text-align:center">
+
+        மேலே உள்ள விவரங்களை உள்ளிட்டு
+        <b>Homework உருவாக்கு</b>
+        என்பதை அழுத்தவும்.
+
+    </p>
+
+
+</div>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   TAMIL WORD DICTIONARY
+===================================================== */
+
+const dictionary = {
+
+
+    /* -------------------------------
+       BASIC
+    ------------------------------- */
+
+    "vanakkam": "வணக்கம்",
+    "nandri": "நன்றி",
+
+    "amma": "அம்மா",
+    "appa": "அப்பா",
+    "annan": "அண்ணன்",
+    "akka": "அக்கா",
+    "thambi": "தம்பி",
+    "thangai": "தங்கை",
+
+    "tamil": "தமிழ்",
+    "tamizh": "தமிழ்",
+    "thamiz": "தமிழ்",
+
+
+    /* -------------------------------
+       SCHOOL
+    ------------------------------- */
+
+    "palli": "பள்ளி",
+    "pallikku": "பள்ளிக்கு",
+    "palliyil": "பள்ளியில்",
+
+    "arasu": "அரசு",
+
+    "thodakkapalli": "தொடக்கப்பள்ளி",
+    "thodakkapalli": "தொடக்கப்பள்ளி",
+
+    "paadam": "பாடம்",
+    "paadamgal": "பாடங்கள்",
+
+    "vakuppu": "வகுப்பு",
+
+    "maanavan": "மாணவன்",
+    "maanavi": "மாணவி",
+    "maanavar": "மாணவர்",
+    "maanavargal": "மாணவர்கள்",
+
+    "aasiriyar": "ஆசிரியர்",
+    "aasiriyai": "ஆசிரியை",
+
+    "thalaimai": "தலைமை",
+
+    "peyar": "பெயர்",
+
+
+    /* -------------------------------
+       QUESTIONS
+    ------------------------------- */
+
+    "kelvi": "கேள்வி",
+    "kelvigal": "கேள்விகள்",
+
+    "pathil": "பதில்",
+    "pathilgal": "பதில்கள்",
+
+    "enna": "என்ன",
+
+    "eppadi": "எப்படி",
+
+    "enge": "எங்கே",
+    "engae": "எங்கே",
+
+    "yaar": "யார்",
+
+    "yen": "ஏன்",
+
+    "etharku": "எதற்கு",
+    "edharku": "எதற்கு",
+
+    "eppothu": "எப்போது",
+    "eppozhuthu": "எப்பொழுது",
+
+    "evvalavu": "எவ்வளவு",
+
+
+    /* -------------------------------
+       COMPUTER
+    ------------------------------- */
+
+    "kanini": "கணினி",
+    "kaniniyai": "கணினியை",
+    "kaniniyin": "கணினியின்",
+
+    "computer": "கணினி",
+
+    "internet": "இணையம்",
+
+    "inaiyam": "இணையம்",
+
+    "website": "வலைத்தளம்",
+
+    "valaithalam": "வலைத்தளம்",
+
+    "browser": "உலாவி",
+
+    "keyboard": "விசைப்பலகை",
+
+    "mouse": "சுட்டி",
+
+    "monitor": "கணினித் திரை",
+
+    "printer": "அச்சுப்பொறி",
+
+
+    /* -------------------------------
+       PROGRAMMING
+    ------------------------------- */
+
+    "html": "HTML",
+
+    "css": "CSS",
+
+    "javascript": "JavaScript",
+
+    "program": "நிரல்",
+
+    "programming": "நிரலாக்கம்",
+
+    "coding": "நிரலாக்கம்",
+
+    "code": "நிரல்",
+
+    "tag": "Tag",
+
+    "tags": "Tags",
+
+    "variable": "மாறி",
+
+    "function": "செயற்கூறு",
+
+    "loop": "சுழற்சி",
+
+
+    /* -------------------------------
+       VERBS
+    ------------------------------- */
+
+    "endral": "என்றால்",
+    "enraal": "என்றால்",
+
+    "enbathu": "என்பது",
+    "enpathu": "என்பது",
+
+    "payanpadum": "பயன்படும்",
+
+    "payanpadugirathu":
+        "பயன்படுகிறது",
+
+    "payanpadugiradhu":
+        "பயன்படுகிறது",
+
+    "payanpadugirathu":
+        "பயன்படுகிறது",
+
+    "uruvakku": "உருவாக்கு",
+
+    "uruvakkuga": "உருவாக்குக",
+
+    "uruvakkavum": "உருவாக்கவும்",
+
+    "ezhuthu": "எழுது",
+
+    "ezhuthuga": "எழுதுக",
+
+    "ezhuthavum": "எழுதவும்",
+
+    "vilakku": "விளக்கு",
+
+    "vilakkuga": "விளக்குக",
+
+    "vilakkavum": "விளக்கவும்",
+
+    "padikka": "படிக்க",
+
+    "padikkavum": "படிக்கவும்",
+
+    "padikkiraar": "படிக்கிறார்",
+
+    "padikkirargal": "படிக்கிறார்கள்",
+
+    "seyyavum": "செய்யவும்",
+
+    "seyyum": "செய்யும்",
+
+    "kaattu": "காட்டு",
+
+    "kaattuga": "காட்டுக",
+
+    "solluga": "சொல்லுக",
+
+    "sollavum": "சொல்லவும்",
+
+
+    /* -------------------------------
+       GENERAL
+    ------------------------------- */
+
+    "puthagam": "புத்தகம்",
+
+    "pusthagam": "புத்தகம்",
+
+    "ezhuthu": "எழுத்து",
+
+    "padam": "படம்",
+
+    "naal": "நாள்",
+
+    "indru": "இன்று",
+
+    "netru": "நேற்று",
+
+    "naalai": "நாளை",
+
+    "nalla": "நல்ல",
+
+    "nallathu": "நல்லது",
+
+    "periya": "பெரிய",
+
+    "siriya": "சிறிய",
+
+    "patri": "பற்றி",
+
+    "patriya": "பற்றிய",
+
+    "anaiththu": "அனைத்து",
+
+    "anaithu": "அனைத்து",
+
+    "mattum": "மட்டும்",
+
+    "matrum": "மற்றும்",
+
+    "allathu": "அல்லது",
+
+    "aanal": "ஆனால்",
+
+    "melum": "மேலும்",
+
+
+    /* -------------------------------
+       NUMBERS
+    ------------------------------- */
+
+    "oru": "ஒரு",
+
+    "irandu": "இரண்டு",
+
+    "moondru": "மூன்று",
+
+    "naangu": "நான்கு",
+
+    "ainthu": "ஐந்து",
+
+    "aaru": "ஆறு",
+
+    "ezhu": "ஏழு",
+
+    "ettu": "எட்டு",
+
+    "onpathu": "ஒன்பது",
+
+    "pathu": "பத்து",
+
+
+    /* -------------------------------
+       HOMEWORK
+    ------------------------------- */
+
+    "homework": "வீட்டுப்பாடம்",
+
+    "veetupadam": "வீட்டுப்பாடம்",
+
+    "veettuppadam":
+        "வீட்டுப்பாடம்",
+
+    "mudikkavum": "முடிக்கவும்",
+
+    "pathilalikkavum":
+        "பதிலளிக்கவும்",
+
+
+    /* -------------------------------
+       EXAMPLES / NAMES
+    ------------------------------- */
+
+    "arun": "அருண்",
+
+    "kumar": "குமார்",
+
+    "ravi": "ரவி",
+
+    "raja": "ராஜா",
+
+    "lakshmi": "லட்சுமி",
+
+    "priya": "பிரியா",
+
+    "kavya": "காவ்யா",
+
+    "divya": "திவ்யா"
+
+};
+
+
+/* =====================================================
+   CONSONANTS
+===================================================== */
+
+const consonants = {
+
+    "ng": "ங",
+    "nj": "ஞ",
+    "ny": "ஞ",
+
+    "zh": "ழ",
+
+    "sh": "ஷ",
+
+    "th": "த",
+    "dh": "த",
+
+    "ph": "ப",
+    "bh": "ப",
+
+    "ch": "ச",
+
+    "kr": "க்ர",
+    "gr": "க்ர",
+
+    "tr": "ட்ர",
+    "dr": "ட்ர",
+
+    "pr": "ப்ர",
+    "br": "ப்ர",
+
+    "sr": "ஸ்ர",
+
+    "k": "க",
+    "g": "க",
+
+    "c": "ச",
+    "j": "ஜ",
+
+    "t": "ட",
+    "d": "ட",
+
+    "n": "ந",
+
+    "p": "ப",
+    "b": "ப",
+
+    "m": "ம",
+
+    "y": "ய",
+
+    "r": "ர",
+
+    "l": "ல",
+
+    "v": "வ",
+    "w": "வ",
+
+    "s": "ஸ",
+
+    "h": "ஹ"
+};
+
+
+/* =====================================================
+   VOWELS
+===================================================== */
+
+const vowels = {
+
+    "aa": "ஆ",
+    "ii": "ஈ",
+    "uu": "ஊ",
+
+    "ee": "ஏ",
+    "ai": "ஐ",
+
+    "oo": "ஓ",
+    "au": "ஔ",
+
+    "a": "அ",
+    "i": "இ",
+    "u": "உ",
+    "e": "எ",
+    "o": "ஒ"
+};
+
+
+/* =====================================================
+   VOWEL SIGNS
+===================================================== */
+
+const signs = {
+
+    "aa": "ா",
+    "ii": "ீ",
+    "uu": "ூ",
+
+    "ee": "ே",
+    "ai": "ை",
+
+    "oo": "ோ",
+    "au": "ௌ",
+
+    "a": "",
+    "i": "ி",
+    "u": "ு",
+    "e": "ெ",
+    "o": "ொ"
+};
+
+
+const consonantKeys =
+    Object.keys(consonants)
+    .sort(
+        (a, b) =>
+            b.length - a.length
+    );
+
+
+const vowelKeys =
+    Object.keys(signs)
+    .sort(
+        (a, b) =>
+            b.length - a.length
+    );
+
+
+const independentVowelKeys =
+    Object.keys(vowels)
+    .sort(
+        (a, b) =>
+            b.length - a.length
+    );
+
+
+/* =====================================================
+   WORD TRANSLITERATION
+===================================================== */
+
+function transliterateWord(word) {
+
+
+    if (!word) {
+
+        return "";
+    }
+
+
+    /*
+       Already Tamil?
+    */
+
+    if (
+        /[\u0B80-\u0BFF]/.test(word)
+    ) {
+
+        return word;
+    }
+
+
+    /*
+       Numbers?
+    */
+
+    if (
+        /^[0-9]+$/.test(word)
+    ) {
+
+        return word;
+    }
+
+
+    const lower =
+        word.toLowerCase();
+
+
+    /*
+       Dictionary.
+    */
+
+    if (
+        dictionary[lower]
+    ) {
+
+        return dictionary[lower];
+    }
+
+
+    let result = "";
+
+    let pos = 0;
+
+
+    while (
+        pos < lower.length
+    ) {
+
+
+        let consonant = null;
+
+
+        /*
+           Find consonant.
+        */
+
+        for (
+            const key
+            of consonantKeys
+        ) {
+
+            if (
+                lower.startsWith(
+                    key,
+                    pos
+                )
+            ) {
+
+                consonant = key;
+
+                break;
+            }
+        }
+
+
+        /*
+           Consonant found.
+        */
+
+        if (consonant) {
+
+
+            const tamil =
+                consonants[
+                    consonant
+                ];
+
+
+            const next =
+                pos +
+                consonant.length;
+
+
+            let vowel = null;
+
+
+            /*
+               Find vowel after
+               consonant.
+            */
+
+            for (
+                const key
+                of vowelKeys
+            ) {
+
+                if (
+                    lower.startsWith(
+                        key,
+                        next
+                    )
+                ) {
+
+                    vowel = key;
+
+                    break;
+                }
+            }
+
+
+            if (vowel) {
+
+                result +=
+                    tamil +
+                    signs[vowel];
+
+                pos =
+                    next +
+                    vowel.length;
+
+            }
+            else {
+
+                /*
+                   Pulli for consonant.
+                */
+
+                result +=
+                    tamil +
+                    "்";
+
+                pos =
+                    next;
+            }
+
+
+            continue;
+        }
+
+
+        /*
+           Independent vowel.
+        */
+
+        let independent =
+            null;
+
+
+        for (
+            const key
+            of independentVowelKeys
+        ) {
+
+            if (
+                lower.startsWith(
+                    key,
+                    pos
+                )
+            ) {
+
+                independent = key;
+
+                break;
+            }
+        }
+
+
+        if (independent) {
+
+            result +=
+                vowels[
+                    independent
+                ];
+
+            pos +=
+                independent.length;
+
+            continue;
+        }
+
+
+        /*
+           Unknown character.
+        */
+
+        result +=
+            word[pos];
+
+        pos++;
+
+    }
+
+
+    return result;
+}
+
+
+/* =====================================================
+   TEXT TRANSLITERATION
+===================================================== */
+
+function transliterateText(text) {
+
+
+    if (!text) {
+
+        return "";
+    }
+
+
+    const parts =
+        text.split(
+            /(\s+)/
+        );
+
+
+    return parts
+        .map(
+            part => {
+
+                if (
+                    /^\s+$/.test(part)
+                ) {
+
+                    return part;
+                }
+
+
+                return transliterateWord(
+                    part
+                );
+
+            }
+        )
+        .join("");
+}
+
+
+/* =====================================================
+   CONVERT LAST WORD
+===================================================== */
+
+function convertLastWord(
+    element
+) {
+
+
+    const cursor =
+        element.selectionStart;
+
+
+    const value =
+        element.value;
+
+
+    const before =
+        value.substring(
+            0,
+            cursor
+        );
+
+
+    const match =
+        before.match(
+            /([A-Za-z]+)$/
+        );
+
+
+    if (!match) {
+
+        return;
+    }
+
+
+    const englishWord =
+        match[1];
+
+
+    const start =
+        cursor -
+        englishWord.length;
+
+
+    const tamilWord =
+        transliterateWord(
+            englishWord
+        );
+
+
+    if (
+        tamilWord.toLowerCase() ===
+        englishWord.toLowerCase()
+    ) {
+
+        return;
+    }
+
+
+    element.value =
+
+        value.substring(
+            0,
+            start
+        )
+
+        +
+
+        tamilWord
+
+        +
+
+        value.substring(
+            cursor
+        );
+
+
+    const newCursor =
+        start +
+        tamilWord.length;
+
+
+    element.setSelectionRange(
+        newCursor,
+        newCursor
+    );
+}
+
+
+/* =====================================================
+   PUNCTUATION
+===================================================== */
+
+function convertBeforePunctuation(
+    element,
+    position
+) {
+
+
+    const value =
+        element.value;
+
+
+    const before =
+        value.substring(
+            0,
+            position
+        );
+
+
+    const match =
+        before.match(
+            /([A-Za-z]+)$/
+        );
+
+
+    if (!match) {
+
+        return;
+    }
+
+
+    const englishWord =
+        match[1];
+
+
+    const start =
+        position -
+        englishWord.length;
+
+
+    const tamilWord =
+        transliterateWord(
+            englishWord
+        );
+
+
+    element.value =
+
+        value.substring(
+            0,
+            start
+        )
+
+        +
+
+        tamilWord
+
+        +
+
+        value.substring(
+            position
+        );
+
+
+    const newCursor =
+        start +
+        tamilWord.length +
+        (
+            value.length -
+            position
+        );
+
+
+    element.setSelectionRange(
+        newCursor,
+        newCursor
+    );
+}
+
+
+/* =====================================================
+   ENABLE TAMIL TYPING
+===================================================== */
+
+function enableTamilTyping(
+    element
+) {
+
+
+    /*
+       Space conversion.
+    */
+
+    element.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === " "
+            ) {
+
+                convertLastWord(
+                    this
+                );
+            }
+
+        }
+    );
+
+
+    /*
+       Punctuation conversion.
+    */
+
+    element.addEventListener(
+        "input",
+        function() {
+
+
+            const cursor =
+                this.selectionStart;
+
+
+            if (
+                cursor <= 0
+            ) {
+
+                return;
+            }
+
+
+            const character =
+                this.value[
+                    cursor - 1
+                ];
+
+
+            if (
+                [
+                    ".",
+                    ",",
+                    "?",
+                    "!",
+                    ":",
+                    ";"
+                ].includes(
+                    character
+                )
+            ) {
+
+                convertBeforePunctuation(
+                    this,
+                    cursor - 1
+                );
+            }
+
+        }
+    );
+}
+
+
+/* =====================================================
+   QUESTION COUNTER
+===================================================== */
+
+let questionCount = 0;
+
+
+/* =====================================================
+   ADD QUESTION
+===================================================== */
+
+function addQuestion(
+    text = ""
+) {
+
+
+    questionCount++;
+
+
+    const container =
+        document.getElementById(
+            "questions"
+        );
+
+
+    const row =
+        document.createElement(
+            "div"
+        );
+
+
+    row.className =
+        "question-row";
+
+
+    row.innerHTML = `
+
+        <div class="question-number">
+            ${questionCount}
+        </div>
+
+        <textarea
+            class="question-input"
+            placeholder="Tanglish-ல் கேள்வியை type செய்யவும்..."
+            autocomplete="off">${escapeHTML(text)}</textarea>
+
+        <button
+            type="button"
+            class="delete-button"
+            onclick="deleteQuestion(this)"
+            title="கேள்வியை நீக்குக">
+
+            ×
+
+        </button>
+
+    `;
+
+
+    container.appendChild(
+        row
+    );
+
+
+    const textarea =
+        row.querySelector(
+            ".question-input"
+        );
+
+
+    enableTamilTyping(
+        textarea
+    );
+
+
+    textarea.focus();
+
+
+    renumberQuestions();
+}
+
+
+/* =====================================================
+   DELETE QUESTION
+===================================================== */
+
+function deleteQuestion(
+    button
+) {
+
+
+    button
+        .parentElement
+        .remove();
+
+
+    renumberQuestions();
+}
+
+
+/* =====================================================
+   RENUMBER QUESTIONS
+===================================================== */
+
+function renumberQuestions() {
+
+
+    const rows =
+        document.querySelectorAll(
+            ".question-row"
+        );
+
+
+    rows.forEach(
+        (row, index) => {
+
+            row.querySelector(
+                ".question-number"
+            ).textContent =
+                index + 1;
+
+        }
+    );
+
+
+    questionCount =
+        rows.length;
+}
+
+
+/* =====================================================
+   CLEAR QUESTIONS
+===================================================== */
+
+function clearQuestions() {
+
+
+    if (
+        !confirm(
+            "அனைத்து கேள்விகளையும் அழிக்க வேண்டுமா?"
+        )
+    ) {
+
+        return;
+    }
+
+
+    document.getElementById(
+        "questions"
+    ).innerHTML = "";
+
+
+    questionCount = 0;
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(
+    text
+) {
+
+    return String(text)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+}
+
+
+/* =====================================================
+   GET QUESTIONS
+===================================================== */
+
+function getQuestions() {
+
+
+    const inputs =
+        document.querySelectorAll(
+            ".question-input"
+        );
+
+
+    const questions = [];
+
+
+    inputs.forEach(
+        input => {
+
+            const text =
+                input.value.trim();
+
+
+            if (text) {
+
+                questions.push(
+                    text
+                );
+            }
+
+        }
+    );
+
+
+    return questions;
+}
+
+
+/* =====================================================
+   GENERATE HOMEWORK
+===================================================== */
+
+function generateHomework() {
+
+
+    const standard =
+        document.getElementById(
+            "standard"
+        ).value;
+
+
+    const subject =
+        document.getElementById(
+            "subject"
+        ).value;
+
+
+    const teacherName =
+        document.getElementById(
+            "teacherName"
+        ).value.trim();
+
+
+    const date =
+        document.getElementById(
+            "homeworkDate"
+        ).value;
+
+
+    const instructions =
+        document.getElementById(
+            "instructions"
+        ).value.trim();
+
+
+    const questions =
+        getQuestions();
+
+
+    /*
+       Validation.
+    */
+
+    if (
+        questions.length === 0
+    ) {
+
+        alert(
+            "குறைந்தது ஒரு கேள்வியாவது உள்ளிடவும்."
+        );
+
+        return;
+    }
+
+
+    /*
+       Subjects.
+    */
+
+    const subjects = {
+
+       
+
+        computer:
+            "கணினி அறிவியல்",
+
+        tamil:
+            "தமிழ்",
+
+        english:
+            "ஆங்கிலம்",
+
+        math:
+            "கணிதம்",
+
+        science:
+            "அறிவியல்"
+
+    };
+
+
+    const subjectName =
+        subjects[subject];
+
+
+    /*
+       Date.
+    */
+
+    let displayDate;
+
+
+    if (date) {
+
+
+        const parts =
+            date.split("-");
+
+
+        displayDate =
+            `${parts[2]}/${parts[1]}/${parts[0]}`;
+
+    }
+    else {
+
+
+        displayDate =
+            new Date()
+            .toLocaleDateString(
+                "ta-IN"
+            );
+
+    }
+
+
+    /*
+       Preview HTML.
+    */
+
+    let output = `
+
+        <div class="preview-school-header">
+
+            <img
+                src="tn.png"
+                class="preview-logo"
+                alt="அரசு சின்னம்">
+
+            <div>
+
+                <h1 class="preview-school-name">
+
+                    அனைப்பாடி அரசு தொடக்கப்பள்ளி
+
+                </h1>
+
+                <h2 class="preview-title">
+
+                    📚 வீட்டுப்பாடம்
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="homework-info">
+
+            <div>
+
+                <strong>
+                    வகுப்பு:
+                </strong>
+
+                ${standard}ஆம் வகுப்பு
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    பாடம்:
+                </strong>
+
+                ${subjectName}
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    தேதி:
+                </strong>
+
+                ${displayDate}
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    ஆசிரியர்:
+                </strong>
+
+                ${escapeHTML(
+                    teacherName || "-"
+                )}
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <h2>
+            ✏️ கேள்விகள்
+        </h2>
+
+    `;
+
+
+    /*
+       Questions.
+    */
+
+    questions.forEach(
+        (question, index) => {
+
+
+            output += `
+
+                <div
+                    class="preview-question">
+
+                    <strong>
+
+                        ${index + 1}.
+                        ${escapeHTML(
+                            question
+                        )}
+
+                    </strong>
+
+
+                    <div
+                        class="answer-line">
+                    </div>
+
+
+                    <div
+                        class="answer-line">
+                    </div>
+
+
+                    <div
+                        class="answer-line">
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    /*
+       Instructions.
+    */
+
+    if (
+        instructions
+    ) {
+
+
+        output += `
+
+            <hr>
+
+            <h3>
+                📌 ஆசிரியர் அறிவுரை
+            </h3>
+
+            <p>
+
+                ${escapeHTML(
+                    instructions
+                )}
+
+            </p>
+
+        `;
+
+    }
+
+
+    /*
+       Footer.
+    */
+
+    output += `
+
+        <div class="footer">
+
+            <hr>
+
+            <p>
+                ⭐ சிறப்பாக செய்து முடிக்கவும் ⭐
+            </p>
+
+            <p>
+                நல்வாழ்த்துகள்!
+            </p>
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "homework"
+    ).innerHTML =
+        output;
+
+
+    document.getElementById(
+        "status"
+    ).textContent =
+        "✓ வீட்டுப்பாடம் தயாராகிவிட்டது!";
+
+}
+
+
+/* =====================================================
+   PDF
+===================================================== */
+
+function savePDF() {
+
+
+    const preview =
+        document.getElementById(
+            "homework"
+        );
+
+
+    if (
+        preview.innerText.includes(
+            "மேலே உள்ள விவரங்களை"
+        )
+    ) {
+
+
+        alert(
+            "முதலில் Homework உருவாக்கவும்."
+        );
+
+
+        return;
+    }
+
+
+    /*
+       Browser print dialog.
+       Select "Save as PDF".
+    */
+
+    window.print();
+}
+
+
+/* =====================================================
+   SET TODAY
+===================================================== */
+
+function setToday() {
+
+
+    const today =
+        new Date();
+
+
+    const year =
+        today.getFullYear();
+
+
+    const month =
+        String(
+            today.getMonth() + 1
+        ).padStart(
+            2,
+            "0"
+        );
+
+
+    const day =
+        String(
+            today.getDate()
+        ).padStart(
+            2,
+            "0"
+        );
+
+
+    document.getElementById(
+        "homeworkDate"
+    ).value =
+        `${year}-${month}-${day}`;
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+
+        /*
+           Today's date.
+        */
+
+        setToday();
+
+
+        /*
+           Tamil typing fields.
+        */
+
+        const fields = [
+
+            "teacherName",
+
+            "instructions"
+
+        ];
+
+
+        fields.forEach(
+            id => {
+
+
+                const element =
+                    document.getElementById(
+                        id
+                    );
+
+
+                if (element) {
+
+                    enableTamilTyping(
+                        element
+                    );
+
+                }
+
+            }
+        );
+
+
+        /*
+           Create 5 questions.
+        */
+
+        for (
+            let i = 0;
+            i < 5;
+            i++
+        ) {
+
+            addQuestion();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
