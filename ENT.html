@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>அனிதா சுந்தர்ராஜு கற்றல் உலகம்</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Noto Sans Tamil", "Latha", sans-serif;
+    background: linear-gradient(135deg, #fff8e1, #e3f2fd);
+    color: #263238;
+    line-height: 1.8;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #ff5722, #ff9800, #ffc107);
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.18);
+}
+
+.logo {
+    font-size: 55px;
+}
+
+header h1 {
+    font-size: clamp(26px, 5vw, 42px);
+}
+
+header p {
+    font-size: 17px;
+}
+
+/* NAVIGATION */
+.navbar {
+    background: #263238;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar button {
+    border: none;
+    padding: 11px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    color: white;
+    background: #455a64;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.navbar button:hover,
+.navbar button.active {
+    background: #ff9800;
+    transform: scale(1.05);
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 15px;
+}
+
+.intro {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.08);
+    margin-bottom: 25px;
+}
+
+.intro h2 {
+    color: #e65100;
+    margin-bottom: 8px;
+}
+
+/* SEARCH */
+.search-box {
+    max-width: 600px;
+    margin: 20px auto 30px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid #ff9800;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* SECTION */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.section-title {
+    text-align: center;
+    color: #1565c0;
+    font-size: 30px;
+    margin: 15px 0 25px;
+}
+
+/* CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.09);
+    transition: .3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.15);
+}
+
+.card-icon {
+    font-size: 45px;
+}
+
+.card h3 {
+    color: #1565c0;
+    font-size: 21px;
+    margin: 8px 0;
+}
+
+.card p {
+    color: #444;
+}
+
+.lesson {
+    margin-top: 14px;
+    background: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding: 10px;
+    border-radius: 8px;
+    color: #6d4c00;
+    font-weight: bold;
+}
+
+/* JOKES */
+.joke {
+    border-top: 6px solid #e91e63;
+}
+
+.joke h3 {
+    color: #c2185b;
+}
+
+.joke-answer {
+    margin-top: 12px;
+    background: #fce4ec;
+    color: #880e4f;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* RIDDLES */
+.riddle {
+    border-top: 6px solid #673ab7;
+}
+
+.riddle h3 {
+    color: #512da8;
+}
+
+.answer {
+    margin-top: 15px;
+    padding: 10px;
+    background: #ede7f6;
+    color: #4527a0;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.answer button {
+    border: none;
+    background: #673ab7;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.answer-text {
+    display: none;
+    margin-top: 8px;
+}
+
+/* QUOTE */
+.quote {
+    margin-top: 35px;
+    background: linear-gradient(135deg, #7b1fa2, #512da8);
+    color: white;
+    padding: 28px;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 35px;
+    background: #263238;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer span {
+    color: #ffca28;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* TOP BUTTON */
+.top-btn {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #ff5722;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,.3);
+}
+
+@media(max-width:600px) {
+
+    header {
+        padding: 25px 10px;
+    }
+
+    .navbar button {
+        padding: 9px 13px;
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .quote {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌈📚✨</div>
+
+    <h1>அனிதா சுந்தர்ராஜு கற்றல் உலகம்</h1>
+
+    <p>
+        🌟 கதைகள் • 😂 நகைச்சுவைகள் • 🧩 விடுகதைகள் • 📚 கற்றல் 🌟
+    </p>
+</header>
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <button class="active" onclick="showSection('stories', this)">
+        📖 கதைகள்
+    </button>
+
+    <button onclick="showSection('jokes', this)">
+        😂 நகைச்சுவைகள்
+    </button>
+
+    <button onclick="showSection('riddles', this)">
+        🧩 விடுகதைகள்
+    </button>
+
+    <button onclick="showSection('all', this)">
+        🌟 அனைத்தும்
+    </button>
+
+</nav>
+
+<div class="container">
+
+<div class="intro">
+
+    <h2>🌱 கதை மூலம் கற்போம்!</h2>
+
+    <p>
+        குழந்தைகளுக்காக உருவாக்கப்பட்ட ஒரு மகிழ்ச்சியான கற்றல் உலகம்.
+        நல்ல சிந்தனை, தன்னம்பிக்கை, நகைச்சுவை மற்றும் அறிவுத்திறனை
+        வளர்க்கும் வகையில் இந்தப் பகுதி அமைக்கப்பட்டுள்ளது.
+    </p>
+
+</div>
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="🔍 கதைகள், நகைச்சுவை அல்லது விடுகதையைத் தேடுங்கள்..."
+        onkeyup="searchContent()"
+    >
+
+</div>
+
+
+<!-- ================= STORIES ================= -->
+
+<section id="stories" class="content-section active">
+
+<h2 class="section-title">📖 25 ஊக்கமளிக்கும் சிறுகதைகள்</h2>
+
+<div class="grid">
+
+<!-- 1 -->
+<div class="card searchable">
+<div class="card-icon">🌱</div>
+<h3>விதையின் நம்பிக்கை</h3>
+<p>
+ஒரு சிறிய விதை இருட்டான மண்ணுக்குள் இருந்தாலும்,
+ஒருநாள் பெரிய மரமாக வளர வேண்டும் என்ற நம்பிக்கையை
+விடவில்லை. தினமும் சிறிது சிறிதாக வளர்ந்து அழகான
+மரமாக மாறியது.
+</p>
+<div class="lesson">
+💡 பாடம்: நம்பிக்கையுடன் முயன்றால் வளர்ச்சி நிச்சயம்.
+</div>
+</div>
+
+<!-- 2 -->
+<div class="card searchable">
+<div class="card-icon">🐜</div>
+<h3>சிறிய எறும்பின் முயற்சி</h3>
+<p>
+ஒரு எறும்பு பெரிய உணவுத் துண்டை எடுத்துச் செல்ல
+பலமுறை முயன்றது. விழுந்தாலும் மீண்டும் எழுந்தது.
+இறுதியில் வெற்றி பெற்றது.
+</p>
+<div class="lesson">
+💡 பாடம்: விடாமுயற்சி வெற்றியின் திறவுகோல்.
+</div>
+</div>
+
+<!-- 3 -->
+<div class="card searchable">
+<div class="card-icon">⭐</div>
+<h3>சிறிய நட்சத்திரம்</h3>
+<p>
+தன்னை சிறியது என்று நினைத்த நட்சத்திரம்,
+ஒரு இரவில் பயணம் செய்த குழந்தைக்கு வழிகாட்டியது.
+தன் சிறிய ஒளியின் மதிப்பை அது புரிந்துகொண்டது.
+</p>
+<div class="lesson">
+💡 பாடம்: சிறியவர்களாலும் பெரிய மாற்றத்தை உருவாக்க முடியும்.
+</div>
+</div>
+
+<!-- 4 -->
+<div class="card searchable">
+<div class="card-icon">📚</div>
+<h3>புத்தகத்தின் நண்பன்</h3>
+<p>
+அருண் தினமும் ஒரு பக்கம் புத்தகம் படித்தான்.
+சில மாதங்களில் அவனுடைய அறிவு அதிகரித்தது.
+புத்தகம் அவனுடைய சிறந்த நண்பனானது.
+</p>
+<div class="lesson">
+💡 பாடம்: தினமும் கொஞ்சம் கற்றால் அறிவு பெருகும்.
+</div>
+</div>
+
+<!-- 5 -->
+<div class="card searchable">
+<div class="card-icon">🦁</div>
+<h3>துணிச்சலான குட்டிச் சிங்கம்</h3>
+<p>
+குட்டிச் சிங்கம் புதிய இடத்திற்குச் செல்ல பயந்தது.
+ஆனால் தாயின் ஊக்கத்தால் முதல் அடியை எடுத்தது.
+அந்த அடியே அதன் பயத்தை வென்றது.
+</p>
+<div class="lesson">
+💡 பாடம்: முதல் அடியை எடுப்பதே துணிச்சல்.
+</div>
+</div>
+
+<!-- 6 -->
+<div class="card searchable">
+<div class="card-icon">💧</div>
+<h3>துளியின் பயணம்</h3>
+<p>
+ஒரு நீர்த்துளி கடலை அடைய வேண்டும் என்று நினைத்தது.
+பல தடைகளைத் தாண்டி ஆற்றுடன் பயணித்து இறுதியில்
+கடலை அடைந்தது.
+</p>
+<div class="lesson">
+💡 பாடம்: தொடர்ச்சியான பயணம் இலக்கை அடையச் செய்யும்.
+</div>
+</div>
+
+<!-- 7 -->
+<div class="card searchable">
+<div class="card-icon">☀️</div>
+<h3>சூரியனைப் போல இரு</h3>
+<p>
+சூரியன் எல்லோருக்கும் சமமாக ஒளி தருகிறது.
+அதுபோல் அனைவரிடமும் அன்பாக நடக்க வேண்டும்
+என்று ஒரு சிறுவன் கற்றுக்கொண்டான்.
+</p>
+<div class="lesson">
+💡 பாடம்: அனைவரிடமும் அன்பாக நடப்போம்.
+</div>
+</div>
+
+<!-- 8 -->
+<div class="card searchable">
+<div class="card-icon">🐦</div>
+<h3>பறக்க கற்ற குட்டிப் பறவை</h3>
+<p>
+குட்டிப் பறவை முதலில் பறக்க பயந்தது.
+தாய் பறவை தொடர்ந்து முயற்சி செய்யச் சொன்னது.
+பயிற்சியால் அது அழகாகப் பறக்கத் தொடங்கியது.
+</p>
+<div class="lesson">
+💡 பாடம்: பயிற்சி வெற்றியை உருவாக்கும்.
+</div>
+</div>
+
+<!-- 9 -->
+<div class="card searchable">
+<div class="card-icon">🧹</div>
+<h3>சுத்தமான பள்ளி</h3>
+<p>
+மீனா வகுப்பறையில் குப்பையைப் பார்த்தாள்.
+அதை சுத்தம் செய்யத் தொடங்கினாள்.
+அவளைப் பார்த்து மற்ற மாணவர்களும் உதவினர்.
+</p>
+<div class="lesson">
+💡 பாடம்: நல்ல செயல் மற்றவர்களையும் ஊக்கப்படுத்தும்.
+</div>
+</div>
+
+<!-- 10 -->
+<div class="card searchable">
+<div class="card-icon">🤝</div>
+<h3>நண்பனின் உதவி</h3>
+<p>
+குமாருக்கு கணிதம் புரியவில்லை.
+அவனுடைய நண்பன் பொறுமையாக விளக்கினான்.
+இருவரும் சேர்ந்து பிரச்சினையைத் தீர்த்தனர்.
+</p>
+<div class="lesson">
+💡 பாடம்: அறிவைப் பகிர்ந்தால் அது பெருகும்.
+</div>
+</div>
+
+<!-- 11 -->
+<div class="card searchable">
+<div class="card-icon">🎯</div>
+<h3>இலக்கை நோக்கி</h3>
+<p>
+லதா ஓட்டப் போட்டியில் வெல்ல விரும்பினாள்.
+தினமும் பயிற்சி செய்தாள். அவளுடைய வேகம்
+மெல்ல மெல்ல அதிகரித்தது.
+</p>
+<div class="lesson">
+💡 பாடம்: இலக்கும் பயிற்சியும் வெற்றிக்கு வழிகாட்டும்.
+</div>
+</div>
+
+<!-- 12 -->
+<div class="card searchable">
+<div class="card-icon">🕊️</div>
+<h3>சுதந்திரமான பறவை</h3>
+<p>
+ஒரு பறவை கூண்டை விட்டு வெளியே வந்தது.
+உலகம் பெரியதாகத் தோன்றினாலும் தன்னம்பிக்கையுடன்
+சிறகுகளை விரித்து பறந்தது.
+</p>
+<div class="lesson">
+💡 பாடம்: தன்னம்பிக்கை நம்மை உயரத்திற்கு அழைத்துச் செல்லும்.
+</div>
+</div>
+
+<!-- 13 -->
+<div class="card searchable">
+<div class="card-icon">🌳</div>
+<h3>மரத்தின் பொறுமை</h3>
+<p>
+ஒரு சிறுவன் விதையை நட்டான்.
+அடுத்த நாளே மரமாக வேண்டும் என்று ஆசைப்பட்டான்.
+ஆனால் பொறுமையாக காத்திருந்தபோது அது பெரிய மரமானது.
+</p>
+<div class="lesson">
+💡 பாடம்: நல்ல விஷயங்களுக்கு நேரம் தேவை.
+</div>
+</div>
+
+<!-- 14 -->
+<div class="card searchable">
+<div class="card-icon">😊</div>
+<h3>ஒரு புன்னகையின் சக்தி</h3>
+<p>
+ரவி சோகமாக இருந்த நண்பனைப் பார்த்து
+புன்னகையுடன் பேசினான். நண்பனின் முகத்தில்
+மீண்டும் மகிழ்ச்சி மலர்ந்தது.
+</p>
+<div class="lesson">
+💡 பாடம்: ஒரு சிறிய புன்னகை பெரிய மகிழ்ச்சியை தரும்.
+</div>
+</div>
+
+<!-- 15 -->
+<div class="card searchable">
+<div class="card-icon">💪</div>
+<h3>தோல்வியை வென்ற சிறுவன்</h3>
+<p>
+விஜய் தேர்வில் குறைந்த மதிப்பெண் பெற்றான்.
+தவறுகளைப் புரிந்துகொண்டு மீண்டும் படித்தான்.
+அடுத்த தேர்வில் முன்னேற்றம் கண்டான்.
+</p>
+<div class="lesson">
+💡 பாடம்: தோல்வி முடிவு அல்ல; அது ஒரு பாடம்.
+</div>
+</div>
+
+<!-- 16 -->
+<div class="card searchable">
+<div class="card-icon">⏰</div>
+<h3>நேரத்தின் மதிப்பு</h3>
+<p>
+சரண் தினசரி திட்டம் அமைத்து படிப்பு,
+விளையாட்டு, ஓய்வு என நேரத்தைப் பிரித்தான்.
+அவன் எல்லா வேலைகளையும் நேரத்தில் முடித்தான்.
+</p>
+<div class="lesson">
+💡 பாடம்: நேரத்தை மதித்தால் வாழ்க்கை ஒழுங்காகும்.
+</div>
+</div>
+
+<!-- 17 -->
+<div class="card searchable">
+<div class="card-icon">❤️</div>
+<h3>அன்பின் பரிசு</h3>
+<p>
+ஒரு சிறுமி தனக்குக் கிடைத்த பரிசில் ஒன்றை
+தோழிக்கு வழங்கினாள். தோழியின் மகிழ்ச்சியைப்
+பார்த்து அவளும் மகிழ்ந்தாள்.
+</p>
+<div class="lesson">
+💡 பாடம்: கொடுப்பதில் கிடைக்கும் மகிழ்ச்சி தனித்துவமானது.
+</div>
+</div>
+
+<!-- 18 -->
+<div class="card searchable">
+<div class="card-icon">🧠</div>
+<h3>கேள்வி கேட்ட குழந்தை</h3>
+<p>
+நித்யா புரியாத விஷயங்களை ஆசிரியரிடம் கேட்கத்
+தயங்கவில்லை. ஒவ்வொரு கேள்வியும் அவளுடைய
+அறிவை அதிகரித்தது.
+</p>
+<div class="lesson">
+💡 பாடம்: கேள்வி கேட்பது அறிவின் தொடக்கம்.
+</div>
+</div>
+
+<!-- 19 -->
+<div class="card searchable">
+<div class="card-icon">🌈</div>
+<h3>மழைக்குப் பின் வானவில்</h3>
+<p>
+மழை பெய்ததால் கார்த்திக் சோகமாக இருந்தான்.
+மழை நின்றதும் அழகான வானவில் தோன்றியது.
+சிரமத்திற்குப் பின்னால் மகிழ்ச்சி வரும் என்பதைப் புரிந்தான்.
+</p>
+<div class="lesson">
+💡 பாடம்: சிரமத்திற்குப் பின்னால் நல்ல காலம் வரும்.
+</div>
+</div>
+
+<!-- 20 -->
+<div class="card searchable">
+<div class="card-icon">🔑</div>
+<h3>நேர்மையின் திறவுகோல்</h3>
+<p>
+அனுவுக்கு பள்ளியில் ஒரு பணப்பை கிடைத்தது.
+அதை ஆசிரியரிடம் கொடுத்தாள். உரிமையாளர் வந்து
+நன்றி தெரிவித்தார்.
+</p>
+<div class="lesson">
+💡 பாடம்: நேர்மை எப்போதும் உயர்வைத் தரும்.
+</div>
+</div>
+
+<!-- 21 -->
+<div class="card searchable">
+<div class="card-icon">🚀</div>
+<h3>கனவு கண்ட சிறுவன்</h3>
+<p>
+ஆதவன் விண்வெளி வீரராக வேண்டும் என்று கனவு கண்டான்.
+அதற்காக அறிவியல் புத்தகங்களைப் படித்து தினமும்
+புதிய விஷயங்களை கற்றுக்கொண்டான்.
+</p>
+<div class="lesson">
+💡 பாடம்: கனவு காணுங்கள்; அதற்காக உழையுங்கள்.
+</div>
+</div>
+
+<!-- 22 -->
+<div class="card searchable">
+<div class="card-icon">🌻</div>
+<h3>சூரியகாந்தியின் பாடம்</h3>
+<p>
+சூரியகாந்தி மலர் சூரியனை நோக்கி திரும்புகிறது.
+அதுபோல் நாமும் நல்ல விஷயங்களை நோக்கி
+முன்னேற வேண்டும்.
+</p>
+<div class="lesson">
+💡 பாடம்: நேர்மறையான எண்ணங்களை வளர்த்துக் கொள்ளுங்கள்.
+</div>
+</div>
+
+<!-- 23 -->
+<div class="card searchable">
+<div class="card-icon">🏆</div>
+<h3>சிறிய வெற்றி</h3>
+<p>
+மாலா தினமும் ஒரு புதிய தமிழ் வார்த்தையை கற்றாள்.
+ஒரு வருடத்தில் நூற்றுக்கணக்கான புதிய வார்த்தைகளை
+அவள் கற்றிருந்தாள்.
+</p>
+<div class="lesson">
+💡 பாடம்: சிறிய வெற்றிகள் சேர்ந்து பெரிய வெற்றியாகும்.
+</div>
+</div>
+
+<!-- 24 -->
+<div class="card searchable">
+<div class="card-icon">🪄</div>
+<h3>முயற்சியின் மந்திரம்</h3>
+<p>
+ராகுல் ஓவியம் வரைய கற்றுக்கொள்ள விரும்பினான்.
+முதல் ஓவியம் சரியாக வரவில்லை. தொடர்ந்து பயிற்சி
+செய்ததால் அவன் சிறந்த ஓவியராக வளர்ந்தான்.
+</p>
+<div class="lesson">
+💡 பாடம்: தொடர்ந்து முயற்சி செய்தால் திறமை வளரும்.
+</div>
+</div>
+
+<!-- 25 -->
+<div class="card searchable">
+<div class="card-icon">🌟</div>
+<h3>நீயும் ஒரு நட்சத்திரம்</h3>
+<p>
+ஒரு குழந்தை தன்னால் எதுவும் செய்ய முடியாது என்று
+நினைத்தது. ஆசிரியர் அதன் திறமைகளை நினைவூட்டினார்.
+தன்னம்பிக்கையுடன் முயற்சி செய்து தனது திறமையை வெளிப்படுத்தியது.
+</p>
+<div class="lesson">
+💡 பாடம்: ஒவ்வொரு குழந்தைக்குள்ளும் ஒரு சிறப்பு திறமை உள்ளது.
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= JOKES ================= -->
+
+<section id="jokes" class="content-section">
+
+<h2 class="section-title">😂 குழந்தைகளுக்கான நகைச்சுவைகள்</h2>
+
+<div class="grid">
+
+<div class="card joke searchable">
+<div class="card-icon">😂</div>
+<h3>நகைச்சுவை 1</h3>
+<p>
+ஆசிரியர்: ஏன் வீட்டுப்பாடம் செய்யவில்லை?
+<br>
+மாணவன்: மிஸ்... வீட்டில்தான் செய்தேன்!
+</p>
+<div class="joke-answer">
+🤣 ஆசிரியர்: அப்படியா? அப்போ நோட்டில் ஏன் இல்லை?
+</div>
+</div>
+
+<div class="card joke searchable">
+<div class="card-icon">🐟</div>
+<h3>நகைச்சுவை 2</h3>
+<p>
+மீன் ஏன் பள்ளிக்குச் சென்றது?
+</p>
+<div class="joke-answer">
+🤣 பதில்: அது “நீந்தி” அறிவு பெறச் சென்றது!
+</div>
+</div>
+
+<div class="card joke searchable">
+<div class="card-icon">📚</div>
+<h3>நகைச்சுவை 3</h3>
+<p>
+புத்தகம் ஏன் எப்போதும் அமைதியாக இருக்கிறது?
+</p>
+<div class="joke-answer">
+🤣 பதில்: அதற்குள் நிறைய “பக்கங்கள்” இருக்கின்றன!
+</div>
+</div>
+
+<div class="card joke searchable">
+<div class="card-icon">🐘</div>
+<h3>நகைச்சுவை 4</h3>
+<p>
+யானை ஏன் கணினியைப் பயன்படுத்தியது?
+</p>
+<div class="joke-answer">
+🤣 பதில்: அது “மவுஸ்” பிடிக்க முயன்றது!
+</div>
+</div>
+
+<div class="card joke searchable">
+<div class="card-icon">🍌</div>
+<h3>நகைச்சுவை 5</h3>
+<p>
+வாழைப்பழம் ஏன் மருத்துவரிடம் சென்றது?
+</p>
+<div class="joke-answer">
+🤣 பதில்: அதற்கு உடம்பு “சறுக்கி” இருந்தது!
+</div>
+</div>
+
+<div class="card joke searchable">
+<div class="card-icon">🐄</div>
+<h3>நகைச்சுவை 6</h3>
+<p>
+பசு ஏன் பள்ளிக்கு வரவில்லை?
+</p>
+<div class="joke-answer">
+🤣 பதில்: அது “மாடு விடுமுறை” எடுத்தது!
+</div>
+</div>
+
+<div class="card joke searchable">
+<div class="card-icon">✏️</div>
+<h3>நகைச்சுவை 7</h3>
+<p>
+பென்சில் ஏன் எப்போதும் மகிழ்ச்சியாக இருக்கிறது?
+</p>
+<div class="joke-answer">
+🤣 பதில்: அதற்கு எப்போதும் நல்ல “point” இருக்கும்!
+</div>
+</div>
+
+<div class="card joke searchable">
+<div class="card-icon">🐱</div>
+<h3>நகைச்சுவை 8</h3>
+<p>
+பூனை கணினி முன் ஏன் உட்கார்ந்தது?
+</p>
+<div class="joke-answer">
+🤣 பதில்: மவுஸை பார்க்க!
+</div>
+</div>
+
+<div class="card joke searchable">
+<div class="card-icon">🍎</div>
+<h3>நகைச்சுவை 9</h3>
+<p>
+ஆப்பிள் ஏன் பள்ளிக்குச் சென்றது?
+</p>
+<div class="joke-answer">
+🤣 பதில்: ஆசிரியரிடம் நல்ல “பழக்கம்” கற்க!
+</div>
+</div>
+
+<div class="card joke searchable">
+<div class="card-icon">☂️</div>
+<h3>நகைச்சுவை 10</h3>
+<p>
+குடை ஏன் மழையைப் பார்த்து பயப்படவில்லை?
+</p>
+<div class="joke-answer">
+🤣 பதில்: அதற்கு எப்போதும் பாதுகாப்பு இருக்கிறது!
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= RIDDLES ================= -->
+
+<section id="riddles" class="content-section">
+
+<h2 class="section-title">🧩 குழந்தைகளுக்கான விடுகதைகள்</h2>
+
+<div class="grid">
+
+<div class="card riddle searchable">
+<div class="card-icon">🧩</div>
+<h3>விடுகதை 1</h3>
+<p>
+கால் இல்லை, ஆனால் ஓடும்.
+வாய் இல்லை, ஆனால் பேசும்.
+அது என்ன?
+</p>
+<div class="answer">
+<button onclick="showAnswer(this)">👀 விடையைப் பார்</button>
+<div class="answer-text">💡 பதில்: ஆறு</div>
+</div>
+</div>
+
+<div class="card riddle searchable">
+<div class="card-icon">🌧️</div>
+<h3>விடுகதை 2</h3>
+<p>
+வானத்தில் பிறக்கும்,
+மண்ணில் விழும்,
+மீண்டும் வானத்திற்குச் செல்லும்.
+அது என்ன?
+</p>
+<div class="answer">
+<button onclick="showAnswer(this)">👀 விடையைப் பார்</button>
+<div class="answer-text">💡 பதில்: நீர்த்துளி</div>
+</div>
+</div>
+
+<div class="card riddle searchable">
+<div class="card-icon">☀️</div>
+<h3>விடுகதை 3</h3>
+<p>
+காலையில் வரும்,
+மாலையில் மறையும்.
+அது என்ன?
+</p>
+<div class="answer">
+<button onclick="showAnswer(this)">👀 விடையைப் பார்</button>
+<div class="answer-text">💡 பதில்: சூரியன்</div>
+</div>
+</div>
+
+<div class="card riddle searchable">
+<div class="card-icon">🌙</div>
+<h3>விடுகதை 4</h3>
+<p>
+இரவில் வரும்,
+பகலில் மறையும்.
+அது என்ன?
+</p>
+<div class="answer">
+<button onclick="showAnswer(this)">👀 விடையைப் பார்</button>
+<div class="answer-text">💡 பதில்: நிலா</div>
+</div>
+</div>
+
+<div class="card riddle searchable">
+<div class="card-icon">🦷</div>
+<h3>விடுகதை 5</h3>
+<p>
+வாய்க்குள் நிறைய இருக்கும்,
+ஆனால் சாப்பிடாது.
+அது என்ன?
+</p>
+<div class="answer">
+<button onclick="showAnswer(this)">👀 விடையைப் பார்</button>
+<div class="answer-text">💡 பதில்: பற்கள்</div>
+</div>
+</div>
+
+<div class="card riddle searchable">
+<div class="card-icon">👁️</div>
+<h3>விடுகதை 6</h3>
+<p>
+இரண்டு ஜன்னல்கள்,
+உலகம் முழுவதையும் பார்க்கும்.
+அவை என்ன?
+</p>
+<div class="answer">
+<button onclick="showAnswer(this)">👀 விடையைப் பார்</button>
+<div class="answer-text">💡 பதில்: கண்கள்</div>
+</div>
+</div>
+
+<div class="card riddle searchable">
+<div class="card-icon">📖</div>
+<h3>விடுகதை 7</h3>
+<p>
+என்னைத் திறந்தால் அறிவு கிடைக்கும்.
+என்னை மூடினால் அமைதி கிடைக்கும்.
+நான் யார்?
+</p>
+<div class="answer">
+<button onclick="showAnswer(this)">👀 விடையைப் பார்</button>
+<div class="answer-text">💡 பதில்: புத்தகம்</div>
+</div>
+</div>
+
+<div class="card riddle searchable">
+<div class="card-icon">⏰</div>
+<h3>விடுகதை 8</h3>
+<p>
+நான் ஓடிக்கொண்டே இருப்பேன்,
+ஆனால் எனக்கு கால்கள் இல்லை.
+நான் யார்?
+</p>
+<div class="answer">
+<button onclick="showAnswer(this)">👀 விடையைப் பார்</button>
+<div class="answer-text">💡 பதில்: நேரம்</div>
+</div>
+</div>
+
+<div class="card riddle searchable">
+<div class="card-icon">🌳</div>
+<h3>விடுகதை 9</h3>
+<p>
+எனக்கு வேர் உண்டு,
+கால் இல்லை.
+கிளைகள் உண்டு,
+கைகள் இல்லை.
+நான் யார்?
+</p>
+<div class="answer">
+<button onclick="showAnswer(this)">👀 விடையைப் பார்</button>
+<div class="answer-text">💡 பதில்: மரம்</div>
+</div>
+</div>
+
+<div class="card riddle searchable">
+<div class="card-icon">🌈</div>
+<h3>விடுகதை 10</h3>
+<p>
+ஏழு நிறங்கள் கொண்டேன்,
+மழைக்குப் பிறகு தோன்றுவேன்.
+நான் யார்?
+</p>
+<div class="answer">
+<button onclick="showAnswer(this)">👀 விடையைப் பார்</button>
+<div class="answer-text">💡 பதில்: வானவில்</div>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= ALL ================= -->
+
+<section id="all" class="content-section">
+
+<h2 class="section-title">🌟 கற்றல் உலகின் சிறப்பு தொகுப்பு</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-icon">📖</div>
+<h3>25 ஊக்கக் கதைகள்</h3>
+<p>
+தன்னம்பிக்கை, விடாமுயற்சி, நேர்மை, அன்பு,
+நட்பு மற்றும் நல்ல பழக்கங்களை வளர்க்கும் கதைகள்.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">😂</div>
+<h3>10 குழந்தைகள் நகைச்சுவைகள்</h3>
+<p>
+குழந்தைகள் மகிழ்ச்சியாக சிரித்து ரசிக்கக்கூடிய
+எளிய மற்றும் நட்பான நகைச்சுவைகள்.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🧩</div>
+<h3>10 விடுகதைகள்</h3>
+<p>
+சிந்தனைத்திறன் மற்றும் நினைவாற்றலை வளர்க்கும்
+சுவாரஸ்யமான விடுகதைகள்.
+</p>
+</div>
+
+</div>
+
+<div class="quote">
+🌟 “கற்றல் மகிழ்ச்சியாக இருந்தால்,
+அறிவு வாழ்க்கை முழுவதும் நம்முடன் இருக்கும்!” 🌟
+</div>
+
+</section>
+
+</div>
+
+
+<footer>
+
+<p>
+📚 <span>அனிதா சுந்தர்ராஜு கற்றல் உலகம்</span>
+</p>
+
+<p>
+💖 குழந்தைகள் கற்போம் • சிந்திப்போம் • சிரிப்போம் • சாதிப்போம்
+</p>
+
+<p>
+🌈 Stories | Jokes | Vidukathai | Learning
+</p>
+
+</footer>
+
+
+<button class="top-btn" id="topBtn" onclick="goTop()">↑</button>
+
+
+<script>
+
+/* SECTION NAVIGATION */
+
+function showSection(sectionId, button) {
+
+    const sections =
+        document.querySelectorAll(".content-section");
+
+    sections.forEach(section => {
+        section.classList.remove("active");
+    });
+
+    document
+        .getElementById(sectionId)
+        .classList.add("active");
+
+    const buttons =
+        document.querySelectorAll(".navbar button");
+
+    buttons.forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* SEARCH */
+
+function searchContent() {
+
+    const search =
+        document.getElementById("search")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".searchable");
+
+    cards.forEach(card => {
+
+        const text =
+            card.innerText.toLowerCase();
+
+        if (text.includes(search)) {
+            card.classList.remove("hidden");
+        } else {
+            card.classList.add("hidden");
+        }
+
+    });
+}
+
+
+/* RIDDLE ANSWER */
+
+function showAnswer(button) {
+
+    const answer =
+        button.parentElement.querySelector(".answer-text");
+
+    if (answer.style.display === "block") {
+
+        answer.style.display = "none";
+        button.innerText = "👀 விடையைப் பார்";
+
+    } else {
+
+        answer.style.display = "block";
+        button.innerText = "🙈 விடையை மறை";
+
+    }
+}
+
+
+/* TOP BUTTON */
+
+const topBtn =
+    document.getElementById("topBtn");
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 300) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+
+});
+
+
+function goTop() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
