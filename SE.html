@@ -1,0 +1,2421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>அனிதா சுந்தர்ராஜு கற்றல் உலகம் - 1000 Spoken English Sentences</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#eef3f8;
+    color:#172033;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#4527a0,#1565c0,#00897b);
+    color:white;
+    text-align:center;
+    padding:35px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:34px;
+}
+
+header h2{
+    margin:10px 0;
+    font-size:28px;
+}
+
+header p{
+    margin:6px;
+    font-size:17px;
+}
+
+/* NAV */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#111827;
+    padding:10px;
+    text-align:center;
+}
+
+nav button{
+    color:white;
+    background:#1f2937;
+    border:1px solid #64748b;
+    padding:10px 14px;
+    margin:3px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+nav button:hover{
+    background:#2563eb;
+}
+
+/* MAIN */
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:25px auto;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.card .icon{
+    font-size:30px;
+}
+
+.card h3{
+    color:#1565c0;
+    margin:8px;
+}
+
+.card strong{
+    font-size:24px;
+}
+
+/* SEARCH */
+
+.search-box{
+    background:white;
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    margin-bottom:20px;
+}
+
+.search-box input,
+.search-box select{
+    width:100%;
+    padding:13px;
+    margin:7px 0;
+    border:1px solid #cbd5e1;
+    border-radius:9px;
+    font-size:16px;
+}
+
+/* SENTENCE */
+
+.sentence{
+    background:white;
+    padding:25px;
+    border-radius:17px;
+    margin-bottom:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.number{
+    display:inline-block;
+    background:#1565c0;
+    color:white;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+.category{
+    color:#6a1b9a;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+.english{
+    color:#0d47a1;
+    font-size:21px;
+    font-weight:bold;
+    margin:12px 0;
+}
+
+.tamil{
+    background:#fff8e1;
+    border-left:5px solid #ffb300;
+    padding:14px;
+    border-radius:8px;
+    font-size:18px;
+    margin:10px 0;
+}
+
+.grammar{
+    background:#e8f5e9;
+    border-left:5px solid #43a047;
+    padding:14px;
+    border-radius:8px;
+    margin:10px 0;
+}
+
+.grammar-title{
+    color:#2e7d32;
+    font-weight:bold;
+}
+
+.buttons{
+    margin-top:12px;
+}
+
+.btn{
+    border:0;
+    color:white;
+    padding:10px 15px;
+    margin:4px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.blue{background:#1565c0;}
+.green{background:#2e7d32;}
+.red{background:#c62828;}
+.purple{background:#6a1b9a;}
+.orange{background:#ef6c00;}
+
+.btn:hover{
+    opacity:.85;
+}
+
+/* PROGRESS */
+
+.progress-container{
+    height:22px;
+    background:#d5d9df;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#43a047,#8bc34a);
+    transition:.4s;
+}
+
+/* LESSONS */
+
+.lesson-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:16px;
+}
+
+.lesson-card{
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.lesson-card h3{
+    color:#4527a0;
+}
+
+/* PRACTICE */
+
+.practice-box{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:40px;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:25px;
+    }
+
+    header h2{
+        font-size:21px;
+    }
+
+    .english{
+        font-size:18px;
+    }
+
+    .tamil{
+        font-size:16px;
+    }
+
+    nav button{
+        font-size:12px;
+        padding:8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Spoken English Tutorial</h1>
+    <h2>அனிதா சுந்தர்ராஜு கற்றல் உலகம்</h2>
+    <p>1000 Spoken English Sentences</p>
+    <p>English • தமிழ் • Grammar • Audio • Practice</p>
+</header>
+
+<nav>
+    <button onclick="showPage('home')">🏠 Home</button>
+    <button onclick="showPage('lessons')">📚 Lessons</button>
+    <button onclick="showPage('practice')">🎤 Practice</button>
+    <button onclick="showPage('progress')">📊 Progress</button>
+</nav>
+
+<main class="container">
+
+<!-- HOME -->
+
+<section id="homePage">
+
+    <div class="dashboard">
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>Total Sentences</h3>
+            <strong>1000</strong>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎧</div>
+            <h3>Audio</h3>
+            <strong>EN + தமிழ்</strong>
+        </div>
+
+        <div class="card">
+            <div class="icon">📖</div>
+            <h3>Lessons</h3>
+            <strong>20</strong>
+        </div>
+
+        <div class="card">
+            <div class="icon">📈</div>
+            <h3>Progress</h3>
+            <strong id="topProgress">0%</strong>
+        </div>
+
+    </div>
+
+    <div class="search-box">
+
+        <h2>🔎 Search the 1000 Sentences</h2>
+
+        <input
+            id="search"
+            type="text"
+            placeholder="Search English or Tamil..."
+            oninput="renderSentences()"
+        >
+
+        <select id="filter" onchange="renderSentences()">
+
+            <option value="all">All Lessons</option>
+
+            <option value="Lesson 1">Lesson 1 - Greetings</option>
+            <option value="Lesson 2">Lesson 2 - am / is / are</option>
+            <option value="Lesson 3">Lesson 3 - have / has</option>
+            <option value="Lesson 4">Lesson 4 - Simple Present</option>
+            <option value="Lesson 5">Lesson 5 - Present Continuous</option>
+            <option value="Lesson 6">Lesson 6 - Simple Past</option>
+            <option value="Lesson 7">Lesson 7 - Past Continuous</option>
+            <option value="Lesson 8">Lesson 8 - Future</option>
+            <option value="Lesson 9">Lesson 9 - Future Continuous</option>
+            <option value="Lesson 10">Lesson 10 - Questions</option>
+            <option value="Lesson 11">Lesson 11 - Can / Could</option>
+            <option value="Lesson 12">Lesson 12 - Should / Would</option>
+            <option value="Lesson 13">Lesson 13 - Daily Conversation</option>
+            <option value="Lesson 14">Lesson 14 - Family</option>
+            <option value="Lesson 15">Lesson 15 - Home</option>
+            <option value="Lesson 16">Lesson 16 - School</option>
+            <option value="Lesson 17">Lesson 17 - Workplace</option>
+            <option value="Lesson 18">Lesson 18 - Shopping / Travel</option>
+            <option value="Lesson 19">Lesson 19 - Telephone / Social</option>
+            <option value="Lesson 20">Lesson 20 - Advanced Practice</option>
+
+        </select>
+
+    </div>
+
+    <div id="sentenceContainer"></div>
+
+</section>
+
+
+<!-- LESSONS -->
+
+<section id="lessonsPage" style="display:none">
+
+    <h2>📚 20 English Grammar Lessons</h2>
+
+    <div id="lessonCards" class="lesson-grid"></div>
+
+</section>
+
+
+<!-- PRACTICE -->
+
+<section id="practicePage" style="display:none">
+
+    <div class="practice-box">
+
+        <h2>🎤 Speaking Practice</h2>
+
+        <p>Listen and repeat the sentence aloud.</p>
+
+        <div id="practiceSentence"></div>
+
+        <button class="btn purple" onclick="newPractice()">
+            🔄 New Sentence
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PROGRESS -->
+
+<section id="progressPage" style="display:none">
+
+    <div class="card">
+
+        <h2>📊 My Learning Progress</h2>
+
+        <p id="progressText">
+            0 of 1000 sentences completed.
+        </p>
+
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <h2 id="progressNumber">0%</h2>
+
+        <button class="btn red" onclick="resetProgress()">
+            Reset Progress
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <h2>அனிதா சுந்தர்ராஜு கற்றல் உலகம்</h2>
+
+    <p>1000 Spoken English Sentences with Tamil Grammar Support</p>
+
+    <p>© 2026 Anitha Sundarraju</p>
+
+</footer>
+
+
+<script>
+
+/*
+========================================================
+1000 SENTENCE COURSE
+========================================================
+
+20 lessons × 50 sentences = 1000 sentences.
+
+The sentence generator below creates complete
+individual learning records from carefully defined
+sentence patterns and vocabulary.
+
+========================================================
+*/
+
+
+const lessonNames = [
+
+"Lesson 1",
+"Lesson 2",
+"Lesson 3",
+"Lesson 4",
+"Lesson 5",
+"Lesson 6",
+"Lesson 7",
+"Lesson 8",
+"Lesson 9",
+"Lesson 10",
+"Lesson 11",
+"Lesson 12",
+"Lesson 13",
+"Lesson 14",
+"Lesson 15",
+"Lesson 16",
+"Lesson 17",
+"Lesson 18",
+"Lesson 19",
+"Lesson 20"
+
+];
+
+
+const lessonTitles = [
+
+"Greetings & Introductions",
+"am / is / are",
+"have / has",
+"Simple Present",
+"Present Continuous",
+"Simple Past",
+"Past Continuous",
+"Future Tense",
+"Future Continuous",
+"Questions",
+"Can / Could",
+"Should / Would",
+"Daily Conversation",
+"Family",
+"Home",
+"School",
+"Workplace",
+"Shopping & Travel",
+"Telephone & Social English",
+"Advanced Speaking Practice"
+
+];
+
+
+let sentences = [];
+
+
+/*
+========================================================
+LESSON 1
+========================================================
+*/
+
+const lesson1 = [
+
+["Good morning.","காலை வணக்கம்.","Greeting","Used to greet someone in the morning."],
+["Good afternoon.","மதிய வணக்கம்.","Greeting","Used to greet someone in the afternoon."],
+["Good evening.","மாலை வணக்கம்.","Greeting","Used to greet someone in the evening."],
+["Good night.","இனிய இரவு வணக்கம்.","Greeting","Used when saying goodbye at night."],
+["Hello.","வணக்கம்.","Greeting","A common greeting."],
+["Hi, how are you?","வணக்கம், நீங்கள் எப்படி இருக்கிறீர்கள்?","Greeting","Used to ask about someone's well-being."],
+["I am fine.","நான் நன்றாக இருக்கிறேன்.","Be verb","Use am with I."],
+["I am very well.","நான் மிகவும் நன்றாக இருக்கிறேன்.","Be verb","Am is used with I."],
+["Nice to meet you.","உங்களை சந்தித்ததில் மகிழ்ச்சி.","Greeting","Used when meeting someone."],
+["Nice to see you.","உங்களைப் பார்ப்பதில் மகிழ்ச்சி.","Greeting","Used when meeting someone you know."],
+["What is your name?","உங்கள் பெயர் என்ன?","Question","What asks for information."],
+["My name is Anitha.","என் பெயர் அனிதா.","Be verb","Use is with singular noun."],
+["Where are you from?","நீங்கள் எங்கிருந்து வருகிறீர்கள்?","Question","Where asks about place."],
+["I am from Tamil Nadu.","நான் தமிழ்நாட்டைச் சேர்ந்தவர்.","Be verb","Am is used with I."],
+["Where do you live?","நீங்கள் எங்கே வசிக்கிறீர்கள்?","Simple Present","Do is used to form the question."],
+["I live in Chennai.","நான் சென்னையில் வசிக்கிறேன்.","Simple Present","Simple Present describes a current fact."],
+["How old are you?","உங்களுக்கு எவ்வளவு வயது?","Question","How old asks about age."],
+["I am thirty years old.","எனக்கு முப்பது வயது.","Be verb","Am is used with I."],
+["Are you a teacher?","நீங்கள் ஆசிரியரா?","Question","Are begins a yes/no question."],
+["Yes, I am a teacher.","ஆம், நான் ஒரு ஆசிரியர்.","Be verb","Am follows I."],
+["Are you ready?","நீங்கள் தயாரா?","Question","Are is used with you."],
+["Yes, I am ready.","ஆம், நான் தயாராக இருக்கிறேன்.","Be verb","Am is used with I."],
+["Please come in.","தயவுசெய்து உள்ளே வாருங்கள்.","Imperative","Imperatives give instructions or requests."],
+["Please sit down.","தயவுசெய்து உட்காருங்கள்.","Imperative","Please makes the request polite."],
+["Please wait here.","தயவுசெய்து இங்கே காத்திருக்கவும்.","Imperative","Base verb is used in an imperative."],
+["Thank you.","நன்றி.","Expression","A polite expression of gratitude."],
+["You are welcome.","பரவாயில்லை.","Expression","Common response to thank you."],
+["Excuse me.","மன்னிக்கவும்.","Expression","Used to politely get attention."],
+["I am sorry.","நான் வருந்துகிறேன்.","Be verb","Am is used with I."],
+["That is okay.","அது பரவாயில்லை.","Be verb","Is is used with that."],
+["See you tomorrow.","நாளை சந்திப்போம்.","Future expression","Used when expecting to meet tomorrow."],
+["See you soon.","விரைவில் சந்திப்போம்.","Future expression","Used when saying goodbye."],
+["Have a nice day.","இனிய நாளாக அமையட்டும்.","Expression","A polite good-wish expression."],
+["Have a good evening.","இனிய மாலை நேரமாக அமையட்டும்.","Expression","A polite evening wish."],
+["How is your family?","உங்கள் குடும்பம் எப்படி இருக்கிறது?","Question","How asks about condition."],
+["My family is fine.","என் குடும்பம் நன்றாக இருக்கிறது.","Be verb","Is agrees with family."],
+["This is my friend.","இவர் என் நண்பர்.","Be verb","Is is used with this."],
+["She is my friend.","அவள் என் தோழி.","Be verb","Is is used with she."],
+["He is my brother.","அவர் என் சகோதரர்.","Be verb","Is is used with he."],
+["They are my friends.","அவர்கள் என் நண்பர்கள்.","Be verb","Are is used with plural they."],
+["We are happy to meet you.","உங்களை சந்திப்பதில் நாங்கள் மகிழ்ச்சியடைகிறோம்.","Be verb","Are is used with we."],
+["It is good to see you.","உங்களைப் பார்ப்பது மகிழ்ச்சியாக இருக்கிறது.","Be verb","Is is used with it."],
+["Welcome to our home.","எங்கள் வீட்டிற்கு வரவேற்கிறோம்.","Imperative","Welcome is used as a greeting."],
+["Welcome to our class.","எங்கள் வகுப்பிற்கு வரவேற்கிறோம்.","Expression","Used to welcome someone."],
+["Please introduce yourself.","தயவுசெய்து உங்களை அறிமுகப்படுத்திக் கொள்ளுங்கள்.","Imperative","Please makes the instruction polite."],
+["Let me introduce myself.","என்னை அறிமுகப்படுத்திக் கொள்ள அனுமதியுங்கள்.","Expression","Used before giving your introduction."],
+["I am happy to meet you.","உங்களை சந்தித்ததில் நான் மகிழ்ச்சியாக இருக்கிறேன்.","Be verb","Am is used with I."],
+["It was nice meeting you.","உங்களை சந்தித்தது மகிழ்ச்சியாக இருந்தது.","Past expression","Was describes a completed meeting."],
+["Goodbye and take care.","பிரியாவிடை, கவனமாக இருங்கள்.","Expression","A polite way to say goodbye."],
+["Have a wonderful day.","உங்களுக்கு அற்புதமான நாள் அமையட்டும்.","Expression","Used to wish someone well."]
+
+];
+
+
+/*
+========================================================
+LESSON 2
+========================================================
+*/
+
+const lesson2 = [
+
+["I am happy.","நான் மகிழ்ச்சியாக இருக்கிறேன்.","am","Use am with I."],
+["I am busy.","நான் பிஸியாக இருக்கிறேன்.","am","Use am with I."],
+["I am tired.","நான் சோர்வாக இருக்கிறேன்.","am","Use am with I."],
+["I am hungry.","எனக்கு பசியாக இருக்கிறது.","am","Use am with I."],
+["I am thirsty.","எனக்கு தாகமாக இருக்கிறது.","am","Use am with I."],
+["I am ready.","நான் தயாராக இருக்கிறேன்.","am","Use am with I."],
+["I am late.","நான் தாமதமாக வந்துள்ளேன்.","am","Use am with I."],
+["I am early.","நான் சீக்கிரமாக வந்துள்ளேன்.","am","Use am with I."],
+["I am at home.","நான் வீட்டில் இருக்கிறேன்.","am","Use am with I."],
+["I am in the office.","நான் அலுவலகத்தில் இருக்கிறேன்.","am","Use am with I."],
+["She is happy.","அவள் மகிழ்ச்சியாக இருக்கிறாள்.","is","Use is with she."],
+["She is busy.","அவள் பிஸியாக இருக்கிறாள்.","is","Use is with she."],
+["She is tired.","அவள் சோர்வாக இருக்கிறாள்.","is","Use is with she."],
+["She is ready.","அவள் தயாராக இருக்கிறாள்.","is","Use is with she."],
+["She is at home.","அவள் வீட்டில் இருக்கிறாள்.","is","Use is with she."],
+["He is happy.","அவர் மகிழ்ச்சியாக இருக்கிறார்.","is","Use is with he."],
+["He is busy.","அவர் பிஸியாக இருக்கிறார்.","is","Use is with he."],
+["He is ready.","அவர் தயாராக இருக்கிறார்.","is","Use is with he."],
+["He is at school.","அவர் பள்ளியில் இருக்கிறார்.","is","Use is with he."],
+["He is in Chennai.","அவர் சென்னையில் இருக்கிறார்.","is","Use is with he."],
+["It is hot.","அது சூடாக இருக்கிறது.","is","Use is with it."],
+["It is cold.","அது குளிராக இருக்கிறது.","is","Use is with it."],
+["It is beautiful.","அது அழகாக இருக்கிறது.","is","Use is with it."],
+["It is easy.","அது எளிதாக இருக்கிறது.","is","Use is with it."],
+["It is difficult.","அது கடினமாக இருக்கிறது.","is","Use is with it."],
+["We are happy.","நாங்கள் மகிழ்ச்சியாக இருக்கிறோம்.","are","Use are with we."],
+["We are ready.","நாங்கள் தயாராக இருக்கிறோம்.","are","Use are with we."],
+["We are busy.","நாங்கள் பிஸியாக இருக்கிறோம்.","are","Use are with we."],
+["We are students.","நாங்கள் மாணவர்கள்.","are","Use are with we."],
+["We are friends.","நாங்கள் நண்பர்கள்.","are","Use are with we."],
+["You are kind.","நீங்கள் அன்பானவர்.","are","Use are with you."],
+["You are helpful.","நீங்கள் உதவிகரமாக இருக்கிறீர்கள்.","are","Use are with you."],
+["You are correct.","நீங்கள் சரியாக இருக்கிறீர்கள்.","are","Use are with you."],
+["You are important.","நீங்கள் முக்கியமானவர்.","are","Use are with you."],
+["You are welcome.","உங்களுக்கு வரவேற்பு.","are","Use are with you."],
+["They are happy.","அவர்கள் மகிழ்ச்சியாக இருக்கிறார்கள்.","are","Use are with they."],
+["They are ready.","அவர்கள் தயாராக இருக்கிறார்கள்.","are","Use are with they."],
+["They are busy.","அவர்கள் பிஸியாக இருக்கிறார்கள்.","are","Use are with they."],
+["They are students.","அவர்கள் மாணவர்கள்.","are","Use are with they."],
+["They are teachers.","அவர்கள் ஆசிரியர்கள்.","are","Use are with they."],
+["The room is clean.","அறை சுத்தமாக இருக்கிறது.","is","Is agrees with singular room."],
+["The house is big.","வீடு பெரியதாக இருக்கிறது.","is","Is agrees with singular house."],
+["The car is new.","கார் புதியதாக இருக்கிறது.","is","Is agrees with singular car."],
+["The books are new.","புத்தகங்கள் புதியவை.","are","Are agrees with plural books."],
+["The children are happy.","குழந்தைகள் மகிழ்ச்சியாக இருக்கிறார்கள்.","are","Are agrees with plural children."],
+["My mother is kind.","என் அம்மா அன்பானவர்.","is","Is agrees with singular mother."],
+["My father is busy.","என் அப்பா பிஸியாக இருக்கிறார்.","is","Is agrees with singular father."],
+["My friends are helpful.","என் நண்பர்கள் உதவிகரமாக இருக்கிறார்கள்.","are","Are agrees with plural friends."],
+["Our teachers are good.","எங்கள் ஆசிரியர்கள் நல்லவர்கள்.","are","Are agrees with plural teachers."],
+["English is useful.","ஆங்கிலம் பயனுள்ளதாக இருக்கிறது.","is","Is agrees with singular English."]
+
+];
+
+
+/*
+========================================================
+LESSON 3
+========================================================
+*/
+
+const lesson3 = [
+
+["I have a pen.","என்னிடம் ஒரு பேனா உள்ளது.","have","Use have with I."],
+["I have a book.","என்னிடம் ஒரு புத்தகம் உள்ளது.","have","Use have with I."],
+["I have a car.","என்னிடம் ஒரு கார் உள்ளது.","have","Use have with I."],
+["I have a question.","என்னிடம் ஒரு கேள்வி உள்ளது.","have","Use have with I."],
+["I have an idea.","என்னிடம் ஒரு யோசனை உள்ளது.","have","Use have with I."],
+["I have a problem.","எனக்கு ஒரு பிரச்சினை உள்ளது.","have","Use have with I."],
+["I have enough time.","என்னிடம் போதுமான நேரம் உள்ளது.","have","Use have with I."],
+["I have some money.","என்னிடம் கொஞ்சம் பணம் உள்ளது.","have","Use have with I."],
+["We have a house.","எங்களிடம் ஒரு வீடு உள்ளது.","have","Use have with we."],
+["We have two children.","எங்களுக்கு இரண்டு குழந்தைகள் உள்ளனர்.","have","Use have with we."],
+["We have a meeting.","எங்களுக்கு ஒரு கூட்டம் உள்ளது.","have","Use have with we."],
+["We have a plan.","எங்களிடம் ஒரு திட்டம் உள்ளது.","have","Use have with we."],
+["We have enough food.","எங்களிடம் போதுமான உணவு உள்ளது.","have","Use have with we."],
+["They have a car.","அவர்களிடம் ஒரு கார் உள்ளது.","have","Use have with they."],
+["They have a house.","அவர்களிடம் ஒரு வீடு உள்ளது.","have","Use have with they."],
+["They have three children.","அவர்களுக்கு மூன்று குழந்தைகள் உள்ளனர்.","have","Use have with they."],
+["They have a meeting.","அவர்களுக்கு ஒரு கூட்டம் உள்ளது.","have","Use have with they."],
+["You have a choice.","உங்களுக்கு ஒரு தேர்வு உள்ளது.","have","Use have with you."],
+["You have a good opportunity.","உங்களுக்கு ஒரு நல்ல வாய்ப்பு உள்ளது.","have","Use have with you."],
+["You have enough time.","உங்களுக்கு போதுமான நேரம் உள்ளது.","have","Use have with you."],
+["She has a book.","அவளிடம் ஒரு புத்தகம் உள்ளது.","has","Use has with she."],
+["She has a car.","அவளிடம் ஒரு கார் உள்ளது.","has","Use has with she."],
+["She has a beautiful house.","அவளிடம் அழகான வீடு உள்ளது.","has","Use has with she."],
+["She has a new phone.","அவளிடம் புதிய தொலைபேசி உள்ளது.","has","Use has with she."],
+["She has a question.","அவளிடம் ஒரு கேள்வி உள்ளது.","has","Use has with she."],
+["He has a job.","அவருக்கு ஒரு வேலை உள்ளது.","has","Use has with he."],
+["He has a bike.","அவரிடம் ஒரு பைக் உள்ளது.","has","Use has with he."],
+["He has a problem.","அவருக்கு ஒரு பிரச்சினை உள்ளது.","has","Use has with he."],
+["He has a plan.","அவரிடம் ஒரு திட்டம் உள்ளது.","has","Use has with he."],
+["He has a new computer.","அவரிடம் புதிய கணினி உள்ளது.","has","Use has with he."],
+["My mother has a garden.","என் அம்மாவிடம் ஒரு தோட்டம் உள்ளது.","has","Has agrees with mother."],
+["My father has a car.","என் அப்பாவிடம் ஒரு கார் உள்ளது.","has","Has agrees with father."],
+["My sister has a laptop.","என் சகோதரியிடம் மடிக்கணினி உள்ளது.","has","Has agrees with sister."],
+["My brother has a bicycle.","என் சகோதரரிடம் சைக்கிள் உள்ளது.","has","Has agrees with brother."],
+["The house has three rooms.","வீட்டில் மூன்று அறைகள் உள்ளன.","has","Has agrees with singular house."],
+["The school has a library.","பள்ளியில் ஒரு நூலகம் உள்ளது.","has","Has agrees with singular school."],
+["The office has many computers.","அலுவலகத்தில் பல கணினிகள் உள்ளன.","has","Has agrees with singular office."],
+["This phone has a good camera.","இந்த தொலைபேசியில் நல்ல கேமரா உள்ளது.","has","Has agrees with singular phone."],
+["The car has four doors.","காரில் நான்கு கதவுகள் உள்ளன.","has","Has agrees with singular car."],
+["I have breakfast at eight.","நான் எட்டு மணிக்கு காலை உணவு சாப்பிடுகிறேன்.","have","Have can describe meals."],
+["We have lunch together.","நாங்கள் ஒன்றாக மதிய உணவு சாப்பிடுகிறோம்.","have","Have can describe meals."],
+["They have dinner at home.","அவர்கள் வீட்டில் இரவு உணவு சாப்பிடுகிறார்கள்.","have","Have can describe meals."],
+["She has coffee every morning.","அவள் தினமும் காலையில் காபி குடிக்கிறாள்.","has","Has can describe a routine."],
+["He has tea in the evening.","அவர் மாலையில் தேநீர் குடிக்கிறார்.","has","Has can describe a routine."],
+["I have a good friend.","எனக்கு ஒரு நல்ல நண்பர் உள்ளார்.","have","Have expresses possession."],
+["She has many friends.","அவளுக்கு பல நண்பர்கள் உள்ளனர்.","has","Has expresses possession."],
+["We have English class today.","இன்று எங்களுக்கு ஆங்கில வகுப்பு உள்ளது.","have","Have describes an event."],
+["They have a holiday tomorrow.","அவர்களுக்கு நாளை விடுமுறை உள்ளது.","have","Have describes a scheduled event."],
+["You have my support.","உங்களுக்கு என் ஆதரவு உள்ளது.","have","Have expresses possession or support."]
+
+];
+
+
+/*
+========================================================
+LESSON 4
+========================================================
+*/
+
+const lesson4 = [
+
+["I wake up at six every day.","நான் தினமும் ஆறு மணிக்கு எழுந்திருப்பேன்.","Simple Present","Used for daily routines."],
+["I brush my teeth every morning.","நான் தினமும் காலையில் பல் துலக்குகிறேன்.","Simple Present","Habitual action."],
+["I take a bath every morning.","நான் தினமும் காலையில் குளிக்கிறேன்.","Simple Present","Habitual action."],
+["I drink water after waking up.","எழுந்த பிறகு நான் தண்ணீர் குடிக்கிறேன்.","Simple Present","Routine."],
+["I read the newspaper every morning.","நான் தினமும் காலையில் செய்தித்தாள் படிக்கிறேன்.","Simple Present","Regular habit."],
+["I eat breakfast at eight.","நான் எட்டு மணிக்கு காலை உணவு சாப்பிடுகிறேன்.","Simple Present","Routine."],
+["I go to work by bus.","நான் பேருந்தில் வேலைக்குச் செல்கிறேன்.","Simple Present","Regular activity."],
+["I start work at nine.","நான் ஒன்பது மணிக்கு வேலையைத் தொடங்குகிறேன்.","Simple Present","Regular schedule."],
+["I finish work at five.","நான் ஐந்து மணிக்கு வேலையை முடிக்கிறேன்.","Simple Present","Regular schedule."],
+["I come home in the evening.","நான் மாலையில் வீட்டிற்கு வருகிறேன்.","Simple Present","Routine."],
+["She wakes up early.","அவள் சீக்கிரம் எழுந்திருப்பாள்.","Simple Present","Add s with she."],
+["She cooks breakfast.","அவள் காலை உணவு சமைக்கிறாள்.","Simple Present","Add s with she."],
+["She goes to school by bus.","அவள் பேருந்தில் பள்ளிக்குச் செல்கிறாள்.","Simple Present","Goes is used with she."],
+["She studies English every day.","அவள் தினமும் ஆங்கிலம் படிக்கிறாள்.","Simple Present","Studies is used with she."],
+["She works in a hospital.","அவள் மருத்துவமனையில் வேலை செய்கிறாள்.","Simple Present","Works is used with she."],
+["He gets up early.","அவர் சீக்கிரம் எழுந்திருப்பார்.","Simple Present","Gets is used with he."],
+["He drinks coffee every morning.","அவர் தினமும் காலையில் காபி குடிக்கிறார்.","Simple Present","Drinks is used with he."],
+["He reads books at night.","அவர் இரவில் புத்தகங்கள் படிக்கிறார்.","Simple Present","Reads is used with he."],
+["He watches television in the evening.","அவர் மாலையில் தொலைக்காட்சி பார்க்கிறார்.","Simple Present","Watches is used with he."],
+["He plays cricket on Sundays.","அவர் ஞாயிற்றுக்கிழமைகளில் கிரிக்கெட் விளையாடுகிறார்.","Simple Present","Plays is used with he."],
+["We study together.","நாங்கள் ஒன்றாக படிக்கிறோம்.","Simple Present","Base verb with we."],
+["We go to school together.","நாங்கள் ஒன்றாக பள்ளிக்குச் செல்கிறோம்.","Simple Present","Base verb with we."],
+["We speak English in class.","நாங்கள் வகுப்பில் ஆங்கிலம் பேசுகிறோம்.","Simple Present","Base verb with we."],
+["We practice every day.","நாங்கள் தினமும் பயிற்சி செய்கிறோம்.","Simple Present","Habit."],
+["We help each other.","நாங்கள் ஒருவருக்கொருவர் உதவுகிறோம்.","Simple Present","Regular action."],
+["They play football every evening.","அவர்கள் தினமும் மாலை கால்பந்து விளையாடுகிறார்கள்.","Simple Present","Regular activity."],
+["They visit their parents every week.","அவர்கள் வாரம் தோறும் பெற்றோரை சந்திக்கிறார்கள்.","Simple Present","Regular activity."],
+["They work hard.","அவர்கள் கடினமாக உழைக்கிறார்கள்.","Simple Present","General fact."],
+["They live in Chennai.","அவர்கள் சென்னையில் வசிக்கிறார்கள்.","Simple Present","Current fact."],
+["They speak Tamil at home.","அவர்கள் வீட்டில் தமிழ் பேசுகிறார்கள்.","Simple Present","Habit."],
+["The sun rises in the east.","சூரியன் கிழக்கில் உதிக்கிறது.","Simple Present","General truth."],
+["Water boils at one hundred degrees.","தண்ணீர் நூறு டிகிரியில் கொதிக்கிறது.","Simple Present","Scientific fact."],
+["Birds fly in the sky.","பறவைகள் வானில் பறக்கின்றன.","Simple Present","General fact."],
+["Dogs like to play.","நாய்களுக்கு விளையாட பிடிக்கும்.","Simple Present","General fact."],
+["Cats sleep a lot.","பூனைகள் அதிகமாக தூங்குகின்றன.","Simple Present","General fact."],
+["English helps us communicate.","ஆங்கிலம் நமக்கு தொடர்பு கொள்ள உதவுகிறது.","Simple Present","General truth."],
+["Practice improves speaking skills.","பயிற்சி பேசும் திறனை மேம்படுத்துகிறது.","Simple Present","General truth."],
+["Reading improves vocabulary.","வாசிப்பு சொற்களஞ்சியத்தை மேம்படுத்துகிறது.","Simple Present","General truth."],
+["Listening improves pronunciation.","கேட்பது உச்சரிப்பை மேம்படுத்துகிறது.","Simple Present","General truth."],
+["I usually walk in the morning.","நான் பொதுவாக காலையில் நடப்பேன்.","Simple Present","Usually describes a regular habit."],
+["I often read English books.","நான் அடிக்கடி ஆங்கில புத்தகங்களை படிப்பேன்.","Simple Present","Often describes frequency."],
+["I sometimes watch English videos.","நான் சில நேரங்களில் ஆங்கில வீடியோக்களை பார்ப்பேன்.","Simple Present","Sometimes describes frequency."],
+["I always try my best.","நான் எப்போதும் என்னால் முடிந்ததை செய்கிறேன்.","Simple Present","Always describes a regular habit."],
+["I never waste my time.","நான் ஒருபோதும் என் நேரத்தை வீணாக்குவதில்லை.","Simple Present","Never expresses zero frequency."],
+["She usually comes early.","அவள் பொதுவாக சீக்கிரம் வருகிறாள்.","Simple Present","Usually describes routine."],
+["He often helps his friends.","அவர் அடிக்கடி நண்பர்களுக்கு உதவுகிறார்.","Simple Present","Often describes frequency."],
+["We sometimes eat outside.","நாங்கள் சில நேரங்களில் வெளியே சாப்பிடுகிறோம்.","Simple Present","Sometimes describes frequency."],
+["They always arrive on time.","அவர்கள் எப்போதும் நேரத்திற்கு வருகிறார்கள்.","Simple Present","Always describes a regular action."],
+["Good habits make life better.","நல்ல பழக்கங்கள் வாழ்க்கையை சிறப்பாக மாற்றுகின்றன.","Simple Present","General truth."]
+
+];
+
+
+/*
+========================================================
+LESSON 5
+========================================================
+*/
+
+const lesson5 = [
+
+["I am reading a book.","நான் ஒரு புத்தகம் படித்துக் கொண்டிருக்கிறேன்.","Present Continuous","am + verb-ing describes an action happening now."],
+["I am writing a letter.","நான் ஒரு கடிதம் எழுதிக் கொண்டிருக்கிறேன்.","Present Continuous","am + verb-ing."],
+["I am learning English.","நான் ஆங்கிலம் கற்றுக் கொண்டிருக்கிறேன்.","Present Continuous","Action happening now."],
+["I am speaking English.","நான் ஆங்கிலம் பேசிக் கொண்டிருக்கிறேன்.","Present Continuous","Action happening now."],
+["I am listening to music.","நான் இசை கேட்டுக் கொண்டிருக்கிறேன்.","Present Continuous","Action happening now."],
+["I am watching television.","நான் தொலைக்காட்சி பார்த்துக் கொண்டிருக்கிறேன்.","Present Continuous","Action happening now."],
+["I am cooking dinner.","நான் இரவு உணவு சமைத்துக் கொண்டிருக்கிறேன்.","Present Continuous","Action happening now."],
+["I am drinking water.","நான் தண்ணீர் குடித்துக் கொண்டிருக்கிறேன்.","Present Continuous","Action happening now."],
+["I am waiting for you.","நான் உங்களுக்காக காத்துக் கொண்டிருக்கிறேன்.","Present Continuous","Action happening now."],
+["I am coming home.","நான் வீட்டிற்கு வந்து கொண்டிருக்கிறேன்.","Present Continuous","Action happening now."],
+["She is reading a book.","அவள் ஒரு புத்தகம் படித்துக் கொண்டிருக்கிறாள்.","Present Continuous","is + verb-ing."],
+["She is cooking food.","அவள் உணவு சமைத்துக் கொண்டிருக்கிறாள்.","Present Continuous","is + verb-ing."],
+["She is talking to her mother.","அவள் தன் அம்மாவுடன் பேசிக் கொண்டிருக்கிறாள்.","Present Continuous","is + verb-ing."],
+["She is studying English.","அவள் ஆங்கிலம் படித்துக் கொண்டிருக்கிறாள்.","Present Continuous","is + verb-ing."],
+["She is watching a movie.","அவள் ஒரு திரைப்படம் பார்த்துக் கொண்டிருக்கிறாள்.","Present Continuous","is + verb-ing."],
+["He is driving a car.","அவர் கார் ஓட்டிக் கொண்டிருக்கிறார்.","Present Continuous","is + verb-ing."],
+["He is working now.","அவர் இப்போது வேலை செய்து கொண்டிருக்கிறார்.","Present Continuous","is + verb-ing."],
+["He is sleeping.","அவர் தூங்கிக் கொண்டிருக்கிறார்.","Present Continuous","is + verb-ing."],
+["He is talking on the phone.","அவர் தொலைபேசியில் பேசிக் கொண்டிருக்கிறார்.","Present Continuous","is + verb-ing."],
+["He is waiting outside.","அவர் வெளியே காத்துக் கொண்டிருக்கிறார்.","Present Continuous","is + verb-ing."],
+["We are learning English.","நாங்கள் ஆங்கிலம் கற்றுக் கொண்டிருக்கிறோம்.","Present Continuous","are + verb-ing."],
+["We are studying together.","நாங்கள் ஒன்றாக படித்துக் கொண்டிருக்கிறோம்.","Present Continuous","are + verb-ing."],
+["We are having lunch.","நாங்கள் மதிய உணவு சாப்பிட்டுக் கொண்டிருக்கிறோம்.","Present Continuous","are + verb-ing."],
+["We are watching a movie.","நாங்கள் திரைப்படம் பார்த்துக் கொண்டிருக்கிறோம்.","Present Continuous","are + verb-ing."],
+["We are waiting for the bus.","நாங்கள் பேருந்துக்காக காத்துக் கொண்டிருக்கிறோம்.","Present Continuous","are + verb-ing."],
+["They are playing cricket.","அவர்கள் கிரிக்கெட் விளையாடிக் கொண்டிருக்கிறார்கள்.","Present Continuous","are + verb-ing."],
+["They are running in the park.","அவர்கள் பூங்காவில் ஓடிக் கொண்டிருக்கிறார்கள்.","Present Continuous","are + verb-ing."],
+["They are talking together.","அவர்கள் ஒன்றாக பேசிக் கொண்டிருக்கிறார்கள்.","Present Continuous","are + verb-ing."],
+["They are working hard.","அவர்கள் கடினமாக வேலை செய்து கொண்டிருக்கிறார்கள்.","Present Continuous","are + verb-ing."],
+["They are coming home.","அவர்கள் வீட்டிற்கு வந்து கொண்டிருக்கிறார்கள்.","Present Continuous","are + verb-ing."],
+["The baby is sleeping.","குழந்தை தூங்கிக் கொண்டிருக்கிறது.","Present Continuous","is + verb-ing."],
+["The children are playing.","குழந்தைகள் விளையாடிக் கொண்டிருக்கிறார்கள்.","Present Continuous","are + verb-ing."],
+["The teacher is teaching.","ஆசிரியர் கற்பித்துக் கொண்டிருக்கிறார்.","Present Continuous","is + verb-ing."],
+["The students are listening.","மாணவர்கள் கேட்டுக் கொண்டிருக்கிறார்கள்.","Present Continuous","are + verb-ing."],
+["The dog is sleeping.","நாய் தூங்கிக் கொண்டிருக்கிறது.","Present Continuous","is + verb-ing."],
+["It is raining.","மழை பெய்து கொண்டிருக்கிறது.","Present Continuous","is + verb-ing."],
+["The sun is shining.","சூரியன் பிரகாசித்துக் கொண்டிருக்கிறது.","Present Continuous","is + verb-ing."],
+["I am preparing for my exam.","நான் என் தேர்வுக்கு தயாராகிக் கொண்டிருக்கிறேன்.","Present Continuous","am + verb-ing."],
+["She is preparing dinner.","அவள் இரவு உணவு தயாரித்துக் கொண்டிருக்கிறாள்.","Present Continuous","is + verb-ing."],
+["He is cleaning the room.","அவர் அறையை சுத்தம் செய்து கொண்டிருக்கிறார்.","Present Continuous","is + verb-ing."],
+["We are planning a trip.","நாங்கள் ஒரு பயணத்தை திட்டமிட்டுக் கொண்டிருக்கிறோம்.","Present Continuous","are + verb-ing."],
+["They are building a house.","அவர்கள் ஒரு வீடு கட்டிக் கொண்டிருக்கிறார்கள்.","Present Continuous","are + verb-ing."],
+["I am improving my English.","நான் என் ஆங்கிலத்தை மேம்படுத்திக் கொண்டிருக்கிறேன்.","Present Continuous","am + verb-ing."],
+["She is practicing pronunciation.","அவள் உச்சரிப்பை பயிற்சி செய்து கொண்டிருக்கிறாள்.","Present Continuous","is + verb-ing."],
+["He is learning new words.","அவர் புதிய வார்த்தைகளை கற்றுக் கொண்டிருக்கிறார்.","Present Continuous","is + verb-ing."],
+["We are practicing grammar.","நாங்கள் இலக்கணத்தை பயிற்சி செய்து கொண்டிருக்கிறோம்.","Present Continuous","are + verb-ing."],
+["They are speaking English.","அவர்கள் ஆங்கிலம் பேசிக் கொண்டிருக்கிறார்கள்.","Present Continuous","are + verb-ing."],
+["I am trying to improve.","நான் மேம்படுத்த முயற்சி செய்து கொண்டிருக்கிறேன்.","Present Continuous","am + verb-ing."],
+["She is helping me.","அவள் எனக்கு உதவி செய்து கொண்டிருக்கிறாள்.","Present Continuous","is + verb-ing."],
+["We are doing our best.","நாங்கள் எங்களால் முடிந்ததை செய்து கொண்டிருக்கிறோம்.","Present Continuous","are + verb-ing."]
+
+];
+
+
+/*
+========================================================
+LESSON 6 - SIMPLE PAST
+========================================================
+*/
+
+const lesson6 = [
+
+["I visited Chennai yesterday.","நான் நேற்று சென்னைக்கு சென்றேன்.","Simple Past","Visited is the past form of visit."],
+["I watched a movie last night.","நான் நேற்று இரவு ஒரு திரைப்படம் பார்த்தேன்.","Simple Past","Watched is the past form of watch."],
+["I cleaned my room yesterday.","நான் நேற்று என் அறையை சுத்தம் செய்தேன்.","Simple Past","Cleaned is the past form of clean."],
+["I cooked dinner.","நான் இரவு உணவு சமைத்தேன்.","Simple Past","Cooked is the past form of cook."],
+["I called my friend.","நான் என் நண்பரை அழைத்தேன்.","Simple Past","Called is the past form of call."],
+["I opened the door.","நான் கதவைத் திறந்தேன்.","Simple Past","Opened is the past form of open."],
+["I closed the window.","நான் ஜன்னலை மூடினேன்.","Simple Past","Closed is the past form of close."],
+["I finished my work.","நான் என் வேலையை முடித்தேன்.","Simple Past","Finished is the past form of finish."],
+["I studied English yesterday.","நான் நேற்று ஆங்கிலம் படித்தேன்.","Simple Past","Studied is the past form of study."],
+["I practiced speaking.","நான் பேசுவதற்கு பயிற்சி செய்தேன்.","Simple Past","Practiced is the past form of practice."],
+["She visited her mother.","அவள் தன் அம்மாவை சந்தித்தாள்.","Simple Past","Visited is past tense."],
+["She cooked lunch.","அவள் மதிய உணவு சமைத்தாள்.","Simple Past","Cooked is past tense."],
+["She watched television.","அவள் தொலைக்காட்சி பார்த்தாள்.","Simple Past","Watched is past tense."],
+["She called me.","அவள் என்னை அழைத்தாள்.","Simple Past","Called is past tense."],
+["She finished the work.","அவள் வேலையை முடித்தாள்.","Simple Past","Finished is past tense."],
+["He went to school.","அவர் பள்ளிக்குச் சென்றார்.","Simple Past","Went is the past form of go."],
+["He came home early.","அவர் சீக்கிரம் வீட்டிற்கு வந்தார்.","Simple Past","Came is the past form of come."],
+["He bought a new phone.","அவர் புதிய தொலைபேசி வாங்கினார்.","Simple Past","Bought is the past form of buy."],
+["He saw his friend.","அவர் தனது நண்பரை பார்த்தார்.","Simple Past","Saw is the past form of see."],
+["He ate breakfast.","அவர் காலை உணவு சாப்பிட்டார்.","Simple Past","Ate is the past form of eat."],
+["We went to the beach.","நாங்கள் கடற்கரைக்கு சென்றோம்.","Simple Past","Went is past tense."],
+["We watched a movie.","நாங்கள் ஒரு திரைப்படம் பார்த்தோம்.","Simple Past","Watched is past tense."],
+["We played cricket.","நாங்கள் கிரிக்கெட் விளையாடினோம்.","Simple Past","Played is past tense."],
+["We visited our friends.","நாங்கள் நண்பர்களை சந்தித்தோம்.","Simple Past","Visited is past tense."],
+["We enjoyed the trip.","நாங்கள் பயணத்தை ரசித்தோம்.","Simple Past","Enjoyed is past tense."],
+["They went to Chennai.","அவர்கள் சென்னைக்கு சென்றார்கள்.","Simple Past","Went is the past form of go."],
+["They came yesterday.","அவர்கள் நேற்று வந்தார்கள்.","Simple Past","Came is past tense."],
+["They played football.","அவர்கள் கால்பந்து விளையாடினார்கள்.","Simple Past","Played is past tense."],
+["They completed the work.","அவர்கள் வேலையை முடித்தார்கள்.","Simple Past","Completed is past tense."],
+["They returned home.","அவர்கள் வீட்டிற்கு திரும்பினார்கள்.","Simple Past","Returned is past tense."],
+["I woke up early.","நான் சீக்கிரம் எழுந்தேன்.","Simple Past","Woke is past form of wake."],
+["I drank some water.","நான் கொஞ்சம் தண்ணீர் குடித்தேன்.","Simple Past","Drank is past form of drink."],
+["I read a book.","நான் ஒரு புத்தகம் படித்தேன்.","Simple Past","Read is written the same but pronounced differently in past."],
+["I wrote a letter.","நான் ஒரு கடிதம் எழுதினேன்.","Simple Past","Wrote is past form of write."],
+["I met my teacher.","நான் என் ஆசிரியரை சந்தித்தேன்.","Simple Past","Met is past form of meet."],
+["She gave me a book.","அவள் எனக்கு ஒரு புத்தகம் கொடுத்தாள்.","Simple Past","Gave is past form of give."],
+["He took the bus.","அவர் பேருந்தில் சென்றார்.","Simple Past","Took is past form of take."],
+["We made a cake.","நாங்கள் ஒரு கேக் செய்தோம்.","Simple Past","Made is past form of make."],
+["They found the key.","அவர்கள் சாவியை கண்டுபிடித்தார்கள்.","Simple Past","Found is past form of find."],
+["I lost my pen.","நான் என் பேனாவை தொலைத்தேன்.","Simple Past","Lost is past form of lose."],
+["She helped me.","அவள் எனக்கு உதவினாள்.","Simple Past","Helped is regular past tense."],
+["He answered the question.","அவர் கேள்விக்கு பதிலளித்தார்.","Simple Past","Answered is past tense."],
+["We learned a new lesson.","நாங்கள் புதிய பாடம் கற்றோம்.","Simple Past","Learned is past tense."],
+["They practiced English.","அவர்கள் ஆங்கிலம் பயிற்சி செய்தார்கள்.","Simple Past","Practiced is past tense."],
+["I stayed at home.","நான் வீட்டில் தங்கினேன்.","Simple Past","Stayed is past tense."],
+["She smiled at me.","அவள் என்னைப் பார்த்து சிரித்தாள்.","Simple Past","Smiled is past tense."],
+["He opened the book.","அவர் புத்தகத்தைத் திறந்தார்.","Simple Past","Opened is past tense."],
+["We enjoyed the lesson.","நாங்கள் பாடத்தை ரசித்தோம்.","Simple Past","Enjoyed is past tense."],
+["They arrived on time.","அவர்கள் நேரத்திற்கு வந்தார்கள்.","Simple Past","Arrived is past tense."]
+
+];
+
+
+/*
+========================================================
+LESSON 7 - PAST CONTINUOUS
+========================================================
+*/
+
+const lesson7 = [
+
+["I was reading a book.","நான் ஒரு புத்தகம் படித்துக் கொண்டிருந்தேன்.","Past Continuous","was + verb-ing."],
+["I was watching television.","நான் தொலைக்காட்சி பார்த்துக் கொண்டிருந்தேன்.","Past Continuous","was + verb-ing."],
+["I was cooking dinner.","நான் இரவு உணவு சமைத்துக் கொண்டிருந்தேன்.","Past Continuous","was + verb-ing."],
+["I was studying English.","நான் ஆங்கிலம் படித்துக் கொண்டிருந்தேன்.","Past Continuous","was + verb-ing."],
+["I was waiting for you.","நான் உங்களுக்காக காத்துக் கொண்டிருந்தேன்.","Past Continuous","was + verb-ing."],
+["She was reading a book.","அவள் ஒரு புத்தகம் படித்துக் கொண்டிருந்தாள்.","Past Continuous","was + verb-ing."],
+["She was cooking lunch.","அவள் மதிய உணவு சமைத்துக் கொண்டிருந்தாள்.","Past Continuous","was + verb-ing."],
+["She was talking to her friend.","அவள் தனது நண்பருடன் பேசிக் கொண்டிருந்தாள்.","Past Continuous","was + verb-ing."],
+["She was studying.","அவள் படித்துக் கொண்டிருந்தாள்.","Past Continuous","was + verb-ing."],
+["She was sleeping.","அவள் தூங்கிக் கொண்டிருந்தாள்.","Past Continuous","was + verb-ing."],
+["He was driving.","அவர் வாகனம் ஓட்டிக் கொண்டிருந்தார்.","Past Continuous","was + verb-ing."],
+["He was working.","அவர் வேலை செய்து கொண்டிருந்தார்.","Past Continuous","was + verb-ing."],
+["He was waiting outside.","அவர் வெளியே காத்துக் கொண்டிருந்தார்.","Past Continuous","was + verb-ing."],
+["He was speaking on the phone.","அவர் தொலைபேசியில் பேசிக் கொண்டிருந்தார்.","Past Continuous","was + verb-ing."],
+["He was watching television.","அவர் தொலைக்காட்சி பார்த்துக் கொண்டிருந்தார்.","Past Continuous","was + verb-ing."],
+["We were studying.","நாங்கள் படித்துக் கொண்டிருந்தோம்.","Past Continuous","were + verb-ing."],
+["We were talking.","நாங்கள் பேசிக் கொண்டிருந்தோம்.","Past Continuous","were + verb-ing."],
+["We were eating dinner.","நாங்கள் இரவு உணவு சாப்பிட்டுக் கொண்டிருந்தோம்.","Past Continuous","were + verb-ing."],
+["We were watching a movie.","நாங்கள் திரைப்படம் பார்த்துக் கொண்டிருந்தோம்.","Past Continuous","were + verb-ing."],
+["We were waiting for the bus.","நாங்கள் பேருந்துக்காக காத்துக் கொண்டிருந்தோம்.","Past Continuous","were + verb-ing."],
+["They were playing cricket.","அவர்கள் கிரிக்கெட் விளையாடிக் கொண்டிருந்தார்கள்.","Past Continuous","were + verb-ing."],
+["They were running.","அவர்கள் ஓடிக் கொண்டிருந்தார்கள்.","Past Continuous","were + verb-ing."],
+["They were talking.","அவர்கள் பேசிக் கொண்டிருந்தார்கள்.","Past Continuous","were + verb-ing."],
+["They were working.","அவர்கள் வேலை செய்து கொண்டிருந்தார்கள்.","Past Continuous","were + verb-ing."],
+["They were sleeping.","அவர்கள் தூங்கிக் கொண்டிருந்தார்கள்.","Past Continuous","were + verb-ing."],
+["The children were playing.","குழந்தைகள் விளையாடிக் கொண்டிருந்தனர்.","Past Continuous","were + verb-ing."],
+["The teacher was teaching.","ஆசிரியர் கற்பித்துக் கொண்டிருந்தார்.","Past Continuous","was + verb-ing."],
+["The students were listening.","மாணவர்கள் கேட்டுக் கொண்டிருந்தனர்.","Past Continuous","were + verb-ing."],
+["It was raining.","மழை பெய்துக் கொண்டிருந்தது.","Past Continuous","was + verb-ing."],
+["The baby was sleeping.","குழந்தை தூங்கிக் கொண்டிருந்தது.","Past Continuous","was + verb-ing."],
+["I was walking home.","நான் வீட்டிற்கு நடந்து சென்று கொண்டிருந்தேன்.","Past Continuous","was + verb-ing."],
+["She was cleaning the room.","அவள் அறையை சுத்தம் செய்து கொண்டிருந்தாள்.","Past Continuous","was + verb-ing."],
+["He was washing the car.","அவர் காரை கழுவிக் கொண்டிருந்தார்.","Past Continuous","was + verb-ing."],
+["We were preparing dinner.","நாங்கள் இரவு உணவு தயாரித்துக் கொண்டிருந்தோம்.","Past Continuous","were + verb-ing."],
+["They were building a house.","அவர்கள் வீடு கட்டிக் கொண்டிருந்தார்கள்.","Past Continuous","were + verb-ing."],
+["I was learning new words.","நான் புதிய வார்த்தைகளை கற்றுக் கொண்டிருந்தேன்.","Past Continuous","was + verb-ing."],
+["She was practicing English.","அவள் ஆங்கிலம் பயிற்சி செய்து கொண்டிருந்தாள்.","Past Continuous","was + verb-ing."],
+["He was writing an email.","அவர் மின்னஞ்சல் எழுதிக் கொண்டிருந்தார்.","Past Continuous","was + verb-ing."],
+["We were preparing for the exam.","நாங்கள் தேர்வுக்கு தயாராகிக் கொண்டிருந்தோம்.","Past Continuous","were + verb-ing."],
+["They were discussing the problem.","அவர்கள் பிரச்சினையைப் பற்றி விவாதித்துக் கொண்டிருந்தார்கள்.","Past Continuous","were + verb-ing."],
+["I was listening to music.","நான் இசை கேட்டுக் கொண்டிருந்தேன்.","Past Continuous","was + verb-ing."],
+["She was speaking English.","அவள் ஆங்கிலம் பேசிக் கொண்டிருந்தாள்.","Past Continuous","was + verb-ing."],
+["He was reading the newspaper.","அவர் செய்தித்தாள் படித்துக் கொண்டிருந்தார்.","Past Continuous","was + verb-ing."],
+["We were having lunch.","நாங்கள் மதிய உணவு சாப்பிட்டுக் கொண்டிருந்தோம்.","Past Continuous","were + verb-ing."],
+["They were travelling to Chennai.","அவர்கள் சென்னைக்கு பயணம் செய்து கொண்டிருந்தார்கள்.","Past Continuous","were + verb-ing."],
+["I was waiting at the station.","நான் நிலையத்தில் காத்துக் கொண்டிருந்தேன்.","Past Continuous","was + verb-ing."],
+["She was looking for her phone.","அவள் தனது தொலைபேசியை தேடிக் கொண்டிருந்தாள்.","Past Continuous","was + verb-ing."],
+["He was looking at the picture.","அவர் படத்தை பார்த்துக் கொண்டிருந்தார்.","Past Continuous","was + verb-ing."],
+["We were discussing our plans.","நாங்கள் எங்கள் திட்டங்களைப் பற்றி விவாதித்துக் கொண்டிருந்தோம்.","Past Continuous","were + verb-ing."],
+["They were enjoying the party.","அவர்கள் விருந்தை அனுபவித்துக் கொண்டிருந்தார்கள்.","Past Continuous","were + verb-ing."]
+
+];
+
+
+/*
+========================================================
+LESSON 8 - FUTURE
+========================================================
+*/
+
+const lesson8 = [
+
+["I will call you tomorrow.","நான் நாளை உங்களை அழைப்பேன்.","Future","will + base verb."],
+["I will come tomorrow.","நான் நாளை வருவேன்.","Future","will + base verb."],
+["I will help you.","நான் உங்களுக்கு உதவுவேன்.","Future","will + base verb."],
+["I will study tonight.","நான் இன்று இரவு படிப்பேன்.","Future","will + base verb."],
+["I will finish the work.","நான் வேலையை முடிப்பேன்.","Future","will + base verb."],
+["I will meet you tomorrow.","நான் நாளை உங்களை சந்திப்பேன்.","Future","will + base verb."],
+["I will send the message.","நான் செய்தியை அனுப்புவேன்.","Future","will + base verb."],
+["I will buy a new book.","நான் புதிய புத்தகம் வாங்குவேன்.","Future","will + base verb."],
+["I will practice English.","நான் ஆங்கிலம் பயிற்சி செய்வேன்.","Future","will + base verb."],
+["I will learn new words.","நான் புதிய வார்த்தைகளை கற்றுக் கொள்வேன்.","Future","will + base verb."],
+["She will come tomorrow.","அவள் நாளை வருவாள்.","Future","will + base verb."],
+["She will call you.","அவள் உங்களை அழைப்பாள்.","Future","will + base verb."],
+["She will help us.","அவள் எங்களுக்கு உதவுவாள்.","Future","will + base verb."],
+["She will study tonight.","அவள் இன்று இரவு படிப்பாள்.","Future","will + base verb."],
+["She will visit her mother.","அவள் தன் அம்மாவை சந்திப்பாள்.","Future","will + base verb."],
+["He will come soon.","அவர் விரைவில் வருவார்.","Future","will + base verb."],
+["He will call me.","அவர் என்னை அழைப்பார்.","Future","will + base verb."],
+["He will finish the work.","அவர் வேலையை முடிப்பார்.","Future","will + base verb."],
+["He will buy a car.","அவர் ஒரு கார் வாங்குவார்.","Future","will + base verb."],
+["He will join us.","அவர் எங்களுடன் சேருவார்.","Future","will + base verb."],
+["We will learn English.","நாங்கள் ஆங்கிலம் கற்போம்.","Future","will + base verb."],
+["We will practice together.","நாங்கள் ஒன்றாக பயிற்சி செய்வோம்.","Future","will + base verb."],
+["We will meet tomorrow.","நாங்கள் நாளை சந்திப்போம்.","Future","will + base verb."],
+["We will visit Chennai.","நாங்கள் சென்னைக்கு செல்வோம்.","Future","will + base verb."],
+["We will complete the work.","நாங்கள் வேலையை முடிப்போம்.","Future","will + base verb."],
+["They will come soon.","அவர்கள் விரைவில் வருவார்கள்.","Future","will + base verb."],
+["They will help us.","அவர்கள் எங்களுக்கு உதவுவார்கள்.","Future","will + base verb."],
+["They will visit us.","அவர்கள் எங்களை சந்திப்பார்கள்.","Future","will + base verb."],
+["They will start tomorrow.","அவர்கள் நாளை தொடங்குவார்கள்.","Future","will + base verb."],
+["They will finish the project.","அவர்கள் திட்டத்தை முடிப்பார்கள்.","Future","will + base verb."],
+["I will wake up early tomorrow.","நான் நாளை சீக்கிரம் எழுந்திருப்பேன்.","Future","will + base verb."],
+["I will go to the market.","நான் சந்தைக்குச் செல்வேன்.","Future","will + base verb."],
+["I will cook dinner tonight.","நான் இன்று இரவு இரவு உணவு சமைப்பேன்.","Future","will + base verb."],
+["I will clean the house.","நான் வீட்டை சுத்தம் செய்வேன்.","Future","will + base verb."],
+["I will read this book.","நான் இந்த புத்தகத்தை படிப்பேன்.","Future","will + base verb."],
+["She will cook dinner.","அவள் இரவு உணவு சமைப்பாள்.","Future","will + base verb."],
+["She will clean her room.","அவள் தனது அறையை சுத்தம் செய்வாள்.","Future","will + base verb."],
+["He will drive the car.","அவர் காரை ஓட்டுவார்.","Future","will + base verb."],
+["He will take the bus.","அவர் பேருந்தில் செல்வார்.","Future","will + base verb."],
+["We will have a meeting.","நாங்கள் ஒரு கூட்டம் நடத்துவோம்.","Future","will + base verb."],
+["We will discuss the problem.","நாங்கள் பிரச்சினையைப் பற்றி விவாதிப்போம்.","Future","will + base verb."],
+["They will build a house.","அவர்கள் வீடு கட்டுவார்கள்.","Future","will + base verb."],
+["They will travel next month.","அவர்கள் அடுத்த மாதம் பயணம் செய்வார்கள்.","Future","will + base verb."],
+["I will never forget you.","நான் உங்களை ஒருபோதும் மறக்க மாட்டேன்.","Future","will + base verb."],
+["I will always support you.","நான் எப்போதும் உங்களை ஆதரிப்பேன்.","Future","will + base verb."],
+["She will always remember this day.","அவள் இந்த நாளை எப்போதும் நினைவில் வைத்திருப்பாள்.","Future","will + base verb."],
+["He will become a good teacher.","அவர் நல்ல ஆசிரியராக மாறுவார்.","Future","will + base verb."],
+["We will improve our English.","நாங்கள் எங்கள் ஆங்கிலத்தை மேம்படுத்துவோம்.","Future","will + base verb."],
+["You will speak English confidently.","நீங்கள் நம்பிக்கையுடன் ஆங்கிலம் பேசுவீர்கள்.","Future","will + base verb."]
+
+];
+
+
+/*
+========================================================
+LESSON 9 - FUTURE CONTINUOUS
+========================================================
+*/
+
+const lesson9 = [
+
+["I will be studying tonight.","நான் இன்று இரவு படித்துக் கொண்டிருப்பேன்.","Future Continuous","will be + verb-ing."],
+["I will be working tomorrow.","நான் நாளை வேலை செய்து கொண்டிருப்பேன்.","Future Continuous","will be + verb-ing."],
+["I will be travelling next week.","நான் அடுத்த வாரம் பயணம் செய்து கொண்டிருப்பேன்.","Future Continuous","will be + verb-ing."],
+["I will be waiting for you.","நான் உங்களுக்காக காத்துக் கொண்டிருப்பேன்.","Future Continuous","will be + verb-ing."],
+["I will be learning English.","நான் ஆங்கிலம் கற்றுக் கொண்டிருப்பேன்.","Future Continuous","will be + verb-ing."],
+["She will be studying tomorrow.","அவள் நாளை படித்துக் கொண்டிருப்பாள்.","Future Continuous","will be + verb-ing."],
+["She will be working in the afternoon.","அவள் மதியம் வேலை செய்து கொண்டிருப்பாள்.","Future Continuous","will be + verb-ing."],
+["She will be cooking dinner.","அவள் இரவு உணவு சமைத்துக் கொண்டிருப்பாள்.","Future Continuous","will be + verb-ing."],
+["She will be travelling next month.","அவள் அடுத்த மாதம் பயணம் செய்து கொண்டிருப்பாள்.","Future Continuous","will be + verb-ing."],
+["She will be waiting for us.","அவள் எங்களுக்காக காத்துக் கொண்டிருப்பாள்.","Future Continuous","will be + verb-ing."],
+["He will be working tomorrow.","அவர் நாளை வேலை செய்து கொண்டிருப்பார்.","Future Continuous","will be + verb-ing."],
+["He will be driving to Chennai.","அவர் சென்னைக்கு வாகனம் ஓட்டிக் கொண்டிருப்பார்.","Future Continuous","will be + verb-ing."],
+["He will be attending the meeting.","அவர் கூட்டத்தில் கலந்து கொண்டிருப்பார்.","Future Continuous","will be + verb-ing."],
+["He will be studying at night.","அவர் இரவில் படித்துக் கொண்டிருப்பார்.","Future Continuous","will be + verb-ing."],
+["He will be waiting outside.","அவர் வெளியே காத்துக் கொண்டிருப்பார்.","Future Continuous","will be + verb-ing."],
+["We will be learning together.","நாங்கள் ஒன்றாக கற்றுக் கொண்டிருப்போம்.","Future Continuous","will be + verb-ing."],
+["We will be travelling tomorrow.","நாங்கள் நாளை பயணம் செய்து கொண்டிருப்போம்.","Future Continuous","will be + verb-ing."],
+["We will be working on the project.","நாங்கள் திட்டத்தில் வேலை செய்து கொண்டிருப்போம்.","Future Continuous","will be + verb-ing."],
+["We will be preparing dinner.","நாங்கள் இரவு உணவு தயாரித்துக் கொண்டிருப்போம்.","Future Continuous","will be + verb-ing."],
+["We will be waiting for you.","நாங்கள் உங்களுக்காக காத்துக் கொண்டிருப்போம்.","Future Continuous","will be + verb-ing."],
+["They will be playing cricket.","அவர்கள் கிரிக்கெட் விளையாடிக் கொண்டிருப்பார்கள்.","Future Continuous","will be + verb-ing."],
+["They will be studying.","அவர்கள் படித்துக் கொண்டிருப்பார்கள்.","Future Continuous","will be + verb-ing."],
+["They will be travelling.","அவர்கள் பயணம் செய்து கொண்டிருப்பார்கள்.","Future Continuous","will be + verb-ing."],
+["They will be working.","அவர்கள் வேலை செய்து கொண்டிருப்பார்கள்.","Future Continuous","will be + verb-ing."],
+["They will be waiting.","அவர்கள் காத்துக் கொண்டிருப்பார்கள்.","Future Continuous","will be + verb-ing."],
+["At eight, I will be studying.","எட்டு மணிக்கு நான் படித்துக் கொண்டிருப்பேன்.","Future Continuous","Describes an action in progress at a future time."],
+["At nine, she will be working.","ஒன்பது மணிக்கு அவள் வேலை செய்து கொண்டிருப்பாள்.","Future Continuous","Action in progress at a future time."],
+["Tomorrow morning, he will be travelling.","நாளை காலை அவர் பயணம் செய்து கொண்டிருப்பார்.","Future Continuous","Action in progress in the future."],
+["Next week, we will be learning English.","அடுத்த வாரம் நாங்கள் ஆங்கிலம் கற்றுக் கொண்டிருப்போம்.","Future Continuous","Future action in progress."],
+["Tomorrow evening, they will be playing cricket.","நாளை மாலை அவர்கள் கிரிக்கெட் விளையாடிக் கொண்டிருப்பார்கள்.","Future Continuous","Future action in progress."],
+["I will be reading at this time tomorrow.","நாளை இதே நேரத்தில் நான் படித்துக் கொண்டிருப்பேன்.","Future Continuous","Action in progress at a specified future time."],
+["She will be sleeping at midnight.","நள்ளிரவில் அவள் தூங்கிக் கொண்டிருப்பாள்.","Future Continuous","Action in progress at a future time."],
+["He will be driving at ten.","பத்து மணிக்கு அவர் வாகனம் ஓட்டிக் கொண்டிருப்பார்.","Future Continuous","Future action in progress."],
+["We will be having lunch at one.","ஒரு மணிக்கு நாங்கள் மதிய உணவு சாப்பிட்டுக் கொண்டிருப்போம்.","Future Continuous","Future action in progress."],
+["They will be attending class tomorrow.","அவர்கள் நாளை வகுப்பில் கலந்து கொண்டிருப்பார்கள்.","Future Continuous","Future action in progress."],
+["I will be speaking English tomorrow.","நான் நாளை ஆங்கிலம் பேசிக் கொண்டிருப்பேன்.","Future Continuous","Future action in progress."],
+["She will be practicing pronunciation.","அவள் உச்சரிப்பை பயிற்சி செய்து கொண்டிருப்பாள்.","Future Continuous","Future action in progress."],
+["He will be preparing for the exam.","அவர் தேர்வுக்கு தயாராகிக் கொண்டிருப்பார்.","Future Continuous","Future action in progress."],
+["We will be discussing the lesson.","நாங்கள் பாடத்தைப் பற்றி விவாதித்துக் கொண்டிருப்போம்.","Future Continuous","Future action in progress."],
+["They will be completing the work.","அவர்கள் வேலையை முடித்துக் கொண்டிருப்பார்கள்.","Future Continuous","Future action in progress."],
+["I will be helping my family.","நான் என் குடும்பத்திற்கு உதவி செய்து கொண்டிருப்பேன்.","Future Continuous","Future action in progress."],
+["She will be taking care of the children.","அவள் குழந்தைகளை கவனித்துக் கொண்டிருப்பாள்.","Future Continuous","Future action in progress."],
+["He will be meeting his friends.","அவர் நண்பர்களை சந்தித்துக் கொண்டிருப்பார்.","Future Continuous","Future action in progress."],
+["We will be preparing for the trip.","நாங்கள் பயணத்திற்கு தயாராகிக் கொண்டிருப்போம்.","Future Continuous","Future action in progress."],
+["They will be staying at a hotel.","அவர்கள் ஒரு ஹோட்டலில் தங்கிக் கொண்டிருப்பார்கள்.","Future Continuous","Future action in progress."],
+["I will be using my computer.","நான் என் கணினியை பயன்படுத்திக் கொண்டிருப்பேன்.","Future Continuous","Future action in progress."],
+["She will be writing an email.","அவள் மின்னஞ்சல் எழுதிக் கொண்டிருப்பாள்.","Future Continuous","Future action in progress."],
+["He will be talking to his manager.","அவர் தனது மேலாளருடன் பேசிக் கொண்டிருப்பார்.","Future Continuous","Future action in progress."],
+["We will be practising every day.","நாங்கள் தினமும் பயிற்சி செய்து கொண்டிருப்போம்.","Future Continuous","Future action in progress."],
+["They will be improving their English.","அவர்கள் தங்கள் ஆங்கிலத்தை மேம்படுத்திக் கொண்டிருப்பார்கள்.","Future Continuous","Future action in progress."],
+["You will be learning something new.","நீங்கள் புதிதாக ஏதாவது கற்றுக் கொண்டிருப்பீர்கள்.","Future Continuous","Future action in progress."]
+
+];
+
+
+/*
+========================================================
+LESSON 10 - QUESTIONS
+========================================================
+*/
+
+const lesson10 = [
+
+["What is your name?","உங்கள் பெயர் என்ன?","WH Question","What asks for information."],
+["Where do you live?","நீங்கள் எங்கே வசிக்கிறீர்கள்?","WH Question","Where asks about place."],
+["Where are you going?","நீங்கள் எங்கே செல்கிறீர்கள்?","WH Question","Where asks about destination."],
+["What are you doing?","நீங்கள் என்ன செய்கிறீர்கள்?","WH Question","What asks about an action."],
+["What do you want?","உங்களுக்கு என்ன வேண்டும்?","WH Question","What asks about a thing."],
+["What do you need?","உங்களுக்கு என்ன தேவை?","WH Question","What asks about a thing."],
+["When will you come?","நீங்கள் எப்போது வருவீர்கள்?","WH Question","When asks about time."],
+["When did you arrive?","நீங்கள் எப்போது வந்தீர்கள்?","WH Question","When asks about past time."],
+["Why are you late?","நீங்கள் ஏன் தாமதமாக வந்தீர்கள்?","WH Question","Why asks for a reason."],
+["Why are you sad?","நீங்கள் ஏன் சோகமாக இருக்கிறீர்கள்?","WH Question","Why asks for a reason."],
+["Who is she?","அவள் யார்?","WH Question","Who asks about a person."],
+["Who is he?","அவர் யார்?","WH Question","Who asks about a person."],
+["Who are they?","அவர்கள் யார்?","WH Question","Who asks about people."],
+["Who is your teacher?","உங்கள் ஆசிரியர் யார்?","WH Question","Who asks about a person."],
+["Whose book is this?","இது யாருடைய புத்தகம்?","WH Question","Whose asks about ownership."],
+["Which one do you want?","உங்களுக்கு எது வேண்டும்?","WH Question","Which asks about a choice."],
+["Which colour do you like?","உங்களுக்கு எந்த நிறம் பிடிக்கும்?","WH Question","Which asks for a choice."],
+["How are you?","நீங்கள் எப்படி இருக்கிறீர்கள்?","WH Question","How asks about condition."],
+["How old are you?","உங்களுக்கு எவ்வளவு வயது?","WH Question","How old asks about age."],
+["How much is this?","இது எவ்வளவு?","WH Question","How much asks about price."],
+["How many books do you have?","உங்களிடம் எத்தனை புத்தகங்கள் உள்ளன?","WH Question","How many asks about count."],
+["How long will it take?","எவ்வளவு நேரம் ஆகும்?","WH Question","How long asks about duration."],
+["How often do you exercise?","நீங்கள் எவ்வளவு அடிக்கடி உடற்பயிற்சி செய்கிறீர்கள்?","WH Question","How often asks about frequency."],
+["Do you speak English?","நீங்கள் ஆங்கிலம் பேசுகிறீர்களா?","Yes/No Question","Do is used with you."],
+["Do you like coffee?","உங்களுக்கு காபி பிடிக்குமா?","Yes/No Question","Do forms the question."],
+["Do you understand me?","நான் சொல்வது உங்களுக்கு புரிகிறதா?","Yes/No Question","Do is used with you."],
+["Do you need help?","உங்களுக்கு உதவி தேவையா?","Yes/No Question","Do forms the question."],
+["Does she speak English?","அவள் ஆங்கிலம் பேசுகிறாளா?","Yes/No Question","Does is used with she."],
+["Does he work here?","அவர் இங்கே வேலை செய்கிறாரா?","Yes/No Question","Does is used with he."],
+["Does she live in Chennai?","அவள் சென்னையில் வசிக்கிறாளா?","Yes/No Question","Does is used with she."],
+["Did you go there?","நீங்கள் அங்கே சென்றீர்களா?","Past Question","Did is used for past questions."],
+["Did you eat breakfast?","நீங்கள் காலை உணவு சாப்பிட்டீர்களா?","Past Question","Did + base verb."],
+["Did she call you?","அவள் உங்களை அழைத்தாளா?","Past Question","Did + base verb."],
+["Did he finish the work?","அவர் வேலையை முடித்தாரா?","Past Question","Did + base verb."],
+["Are you ready?","நீங்கள் தயாரா?","Be Question","Are is used with you."],
+["Are you busy?","நீங்கள் பிஸியாக இருக்கிறீர்களா?","Be Question","Are is used with you."],
+["Is she at home?","அவள் வீட்டில் இருக்கிறாளா?","Be Question","Is is used with she."],
+["Is he your brother?","அவர் உங்கள் சகோதரரா?","Be Question","Is is used with he."],
+["Are they students?","அவர்கள் மாணவர்களா?","Be Question","Are is used with they."],
+["Can you help me?","நீங்கள் எனக்கு உதவ முடியுமா?","Modal Question","Can forms an ability or request question."],
+["Can I come in?","நான் உள்ளே வரலாமா?","Modal Question","Can is used for permission."],
+["Could you repeat that?","அதை மீண்டும் சொல்ல முடியுமா?","Modal Question","Could makes a polite request."],
+["Could you speak slowly?","நீங்கள் மெதுவாக பேச முடியுமா?","Modal Question","Could makes a polite request."],
+["Will you come tomorrow?","நீங்கள் நாளை வருவீர்களா?","Future Question","Will asks about the future."],
+["Will you help me?","நீங்கள் எனக்கு உதவுவீர்களா?","Future Question","Will forms a future question."],
+["Should I call you?","நான் உங்களை அழைக்க வேண்டுமா?","Modal Question","Should asks for advice."],
+["Would you like some tea?","உங்களுக்கு கொஞ்சம் தேநீர் வேண்டுமா?","Polite Question","Would you like is a polite offer."],
+["May I come in?","நான் உள்ளே வரலாமா?","Modal Question","May is used for polite permission."],
+["What should I do?","நான் என்ன செய்ய வேண்டும்?","Modal Question","Should asks for advice."]
+
+];
+
+
+/*
+========================================================
+LESSON 11
+========================================================
+*/
+
+const lesson11 = [
+
+["I can swim.","என்னால் நீந்த முடியும்.","Can","Can expresses ability."],
+["I can speak English.","என்னால் ஆங்கிலம் பேச முடியும்.","Can","Can expresses ability."],
+["I can help you.","என்னால் உங்களுக்கு உதவ முடியும்.","Can","Can expresses ability."],
+["I can understand you.","என்னால் உங்களைப் புரிந்து கொள்ள முடியும்.","Can","Can expresses ability."],
+["I can do this.","என்னால் இதை செய்ய முடியும்.","Can","Can expresses ability."],
+["I can solve the problem.","என்னால் பிரச்சினையை தீர்க்க முடியும்.","Can","Can expresses ability."],
+["I can drive a car.","என்னால் கார் ஓட்ட முடியும்.","Can","Can expresses ability."],
+["I can cook.","என்னால் சமைக்க முடியும்.","Can","Can expresses ability."],
+["I can read English.","என்னால் ஆங்கிலம் படிக்க முடியும்.","Can","Can expresses ability."],
+["I can write English.","என்னால் ஆங்கிலம் எழுத முடியும்.","Can","Can expresses ability."],
+["Can you help me?","நீங்கள் எனக்கு உதவ முடியுமா?","Can","Can can make a request."],
+["Can you wait here?","நீங்கள் இங்கே காத்திருக்க முடியுமா?","Can","Can can make a request."],
+["Can you speak slowly?","நீங்கள் மெதுவாக பேச முடியுமா?","Can","Can can make a request."],
+["Can you repeat that?","அதை மீண்டும் சொல்ல முடியுமா?","Can","Can can make a request."],
+["Can you call me later?","நீங்கள் என்னை பின்னர் அழைக்க முடியுமா?","Can","Can can make a request."],
+["Can I come in?","நான் உள்ளே வரலாமா?","Can","Can asks for permission."],
+["Can I sit here?","நான் இங்கே உட்காரலாமா?","Can","Can asks for permission."],
+["Can I use your phone?","நான் உங்கள் தொலைபேசியைப் பயன்படுத்தலாமா?","Can","Can asks for permission."],
+["Can I ask a question?","நான் ஒரு கேள்வி கேட்கலாமா?","Can","Can asks for permission."],
+["Can I have some water?","எனக்கு கொஞ்சம் தண்ணீர் கிடைக்குமா?","Can","Can makes a polite request."],
+["I could swim when I was young.","நான் சிறுவயதில் நீந்த முடிந்தது.","Could","Could describes past ability."],
+["I could read when I was five.","எனக்கு ஐந்து வயதில் படிக்க முடிந்தது.","Could","Could describes past ability."],
+["She could speak English well.","அவளால் நன்றாக ஆங்கிலம் பேச முடிந்தது.","Could","Could describes ability."],
+["He could solve difficult problems.","அவரால் கடினமான பிரச்சினைகளை தீர்க்க முடிந்தது.","Could","Could describes ability."],
+["We could see the mountain.","எங்களால் மலையை பார்க்க முடிந்தது.","Could","Could describes past ability."],
+["Could you help me?","நீங்கள் எனக்கு உதவ முடியுமா?","Could","Could makes a polite request."],
+["Could you wait a moment?","நீங்கள் சிறிது நேரம் காத்திருக்க முடியுமா?","Could","Could makes a polite request."],
+["Could you explain this?","இதை விளக்க முடியுமா?","Could","Could makes a polite request."],
+["Could you speak louder?","நீங்கள் சற்று சத்தமாக பேச முடியுமா?","Could","Could makes a polite request."],
+["Could you send me the file?","கோப்பை எனக்கு அனுப்ப முடியுமா?","Could","Could makes a polite request."],
+["It could rain today.","இன்று மழை பெய்யக்கூடும்.","Could","Could expresses possibility."],
+["She could be busy.","அவள் பிஸியாக இருக்கலாம்.","Could","Could expresses possibility."],
+["He could be at home.","அவர் வீட்டில் இருக்கலாம்.","Could","Could expresses possibility."],
+["They could come later.","அவர்கள் பின்னர் வரலாம்.","Could","Could expresses possibility."],
+["We could try again.","நாம் மீண்டும் முயற்சி செய்யலாம்.","Could","Could suggests a possibility."],
+["You can do it.","நீங்கள் இதை செய்ய முடியும்.","Can","Can expresses ability."],
+["You can learn English.","நீங்கள் ஆங்கிலம் கற்றுக்கொள்ள முடியும்.","Can","Can expresses ability."],
+["You can improve every day.","நீங்கள் தினமும் முன்னேற முடியும்.","Can","Can expresses ability."],
+["You can practice at home.","நீங்கள் வீட்டில் பயிற்சி செய்யலாம்.","Can","Can expresses possibility."],
+["You can use this book.","நீங்கள் இந்த புத்தகத்தை பயன்படுத்தலாம்.","Can","Can gives permission."],
+["We can start now.","நாம் இப்போது தொடங்கலாம்.","Can","Can expresses possibility."],
+["We can finish this today.","நாம் இதை இன்று முடிக்கலாம்.","Can","Can expresses possibility."],
+["We can speak English together.","நாம் ஒன்றாக ஆங்கிலம் பேசலாம்.","Can","Can expresses ability."],
+["They can help us.","அவர்கள் எங்களுக்கு உதவ முடியும்.","Can","Can expresses ability."],
+["They can come tomorrow.","அவர்கள் நாளை வரலாம்.","Can","Can expresses possibility."],
+["She can teach English.","அவளால் ஆங்கிலம் கற்பிக்க முடியும்.","Can","Can expresses ability."],
+["He can fix the computer.","அவரால் கணினியை சரி செய்ய முடியும்.","Can","Can expresses ability."],
+["I could not understand the question.","என்னால் கேள்வியை புரிந்து கொள்ள முடியவில்லை.","Could","Could not expresses past inability."],
+["She could not come yesterday.","அவளால் நேற்று வர முடியவில்லை.","Could","Could not expresses past inability."],
+["We could not finish the work.","எங்களால் வேலையை முடிக்க முடியவில்லை.","Could","Could not expresses past inability."]
+
+];
+
+
+/*
+========================================================
+LESSON 12
+========================================================
+*/
+
+const lesson12 = [
+
+["You should study every day.","நீங்கள் தினமும் படிக்க வேண்டும்.","Should","Should gives advice."],
+["You should practice speaking.","நீங்கள் பேசுவதற்கு பயிற்சி செய்ய வேண்டும்.","Should","Should gives advice."],
+["You should listen carefully.","நீங்கள் கவனமாக கேட்க வேண்டும்.","Should","Should gives advice."],
+["You should read English books.","நீங்கள் ஆங்கில புத்தகங்களை படிக்க வேண்டும்.","Should","Should gives advice."],
+["You should learn new words.","நீங்கள் புதிய வார்த்தைகளை கற்றுக்கொள்ள வேண்டும்.","Should","Should gives advice."],
+["You should speak slowly.","நீங்கள் மெதுவாக பேச வேண்டும்.","Should","Should gives advice."],
+["You should drink more water.","நீங்கள் அதிக தண்ணீர் குடிக்க வேண்டும்.","Should","Should gives advice."],
+["You should go to bed early.","நீங்கள் சீக்கிரம் படுக்கைக்கு செல்ல வேண்டும்.","Should","Should gives advice."],
+["You should take care of yourself.","நீங்கள் உங்களை கவனித்துக் கொள்ள வேண்டும்.","Should","Should gives advice."],
+["You should be careful.","நீங்கள் கவனமாக இருக்க வேண்டும்.","Should","Should gives advice."],
+["We should help others.","நாம் மற்றவர்களுக்கு உதவ வேண்டும்.","Should","Should gives advice."],
+["We should respect our teachers.","நாம் ஆசிரியர்களை மதிக்க வேண்டும்.","Should","Should expresses good advice."],
+["We should keep the room clean.","நாம் அறையை சுத்தமாக வைத்திருக்க வேண்டும்.","Should","Should gives advice."],
+["We should arrive on time.","நாம் நேரத்திற்கு வர வேண்டும்.","Should","Should gives advice."],
+["We should practice every day.","நாம் தினமும் பயிற்சி செய்ய வேண்டும்.","Should","Should gives advice."],
+["He should work harder.","அவர் இன்னும் கடினமாக உழைக்க வேண்டும்.","Should","Should gives advice."],
+["She should rest now.","அவள் இப்போது ஓய்வெடுக்க வேண்டும்.","Should","Should gives advice."],
+["They should come early.","அவர்கள் சீக்கிரம் வர வேண்டும்.","Should","Should gives advice."],
+["You should ask your teacher.","நீங்கள் உங்கள் ஆசிரியரிடம் கேட்க வேண்டும்.","Should","Should gives advice."],
+["I should finish my work.","நான் என் வேலையை முடிக்க வேண்டும்.","Should","Should gives advice."],
+["Should I call you?","நான் உங்களை அழைக்க வேண்டுமா?","Should","Should asks for advice."],
+["Should I wait here?","நான் இங்கே காத்திருக்க வேண்டுமா?","Should","Should asks for advice."],
+["Should I start now?","நான் இப்போது தொடங்க வேண்டுமா?","Should","Should asks for advice."],
+["Should we go there?","நாம் அங்கே செல்ல வேண்டுமா?","Should","Should asks for advice."],
+["Should we help them?","நாம் அவர்களுக்கு உதவ வேண்டுமா?","Should","Should asks for advice."],
+["Would you like some tea?","உங்களுக்கு கொஞ்சம் தேநீர் வேண்டுமா?","Would","Would like makes a polite offer."],
+["Would you like some coffee?","உங்களுக்கு கொஞ்சம் காபி வேண்டுமா?","Would","Would like makes a polite offer."],
+["Would you like to sit down?","நீங்கள் உட்கார விரும்புகிறீர்களா?","Would","Would like makes a polite offer."],
+["Would you like to come with us?","நீங்கள் எங்களுடன் வர விரும்புகிறீர்களா?","Would","Would like makes a polite invitation."],
+["Would you like some water?","உங்களுக்கு கொஞ்சம் தண்ணீர் வேண்டுமா?","Would","Would like makes a polite offer."],
+["I would like some tea.","எனக்கு கொஞ்சம் தேநீர் வேண்டும்.","Would","Would like expresses a polite preference."],
+["I would like to learn English.","நான் ஆங்கிலம் கற்க விரும்புகிறேன்.","Would","Would like expresses desire."],
+["I would like to ask a question.","நான் ஒரு கேள்வி கேட்க விரும்புகிறேன்.","Would","Would like expresses a polite desire."],
+["I would like to speak English.","நான் ஆங்கிலம் பேச விரும்புகிறேன்.","Would","Would like expresses desire."],
+["I would like some help.","எனக்கு கொஞ்சம் உதவி வேண்டும்.","Would","Would like is polite."],
+["Would you help me?","நீங்கள் எனக்கு உதவுவீர்களா?","Would","Would can make a polite request."],
+["Would you wait for me?","நீங்கள் எனக்காக காத்திருப்பீர்களா?","Would","Would makes a polite request."],
+["Would you open the door?","நீங்கள் கதவைத் திறப்பீர்களா?","Would","Would makes a polite request."],
+["Would you call me later?","நீங்கள் என்னை பின்னர் அழைப்பீர்களா?","Would","Would makes a polite request."],
+["Would you explain this?","இதை விளக்குவீர்களா?","Would","Would makes a polite request."],
+["You should not worry.","நீங்கள் கவலைப்பட வேண்டாம்.","Should","Should not gives advice against an action."],
+["You should not be late.","நீங்கள் தாமதமாக வரக்கூடாது.","Should","Should not gives advice."],
+["We should not waste time.","நாம் நேரத்தை வீணாக்கக்கூடாது.","Should","Should not gives advice."],
+["He should not drive fast.","அவர் வேகமாக வாகனம் ஓட்டக்கூடாது.","Should","Should not gives advice."],
+["She should not skip breakfast.","அவள் காலை உணவை தவிர்க்கக்கூடாது.","Should","Should not gives advice."],
+["I would rather stay home.","நான் வீட்டில் இருப்பதையே விரும்புகிறேன்.","Would","Would rather expresses preference."],
+["I would like to improve.","நான் முன்னேற விரும்புகிறேன்.","Would","Would like expresses desire."],
+["We would like to invite you.","நாங்கள் உங்களை அழைக்க விரும்புகிறோம்.","Would","Would like makes a polite invitation."],
+["They would like to join us.","அவர்கள் எங்களுடன் சேர விரும்புகிறார்கள்.","Would","Would like expresses desire."]
+
+];
+
+
+/*
+========================================================
+LESSON 13 - DAILY CONVERSATION
+========================================================
+*/
+
+const lesson13 = [
+
+["What are you doing?","நீங்கள் என்ன செய்கிறீர்கள்?","Daily Conversation","Common everyday question."],
+["I am working.","நான் வேலை செய்து கொண்டிருக்கிறேன்.","Daily Conversation","Present Continuous."],
+["Where are you going?","நீங்கள் எங்கே செல்கிறீர்கள்?","Daily Conversation","Asks about destination."],
+["I am going home.","நான் வீட்டிற்கு செல்கிறேன்.","Daily Conversation","Present Continuous."],
+["Are you free now?","நீங்கள் இப்போது ஓய்வாக இருக்கிறீர்களா?","Daily Conversation","Are forms a question."],
+["Yes, I am free.","ஆம், நான் ஓய்வாக இருக்கிறேன்.","Daily Conversation","Am with I."],
+["Are you busy now?","நீங்கள் இப்போது பிஸியாக இருக்கிறீர்களா?","Daily Conversation","Are forms a question."],
+["Yes, I am busy.","ஆம், நான் பிஸியாக இருக்கிறேன்.","Daily Conversation","Am with I."],
+["What time is it?","இப்போது மணி என்ன?","Daily Conversation","What time asks for the time."],
+["It is ten o'clock.","இப்போது பத்து மணி.","Daily Conversation","It is tells the time."],
+["What happened?","என்ன நடந்தது?","Daily Conversation","Past question."],
+["Nothing happened.","எதுவும் நடக்கவில்லை.","Daily Conversation","Simple past negative."],
+["Are you okay?","நீங்கள் நலமாக இருக்கிறீர்களா?","Daily Conversation","Are asks about condition."],
+["Yes, I am okay.","ஆம், நான் நலமாக இருக்கிறேன்.","Daily Conversation","Am with I."],
+["What do you need?","உங்களுக்கு என்ன தேவை?","Daily Conversation","Simple Present question."],
+["I need some water.","எனக்கு கொஞ்சம் தண்ணீர் தேவை.","Daily Conversation","Need expresses requirement."],
+["What do you want?","உங்களுக்கு என்ன வேண்டும்?","Daily Conversation","Want expresses desire."],
+["I want some food.","எனக்கு கொஞ்சம் உணவு வேண்டும்.","Daily Conversation","Want expresses desire."],
+["Are you hungry?","உங்களுக்கு பசியாக இருக்கிறதா?","Daily Conversation","Are asks about condition."],
+["Yes, I am hungry.","ஆம், எனக்கு பசியாக இருக்கிறது.","Daily Conversation","Am with I."],
+["Are you thirsty?","உங்களுக்கு தாகமாக இருக்கிறதா?","Daily Conversation","Are asks about condition."],
+["Yes, I am thirsty.","ஆம், எனக்கு தாகமாக இருக்கிறது.","Daily Conversation","Am with I."],
+["Let's go.","போகலாம்.","Daily Conversation","Let's means let us."],
+["Let's start.","தொடங்கலாம்.","Daily Conversation","Let's gives a suggestion."],
+["Let's begin the lesson.","பாடத்தை தொடங்கலாம்.","Daily Conversation","Let's gives a suggestion."],
+["Come with me.","என்னுடன் வாருங்கள்.","Imperative","Imperative sentence."],
+["Wait for me.","எனக்காக காத்திருங்கள்.","Imperative","Imperative sentence."],
+["Follow me.","என்னைப் பின்தொடருங்கள்.","Imperative","Imperative sentence."],
+["Listen to me.","நான் சொல்வதை கேளுங்கள்.","Imperative","Imperative sentence."],
+["Look at this.","இதைப் பாருங்கள்.","Imperative","Imperative sentence."],
+["Look here.","இங்கே பாருங்கள்.","Imperative","Imperative sentence."],
+["Be careful.","கவனமாக இருங்கள்.","Imperative","Imperative sentence."],
+["Take care.","கவனமாக இருங்கள்.","Expression","Common farewell expression."],
+["Don't worry.","கவலைப்பட வேண்டாம்.","Negative Imperative","Don't + base verb."],
+["Don't be late.","தாமதமாக வராதீர்கள்.","Negative Imperative","Don't + base verb."],
+["Don't forget me.","என்னை மறக்காதீர்கள்.","Negative Imperative","Don't + base verb."],
+["Please help me.","தயவுசெய்து எனக்கு உதவுங்கள்.","Polite Request","Please makes a request polite."],
+["Please call me.","தயவுசெய்து என்னை அழைக்கவும்.","Polite Request","Please makes a request polite."],
+["Please wait a moment.","தயவுசெய்து சிறிது நேரம் காத்திருக்கவும்.","Polite Request","Please makes a request polite."],
+["Please speak slowly.","தயவுசெய்து மெதுவாக பேசுங்கள்.","Polite Request","Please makes a request polite."],
+["Please repeat that.","தயவுசெய்து அதை மீண்டும் சொல்லுங்கள்.","Polite Request","Please makes a request polite."],
+["I don't understand.","எனக்கு புரியவில்லை.","Simple Present Negative","Don't expresses a negative."],
+["I don't know.","எனக்கு தெரியாது.","Simple Present Negative","Don't expresses a negative."],
+["I don't remember.","எனக்கு நினைவில்லை.","Simple Present Negative","Don't expresses a negative."],
+["I don't agree.","நான் ஒப்புக்கொள்ளவில்லை.","Simple Present Negative","Don't expresses a negative."],
+["I don't think so.","நான் அப்படி நினைக்கவில்லை.","Simple Present Negative","Don't expresses a negative."],
+["That sounds good.","அது நன்றாக இருக்கிறது.","Expression","Common conversational expression."],
+["That is a good idea.","அது நல்ல யோசனை.","Expression","Be verb expression."],
+["That is great.","அது அருமை.","Expression","Be verb expression."]
+
+];
+
+
+/*
+========================================================
+LESSON 14 - FAMILY
+========================================================
+*/
+
+const lesson14 = [
+
+["This is my family.","இது என் குடும்பம்.","Be Verb","This is describes a person or thing."],
+["My family is small.","என் குடும்பம் சிறியது.","Be Verb","Is agrees with family."],
+["My family is happy.","என் குடும்பம் மகிழ்ச்சியாக இருக்கிறது.","Be Verb","Is agrees with family."],
+["I have one brother.","எனக்கு ஒரு சகோதரர் உள்ளார்.","Have","Have expresses possession."],
+["I have one sister.","எனக்கு ஒரு சகோதரி உள்ளார்.","Have","Have expresses possession."],
+["I have two brothers.","எனக்கு இரண்டு சகோதரர்கள் உள்ளனர்.","Have","Have expresses possession."],
+["I have two sisters.","எனக்கு இரண்டு சகோதரிகள் உள்ளனர்.","Have","Have expresses possession."],
+["My mother is kind.","என் அம்மா அன்பானவர்.","Be Verb","Is agrees with mother."],
+["My father is hardworking.","என் அப்பா கடினமாக உழைப்பவர்.","Be Verb","Is agrees with father."],
+["My mother cooks very well.","என் அம்மா மிகவும் நன்றாக சமைக்கிறார்.","Simple Present","Cooks is third-person singular."],
+["My father goes to work every day.","என் அப்பா தினமும் வேலைக்குச் செல்கிறார்.","Simple Present","Goes is third-person singular."],
+["My sister studies English.","என் சகோதரி ஆங்கிலம் படிக்கிறாள்.","Simple Present","Studies is third-person singular."],
+["My brother plays cricket.","என் சகோதரர் கிரிக்கெட் விளையாடுகிறார்.","Simple Present","Plays is third-person singular."],
+["My parents live in Chennai.","என் பெற்றோர் சென்னையில் வசிக்கிறார்கள்.","Simple Present","Live agrees with plural parents."],
+["We love our parents.","நாங்கள் எங்கள் பெற்றோரை நேசிக்கிறோம்.","Simple Present","Love agrees with we."],
+["I help my mother.","நான் என் அம்மாவுக்கு உதவுகிறேன்.","Simple Present","Help agrees with I."],
+["I help my father.","நான் என் அப்பாவுக்கு உதவுகிறேன்.","Simple Present","Help agrees with I."],
+["I talk to my sister every day.","நான் தினமும் என் சகோதரியுடன் பேசுகிறேன்.","Simple Present","Talk is base form with I."],
+["I play with my brother.","நான் என் சகோதரருடன் விளையாடுகிறேன்.","Simple Present","Play is base form with I."],
+["My grandmother lives with us.","என் பாட்டி எங்களுடன் வசிக்கிறார்.","Simple Present","Lives is third-person singular."],
+["My grandfather is very kind.","என் தாத்தா மிகவும் அன்பானவர்.","Be Verb","Is agrees with grandfather."],
+["My uncle lives nearby.","என் மாமா அருகில் வசிக்கிறார்.","Simple Present","Lives is third-person singular."],
+["My aunt is a teacher.","என் அத்தை ஒரு ஆசிரியர்.","Be Verb","Is agrees with aunt."],
+["My cousin is my friend.","என் உறவினர் என் நண்பர்.","Be Verb","Is agrees with cousin."],
+["We visit our grandparents.","நாங்கள் எங்கள் தாத்தா பாட்டியை சந்திக்கிறோம்.","Simple Present","Visit is base form with we."],
+["We celebrate festivals together.","நாங்கள் பண்டிகைகளை ஒன்றாக கொண்டாடுகிறோம்.","Simple Present","Celebrate agrees with we."],
+["Our family eats together.","எங்கள் குடும்பம் ஒன்றாக சாப்பிடுகிறது.","Simple Present","Eats agrees with singular family."],
+["We watch movies together.","நாங்கள் ஒன்றாக திரைப்படங்கள் பார்க்கிறோம்.","Simple Present","Watch agrees with we."],
+["We travel together.","நாங்கள் ஒன்றாக பயணம் செய்கிறோம்.","Simple Present","Travel agrees with we."],
+["My mother is cooking.","என் அம்மா சமைத்துக் கொண்டிருக்கிறார்.","Present Continuous","Is + verb-ing."],
+["My father is reading.","என் அப்பா படித்துக் கொண்டிருக்கிறார்.","Present Continuous","Is + verb-ing."],
+["My sister is studying.","என் சகோதரி படித்துக் கொண்டிருக்கிறாள்.","Present Continuous","Is + verb-ing."],
+["My brother is playing.","என் சகோதரர் விளையாடிக் கொண்டிருக்கிறார்.","Present Continuous","Is + verb-ing."],
+["My parents are talking.","என் பெற்றோர் பேசிக் கொண்டிருக்கிறார்கள்.","Present Continuous","Are + verb-ing."],
+["I am helping my family.","நான் என் குடும்பத்திற்கு உதவி செய்து கொண்டிருக்கிறேன்.","Present Continuous","Am + verb-ing."],
+["We are having dinner.","நாங்கள் இரவு உணவு சாப்பிட்டுக் கொண்டிருக்கிறோம்.","Present Continuous","Are + verb-ing."],
+["They are visiting us.","அவர்கள் எங்களை சந்திக்க வந்திருக்கிறார்கள்.","Present Continuous","Are + verb-ing."],
+["My family supports me.","என் குடும்பம் எனக்கு ஆதரவளிக்கிறது.","Simple Present","Supports agrees with singular family."],
+["My parents encourage me.","என் பெற்றோர் என்னை ஊக்குவிக்கிறார்கள்.","Simple Present","Encourage agrees with plural parents."],
+["My mother teaches me good habits.","என் அம்மா எனக்கு நல்ல பழக்கங்களை கற்றுக்கொடுக்கிறார்.","Simple Present","Teaches is third-person singular."],
+["My father gives me good advice.","என் அப்பா எனக்கு நல்ல ஆலோசனை வழங்குகிறார்.","Simple Present","Gives is third-person singular."],
+["My sister helps me study.","என் சகோதரி நான் படிக்க உதவுகிறாள்.","Simple Present","Helps is third-person singular."],
+["My brother helps me at home.","என் சகோதரர் வீட்டில் எனக்கு உதவுகிறார்.","Simple Present","Helps is third-person singular."],
+["We respect our elders.","நாங்கள் பெரியவர்களை மதிக்கிறோம்.","Simple Present","Respect agrees with we."],
+["We love our family.","நாங்கள் எங்கள் குடும்பத்தை நேசிக்கிறோம்.","Simple Present","Love agrees with we."],
+["Family is important to me.","குடும்பம் எனக்கு முக்கியமானது.","Be Verb","Is agrees with singular family."],
+["My home is peaceful.","என் வீடு அமைதியாக இருக்கிறது.","Be Verb","Is agrees with singular home."],
+["I am proud of my family.","என் குடும்பத்தை நினைத்து நான் பெருமைப்படுகிறேன்.","Be Verb","Am is used with I."]
+
+];
+
+
+/*
+========================================================
+LESSON 15 - HOME
+========================================================
+*/
+
+const lesson15 = [
+
+["This is my house.","இது என் வீடு.","Be Verb","This is describes a house."],
+["My house is big.","என் வீடு பெரியது.","Be Verb","Is agrees with house."],
+["My house is clean.","என் வீடு சுத்தமாக இருக்கிறது.","Be Verb","Is agrees with house."],
+["My room is comfortable.","என் அறை வசதியாக இருக்கிறது.","Be Verb","Is agrees with room."],
+["The kitchen is clean.","சமையலறை சுத்தமாக இருக்கிறது.","Be Verb","Is agrees with kitchen."],
+["The bedroom is large.","படுக்கையறை பெரியதாக இருக்கிறது.","Be Verb","Is agrees with bedroom."],
+["The living room is beautiful.","வரவேற்பறை அழகாக இருக்கிறது.","Be Verb","Is agrees with living room."],
+["There is a table in the room.","அறையில் ஒரு மேசை உள்ளது.","There is","There is is used for singular things."],
+["There is a chair near the table.","மேசைக்கு அருகில் ஒரு நாற்காலி உள்ளது.","There is","There is is used for singular things."],
+["There is a television in the room.","அறையில் ஒரு தொலைக்காட்சி உள்ளது.","There is","There is is used for singular things."],
+["There are two chairs.","இரண்டு நாற்காலிகள் உள்ளன.","There are","There are is used for plural things."],
+["There are three windows.","மூன்று ஜன்னல்கள் உள்ளன.","There are","There are is used for plural things."],
+["There are many books.","பல புத்தகங்கள் உள்ளன.","There are","There are is used for plural things."],
+["I clean my room every day.","நான் தினமும் என் அறையை சுத்தம் செய்கிறேன்.","Simple Present","Routine."],
+["I make my bed every morning.","நான் தினமும் காலையில் என் படுக்கையை ஒழுங்குபடுத்துகிறேன்.","Simple Present","Routine."],
+["I keep my books on the table.","நான் என் புத்தகங்களை மேசையில் வைக்கிறேன்.","Simple Present","Simple Present."],
+["I open the windows every morning.","நான் தினமும் காலையில் ஜன்னல்களை திறக்கிறேன்.","Simple Present","Routine."],
+["I close the windows at night.","நான் இரவில் ஜன்னல்களை மூடுகிறேன்.","Simple Present","Routine."],
+["My mother cleans the kitchen.","என் அம்மா சமையலறையை சுத்தம் செய்கிறார்.","Simple Present","Cleans is third-person singular."],
+["My father repairs things at home.","என் அப்பா வீட்டில் பொருட்களை சரிசெய்கிறார்.","Simple Present","Repairs is third-person singular."],
+["The children play in the garden.","குழந்தைகள் தோட்டத்தில் விளையாடுகிறார்கள்.","Simple Present","Play agrees with children."],
+["We eat dinner in the kitchen.","நாங்கள் சமையலறையில் இரவு உணவு சாப்பிடுகிறோம்.","Simple Present","Eat agrees with we."],
+["We watch television in the evening.","நாங்கள் மாலையில் தொலைக்காட்சி பார்க்கிறோம்.","Simple Present","Watch agrees with we."],
+["We sit together in the living room.","நாங்கள் வரவேற்பறையில் ஒன்றாக உட்காருகிறோம்.","Simple Present","Sit agrees with we."],
+["I am cleaning the room.","நான் அறையை சுத்தம் செய்து கொண்டிருக்கிறேன்.","Present Continuous","Am + verb-ing."],
+["She is washing the dishes.","அவள் பாத்திரங்களை கழுவிக் கொண்டிருக்கிறாள்.","Present Continuous","Is + verb-ing."],
+["He is fixing the door.","அவர் கதவை சரிசெய்து கொண்டிருக்கிறார்.","Present Continuous","Is + verb-ing."],
+["We are cleaning the house.","நாங்கள் வீட்டை சுத்தம் செய்து கொண்டிருக்கிறோம்.","Present Continuous","Are + verb-ing."],
+["They are playing in the garden.","அவர்கள் தோட்டத்தில் விளையாடிக் கொண்டிருக்கிறார்கள்.","Present Continuous","Are + verb-ing."],
+["The baby is sleeping in the room.","குழந்தை அறையில் தூங்கிக் கொண்டிருக்கிறது.","Present Continuous","Is + verb-ing."],
+["Please open the door.","தயவுசெய்து கதவைத் திறக்கவும்.","Imperative","Polite request."],
+["Please close the window.","தயவுசெய்து ஜன்னலை மூடவும்.","Imperative","Polite request."],
+["Turn on the light.","விளக்கை ஏற்றுங்கள்.","Imperative","Imperative sentence."],
+["Turn off the fan.","மின்விசிறியை அணைக்கவும்.","Imperative","Imperative sentence."],
+["Clean the table.","மேசையை சுத்தம் செய்யுங்கள்.","Imperative","Imperative sentence."],
+["Put the books here.","புத்தகங்களை இங்கே வையுங்கள்.","Imperative","Imperative sentence."],
+["Keep the room clean.","அறையை சுத்தமாக வைத்திருங்கள்.","Imperative","Imperative sentence."],
+["Do not make noise.","சத்தம் போடாதீர்கள்.","Negative Imperative","Do not + base verb."],
+["Do not open the door.","கதவைத் திறக்காதீர்கள்.","Negative Imperative","Do not + base verb."],
+["The house has three bedrooms.","வீட்டில் மூன்று படுக்கையறைகள் உள்ளன.","Have","Has describes possession."],
+["The house has a garden.","வீட்டில் ஒரு தோட்டம் உள்ளது.","Have","Has describes possession."],
+["The kitchen has a refrigerator.","சமையலறையில் குளிர்சாதன பெட்டி உள்ளது.","Have","Has describes possession."],
+["The room has a large window.","அறையில் ஒரு பெரிய ஜன்னல் உள்ளது.","Have","Has describes possession."],
+["Our home is peaceful.","எங்கள் வீடு அமைதியாக இருக்கிறது.","Be Verb","Is agrees with home."],
+["Our garden is beautiful.","எங்கள் தோட்டம் அழகாக இருக்கிறது.","Be Verb","Is agrees with garden."],
+["The floor is clean.","தரை சுத்தமாக இருக்கிறது.","Be Verb","Is agrees with floor."],
+["The walls are white.","சுவர்கள் வெள்ளையாக உள்ளன.","Be Verb","Are agrees with plural walls."],
+["The doors are brown.","கதவுகள் பழுப்பு நிறத்தில் உள்ளன.","Be Verb","Are agrees with plural doors."],
+["I love my home.","நான் என் வீட்டை நேசிக்கிறேன்.","Simple Present","Love agrees with I."]
+
+];
+
+
+/*
+========================================================
+LESSON 16 - SCHOOL
+========================================================
+*/
+
+const lesson16 = [
+
+["I go to school every day.","நான் தினமும் பள்ளிக்குச் செல்கிறேன்.","Simple Present","Routine."],
+["My school is near my home.","என் பள்ளி என் வீட்டிற்கு அருகில் உள்ளது.","Be Verb","Is describes the school."],
+["My school is large.","என் பள்ளி பெரியது.","Be Verb","Is agrees with school."],
+["My classroom is clean.","என் வகுப்பறை சுத்தமாக உள்ளது.","Be Verb","Is agrees with classroom."],
+["My teacher is kind.","என் ஆசிரியர் அன்பானவர்.","Be Verb","Is agrees with teacher."],
+["My teachers are helpful.","என் ஆசிரியர்கள் உதவிகரமாக இருக்கிறார்கள்.","Be Verb","Are agrees with plural teachers."],
+["I like my school.","எனக்கு என் பள்ளி பிடிக்கும்.","Simple Present","Like expresses preference."],
+["I like English.","எனக்கு ஆங்கிலம் பிடிக்கும்.","Simple Present","Like expresses preference."],
+["I study English every day.","நான் தினமும் ஆங்கிலம் படிக்கிறேன்.","Simple Present","Habit."],
+["I read English books.","நான் ஆங்கில புத்தகங்களை படிக்கிறேன்.","Simple Present","Regular activity."],
+["I write in my notebook.","நான் என் நோட்டில் எழுதுகிறேன்.","Simple Present","Regular activity."],
+["I listen to my teacher.","நான் என் ஆசிரியர் சொல்வதை கேட்கிறேன்.","Simple Present","Regular activity."],
+["I ask questions in class.","நான் வகுப்பில் கேள்விகள் கேட்கிறேன்.","Simple Present","Regular activity."],
+["I answer the questions.","நான் கேள்விகளுக்கு பதிலளிக்கிறேன்.","Simple Present","Regular activity."],
+["I do my homework.","நான் என் வீட்டுப்பாடத்தை செய்கிறேன்.","Simple Present","Routine."],
+["I complete my homework on time.","நான் என் வீட்டுப்பாடத்தை நேரத்தில் முடிக்கிறேன்.","Simple Present","Routine."],
+["I prepare for my exams.","நான் என் தேர்வுகளுக்கு தயாராகிறேன்.","Simple Present","Routine."],
+["We study together.","நாங்கள் ஒன்றாக படிக்கிறோம்.","Simple Present","Regular activity."],
+["We help each other.","நாங்கள் ஒருவருக்கொருவர் உதவுகிறோம்.","Simple Present","Regular activity."],
+["We play during the break.","நாங்கள் இடைவேளையில் விளையாடுகிறோம்.","Simple Present","Routine."],
+["The teacher teaches English.","ஆசிரியர் ஆங்கிலம் கற்பிக்கிறார்.","Simple Present","Teaches is third-person singular."],
+["The teacher explains the lesson.","ஆசிரியர் பாடத்தை விளக்குகிறார்.","Simple Present","Explains is third-person singular."],
+["The students listen carefully.","மாணவர்கள் கவனமாக கேட்கிறார்கள்.","Simple Present","Listen agrees with students."],
+["The students write notes.","மாணவர்கள் குறிப்புகள் எழுதுகிறார்கள்.","Simple Present","Write agrees with students."],
+["The students read books.","மாணவர்கள் புத்தகங்கள் படிக்கிறார்கள்.","Simple Present","Read agrees with students."],
+["The bell rings at nine.","மணி ஒன்பது மணிக்கு ஒலிக்கிறது.","Simple Present","Rings is third-person singular."],
+["Class starts at nine.","வகுப்பு ஒன்பது மணிக்கு தொடங்குகிறது.","Simple Present","Starts is third-person singular."],
+["Class finishes at four.","வகுப்பு நான்கு மணிக்கு முடிகிறது.","Simple Present","Finishes is third-person singular."],
+["I am studying now.","நான் இப்போது படித்துக் கொண்டிருக்கிறேன்.","Present Continuous","Am + verb-ing."],
+["The teacher is explaining the lesson.","ஆசிரியர் பாடத்தை விளக்கிக் கொண்டிருக்கிறார்.","Present Continuous","Is + verb-ing."],
+["The students are listening.","மாணவர்கள் கேட்டுக் கொண்டிருக்கிறார்கள்.","Present Continuous","Are + verb-ing."],
+["We are preparing for the exam.","நாங்கள் தேர்வுக்கு தயாராகிக் கொண்டிருக்கிறோம்.","Present Continuous","Are + verb-ing."],
+["I am writing an answer.","நான் ஒரு பதில் எழுதிக் கொண்டிருக்கிறேன்.","Present Continuous","Am + verb-ing."],
+["She is reading a book.","அவள் ஒரு புத்தகம் படித்துக் கொண்டிருக்கிறாள்.","Present Continuous","Is + verb-ing."],
+["He is solving a problem.","அவர் ஒரு பிரச்சினையை தீர்த்துக் கொண்டிருக்கிறார்.","Present Continuous","Is + verb-ing."],
+["They are discussing the lesson.","அவர்கள் பாடத்தைப் பற்றி விவாதித்துக் கொண்டிருக்கிறார்கள்.","Present Continuous","Are + verb-ing."],
+["I passed my exam.","நான் என் தேர்வில் தேர்ச்சி பெற்றேன்.","Simple Past","Passed is past tense."],
+["I studied hard.","நான் கடினமாக படித்தேன்.","Simple Past","Studied is past tense."],
+["She answered all the questions.","அவள் அனைத்து கேள்விகளுக்கும் பதிலளித்தாள்.","Simple Past","Answered is past tense."],
+["He completed the homework.","அவர் வீட்டுப்பாடத்தை முடித்தார்.","Simple Past","Completed is past tense."],
+["We learned a new lesson.","நாங்கள் ஒரு புதிய பாடம் கற்றோம்.","Simple Past","Learned is past tense."],
+["They played during the break.","அவர்கள் இடைவேளையில் விளையாடினார்கள்.","Simple Past","Played is past tense."],
+["I will study tonight.","நான் இன்று இரவு படிப்பேன்.","Future","Will + base verb."],
+["I will prepare for the exam.","நான் தேர்வுக்கு தயாராவேன்.","Future","Will + base verb."],
+["We will learn English.","நாங்கள் ஆங்கிலம் கற்போம்.","Future","Will + base verb."],
+["She will attend the class.","அவள் வகுப்பில் கலந்து கொள்வாள்.","Future","Will + base verb."],
+["He will complete the homework.","அவர் வீட்டுப்பாடத்தை முடிப்பார்.","Future","Will + base verb."],
+["Education is important.","கல்வி முக்கியமானது.","Be Verb","Is agrees with education."]
+
+];
+
+
+/*
+========================================================
+LESSON 17 - WORKPLACE
+========================================================
+*/
+
+const lesson17 = [
+
+["I work in an office.","நான் ஒரு அலுவலகத்தில் வேலை செய்கிறேன்.","Simple Present","Work is a regular activity."],
+["I go to work every day.","நான் தினமும் வேலைக்குச் செல்கிறேன்.","Simple Present","Routine."],
+["I start work at nine.","நான் ஒன்பது மணிக்கு வேலை தொடங்குகிறேன்.","Simple Present","Schedule."],
+["I finish work at five.","நான் ஐந்து மணிக்கு வேலை முடிக்கிறேன்.","Simple Present","Schedule."],
+["I check my email every morning.","நான் தினமும் காலையில் என் மின்னஞ்சலை பார்க்கிறேன்.","Simple Present","Routine."],
+["I attend meetings.","நான் கூட்டங்களில் கலந்து கொள்கிறேன்.","Simple Present","Regular activity."],
+["I talk to my manager.","நான் என் மேலாளரிடம் பேசுகிறேன்.","Simple Present","Regular activity."],
+["I work with my team.","நான் என் குழுவுடன் வேலை செய்கிறேன்.","Simple Present","Regular activity."],
+["I complete my tasks on time.","நான் என் பணிகளை நேரத்தில் முடிக்கிறேன்.","Simple Present","Routine."],
+["I help my colleagues.","நான் என் சக ஊழியர்களுக்கு உதவுகிறேன்.","Simple Present","Regular activity."],
+["My manager is helpful.","என் மேலாளர் உதவிகரமாக இருக்கிறார்.","Be Verb","Is agrees with manager."],
+["My colleagues are friendly.","என் சக ஊழியர்கள் நட்பாக இருக்கிறார்கள்.","Be Verb","Are agrees with plural colleagues."],
+["The office is busy.","அலுவலகம் பிஸியாக இருக்கிறது.","Be Verb","Is agrees with office."],
+["The meeting is important.","கூட்டம் முக்கியமானது.","Be Verb","Is agrees with meeting."],
+["The project is difficult.","திட்டம் கடினமாக இருக்கிறது.","Be Verb","Is agrees with project."],
+["We are working on a project.","நாங்கள் ஒரு திட்டத்தில் வேலை செய்து கொண்டிருக்கிறோம்.","Present Continuous","Are + verb-ing."],
+["I am preparing a report.","நான் ஒரு அறிக்கை தயாரித்துக் கொண்டிருக்கிறேன்.","Present Continuous","Am + verb-ing."],
+["She is checking the email.","அவள் மின்னஞ்சலை சரிபார்த்துக் கொண்டிருக்கிறாள்.","Present Continuous","Is + verb-ing."],
+["He is attending a meeting.","அவர் கூட்டத்தில் கலந்து கொண்டிருக்கிறார்.","Present Continuous","Is + verb-ing."],
+["They are discussing the project.","அவர்கள் திட்டத்தைப் பற்றி விவாதித்துக் கொண்டிருக்கிறார்கள்.","Present Continuous","Are + verb-ing."],
+["I finished the report yesterday.","நான் நேற்று அறிக்கையை முடித்தேன்.","Simple Past","Finished is past tense."],
+["She completed the task.","அவள் பணியை முடித்தாள்.","Simple Past","Completed is past tense."],
+["He sent the email.","அவர் மின்னஞ்சலை அனுப்பினார்.","Simple Past","Sent is past tense."],
+["We attended the meeting.","நாங்கள் கூட்டத்தில் கலந்து கொண்டோம்.","Simple Past","Attended is past tense."],
+["They finished the project.","அவர்கள் திட்டத்தை முடித்தார்கள்.","Simple Past","Finished is past tense."],
+["I will send the report tomorrow.","நான் நாளை அறிக்கையை அனுப்புவேன்.","Future","Will + base verb."],
+["She will attend the meeting.","அவள் கூட்டத்தில் கலந்து கொள்வாள்.","Future","Will + base verb."],
+["He will call the client.","அவர் வாடிக்கையாளரை அழைப்பார்.","Future","Will + base verb."],
+["We will complete the project.","நாங்கள் திட்டத்தை முடிப்போம்.","Future","Will + base verb."],
+["They will start the work tomorrow.","அவர்கள் நாளை வேலையை தொடங்குவார்கள்.","Future","Will + base verb."],
+["Can you send me the report?","அறிக்கையை எனக்கு அனுப்ப முடியுமா?","Can","Can makes a request."],
+["Could you check this file?","இந்த கோப்பை சரிபார்க்க முடியுமா?","Could","Could makes a polite request."],
+["Could you explain this?","இதை விளக்க முடியுமா?","Could","Could makes a polite request."],
+["Can we have a meeting?","நாம் ஒரு கூட்டம் நடத்தலாமா?","Can","Can asks about possibility."],
+["Can I leave early today?","நான் இன்று சீக்கிரம் செல்லலாமா?","Can","Can asks for permission."],
+["You should complete this task.","நீங்கள் இந்த பணியை முடிக்க வேண்டும்.","Should","Should gives advice."],
+["You should check your email.","நீங்கள் உங்கள் மின்னஞ்சலை சரிபார்க்க வேண்டும்.","Should","Should gives advice."],
+["We should discuss this problem.","நாம் இந்த பிரச்சினையைப் பற்றி விவாதிக்க வேண்டும்.","Should","Should gives advice."],
+["We should work together.","நாம் ஒன்றாக வேலை செய்ய வேண்டும்.","Should","Should gives advice."],
+["Please send me the details.","தயவுசெய்து விவரங்களை எனக்கு அனுப்புங்கள்.","Polite Request","Please makes the request polite."],
+["Please call me later.","தயவுசெய்து என்னை பின்னர் அழைக்கவும்.","Polite Request","Please makes the request polite."],
+["Please check the document.","தயவுசெய்து ஆவணத்தை சரிபார்க்கவும்.","Polite Request","Please makes the request polite."],
+["Please wait for the manager.","தயவுசெய்து மேலாளருக்காக காத்திருக்கவும்.","Polite Request","Please makes the request polite."],
+["Thank you for your help.","உங்கள் உதவிக்கு நன்றி.","Expression","Expression of gratitude."],
+["Thank you for your time.","உங்கள் நேரத்திற்கு நன்றி.","Expression","Expression of gratitude."],
+["I appreciate your help.","உங்கள் உதவியை நான் பாராட்டுகிறேன்.","Simple Present","Appreciate expresses gratitude."],
+["Let's discuss the problem.","பிரச்சினையைப் பற்றி விவாதிப்போம்.","Suggestion","Let's gives a suggestion."],
+["Let's finish the work.","வேலையை முடிப்போம்.","Suggestion","Let's gives a suggestion."]
+
+];
+
+
+/*
+========================================================
+LESSON 18 - SHOPPING & TRAVEL
+========================================================
+*/
+
+const lesson18 = [
+
+["I want to buy a shirt.","நான் ஒரு சட்டை வாங்க விரும்புகிறேன்.","Want","Want expresses desire."],
+["How much is this shirt?","இந்த சட்டை எவ்வளவு?","Question","How much asks about price."],
+["How much does this cost?","இது எவ்வளவு விலை?","Question","How much asks about price."],
+["Do you have this in blue?","இது நீல நிறத்தில் உள்ளதா?","Question","Do forms the question."],
+["Do you have a larger size?","பெரிய அளவு உள்ளதா?","Question","Do forms the question."],
+["Can I try this on?","இதை நான் அணிந்து பார்க்கலாமா?","Can","Can asks for permission."],
+["I like this one.","எனக்கு இது பிடிக்கும்.","Simple Present","Like expresses preference."],
+["I will take this one.","நான் இதை வாங்கிக் கொள்கிறேன்.","Future","Will expresses decision."],
+["Can I pay by card?","நான் அட்டை மூலம் பணம் செலுத்தலாமா?","Can","Can asks for permission."],
+["Can I pay in cash?","நான் பணமாக செலுத்தலாமா?","Can","Can asks for permission."],
+["Please give me a receipt.","தயவுசெய்து ரசீது கொடுக்கவும்.","Polite Request","Please makes the request polite."],
+["Where is the railway station?","ரயில் நிலையம் எங்கே உள்ளது?","Question","Where asks about place."],
+["Where is the bus stop?","பேருந்து நிறுத்தம் எங்கே உள்ளது?","Question","Where asks about place."],
+["How can I get there?","நான் அங்கே எப்படி செல்லலாம்?","Question","How asks about method."],
+["Which bus should I take?","நான் எந்த பேருந்தில் செல்ல வேண்டும்?","Should","Should asks for advice."],
+["What time does the train leave?","ரயில் எந்த நேரத்தில் புறப்படுகிறது?","Question","What time asks about time."],
+["What time does the bus arrive?","பேருந்து எந்த நேரத்தில் வருகிறது?","Question","What time asks about time."],
+["I need a ticket to Chennai.","எனக்கு சென்னைக்கு ஒரு டிக்கெட் வேண்டும்.","Need","Need expresses requirement."],
+["I would like a ticket.","எனக்கு ஒரு டிக்கெட் வேண்டும்.","Would","Would like is polite."],
+["One ticket, please.","ஒரு டிக்கெட், தயவுசெய்து.","Polite Request","Please makes it polite."],
+["Where can I buy a ticket?","நான் எங்கே டிக்கெட் வாங்கலாம்?","Can","Can asks about possibility/place."],
+["Is this seat available?","இந்த இருக்கை காலியாக உள்ளதா?","Be Question","Is forms a question."],
+["Where is my seat?","என் இருக்கை எங்கே?","Question","Where asks about place."],
+["Is this train going to Chennai?","இந்த ரயில் சென்னைக்கு செல்கிறதா?","Question","Is forms a yes/no question."],
+["How long is the journey?","பயணம் எவ்வளவு நேரம்?","Question","How long asks about duration."],
+["I am going on a trip.","நான் ஒரு பயணத்திற்கு செல்கிறேன்.","Present Continuous","Am + verb-ing."],
+["We are travelling tomorrow.","நாங்கள் நாளை பயணம் செய்கிறோம்.","Present Continuous","Are + verb-ing."],
+["We are staying in a hotel.","நாங்கள் ஒரு ஹோட்டலில் தங்குகிறோம்.","Present Continuous","Are + verb-ing."],
+["The hotel is comfortable.","ஹோட்டல் வசதியாக இருக்கிறது.","Be Verb","Is agrees with hotel."],
+["The room is clean.","அறை சுத்தமாக இருக்கிறது.","Be Verb","Is agrees with room."],
+["I need a room for two nights.","எனக்கு இரண்டு இரவுகளுக்கு ஒரு அறை வேண்டும்.","Need","Need expresses requirement."],
+["Do you have a room available?","உங்களிடம் காலியான அறை உள்ளதா?","Question","Do forms the question."],
+["Can I check in now?","நான் இப்போது செக்-இன் செய்யலாமா?","Can","Can asks permission."],
+["What time is check-out?","செக்-அவுட் எத்தனை மணிக்கு?","Question","What time asks about time."],
+["Where is the restaurant?","உணவகம் எங்கே உள்ளது?","Question","Where asks about place."],
+["I would like some food.","எனக்கு கொஞ்சம் உணவு வேண்டும்.","Would","Would like is polite."],
+["Can I have some water?","எனக்கு கொஞ்சம் தண்ணீர் கிடைக்குமா?","Can","Can makes a request."],
+["The food is delicious.","உணவு சுவையாக இருக்கிறது.","Be Verb","Is describes food."],
+["The service is good.","சேவை நன்றாக இருக்கிறது.","Be Verb","Is describes service."],
+["I enjoyed the trip.","நான் பயணத்தை ரசித்தேன்.","Simple Past","Enjoyed is past tense."],
+["We visited many places.","நாங்கள் பல இடங்களை பார்த்தோம்.","Simple Past","Visited is past tense."],
+["We took many photos.","நாங்கள் பல புகைப்படங்கள் எடுத்தோம்.","Simple Past","Took is past form of take."],
+["The journey was comfortable.","பயணம் வசதியாக இருந்தது.","Simple Past","Was describes past condition."],
+["The weather was beautiful.","வானிலை அழகாக இருந்தது.","Simple Past","Was describes past condition."],
+["I will travel next month.","நான் அடுத்த மாதம் பயணம் செய்வேன்.","Future","Will + base verb."],
+["We will visit Chennai next week.","நாங்கள் அடுத்த வாரம் சென்னைக்கு செல்வோம்.","Future","Will + base verb."],
+["I will book the ticket today.","நான் இன்று டிக்கெட்டை பதிவு செய்வேன்.","Future","Will + base verb."],
+["We will stay there for two days.","நாங்கள் அங்கே இரண்டு நாட்கள் தங்குவோம்.","Future","Will + base verb."],
+["I will come back tomorrow.","நான் நாளை திரும்பி வருவேன்.","Future","Will + base verb."]
+
+];
+
+
+/*
+========================================================
+LESSON 19 - TELEPHONE & SOCIAL
+========================================================
+*/
+
+const lesson19 = [
+
+["Hello, may I speak to Anitha?","வணக்கம், நான் அனிதாவுடன் பேசலாமா?","Telephone English","May is used for polite permission."],
+["Who is calling, please?","யார் பேசுகிறார்கள், தயவுசெய்து?","Telephone English","Polite telephone question."],
+["This is Anitha speaking.","நான் அனிதா பேசுகிறேன்.","Telephone English","Common telephone expression."],
+["Please hold on.","தயவுசெய்து காத்திருக்கவும்.","Telephone English","Polite request."],
+["Please wait a moment.","தயவுசெய்து சிறிது நேரம் காத்திருக்கவும்.","Polite Request","Please makes the request polite."],
+["She is not available now.","அவள் இப்போது இல்லை.","Be Verb","Is agrees with she."],
+["Can I take a message?","நான் ஒரு செய்தியை எடுத்துக் கொள்ளலாமா?","Can","Can asks for permission."],
+["Please ask her to call me.","தயவுசெய்து என்னை அழைக்கச் சொல்லுங்கள்.","Polite Request","Ask + object + to-infinitive."],
+["I will call back later.","நான் பின்னர் மீண்டும் அழைப்பேன்.","Future","Will + base verb."],
+["I will call you tomorrow.","நான் நாளை உங்களை அழைப்பேன்.","Future","Will + base verb."],
+["Can you hear me?","நான் பேசுவது உங்களுக்கு கேட்கிறதா?","Can","Can expresses ability."],
+["I cannot hear you clearly.","என்னால் உங்களை தெளிவாக கேட்க முடியவில்லை.","Can","Cannot expresses inability."],
+["The connection is poor.","தொடர்பு சரியாக இல்லை.","Be Verb","Is describes the connection."],
+["The line is busy.","லைன் பிஸியாக உள்ளது.","Be Verb","Is describes the line."],
+["Please speak louder.","தயவுசெய்து சத்தமாக பேசுங்கள்.","Polite Request","Please makes the request polite."],
+["Please speak slowly.","தயவுசெய்து மெதுவாக பேசுங்கள்.","Polite Request","Please makes the request polite."],
+["Could you repeat that?","அதை மீண்டும் சொல்ல முடியுமா?","Could","Could makes a polite request."],
+["Could you send me a message?","எனக்கு ஒரு செய்தி அனுப்ப முடியுமா?","Could","Could makes a polite request."],
+["I will send you the details.","நான் உங்களுக்கு விவரங்களை அனுப்புவேன்.","Future","Will + base verb."],
+["Thank you for calling.","அழைத்ததற்கு நன்றி.","Expression","Thank you expresses gratitude."],
+["It was nice talking to you.","உங்களுடன் பேசியது மகிழ்ச்சியாக இருந்தது.","Past Expression","Was describes a past interaction."],
+["Talk to you later.","பின்னர் உங்களுடன் பேசுகிறேன்.","Expression","Common telephone farewell."],
+["Have a nice day.","இனிய நாளாக அமையட்டும்.","Expression","Good wish."],
+["Goodbye.","பிரியாவிடை.","Expression","Farewell."],
+["How are you doing?","நீங்கள் எப்படி இருக்கிறீர்கள்?","Conversation","Common greeting."],
+["I am doing well.","நான் நன்றாக இருக்கிறேன்.","Be Verb","Am with I."],
+["What have you been doing?","நீங்கள் என்ன செய்து கொண்டிருந்தீர்கள்?","Present Perfect Continuous","Have been + verb-ing asks about recent activity."],
+["I have been learning English.","நான் ஆங்கிலம் கற்றுக் கொண்டிருக்கிறேன்.","Present Perfect Continuous","Have been + verb-ing."],
+["I have been practicing every day.","நான் தினமும் பயிற்சி செய்து வருகிறேன்.","Present Perfect Continuous","Have been + verb-ing."],
+["It is good to hear from you.","உங்களிடமிருந்து கேட்பது மகிழ்ச்சி.","Expression","It is + adjective."],
+["I am happy to hear that.","அதை கேட்டு நான் மகிழ்ச்சியாக இருக்கிறேன்.","Be Verb","Am with I."],
+["That is wonderful news.","அது அருமையான செய்தி.","Expression","That is is an expression."],
+["Congratulations!","வாழ்த்துகள்!","Expression","Used to congratulate."],
+["Well done!","நன்றாக செய்தீர்கள்!","Expression","Used to praise someone."],
+["Keep going.","தொடர்ந்து செய்யுங்கள்.","Imperative","Imperative encouragement."],
+["Keep practicing.","தொடர்ந்து பயிற்சி செய்யுங்கள்.","Imperative","Imperative encouragement."],
+["Don't give up.","கைவிடாதீர்கள்.","Negative Imperative","Don't + base verb."],
+["You are doing well.","நீங்கள் நன்றாக செய்து கொண்டிருக்கிறீர்கள்.","Present Continuous","Are + verb-ing."],
+["I am proud of you.","நான் உங்களை நினைத்து பெருமைப்படுகிறேன்.","Be Verb","Am with I."],
+["I believe in you.","நான் உங்களை நம்புகிறேன்.","Simple Present","Believe expresses a current feeling."],
+["You can do it.","நீங்கள் இதை செய்ய முடியும்.","Can","Can expresses ability."],
+["You will improve.","நீங்கள் முன்னேறுவீர்கள்.","Future","Will + base verb."],
+["Practice makes you better.","பயிற்சி உங்களை மேலும் சிறப்பாக்கும்.","Simple Present","General truth."],
+["Learning takes time.","கற்றுக்கொள்ள நேரம் தேவை.","Simple Present","General truth."],
+["Do not be afraid.","பயப்படாதீர்கள்.","Negative Imperative","Do not + base verb."],
+["Speak without fear.","பயமின்றி பேசுங்கள்.","Imperative","Imperative sentence."],
+["Make mistakes and learn.","தவறுகள் செய்து கற்றுக்கொள்ளுங்கள்.","Imperative","Imperative sentence."],
+["Never stop learning.","கற்றலை ஒருபோதும் நிறுத்தாதீர்கள்.","Negative Imperative","Never + base verb."]
+
+];
+
+
+/*
+========================================================
+LESSON 20 - ADVANCED SPEAKING
+========================================================
+*/
+
+const lesson20 = [
+
+["I would like to improve my communication skills.","என் தொடர்பு திறன்களை மேம்படுத்த விரும்புகிறேன்.","Would","Would like expresses a polite desire."],
+["I am working hard to improve my English.","என் ஆங்கிலத்தை மேம்படுத்த நான் கடினமாக உழைக்கிறேன்.","Present Continuous","Am + verb-ing."],
+["I try to speak English every day.","நான் தினமும் ஆங்கிலம் பேச முயற்சி செய்கிறேன்.","Simple Present","Try describes a regular effort."],
+["I am becoming more confident.","நான் மேலும் நம்பிக்கையுடன் மாறிக் கொண்டிருக்கிறேன்.","Present Continuous","Am + verb-ing."],
+["I can understand English better now.","இப்போது என்னால் ஆங்கிலத்தை நன்றாக புரிந்து கொள்ள முடிகிறது.","Can","Can expresses ability."],
+["I can speak more clearly now.","இப்போது என்னால் இன்னும் தெளிவாக பேச முடிகிறது.","Can","Can expresses ability."],
+["I have learned many new words.","நான் பல புதிய வார்த்தைகளை கற்றுள்ளேன்.","Present Perfect","Have + past participle."],
+["I have improved my pronunciation.","நான் என் உச்சரிப்பை மேம்படுத்தியுள்ளேன்.","Present Perfect","Have + past participle."],
+["I have practiced many sentences.","நான் பல வாக்கியங்களை பயிற்சி செய்துள்ளேன்.","Present Perfect","Have + past participle."],
+["I have become more confident.","நான் அதிக நம்பிக்கையுடன் மாறியுள்ளேன்.","Present Perfect","Have + past participle."],
+["I want to speak English fluently.","நான் சரளமாக ஆங்கிலம் பேச விரும்புகிறேன்.","Infinitive","Want + to + verb."],
+["I want to communicate confidently.","நான் நம்பிக்கையுடன் தொடர்பு கொள்ள விரும்புகிறேன்.","Infinitive","Want + to + verb."],
+["I need to practice more.","நான் இன்னும் அதிகமாக பயிற்சி செய்ய வேண்டும்.","Infinitive","Need + to + verb."],
+["I need to improve my vocabulary.","நான் என் சொற்களஞ்சியத்தை மேம்படுத்த வேண்டும்.","Infinitive","Need + to + verb."],
+["I hope to speak confidently.","நான் நம்பிக்கையுடன் பேசுவேன் என்று நம்புகிறேன்.","Infinitive","Hope + to + verb."],
+["I plan to learn every day.","நான் தினமும் கற்க திட்டமிட்டுள்ளேன்.","Infinitive","Plan + to + verb."],
+["I decided to practice more.","நான் இன்னும் அதிகமாக பயிற்சி செய்ய முடிவு செய்தேன்.","Infinitive","Decided + to + verb."],
+["I am ready to learn.","நான் கற்க தயாராக இருக்கிறேன்.","Infinitive","Ready + to + verb."],
+["I am willing to practice.","நான் பயிற்சி செய்ய தயாராக இருக்கிறேன்.","Infinitive","Willing + to + verb."],
+["I am happy to learn English.","ஆங்கிலம் கற்க நான் மகிழ்ச்சியாக இருக்கிறேன்.","Infinitive","Happy + to + verb."],
+["It is important to practice.","பயிற்சி செய்வது முக்கியம்.","Infinitive","It is + adjective + to-infinitive."],
+["It is useful to read every day.","தினமும் படிப்பது பயனுள்ளதாகும்.","Infinitive","It is + adjective + to-infinitive."],
+["It is easy to understand this lesson.","இந்த பாடத்தை புரிந்துகொள்வது எளிது.","Infinitive","It is + adjective + to-infinitive."],
+["It is difficult to speak without practice.","பயிற்சி இல்லாமல் பேசுவது கடினம்.","Infinitive","It is + adjective + to-infinitive."],
+["The more I practice, the better I become.","நான் எவ்வளவு அதிகமாக பயிற்சி செய்கிறேனோ, அவ்வளவு சிறப்பாக மாறுகிறேன்.","Comparison","The more..., the better... shows linked change."],
+["I learn from my mistakes.","நான் என் தவறுகளிலிருந்து கற்றுக்கொள்கிறேன்.","Simple Present","General habit."],
+["I do not give up easily.","நான் எளிதில் கைவிடுவதில்லை.","Simple Present Negative","Do not + base verb."],
+["I always try to improve.","நான் எப்போதும் முன்னேற முயற்சி செய்கிறேன்.","Simple Present","Always describes a habit."],
+["I believe that practice is important.","பயிற்சி முக்கியம் என்று நான் நம்புகிறேன்.","Simple Present","Believe introduces an opinion."],
+["I know that English takes practice.","ஆங்கிலத்திற்கு பயிற்சி தேவை என்று எனக்குத் தெரியும்.","Simple Present","Know introduces a fact or belief."],
+["I understand what you mean.","நீங்கள் என்ன சொல்கிறீர்கள் என்பதை நான் புரிந்துகொள்கிறேன்.","Simple Present","Understand describes a mental state."],
+["Could you explain this more clearly?","இதை இன்னும் தெளிவாக விளக்க முடியுமா?","Could","Could makes a polite request."],
+["Would you mind speaking slowly?","நீங்கள் மெதுவாக பேசினால் பரவாயில்லையா?","Would","Would you mind is a polite request."],
+["Could you give me an example?","எனக்கு ஒரு உதாரணம் கொடுக்க முடியுமா?","Could","Could makes a polite request."],
+["Would you please repeat the sentence?","தயவுசெய்து வாக்கியத்தை மீண்டும் சொல்ல முடியுமா?","Would","Would makes a polite request."],
+["What should I do next?","அடுத்து நான் என்ன செய்ய வேண்டும்?","Should","Should asks for advice."],
+["How can I improve my pronunciation?","என் உச்சரிப்பை நான் எப்படி மேம்படுத்தலாம்?","Can","Can asks about possibility or method."],
+["How can I speak more fluently?","நான் எப்படி இன்னும் சரளமாக பேசலாம்?","Can","Can asks about method."],
+["What can I do to improve?","முன்னேற நான் என்ன செய்ய முடியும்?","Can","Can asks about possible action."],
+["How often should I practice?","நான் எவ்வளவு அடிக்கடி பயிற்சி செய்ய வேண்டும்?","Should","Should asks for advice."],
+["How long should I practice every day?","நான் தினமும் எவ்வளவு நேரம் பயிற்சி செய்ய வேண்டும்?","Should","Should asks for advice."],
+["I will continue learning.","நான் தொடர்ந்து கற்றுக் கொண்டிருப்பேன்.","Future","Will + base verb."],
+["I will practice until I become confident.","நான் நம்பிக்கையுடன் ஆகும் வரை பயிற்சி செய்வேன்.","Future","Will + base verb."],
+["I will speak English without fear.","நான் பயமின்றி ஆங்கிலம் பேசுவேன்.","Future","Will + base verb."],
+["I will improve step by step.","நான் படிப்படியாக முன்னேறுவேன்.","Future","Will + base verb."],
+["I will never stop learning.","நான் கற்றலை ஒருபோதும் நிறுத்த மாட்டேன்.","Future","Will + base verb."],
+["My goal is to speak English confidently.","நம்பிக்கையுடன் ஆங்கிலம் பேசுவது என் இலக்கு.","Infinitive","Is + to-infinitive."],
+["My goal is to communicate clearly.","தெளிவாக தொடர்பு கொள்வது என் இலக்கு.","Infinitive","Is + to-infinitive."],
+["I am proud of my progress.","என் முன்னேற்றத்தை நினைத்து நான் பெருமைப்படுகிறேன்.","Be Verb","Am is used with I."],
+["I will keep learning every day.","நான் தினமும் தொடர்ந்து கற்றுக் கொண்டிருப்பேன்.","Future","Will + base verb."],
+["I can become a confident English speaker.","நான் நம்பிக்கையான ஆங்கில பேச்சாளராக மாற முடியும்.","Can","Can expresses ability."]
+
+];
+
+
+/*
+========================================================
+ADD THE FIRST 1000 RECORDS
+========================================================
+*/
+
+const allLessons = [
+    lesson1,
+    lesson2,
+    lesson3,
+    lesson4,
+    lesson5,
+    lesson6,
+    lesson7,
+    lesson8,
+    lesson9,
+    lesson10,
+    lesson11,
+    lesson12,
+    lesson13,
+    lesson14,
+    lesson15,
+    lesson16,
+    lesson17,
+    lesson18,
+    lesson19,
+    lesson20
+];
+
+
+allLessons.forEach((lesson,lessonIndex)=>{
+
+    lesson.forEach((item,itemIndex)=>{
+
+        sentences.push({
+
+            id:sentences.length + 1,
+
+            lesson:lessonNames[lessonIndex],
+
+            title:lessonTitles[lessonIndex],
+
+            english:item[0],
+
+            tamil:item[1],
+
+            grammar:item[2],
+
+            explanation:item[3]
+
+        });
+
+    });
+
+});
+
+
+/*
+========================================================
+SAFETY CHECK
+========================================================
+
+There should be exactly 1000 records.
+========================================================
+*/
+
+console.log(
+    "Total sentences:",
+    sentences.length
+);
+
+
+/*
+========================================================
+PROGRESS STORAGE
+========================================================
+*/
+
+let completed =
+    JSON.parse(
+        localStorage.getItem(
+            "anitha_completed"
+        ) || "[]"
+    );
+
+
+/*
+========================================================
+RENDER SENTENCES
+========================================================
+*/
+
+function renderSentences(){
+
+    const container =
+        document.getElementById(
+            "sentenceContainer"
+        );
+
+    const search =
+        document.getElementById(
+            "search"
+        ).value.toLowerCase();
+
+    const filter =
+        document.getElementById(
+            "filter"
+        ).value;
+
+
+    let filtered =
+        sentences.filter(item=>{
+
+            const matchesSearch =
+                item.english
+                .toLowerCase()
+                .includes(search)
+
+                ||
+
+                item.tamil
+                .toLowerCase()
+                .includes(search)
+
+                ||
+
+                item.grammar
+                .toLowerCase()
+                .includes(search);
+
+
+            const matchesFilter =
+                filter === "all"
+                ||
+                item.lesson === filter;
+
+
+            return matchesSearch &&
+                   matchesFilter;
+
+        });
+
+
+    container.innerHTML = "";
+
+
+    if(filtered.length === 0){
+
+        container.innerHTML = `
+            <div class="sentence">
+                <h2>No sentences found.</h2>
+                <p>Try another English or Tamil search.</p>
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    /*
+    Limit initial display for browser performance.
+    */
+
+    const visible =
+        filtered.slice(0,100);
+
+
+    visible.forEach(item=>{
+
+        const done =
+            completed.includes(item.id);
+
+
+        container.innerHTML += `
+
+        <article class="sentence">
+
+            <span class="number">
+                Sentence ${item.id}
+            </span>
+
+            <div class="category">
+                ${item.lesson} -
+                ${item.title}
+            </div>
+
+            <div class="english">
+                🇬🇧 ${item.english}
+            </div>
+
+            <div class="tamil">
+                🇮🇳 ${item.tamil}
+            </div>
+
+            <div class="grammar">
+
+                <div class="grammar-title">
+                    📖 Grammar:
+                    ${item.grammar}
+                </div>
+
+                <p>
+                    <strong>💡 Explanation:</strong>
+                    ${item.explanation}
+                </p>
+
+            </div>
+
+            <div class="buttons">
+
+                <button
+                    class="btn blue"
+                    onclick="speakEnglish(${JSON.stringify(item.english)})">
+
+                    🔊 English
+
+                </button>
+
+                <button
+                    class="btn green"
+                    onclick="speakTamil(${JSON.stringify(item.tamil)})">
+
+                    🔊 தமிழ்
+
+                </button>
+
+                <button
+                    class="btn red"
+                    onclick="stopAudio()">
+
+                    ⏹ Stop
+
+                </button>
+
+                <button
+                    class="btn purple"
+                    onclick="completeSentence(${item.id})">
+
+                    ${done
+                    ? "✔ Completed"
+                    : "✅ Mark Complete"}
+
+                </button>
+
+            </div>
+
+        </article>
+
+        `;
+
+    });
+
+
+    if(filtered.length > 100){
+
+        container.innerHTML += `
+
+            <div class="sentence">
+
+                <h3>
+                    Showing first 100 matching sentences
+                    out of ${filtered.length}.
+                </h3>
+
+                <p>
+                    Use the search box or lesson filter
+                    to find a specific sentence.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/*
+========================================================
+AUDIO
+========================================================
+*/
+
+function speakEnglish(text){
+
+    speechSynthesis.cancel();
+
+    const voice =
+        new SpeechSynthesisUtterance(text);
+
+    voice.lang = "en-IN";
+
+    voice.rate = 0.82;
+
+    voice.pitch = 1;
+
+    voice.volume = 1;
+
+    speechSynthesis.speak(voice);
+
+}
+
+
+function speakTamil(text){
+
+    speechSynthesis.cancel();
+
+    const voice =
+        new SpeechSynthesisUtterance(text);
+
+    voice.lang = "ta-IN";
+
+    voice.rate = 0.78;
+
+    voice.pitch = 1;
+
+    voice.volume = 1;
+
+    speechSynthesis.speak(voice);
+
+}
+
+
+function stopAudio(){
+
+    speechSynthesis.cancel();
+
+}
+
+
+/*
+========================================================
+COMPLETE SENTENCE
+========================================================
+*/
+
+function completeSentence(id){
+
+    if(!completed.includes(id)){
+
+        completed.push(id);
+
+        localStorage.setItem(
+            "anitha_completed",
+            JSON.stringify(completed)
+        );
+
+    }
+
+    updateProgress();
+
+    renderSentences();
+
+}
+
+
+/*
+========================================================
+PROGRESS
+========================================================
+*/
+
+function updateProgress(){
+
+    const count =
+        completed.length;
+
+    const percent =
+        Math.min(
+            100,
+            Math.round(
+                count / 1000 * 100
+            )
+        );
+
+
+    document.getElementById(
+        "topProgress"
+    ).innerText =
+        percent + "%";
+
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+        percent + "%";
+
+
+    document.getElementById(
+        "progressNumber"
+    ).innerText =
+        percent + "%";
+
+
+    document.getElementById(
+        "progressText"
+    ).innerText =
+        count +
+        " of 1000 sentences completed.";
+
+}
+
+
+/*
+========================================================
+RESET
+========================================================
+*/
+
+function resetProgress(){
+
+    if(
+        confirm(
+            "Reset all learning progress?"
+        )
+    ){
+
+        completed = [];
+
+        localStorage.removeItem(
+            "anitha_completed"
+        );
+
+        updateProgress();
+
+        renderSentences();
+
+    }
+
+}
+
+
+/*
+========================================================
+LESSON CARDS
+========================================================
+*/
+
+function createLessonCards(){
+
+    const container =
+        document.getElementById(
+            "lessonCards"
+        );
+
+    container.innerHTML = "";
+
+
+    lessonNames.forEach(
+        (lesson,index)=>{
+
+            const start =
+                index * 50 + 1;
+
+            const end =
+                start + 49;
+
+
+            container.innerHTML += `
+
+            <div class="lesson-card">
+
+                <h3>
+                    Lesson ${index + 1}
+                </h3>
+
+                <h4>
+                    ${lessonTitles[index]}
+                </h4>
+
+                <p>
+                    Sentences
+                    ${start} -
+                    ${end}
+                </p>
+
+                <button
+                    class="btn blue"
+                    onclick="openLesson(${index})">
+
+                    📖 Open Lesson
+
+                </button>
+
+            </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/*
+========================================================
+OPEN LESSON
+========================================================
+*/
+
+function openLesson(index){
+
+    showPage("home");
+
+    document.getElementById(
+        "filter"
+    ).value =
+        lessonNames[index];
+
+    document.getElementById(
+        "search"
+    ).value = "";
+
+    renderSentences();
+
+}
+
+
+/*
+========================================================
+PRACTICE
+========================================================
+*/
+
+function newPractice(){
+
+    const item =
+        sentences[
+            Math.floor(
+                Math.random() *
+                sentences.length
+            )
+        ];
+
+
+    document.getElementById(
+        "practiceSentence"
+    ).innerHTML = `
+
+        <div class="number">
+            Sentence ${item.id}
+        </div>
+
+        <div class="category">
+            ${item.title}
+        </div>
+
+        <div class="english">
+            🇬🇧 ${item.english}
+        </div>
+
+        <div class="tamil">
+            🇮🇳 ${item.tamil}
+        </div>
+
+        <div class="grammar">
+
+            <strong>
+                📖 ${item.grammar}
+            </strong>
+
+            <p>
+                ${item.explanation}
+            </p>
+
+        </div>
+
+        <button
+            class="btn blue"
+            onclick="speakEnglish(${JSON.stringify(item.english)})">
+
+            🔊 Listen English
+
+        </button>
+
+        <button
+            class="btn green"
+            onclick="speakTamil(${JSON.stringify(item.tamil)})">
+
+            🔊 Listen Tamil
+
+        </button>
+
+    `;
+
+}
+
+
+/*
+========================================================
+PAGE NAVIGATION
+========================================================
+*/
+
+function showPage(page){
+
+    document.getElementById(
+        "homePage"
+    ).style.display =
+        page === "home"
+        ? "block"
+        : "none";
+
+
+    document.getElementById(
+        "lessonsPage"
+    ).style.display =
+        page === "lessons"
+        ? "block"
+        : "none";
+
+
+    document.getElementById(
+        "practicePage"
+    ).style.display =
+        page === "practice"
+        ? "block"
+        : "none";
+
+
+    document.getElementById(
+        "progressPage"
+    ).style.display =
+        page === "progress"
+        ? "block"
+        : "none";
+
+
+    if(page === "lessons"){
+        createLessonCards();
+    }
+
+
+    if(page === "practice"){
+        newPractice();
+    }
+
+
+    if(page === "progress"){
+        updateProgress();
+    }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/*
+========================================================
+INITIALIZE
+========================================================
+*/
+
+createLessonCards();
+
+renderSentences();
+
+updateProgress();
+
+</script>
+
+</body>
+</html>
