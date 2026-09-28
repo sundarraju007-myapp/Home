@@ -1,0 +1,3266 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI உலகமும் மனிதனும் — Sundarraju</title>
+
+<meta name="description"
+content="AI உலகமும் மனிதனும் — Sundarraju. ML, DL, NLP, LLM, ChatGPT, DeepSeek, Gemini, Claude ஆகியவற்றைக் கற்கும் தமிழ் AI கல்வித் தளம்.">
+
+<style>
+/* =========================================================
+   AI ULAGAMUM MANITHANUM
+   Complete CSS
+========================================================= */
+
+:root {
+    --bg: #07111f;
+    --bg2: #0b1728;
+    --card: rgba(15, 31, 51, .82);
+    --card2: #10243b;
+    --text: #edf6ff;
+    --muted: #9eb1c7;
+    --primary: #00d4ff;
+    --secondary: #7c3aed;
+    --accent: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --border: rgba(255,255,255,.09);
+    --shadow: 0 20px 60px rgba(0,0,0,.28);
+    --radius: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Noto Sans Tamil",
+        "Latha",
+        "Nirmala UI",
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 10%, rgba(0,212,255,.12), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(124,58,237,.13), transparent 25%),
+        linear-gradient(135deg, var(--bg), #030812);
+
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(18px);
+    background: rgba(5, 13, 25, .86);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 14px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 14px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 23px;
+    font-weight: 900;
+
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    box-shadow: 0 0 25px rgba(0,212,255,.25);
+}
+
+.logo-text strong {
+    display: block;
+    font-size: 17px;
+}
+
+.logo-text span {
+    color: var(--primary);
+    font-size: 12px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 7px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: white;
+    background: rgba(255,255,255,.07);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.04);
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+    max-width: 1400px;
+    margin: auto;
+    padding: 90px 22px 60px;
+
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #bff6ff;
+    background: rgba(0,212,255,.08);
+    border: 1px solid rgba(0,212,255,.22);
+
+    padding: 7px 13px;
+    border-radius: 50px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.gradient-text {
+    background: linear-gradient(
+        90deg,
+        #00d4ff,
+        #7c3aed,
+        #ec4899
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 750px;
+    font-size: 18px;
+    margin: 22px 0;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    color: white;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00bde8, #6366f1);
+    box-shadow: 0 10px 30px rgba(0,212,255,.15);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,.06);
+    border: 1px solid var(--border);
+}
+
+.btn-success {
+    background: linear-gradient(135deg,#16a34a,#22c55e);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ---------------- AI ORBIT ---------------- */
+
+.ai-visual {
+    min-height: 400px;
+    position: relative;
+
+    display: grid;
+    place-items: center;
+}
+
+.ai-core {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    background:
+        radial-gradient(circle at 35% 30%, white, #00d4ff 7%, #4f46e5 42%, #111827 72%);
+
+    box-shadow:
+        0 0 45px rgba(0,212,255,.45),
+        0 0 120px rgba(124,58,237,.25);
+
+    font-size: 52px;
+
+    position: relative;
+    z-index: 3;
+}
+
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(0,212,255,.2);
+    border-radius: 50%;
+    animation: spin 15s linear infinite;
+}
+
+.orbit.one {
+    width: 240px;
+    height: 240px;
+}
+
+.orbit.two {
+    width: 350px;
+    height: 350px;
+    animation-duration: 22s;
+    animation-direction: reverse;
+}
+
+.orbit span {
+    position: absolute;
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 6px 10px;
+    font-size: 12px;
+    color: #dff9ff;
+}
+
+.orbit.one span:nth-child(1) {
+    top: -15px;
+    left: 50%;
+}
+
+.orbit.one span:nth-child(2) {
+    bottom: 20px;
+    right: -20px;
+}
+
+.orbit.two span:nth-child(1) {
+    bottom: 15px;
+    left: 0;
+}
+
+.orbit.two span:nth-child(2) {
+    top: 30px;
+    right: -25px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+.section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 65px 22px;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.section-title .eyebrow {
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.section-title h2 {
+    font-size: clamp(28px,4vw,44px);
+    margin: 5px 0;
+}
+
+.section-title p {
+    color: var(--muted);
+    max-width: 800px;
+}
+
+/* ---------------- STATS ---------------- */
+
+.stats {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 22px 50px;
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+
+.stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.stat h3 {
+    color: var(--primary);
+    font-size: 30px;
+}
+
+.stat p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ---------------- TOPIC GRID ---------------- */
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.topic-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 24px;
+    min-height: 230px;
+
+    background:
+        linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.015)),
+        var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    transition: .25s;
+}
+
+.topic-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(0,212,255,.3);
+}
+
+.topic-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 24px;
+    margin-bottom: 15px;
+
+    background: rgba(0,212,255,.09);
+}
+
+.topic-card h3 {
+    margin-bottom: 7px;
+}
+
+.topic-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.topic-card .tag {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 4px 8px;
+    border-radius: 7px;
+    font-size: 11px;
+    color: #bdf5ff;
+    background: rgba(0,212,255,.08);
+}
+
+/* ---------------- MODEL CARDS ---------------- */
+
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.model-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.model-header {
+    padding: 22px;
+    background: linear-gradient(
+        135deg,
+        rgba(0,212,255,.08),
+        rgba(124,58,237,.08)
+    );
+}
+
+.model-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+
+    display: grid;
+    place-items: center;
+
+    background: #172a43;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.model-body {
+    padding: 22px;
+}
+
+.model-body p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.model-list {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.model-list li {
+    padding: 6px 0;
+    color: #c7d6e7;
+    font-size: 13px;
+}
+
+.model-list li::before {
+    content: "✓";
+    color: var(--accent);
+    margin-right: 8px;
+}
+
+/* ---------------- TUTORIAL ---------------- */
+
+.tutorial-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
+}
+
+.sidebar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    height: max-content;
+    position: sticky;
+    top: 85px;
+}
+
+.sidebar button {
+    display: block;
+    width: 100%;
+    text-align: left;
+
+    background: transparent;
+    border: none;
+    color: var(--muted);
+
+    padding: 11px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 3px;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+    background: rgba(0,212,255,.1);
+    color: white;
+}
+
+.tutorial-content {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+}
+
+.lesson {
+    display: none;
+}
+
+.lesson.active {
+    display: block;
+}
+
+.lesson h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.lesson > p {
+    color: var(--muted);
+}
+
+.lesson-box {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    background: rgba(0,0,0,.18);
+}
+
+.lesson-box h4 {
+    margin-bottom: 7px;
+    color: var(--primary);
+}
+
+/* ---------------- CODE ---------------- */
+
+.code-window {
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #233b56;
+    background: #050b13;
+}
+
+.code-header {
+    padding: 10px 14px;
+    background: #0d1827;
+    color: #91a7bf;
+    font-size: 12px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+pre {
+    padding: 18px;
+    overflow-x: auto;
+    color: #c9e7ff;
+    font-family: "Fira Code", Consolas, monospace;
+    font-size: 13px;
+}
+
+.copy-code {
+    cursor: pointer;
+    color: var(--primary);
+}
+
+/* ---------------- DATASETS ---------------- */
+
+.dataset-tools {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.search {
+    flex: 1;
+    min-width: 220px;
+
+    padding: 12px 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--card);
+    color: white;
+    outline: none;
+}
+
+.filter-btn {
+    padding: 10px 14px;
+    border-radius: 10px;
+
+    color: var(--muted);
+    background: var(--card);
+    border: 1px solid var(--border);
+
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    color: white;
+    background: rgba(0,212,255,.12);
+    border-color: rgba(0,212,255,.3);
+}
+
+.dataset-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.dataset {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+}
+
+.dataset h3 {
+    font-size: 18px;
+}
+
+.dataset p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 8px 0;
+}
+
+.dataset-meta {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.dataset-meta span {
+    font-size: 11px;
+    padding: 4px 7px;
+    border-radius: 6px;
+    background: rgba(255,255,255,.06);
+}
+
+/* ---------------- PROBLEMS ---------------- */
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.problem {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+}
+
+.problem-level {
+    color: var(--warning);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.problem h3 {
+    margin: 7px 0;
+}
+
+.problem p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.solution {
+    display: none;
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(34,197,94,.08);
+    color: #c9f7d6;
+    font-size: 13px;
+}
+
+.solution.show {
+    display: block;
+}
+
+/* ---------------- QUIZ ---------------- */
+
+.quiz {
+    max-width: 850px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.question h3 {
+    margin-bottom: 12px;
+}
+
+.options {
+    display: grid;
+    gap: 8px;
+}
+
+.option {
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgba(255,255,255,.025);
+}
+
+.option:hover {
+    background: rgba(0,212,255,.07);
+}
+
+.option.correct {
+    background: rgba(34,197,94,.15);
+    border-color: #22c55e;
+}
+
+.option.wrong {
+    background: rgba(239,68,68,.15);
+    border-color: #ef4444;
+}
+
+.quiz-result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+/* ---------------- ROADMAP ---------------- */
+
+.roadmap {
+    position: relative;
+    max-width: 950px;
+}
+
+.roadmap::before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(var(--primary), var(--secondary));
+}
+
+.roadmap-item {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 35px;
+}
+
+.roadmap-dot {
+    position: absolute;
+    left: 13px;
+    top: 5px;
+
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    background: var(--bg);
+    border: 3px solid var(--primary);
+}
+
+.roadmap-item h3 {
+    margin-bottom: 5px;
+}
+
+.roadmap-item p {
+    color: var(--muted);
+}
+
+/* ---------------- PROGRESS ---------------- */
+
+.progress-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 25px;
+}
+
+.progress-bar {
+    height: 13px;
+    background: rgba(255,255,255,.07);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg,var(--primary),var(--secondary));
+    transition: width .5s;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    margin-top: 50px;
+    padding: 50px 22px;
+
+    border-top: 1px solid var(--border);
+    background: rgba(0,0,0,.2);
+}
+
+.footer-inner {
+    max-width: 1400px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 30px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+footer p,
+footer a {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer a {
+    display: block;
+    text-decoration: none;
+    margin: 6px 0;
+}
+
+.copyright {
+    max-width: 1400px;
+    margin: 35px auto 0;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+    color: #65778c;
+    font-size: 12px;
+}
+
+/* ---------------- MODAL ---------------- */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    background: rgba(0,0,0,.75);
+    backdrop-filter: blur(8px);
+
+    place-items: center;
+    padding: 20px;
+}
+
+.modal.show {
+    display: grid;
+}
+
+.modal-box {
+    max-width: 650px;
+    width: 100%;
+
+    background: #0c1b2d;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.modal-close {
+    float: right;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 22px;
+}
+
+/* ---------------- LIGHT MODE ---------------- */
+
+body.light {
+    --bg: #f2f7fb;
+    --bg2: #ffffff;
+    --card: rgba(255,255,255,.9);
+    --card2: #ffffff;
+    --text: #102033;
+    --muted: #53677d;
+    --border: rgba(10,30,50,.12);
+
+    background:
+        radial-gradient(circle at 10% 10%, rgba(0,212,255,.12), transparent 25%),
+        linear-gradient(135deg,#eef8ff,#f8f7ff);
+}
+
+body.light .navbar {
+    background: rgba(255,255,255,.88);
+}
+
+body.light .logo {
+    color: #102033;
+}
+
+body.light .topic-card,
+body.light .model-card,
+body.light .dataset,
+body.light .problem,
+body.light .quiz,
+body.light .progress-box,
+body.light .sidebar,
+body.light .tutorial-content,
+body.light .stat {
+    box-shadow: 0 10px 40px rgba(20,40,60,.08);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media(max-width:1100px) {
+    .topic-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .model-grid,
+    .dataset-grid,
+    .problem-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-visual {
+        min-height: 330px;
+    }
+}
+
+@media(max-width:800px) {
+    .nav-links {
+        display: none;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .tutorial-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .sidebar button {
+        display: inline-block;
+        width: auto;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:600px) {
+    .hero {
+        padding-top: 55px;
+    }
+
+    .topic-grid,
+    .model-grid,
+    .dataset-grid,
+    .problem-grid,
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .tutorial-content {
+        padding: 20px;
+    }
+
+    .orbit.two {
+        width: 290px;
+        height: 290px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            <div class="logo-icon">AI</div>
+
+            <div class="logo-text">
+                <strong>AI உலகமும் மனிதனும்</strong>
+                <span>Sundarraju • AI Learning Portal</span>
+            </div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#topics">பாடங்கள்</a></li>
+            <li><a href="#models">AI Models</a></li>
+            <li><a href="#tutorials">Tutorials</a></li>
+            <li><a href="#datasets">Datasets</a></li>
+            <li><a href="#problems">Problems</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="icon-btn" id="themeBtn" title="Theme">☀</button>
+            <button class="icon-btn" id="menuBtn" title="Menu">☰</button>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero" id="home">
+
+    <div>
+
+        <div class="badge">
+            🧠 தமிழ் AI கல்வி தளம்
+        </div>
+
+        <h1>
+            AI உலகமும்
+            <br>
+            <span class="gradient-text">மனிதனும்</span>
+        </h1>
+
+        <p>
+            Machine Learning முதல் Deep Learning வரை,
+            NLP முதல் LLM வரை, ChatGPT, DeepSeek, Gemini,
+            Claude போன்ற நவீன AI systems வரை —
+            தமிழில் கற்றுக்கொள்ள ஒரு முழுமையான learning portal.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#tutorials" class="btn btn-primary">
+                🚀 கற்றலை தொடங்கு
+            </a>
+
+            <a href="#roadmap" class="btn btn-secondary">
+                🗺 Roadmap பார்க்க
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="ai-visual">
+
+        <div class="orbit one">
+            <span>ML</span>
+            <span>NLP</span>
+        </div>
+
+        <div class="orbit two">
+            <span>LLM</span>
+            <span>DL</span>
+        </div>
+
+        <div class="ai-core">
+            🤖
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+    <div class="stat">
+        <h3>8+</h3>
+        <p>முக்கிய AI Topics</p>
+    </div>
+
+    <div class="stat">
+        <h3>50+</h3>
+        <p>Practice Problems</p>
+    </div>
+
+    <div class="stat">
+        <h3>20+</h3>
+        <p>Dataset Ideas</p>
+    </div>
+
+    <div class="stat">
+        <h3>100%</h3>
+        <p>Interactive Learning</p>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<section class="section" id="topics">
+
+    <div class="section-title">
+        <div class="eyebrow">Learning Universe</div>
+
+        <h2>AI கற்க வேண்டிய முக்கிய துறைகள்</h2>
+
+        <p>
+            Beginner முதல் advanced AI developer வரை
+            படிப்படியாக முன்னேறக்கூடிய learning structure.
+        </p>
+    </div>
+
+
+    <div class="topic-grid">
+
+        <article class="topic-card">
+            <div class="topic-icon">📊</div>
+            <h3>Machine Learning</h3>
+            <p>
+                Regression, Classification, Clustering,
+                Feature Engineering மற்றும் Model Evaluation.
+            </p>
+            <span class="tag">ML</span>
+        </article>
+
+
+        <article class="topic-card">
+            <div class="topic-icon">🧠</div>
+            <h3>Deep Learning</h3>
+            <p>
+                Neural Networks, CNN, RNN, LSTM,
+                Transformers மற்றும் Training concepts.
+            </p>
+            <span class="tag">DL</span>
+        </article>
+
+
+        <article class="topic-card">
+            <div class="topic-icon">💬</div>
+            <h3>NLP</h3>
+            <p>
+                Text preprocessing, embeddings,
+                sentiment analysis, classification மற்றும் generation.
+            </p>
+            <span class="tag">NLP</span>
+        </article>
+
+
+        <article class="topic-card">
+            <div class="topic-icon">🔤</div>
+            <h3>LLM</h3>
+            <p>
+                Tokens, embeddings, attention, transformers,
+                fine-tuning, RAG மற்றும் agents.
+            </p>
+            <span class="tag">LLM</span>
+        </article>
+
+
+        <article class="topic-card">
+            <div class="topic-icon">🤖</div>
+            <h3>Generative AI</h3>
+            <p>
+                Text, image, code மற்றும் multimodal AI
+                systems உருவாக்கும் concepts.
+            </p>
+            <span class="tag">GenAI</span>
+        </article>
+
+
+        <article class="topic-card">
+            <div class="topic-icon">🔗</div>
+            <h3>RAG</h3>
+            <p>
+                Documents + Retrieval + LLM மூலம்
+                knowledge-grounded applications உருவாக்குதல்.
+            </p>
+            <span class="tag">Advanced</span>
+        </article>
+
+
+        <article class="topic-card">
+            <div class="topic-icon">⚙️</div>
+            <h3>AI Engineering</h3>
+            <p>
+                APIs, vector databases, deployment,
+                monitoring மற்றும் production AI.
+            </p>
+            <span class="tag">Engineering</span>
+        </article>
+
+
+        <article class="topic-card">
+            <div class="topic-icon">🛡️</div>
+            <h3>Responsible AI</h3>
+            <p>
+                Privacy, safety, bias, evaluation,
+                hallucination மற்றும் human oversight.
+            </p>
+            <span class="tag">Ethics</span>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MODELS
+===================================================== -->
+
+<section class="section" id="models">
+
+    <div class="section-title">
+        <div class="eyebrow">Modern AI</div>
+
+        <h2>AI Models & Assistants</h2>
+
+        <p>
+            பிரபலமான AI assistants மற்றும் model families
+            எவ்வாறு பயன்படுத்தப்படுகின்றன என்பதை அறியுங்கள்.
+        </p>
+    </div>
+
+
+    <div class="model-grid">
+
+        <article class="model-card">
+
+            <div class="model-header">
+                <div class="model-logo">◎</div>
+                <h3>ChatGPT</h3>
+            </div>
+
+            <div class="model-body">
+
+                <p>
+                    Conversational AI, reasoning, writing,
+                    coding மற்றும் tool-assisted workflows.
+                </p>
+
+                <ul class="model-list">
+                    <li>Prompt Engineering</li>
+                    <li>Structured Output</li>
+                    <li>Code Assistance</li>
+                    <li>AI Workflow Design</li>
+                </ul>
+
+                <button
+                    class="btn btn-secondary learn-model"
+                    data-model="ChatGPT">
+                    Tutorial
+                </button>
+
+            </div>
+        </article>
+
+
+        <article class="model-card">
+
+            <div class="model-header">
+                <div class="model-logo">DS</div>
+                <h3>DeepSeek</h3>
+            </div>
+
+            <div class="model-body">
+
+                <p>
+                    Reasoning மற்றும் coding-oriented
+                    open/model ecosystem concepts.
+                </p>
+
+                <ul class="model-list">
+                    <li>Reasoning</li>
+                    <li>Coding</li>
+                    <li>Prompt Design</li>
+                    <li>Model Evaluation</li>
+                </ul>
+
+                <button
+                    class="btn btn-secondary learn-model"
+                    data-model="DeepSeek">
+                    Tutorial
+                </button>
+
+            </div>
+        </article>
+
+
+        <article class="model-card">
+
+            <div class="model-header">
+                <div class="model-logo">G</div>
+                <h3>Gemini</h3>
+            </div>
+
+            <div class="model-body">
+
+                <p>
+                    Multimodal AI concepts including
+                    text, images, code மற்றும் documents.
+                </p>
+
+                <ul class="model-list">
+                    <li>Multimodal AI</li>
+                    <li>Prompting</li>
+                    <li>Long Context</li>
+                    <li>AI Applications</li>
+                </ul>
+
+                <button
+                    class="btn btn-secondary learn-model"
+                    data-model="Gemini">
+                    Tutorial
+                </button>
+
+            </div>
+        </article>
+
+
+        <article class="model-card">
+
+            <div class="model-header">
+                <div class="model-logo">✦</div>
+                <h3>Claude</h3>
+            </div>
+
+            <div class="model-body">
+
+                <p>
+                    Long-form reasoning, document workflows,
+                    coding மற்றும் assistant applications.
+                </p>
+
+                <ul class="model-list">
+                    <li>Long Context</li>
+                    <li>Document Analysis</li>
+                    <li>Coding</li>
+                    <li>Prompt Engineering</li>
+                </ul>
+
+                <button
+                    class="btn btn-secondary learn-model"
+                    data-model="Claude">
+                    Tutorial
+                </button>
+
+            </div>
+        </article>
+
+
+        <article class="model-card">
+
+            <div class="model-header">
+                <div class="model-logo">🔮</div>
+                <h3>Open LLMs</h3>
+            </div>
+
+            <div class="model-body">
+
+                <p>
+                    Open-weight models, local inference,
+                    quantization மற்றும் deployment concepts.
+                </p>
+
+                <ul class="model-list">
+                    <li>Local Models</li>
+                    <li>Quantization</li>
+                    <li>Inference</li>
+                    <li>Fine-tuning</li>
+                </ul>
+
+                <button
+                    class="btn btn-secondary learn-model"
+                    data-model="Open LLM">
+                    Tutorial
+                </button>
+
+            </div>
+        </article>
+
+
+        <article class="model-card">
+
+            <div class="model-header">
+                <div class="model-logo">🧩</div>
+                <h3>AI Agents</h3>
+            </div>
+
+            <div class="model-body">
+
+                <p>
+                    LLM + tools + memory + planning மூலம்
+                    AI agents உருவாக்கும் architecture.
+                </p>
+
+                <ul class="model-list">
+                    <li>Tools</li>
+                    <li>Memory</li>
+                    <li>Planning</li>
+                    <li>Agent Loops</li>
+                </ul>
+
+                <button
+                    class="btn btn-secondary learn-model"
+                    data-model="AI Agents">
+                    Tutorial
+                </button>
+
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TUTORIALS
+===================================================== -->
+
+<section class="section" id="tutorials">
+
+    <div class="section-title">
+        <div class="eyebrow">Interactive Course</div>
+
+        <h2>Step-by-Step AI Tutorials</h2>
+
+        <p>
+            Theory → Example → Code → Problem → Project
+            என்ற முறையில் கற்றுக்கொள்ளுங்கள்.
+        </p>
+    </div>
+
+
+    <div class="tutorial-layout">
+
+        <aside class="sidebar">
+
+            <button class="lesson-btn active" data-lesson="ml">
+                📊 Machine Learning
+            </button>
+
+            <button class="lesson-btn" data-lesson="dl">
+                🧠 Deep Learning
+            </button>
+
+            <button class="lesson-btn" data-lesson="nlp">
+                💬 NLP
+            </button>
+
+            <button class="lesson-btn" data-lesson="llm">
+                🔤 LLM
+            </button>
+
+            <button class="lesson-btn" data-lesson="rag">
+                🔗 RAG
+            </button>
+
+            <button class="lesson-btn" data-lesson="prompt">
+                ✨ Prompt Engineering
+            </button>
+
+        </aside>
+
+
+        <main class="tutorial-content">
+
+            <!-- ML -->
+
+            <article class="lesson active" id="lesson-ml">
+
+                <h3>📊 Machine Learning</h3>
+
+                <p>
+                    Data-வில் இருக்கும் patterns-ஐ பயன்படுத்தி
+                    prediction அல்லது decision செய்யும் algorithms.
+                </p>
+
+                <div class="lesson-box">
+                    <h4>Problem</h4>
+
+                    <p>
+                        ஒரு வீட்டின் area, bedrooms, location போன்ற
+                        features கொடுக்கப்பட்டால் அதன் price-ஐ predict செய்ய வேண்டும்.
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h4>Learning Path</h4>
+
+                    <p>
+                        Dataset → Cleaning → Features → Train/Test Split
+                        → Model → Evaluation → Deployment
+                    </p>
+                </div>
+
+
+                <div class="code-window">
+
+                    <div class="code-header">
+                        <span>Python • Linear Regression</span>
+                        <span class="copy-code">Copy</span>
+                    </div>
+
+<pre><code>from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error
+
+X = df[["area", "bedrooms"]]
+y = df["price"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+predictions = model.predict(X_test)
+
+mae = mean_absolute_error(y_test, predictions)
+
+print("MAE:", mae)</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- DL -->
+
+            <article class="lesson" id="lesson-dl">
+
+                <h3>🧠 Deep Learning</h3>
+
+                <p>
+                    Neural networks மூலம் complex patterns-ஐ
+                    கற்றுக்கொள்ளும் approach.
+                </p>
+
+                <div class="lesson-box">
+
+                    <h4>Problem</h4>
+
+                    <p>
+                        Images-ல் இருக்கும் cats மற்றும் dogs-ஐ
+                        classify செய்ய வேண்டும்.
+                    </p>
+
+                </div>
+
+                <div class="lesson-box">
+
+                    <h4>Concepts</h4>
+
+                    <p>
+                        Neuron → Layer → Activation →
+                        Loss → Backpropagation → Optimizer
+                    </p>
+
+                </div>
+
+
+                <div class="code-window">
+
+                    <div class="code-header">
+                        <span>Python • Neural Network</span>
+                        <span class="copy-code">Copy</span>
+                    </div>
+
+<pre><code>import tensorflow as tf
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Input(shape=(784,)),
+    tf.keras.layers.Dense(128, activation="relu"),
+    tf.keras.layers.Dropout(0.2),
+    tf.keras.layers.Dense(10, activation="softmax")
+])
+
+model.compile(
+    optimizer="adam",
+    loss="sparse_categorical_crossentropy",
+    metrics=["accuracy"]
+)
+
+model.summary()</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- NLP -->
+
+            <article class="lesson" id="lesson-nlp">
+
+                <h3>💬 Natural Language Processing</h3>
+
+                <p>
+                    மனித மொழியை computer புரிந்து கொள்ளவும்,
+                    classify செய்யவும், generate செய்யவும் உதவும் AI field.
+                </p>
+
+                <div class="lesson-box">
+
+                    <h4>Problem</h4>
+
+                    <p>
+                        ஒரு customer review positive அல்லது negative
+                        என்பதை கண்டறிய வேண்டும்.
+                    </p>
+
+                </div>
+
+                <div class="lesson-box">
+
+                    <h4>Pipeline</h4>
+
+                    <p>
+                        Text → Cleaning → Tokenization →
+                        Representation → Model → Prediction
+                    </p>
+
+                </div>
+
+
+                <div class="code-window">
+
+                    <div class="code-header">
+                        <span>Python • Text Classification</span>
+                        <span class="copy-code">Copy</span>
+                    </div>
+
+<pre><code>from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+
+vectorizer = TfidfVectorizer(
+    max_features=5000
+)
+
+X = vectorizer.fit_transform(texts)
+
+model = LogisticRegression()
+
+model.fit(X, labels)
+
+new_text = ["இந்த product மிகவும் நல்லது"]
+
+new_x = vectorizer.transform(new_text)
+
+print(model.predict(new_x))</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- LLM -->
+
+            <article class="lesson" id="lesson-llm">
+
+                <h3>🔤 Large Language Models</h3>
+
+                <p>
+                    மிகப்பெரிய text datasets மூலம் language patterns
+                    கற்றுக்கொள்ளும் neural language models.
+                </p>
+
+                <div class="lesson-box">
+
+                    <h4>Core Architecture</h4>
+
+                    <p>
+                        Tokens → Embeddings → Attention →
+                        Transformer Blocks → Output Probabilities
+                    </p>
+
+                </div>
+
+                <div class="lesson-box">
+
+                    <h4>Important Concepts</h4>
+
+                    <p>
+                        Context window, tokens, embeddings,
+                        attention, inference, temperature,
+                        fine-tuning மற்றும் RAG.
+                    </p>
+
+                </div>
+
+
+                <div class="code-window">
+
+                    <div class="code-header">
+                        <span>Python • Conceptual LLM Prompt</span>
+                        <span class="copy-code">Copy</span>
+                    </div>
+
+<pre><code>system_prompt = """
+You are a Tamil AI tutor.
+Explain difficult AI concepts
+using simple Tamil and examples.
+"""
+
+user_prompt = """
+Explain transformer attention
+to a beginner.
+"""
+
+prompt = system_prompt + "\n" + user_prompt
+
+print(prompt)</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- RAG -->
+
+            <article class="lesson" id="lesson-rag">
+
+                <h3>🔗 Retrieval Augmented Generation</h3>
+
+                <p>
+                    LLM பதிலை external knowledge அல்லது documents-ல்
+                    இருந்து retrieve செய்யப்பட்ட தகவலுடன் உருவாக்கும் architecture.
+                </p>
+
+                <div class="lesson-box">
+
+                    <h4>RAG Pipeline</h4>
+
+                    <p>
+                        Documents → Chunking → Embeddings →
+                        Vector Database → Retrieval → LLM → Answer
+                    </p>
+
+                </div>
+
+                <div class="lesson-box">
+
+                    <h4>Example Project</h4>
+
+                    <p>
+                        உங்கள் கல்லூரி notes அனைத்தையும் upload செய்து,
+                        அவற்றைப் பற்றி கேள்விகளுக்கு பதில் சொல்லும்
+                        Tamil AI assistant.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROMPT -->
+
+            <article class="lesson" id="lesson-prompt">
+
+                <h3>✨ Prompt Engineering</h3>
+
+                <p>
+                    AI model-க்கு தெளிவான instructions வழங்கி
+                    தேவையான output பெறும் திறன்.
+                </p>
+
+                <div class="lesson-box">
+
+                    <h4>Weak Prompt</h4>
+
+                    <p>
+                        "AI பற்றி சொல்லு."
+                    </p>
+
+                </div>
+
+                <div class="lesson-box">
+
+                    <h4>Better Prompt</h4>
+
+                    <p>
+                        "Machine Learning-ஐ 10ஆம் வகுப்பு மாணவருக்கு
+                        புரியும் தமிழில், ஒரு real-world example,
+                        ஒரு analogy மற்றும் 5 முக்கிய points உடன் விளக்கவும்."
+                    </p>
+
+                </div>
+
+            </article>
+
+        </main>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DATASETS
+===================================================== -->
+
+<section class="section" id="datasets">
+
+    <div class="section-title">
+
+        <div class="eyebrow">Practice Data</div>
+
+        <h2>Datasets & Project Ideas</h2>
+
+        <p>
+            ஒவ்வொரு dataset-ஐ வைத்து ஒரு practical AI problem
+            உருவாக்கி practice செய்யுங்கள்.
+        </p>
+
+    </div>
+
+
+    <div class="dataset-tools">
+
+        <input
+            class="search"
+            id="datasetSearch"
+            placeholder="Dataset / topic தேடுங்கள்..."
+        >
+
+        <button class="filter-btn active" data-filter="all">
+            அனைத்தும்
+        </button>
+
+        <button class="filter-btn" data-filter="ML">
+            ML
+        </button>
+
+        <button class="filter-btn" data-filter="NLP">
+            NLP
+        </button>
+
+        <button class="filter-btn" data-filter="DL">
+            DL
+        </button>
+
+    </div>
+
+
+    <div class="dataset-grid" id="datasetGrid">
+
+        <article class="dataset" data-type="ML">
+
+            <h3>🏠 House Price Dataset</h3>
+
+            <p>
+                Area, bedrooms, location போன்ற features
+                கொண்டு house price prediction.
+            </p>
+
+            <div class="dataset-meta">
+                <span>ML</span>
+                <span>Regression</span>
+                <span>Beginner</span>
+            </div>
+
+        </article>
+
+
+        <article class="dataset" data-type="ML">
+
+            <h3>💳 Customer Churn</h3>
+
+            <p>
+                எந்த customers service-ஐ விட்டு வெளியேறலாம்
+                என்பதை predict செய்யுங்கள்.
+            </p>
+
+            <div class="dataset-meta">
+                <span>ML</span>
+                <span>Classification</span>
+                <span>Intermediate</span>
+            </div>
+
+        </article>
+
+
+        <article class="dataset" data-type="NLP">
+
+            <h3>😊 Sentiment Dataset</h3>
+
+            <p>
+                Product reviews-ஐ positive, negative,
+                neutral என classify செய்யுங்கள்.
+            </p>
+
+            <div class="dataset-meta">
+                <span>NLP</span>
+                <span>Text</span>
+                <span>Beginner</span>
+            </div>
+
+        </article>
+
+
+        <article class="dataset" data-type="DL">
+
+            <h3>🖼 Image Classification</h3>
+
+            <p>
+                Multiple image categories-ஐ
+                CNN model மூலம் classify செய்யுங்கள்.
+            </p>
+
+            <div class="dataset-meta">
+                <span>DL</span>
+                <span>CNN</span>
+                <span>Intermediate</span>
+            </div>
+
+        </article>
+
+
+        <article class="dataset" data-type="NLP">
+
+            <h3>📰 News Classification</h3>
+
+            <p>
+                News articles-ஐ sports, politics,
+                technology போன்ற categories-ல் classify செய்யுங்கள்.
+            </p>
+
+            <div class="dataset-meta">
+                <span>NLP</span>
+                <span>Classification</span>
+                <span>Intermediate</span>
+            </div>
+
+        </article>
+
+
+        <article class="dataset" data-type="DL">
+
+            <h3>🎙 Speech Dataset</h3>
+
+            <p>
+                Audio signals-ல் இருந்து spoken commands
+                அல்லது classes கண்டறியும் project.
+            </p>
+
+            <div class="dataset-meta">
+                <span>DL</span>
+                <span>Audio</span>
+                <span>Advanced</span>
+            </div>
+
+        </article>
+
+
+        <article class="dataset" data-type="NLP">
+
+            <h3>📚 Tamil Text Dataset</h3>
+
+            <p>
+                தமிழ் text classification, sentiment,
+                summarization போன்ற tasks.
+            </p>
+
+            <div class="dataset-meta">
+                <span>NLP</span>
+                <span>Tamil</span>
+                <span>Advanced</span>
+            </div>
+
+        </article>
+
+
+        <article class="dataset" data-type="ML">
+
+            <h3>🚗 Vehicle Dataset</h3>
+
+            <p>
+                Vehicle specifications கொண்டு price,
+                mileage அல்லது category prediction.
+            </p>
+
+            <div class="dataset-meta">
+                <span>ML</span>
+                <span>Regression</span>
+                <span>Beginner</span>
+            </div>
+
+        </article>
+
+
+        <article class="dataset" data-type="DL">
+
+            <h3>🧬 Medical Images</h3>
+
+            <p>
+                Educational image classification experiments
+                மற்றும் computer vision research.
+            </p>
+
+            <div class="dataset-meta">
+                <span>DL</span>
+                <span>Vision</span>
+                <span>Advanced</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROBLEMS
+===================================================== -->
+
+<section class="section" id="problems">
+
+    <div class="section-title">
+
+        <div class="eyebrow">Challenge Lab</div>
+
+        <h2>AI Problem Solving</h2>
+
+        <p>
+            Theory மட்டும் போதாது. Problem solving மூலம்
+            AI engineering skills வளர்த்துக்கொள்ளுங்கள்.
+        </p>
+
+    </div>
+
+
+    <div class="problem-grid">
+
+        <article class="problem">
+
+            <span class="problem-level">BEGINNER</span>
+
+            <h3>Problem 01 — House Price</h3>
+
+            <p>
+                Area மற்றும் bedrooms மூலம் house price predict செய்யவும்.
+            </p>
+
+            <button
+                class="btn btn-secondary solution-btn">
+                Solution
+            </button>
+
+            <div class="solution">
+                Regression problem.
+                Linear Regression, Random Forest Regressor போன்ற models
+                பயன்படுத்தி MAE/RMSE மூலம் evaluate செய்யலாம்.
+            </div>
+
+        </article>
+
+
+        <article class="problem">
+
+            <span class="problem-level">BEGINNER</span>
+
+            <h3>Problem 02 — Spam Detection</h3>
+
+            <p>
+                SMS message spam அல்லது normal message என்பதை கண்டறியவும்.
+            </p>
+
+            <button
+                class="btn btn-secondary solution-btn">
+                Solution
+            </button>
+
+            <div class="solution">
+                NLP classification.
+                TF-IDF + Logistic Regression அல்லது Naive Bayes
+                போன்ற baseline model பயன்படுத்தலாம்.
+            </div>
+
+        </article>
+
+
+        <article class="problem">
+
+            <span class="problem-level">INTERMEDIATE</span>
+
+            <h3>Problem 03 — Image Classifier</h3>
+
+            <p>
+                Images-ஐ பல categories-ஆக classify செய்யவும்.
+            </p>
+
+            <button
+                class="btn btn-secondary solution-btn">
+                Solution
+            </button>
+
+            <div class="solution">
+                CNN அல்லது transfer learning model பயன்படுத்தலாம்.
+                Accuracy, Precision, Recall மற்றும் confusion matrix
+                மூலம் evaluation செய்யலாம்.
+            </div>
+
+        </article>
+
+
+        <article class="problem">
+
+            <span class="problem-level">INTERMEDIATE</span>
+
+            <h3>Problem 04 — Tamil Sentiment</h3>
+
+            <p>
+                தமிழ் customer reviews-ன் sentiment கண்டறியவும்.
+            </p>
+
+            <button
+                class="btn btn-secondary solution-btn">
+                Solution
+            </button>
+
+            <div class="solution">
+                Tamil text preprocessing → tokenization →
+                TF-IDF/embeddings → classifier என்ற pipeline அமைக்கலாம்.
+            </div>
+
+        </article>
+
+
+        <article class="problem">
+
+            <span class="problem-level">ADVANCED</span>
+
+            <h3>Problem 05 — RAG Assistant</h3>
+
+            <p>
+                PDF documents அடிப்படையில் கேள்விகளுக்கு பதில் சொல்லும்
+                AI assistant உருவாக்கவும்.
+            </p>
+
+            <button
+                class="btn btn-secondary solution-btn">
+                Solution
+            </button>
+
+            <div class="solution">
+                PDF parsing → chunking → embeddings →
+                vector search → relevant context → LLM response.
+            </div>
+
+        </article>
+
+
+        <article class="problem">
+
+            <span class="problem-level">ADVANCED</span>
+
+            <h3>Problem 06 — AI Agent</h3>
+
+            <p>
+                User instruction-ஐ புரிந்து கொண்டு tools பயன்படுத்தும்
+                AI agent architecture உருவாக்கவும்.
+            </p>
+
+            <button
+                class="btn btn-secondary solution-btn">
+                Solution
+            </button>
+
+            <div class="solution">
+                Agent loop = Observe → Reason → Tool Call →
+                Result → Next Action → Final Response.
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ROADMAP
+===================================================== -->
+
+<section class="section" id="roadmap">
+
+    <div class="section-title">
+
+        <div class="eyebrow">AI Career Roadmap</div>
+
+        <h2>Beginner → AI Engineer</h2>
+
+        <p>
+            AI கற்றலுக்கான structured roadmap.
+        </p>
+
+    </div>
+
+
+    <div class="roadmap">
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-dot"></div>
+
+            <h3>01 — Programming</h3>
+
+            <p>
+                Python, functions, classes, NumPy, Pandas,
+                Git மற்றும் basic software engineering.
+            </p>
+
+        </div>
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-dot"></div>
+
+            <h3>02 — Mathematics</h3>
+
+            <p>
+                Probability, statistics, linear algebra,
+                calculus மற்றும் optimization basics.
+            </p>
+
+        </div>
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-dot"></div>
+
+            <h3>03 — Machine Learning</h3>
+
+            <p>
+                Regression, classification, clustering,
+                feature engineering மற்றும் evaluation.
+            </p>
+
+        </div>
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-dot"></div>
+
+            <h3>04 — Deep Learning</h3>
+
+            <p>
+                Neural networks, CNN, RNN, transformers
+                மற்றும் model training.
+            </p>
+
+        </div>
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-dot"></div>
+
+            <h3>05 — NLP & LLM</h3>
+
+            <p>
+                Tokenization, embeddings, attention,
+                transformers, prompting மற்றும் evaluation.
+            </p>
+
+        </div>
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-dot"></div>
+
+            <h3>06 — RAG & Agents</h3>
+
+            <p>
+                Vector databases, retrieval, tools,
+                memory மற்றும் agent architectures.
+            </p>
+
+        </div>
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-dot"></div>
+
+            <h3>07 — AI Applications</h3>
+
+            <p>
+                API integration, deployment, monitoring,
+                security மற்றும் production AI.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<section class="section" id="quiz">
+
+    <div class="section-title">
+
+        <div class="eyebrow">Knowledge Check</div>
+
+        <h2>AI Quiz</h2>
+
+        <p>
+            நீங்கள் கற்றவற்றை test செய்து பாருங்கள்.
+        </p>
+
+    </div>
+
+
+    <div class="quiz">
+
+        <div class="question">
+
+            <h3>
+                1. Machine Learning-ல் training data எதற்காக பயன்படுத்தப்படுகிறது?
+            </h3>
+
+            <div class="options">
+
+                <div class="option" data-correct="false">
+                    Website design செய்ய
+                </div>
+
+                <div class="option" data-correct="true">
+                    Patterns கற்றுக்கொண்டு predictions செய்ய
+                </div>
+
+                <div class="option" data-correct="false">
+                    Database delete செய்ய
+                </div>
+
+                <div class="option" data-correct="false">
+                    Internet speed அதிகரிக்க
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="question">
+
+            <h3>
+                2. NLP என்பதன் முக்கிய நோக்கம் என்ன?
+            </h3>
+
+            <div class="options">
+
+                <div class="option" data-correct="false">
+                    Hardware manufacturing
+                </div>
+
+                <div class="option" data-correct="true">
+                    Human language-ஐ process செய்வது
+                </div>
+
+                <div class="option" data-correct="false">
+                    Image compression மட்டும்
+                </div>
+
+                <div class="option" data-correct="false">
+                    CPU manufacturing
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="question">
+
+            <h3>
+                3. RAG architecture-ல் retrieval எதற்காக?
+            </h3>
+
+            <div class="options">
+
+                <div class="option" data-correct="false">
+                    Screen brightness மாற்ற
+                </div>
+
+                <div class="option" data-correct="true">
+                    Relevant external information கண்டுபிடிக்க
+                </div>
+
+                <div class="option" data-correct="false">
+                    Keyboard control செய்ய
+                </div>
+
+                <div class="option" data-correct="false">
+                    GPU temperature குறைக்க
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button class="btn btn-primary" id="checkQuiz">
+            🎯 Quiz முடிவை பார்க்க
+        </button>
+
+        <div class="quiz-result" id="quizResult"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <div class="eyebrow">Your Learning</div>
+
+        <h2>Learning Progress</h2>
+
+        <p>
+            இந்த browser-ல் உங்கள் learning progress சேமிக்கப்படும்.
+        </p>
+
+    </div>
+
+
+    <div class="progress-box">
+
+        <strong id="progressText">
+            0% Complete
+        </strong>
+
+        <div class="progress-bar">
+            <div
+                class="progress-fill"
+                id="progressFill">
+            </div>
+        </div>
+
+        <button
+            class="btn btn-success"
+            id="completeLesson">
+            ✓ இந்த Lesson முடிந்தது
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL PROJECT
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <div class="eyebrow">Capstone</div>
+
+        <h2>🚀 Final AI Project</h2>
+
+        <p>
+            உங்கள் learning-ஐ ஒரு முழுமையான AI application-ஆக மாற்றுங்கள்.
+        </p>
+
+    </div>
+
+
+    <div class="topic-grid">
+
+        <article class="topic-card">
+
+            <div class="topic-icon">📚</div>
+
+            <h3>Tamil AI Tutor</h3>
+
+            <p>
+                Tamil students-க்கு பாடங்களை விளக்கும்,
+                questions உருவாக்கும் மற்றும் quiz நடத்தும் AI tutor.
+            </p>
+
+        </article>
+
+
+        <article class="topic-card">
+
+            <div class="topic-icon">📄</div>
+
+            <h3>Document RAG</h3>
+
+            <p>
+                PDF / notes upload செய்து அதிலிருந்து
+                grounded answers வழங்கும் assistant.
+            </p>
+
+        </article>
+
+
+        <article class="topic-card">
+
+            <div class="topic-icon">🤖</div>
+
+            <h3>AI Agent</h3>
+
+            <p>
+                Search, calculation, documents போன்ற tools-ஐ
+                பயன்படுத்தக்கூடிய agent.
+            </p>
+
+        </article>
+
+
+        <article class="topic-card">
+
+            <div class="topic-icon">🌐</div>
+
+            <h3>AI Web App</h3>
+
+            <p>
+                HTML + CSS + JavaScript frontend,
+                backend API மற்றும் AI model இணைத்து production-style app.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+
+            <h3>🤖 AI உலகமும் மனிதனும்</h3>
+
+            <p>
+                AI-ஐ புரிந்துகொண்டு, மனிதனுக்கு பயனுள்ள
+                தொழில்நுட்பங்களை உருவாக்குவோம்.
+            </p>
+
+            <p style="margin-top:10px;">
+                <strong>— Sundarraju</strong>
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Learning</h3>
+
+            <a href="#topics">AI Topics</a>
+            <a href="#tutorials">Tutorials</a>
+            <a href="#datasets">Datasets</a>
+            <a href="#problems">Problems</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Advanced</h3>
+
+            <a href="#models">LLM Models</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#home">Back to Top ↑</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 AI உலகமும் மனிதனும் — Sundarraju.
+        Educational project. Built with HTML, CSS & JavaScript.
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     MODEL MODAL
+===================================================== -->
+
+<div class="modal" id="modelModal">
+
+    <div class="modal-box">
+
+        <span class="modal-close" id="modalClose">×</span>
+
+        <h2 id="modalTitle">
+            AI Model
+        </h2>
+
+        <p
+            id="modalContent"
+            style="color:var(--muted); margin-top:15px;">
+        </p>
+
+        <div class="lesson-box">
+
+            <h4>பயிற்சி Challenge</h4>
+
+            <p id="modalChallenge">
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+/* =========================================================
+   AI ULAGAMUM MANITHANUM
+   Complete JavaScript
+========================================================= */
+
+
+/* ---------------- THEME ---------------- */
+
+const themeBtn = document.getElementById("themeBtn");
+
+const savedTheme = localStorage.getItem("ai-theme");
+
+if (savedTheme === "light") {
+    document.body.classList.add("light");
+    themeBtn.textContent = "🌙";
+}
+
+themeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("light");
+
+    const light =
+        document.body.classList.contains("light");
+
+    localStorage.setItem(
+        "ai-theme",
+        light ? "light" : "dark"
+    );
+
+    themeBtn.textContent =
+        light ? "🌙" : "☀";
+
+});
+
+
+/* ---------------- MOBILE MENU ---------------- */
+
+document.getElementById("menuBtn")
+    .addEventListener("click", () => {
+
+        const nav = document.querySelector(".nav-links");
+
+        if (nav.style.display === "flex") {
+            nav.style.display = "";
+        } else {
+            nav.style.display = "flex";
+            nav.style.flexDirection = "column";
+            nav.style.position = "absolute";
+            nav.style.top = "70px";
+            nav.style.right = "20px";
+            nav.style.padding = "12px";
+            nav.style.background = "rgba(7,17,31,.98)";
+            nav.style.border = "1px solid rgba(255,255,255,.1)";
+            nav.style.borderRadius = "15px";
+        }
+
+    });
+
+
+/* ---------------- LESSON TABS ---------------- */
+
+const lessonButtons =
+    document.querySelectorAll(".lesson-btn");
+
+const lessons =
+    document.querySelectorAll(".lesson");
+
+lessonButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        lessonButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        lessons.forEach(lesson =>
+            lesson.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        const target =
+            document.getElementById(
+                "lesson-" + button.dataset.lesson
+            );
+
+        if (target) {
+            target.classList.add("active");
+        }
+
+        updateProgress();
+
+    });
+
+});
+
+
+/* ---------------- DATASET SEARCH ---------------- */
+
+const searchInput =
+    document.getElementById("datasetSearch");
+
+const datasets =
+    document.querySelectorAll(".dataset");
+
+let activeFilter = "all";
+
+function filterDatasets() {
+
+    const query =
+        searchInput.value.toLowerCase();
+
+    datasets.forEach(dataset => {
+
+        const text =
+            dataset.textContent.toLowerCase();
+
+        const type =
+            dataset.dataset.type;
+
+        const matchesSearch =
+            text.includes(query);
+
+        const matchesFilter =
+            activeFilter === "all" ||
+            type === activeFilter;
+
+        dataset.style.display =
+            matchesSearch && matchesFilter
+                ? ""
+                : "none";
+
+    });
+
+}
+
+searchInput.addEventListener(
+    "input",
+    filterDatasets
+);
+
+
+document
+    .querySelectorAll(".filter-btn")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            document
+                .querySelectorAll(".filter-btn")
+                .forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+            button.classList.add("active");
+
+            activeFilter =
+                button.dataset.filter;
+
+            filterDatasets();
+
+        });
+
+    });
+
+
+/* ---------------- PROBLEM SOLUTIONS ---------------- */
+
+document
+    .querySelectorAll(".solution-btn")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const solution =
+                button.nextElementSibling;
+
+            solution.classList.toggle("show");
+
+            button.textContent =
+                solution.classList.contains("show")
+                    ? "Hide Solution"
+                    : "Solution";
+
+        });
+
+    });
+
+
+/* ---------------- CODE COPY ---------------- */
+
+document
+    .querySelectorAll(".copy-code")
+    .forEach(button => {
+
+        button.addEventListener("click", async () => {
+
+            const code =
+                button
+                .closest(".code-window")
+                .querySelector("code")
+                .innerText;
+
+            try {
+
+                await navigator.clipboard.writeText(code);
+
+                button.textContent = "Copied ✓";
+
+                setTimeout(() => {
+                    button.textContent = "Copy";
+                }, 1500);
+
+            } catch (error) {
+
+                alert("Code copy செய்ய முடியவில்லை.");
+
+            }
+
+        });
+
+    });
+
+
+/* ---------------- MODEL MODAL ---------------- */
+
+const modelData = {
+
+    ChatGPT: {
+        content:
+            "Conversational AI, coding, reasoning, structured outputs மற்றும் AI workflows பற்றி கற்றுக்கொள்ளுங்கள்.",
+        challenge:
+            "ஒரு AI tutor-க்கான system prompt எழுதுங்கள். அது தமிழில் beginner-friendly answers வழங்க வேண்டும்."
+    },
+
+    DeepSeek: {
+        content:
+            "Reasoning மற்றும் coding-oriented AI model workflows பற்றி study செய்யுங்கள்.",
+        challenge:
+            "ஒரு programming problem-ஐ AI model-க்கு கொடுத்து, solution explanation மற்றும் test cases கேட்கும் prompt உருவாக்குங்கள்."
+    },
+
+    Gemini: {
+        content:
+            "Multimodal AI, text, images, documents மற்றும் application workflows பற்றி கற்றுக்கொள்ளுங்கள்.",
+        challenge:
+            "ஒரு document analysis workflow-ஐ design செய்யுங்கள்."
+    },
+
+    Claude: {
+        content:
+            "Long-form text, documents, coding மற்றும் assistant workflows பற்றி கற்றுக்கொள்ளுங்கள்.",
+        challenge:
+            "ஒரு பெரிய document-ஐ chapter-wise summarize செய்யும் prompt design செய்யுங்கள்."
+    },
+
+    "Open LLM": {
+        content:
+            "Open-weight models, local inference, quantization மற்றும் fine-tuning concepts.",
+        challenge:
+            "ஒரு local LLM application architecture-ஐ diagram ஆக வடிவமைக்கவும்."
+    },
+
+    "AI Agents": {
+        content:
+            "LLM + tools + memory + planning ஆகியவற்றைக் கொண்டு autonomous workflows அமைத்தல்.",
+        challenge:
+            "Weather, calculator மற்றும் document search tools கொண்ட agent-ன் architecture எழுதுங்கள்."
+    }
+
+};
+
+
+const modal =
+    document.getElementById("modelModal");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalContent =
+    document.getElementById("modalContent");
+
+const modalChallenge =
+    document.getElementById("modalChallenge");
+
+
+document
+    .querySelectorAll(".learn-model")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const model =
+                button.dataset.model;
+
+            const data =
+                modelData[model];
+
+            modalTitle.textContent =
+                model + " Tutorial";
+
+            modalContent.textContent =
+                data?.content ||
+                "இந்த AI model பற்றிய advanced concepts இங்கே கற்கலாம்.";
+
+            modalChallenge.textContent =
+                data?.challenge ||
+                "ஒரு practical AI project உருவாக்குங்கள்.";
+
+            modal.classList.add("show");
+
+        });
+
+    });
+
+
+document
+    .getElementById("modalClose")
+    .addEventListener("click", () => {
+
+        modal.classList.remove("show");
+
+    });
+
+
+modal.addEventListener("click", event => {
+
+    if (event.target === modal) {
+        modal.classList.remove("show");
+    }
+
+});
+
+
+/* ---------------- QUIZ ---------------- */
+
+const quizOptions =
+    document.querySelectorAll(".option");
+
+quizOptions.forEach(option => {
+
+    option.addEventListener("click", () => {
+
+        const siblings =
+            option.parentElement
+            .querySelectorAll(".option");
+
+        siblings.forEach(item => {
+            item.classList.remove("correct");
+            item.classList.remove("wrong");
+        });
+
+        if (option.dataset.correct === "true") {
+            option.classList.add("correct");
+        } else {
+            option.classList.add("wrong");
+        }
+
+    });
+
+});
+
+
+document
+    .getElementById("checkQuiz")
+    .addEventListener("click", () => {
+
+        let score = 0;
+        let total = 0;
+
+        document
+            .querySelectorAll(".question")
+            .forEach(question => {
+
+                total++;
+
+                const selected =
+                    question.querySelector(
+                        ".option.correct"
+                    );
+
+                if (selected) {
+                    score++;
+                }
+
+            });
+
+        const result =
+            document.getElementById("quizResult");
+
+        result.textContent =
+            `உங்கள் Score: ${score}/${total}`;
+
+        localStorage.setItem(
+            "ai-quiz-score",
+            score
+        );
+
+    });
+
+
+/* ---------------- LEARNING PROGRESS ---------------- */
+
+let progress =
+    Number(
+        localStorage.getItem("ai-progress") || 0
+    );
+
+function updateProgress() {
+
+    const progressFill =
+        document.getElementById("progressFill");
+
+    const progressText =
+        document.getElementById("progressText");
+
+    progressFill.style.width =
+        progress + "%";
+
+    progressText.textContent =
+        progress + "% Complete";
+
+}
+
+
+document
+    .getElementById("completeLesson")
+    .addEventListener("click", () => {
+
+        progress += 10;
+
+        if (progress > 100) {
+            progress = 100;
+        }
+
+        localStorage.setItem(
+            "ai-progress",
+            progress
+        );
+
+        updateProgress();
+
+    });
+
+
+updateProgress();
+
+
+/* ---------------- SCROLL REVEAL ---------------- */
+
+const revealElements =
+    document.querySelectorAll(
+        ".topic-card, .model-card, .dataset, .problem, .roadmap-item"
+    );
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .08
+        }
+    );
+
+
+revealElements.forEach(element => {
+
+    element.style.opacity = "0";
+    element.style.transform = "translateY(20px)";
+    element.style.transition = "opacity .5s ease, transform .5s ease";
+
+    observer.observe(element);
+
+});
+
+
+/* ---------------- KEYBOARD SHORTCUT ---------------- */
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "/") {
+
+        if (
+            document.activeElement.tagName !== "INPUT" &&
+            document.activeElement.tagName !== "TEXTAREA"
+        ) {
+
+            event.preventDefault();
+
+            searchInput.focus();
+
+        }
+
+    }
+
+    if (event.key === "Escape") {
+        modal.classList.remove("show");
+    }
+
+});
+
+
+/* ---------------- CONSOLE ---------------- */
+
+console.log(
+`
+╔══════════════════════════════════════════╗
+║      AI உலகமும் மனிதனும்                 ║
+║      Sundarraju                           ║
+║                                          ║
+║      Learn AI • Build AI • Human First   ║
+╚══════════════════════════════════════════╝
+`
+);
+
+</script>
+
+</body>
+</html>
