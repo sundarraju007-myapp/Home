@@ -1,0 +1,5593 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI உலகமும் மனிதனும் — சுந்தர்ராஜூ</title>
+
+<meta name="description"
+content="AI உலகமும் மனிதனும் — சுந்தர்ராஜூTamil AI learning platform for ML, DL, NLP, LLM, Generative AI, RAG and AI Agents.">
+
+<style>
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+    --bg:#050b14;
+    --bg2:#091525;
+    --card:#0c1a2b;
+    --card2:#10233a;
+    --text:#eff8ff;
+    --muted:#9db0c4;
+    --primary:#00d9ff;
+    --secondary:#7c3aed;
+    --pink:#ec4899;
+    --green:#22c55e;
+    --yellow:#f59e0b;
+    --red:#ef4444;
+    --border:rgba(255,255,255,.09);
+    --shadow:0 20px 60px rgba(0,0,0,.30);
+    --radius:20px;
+}
+
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    font-family:
+        "Noto Sans Tamil",
+        "Latha",
+        "Nirmala UI",
+        Arial,
+        sans-serif;
+
+    color:var(--text);
+    background:
+        radial-gradient(
+            circle at 10% 5%,
+            rgba(0,217,255,.10),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(124,58,237,.13),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            var(--bg),
+            #02060c
+        );
+
+    line-height:1.7;
+    min-height:100vh;
+}
+
+button,
+input,
+select {
+    font:inherit;
+}
+
+button {
+    cursor:pointer;
+}
+
+a {
+    color:inherit;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(3,9,18,.88);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+}
+
+.nav-container {
+    max-width:1450px;
+    margin:auto;
+    padding:13px 22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo {
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon {
+    width:46px;
+    height:46px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:14px;
+
+    font-weight:900;
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 0 30px rgba(0,217,255,.25);
+}
+
+.logo strong {
+    display:block;
+    font-size:16px;
+}
+
+.logo small {
+    color:var(--primary);
+    font-size:11px;
+}
+
+.nav-links {
+    display:flex;
+    list-style:none;
+    gap:5px;
+}
+
+.nav-links a {
+    text-decoration:none;
+    color:var(--muted);
+
+    padding:8px 10px;
+    border-radius:9px;
+
+    font-size:13px;
+}
+
+.nav-links a:hover {
+    color:white;
+    background:rgba(255,255,255,.06);
+}
+
+.nav-actions {
+    display:flex;
+    gap:8px;
+}
+
+.icon-btn {
+    width:40px;
+    height:40px;
+
+    color:white;
+    background:rgba(255,255,255,.05);
+
+    border:1px solid var(--border);
+    border-radius:11px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    max-width:1450px;
+    margin:auto;
+    padding:90px 22px 60px;
+
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:50px;
+
+    align-items:center;
+}
+
+.badge {
+    display:inline-flex;
+
+    padding:7px 13px;
+    margin-bottom:20px;
+
+    border-radius:50px;
+
+    color:#c9f8ff;
+    background:rgba(0,217,255,.08);
+    border:1px solid rgba(0,217,255,.25);
+
+    font-size:12px;
+}
+
+.hero h1 {
+    font-size:clamp(44px,6vw,82px);
+    line-height:1.05;
+    letter-spacing:-2px;
+}
+
+.gradient {
+    background:
+        linear-gradient(
+            90deg,
+            #00d9ff,
+            #6366f1,
+            #ec4899
+        );
+
+    color:transparent;
+    background-clip:text;
+    -webkit-background-clip:text;
+}
+
+.hero-description {
+    max-width:820px;
+
+    margin:23px 0;
+
+    color:var(--muted);
+    font-size:18px;
+}
+
+.hero-buttons {
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.btn {
+    border:none;
+    border-radius:12px;
+
+    padding:11px 17px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+
+    color:white;
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.btn:hover {
+    transform:translateY(-2px);
+}
+
+.btn-primary {
+    background:
+        linear-gradient(
+            135deg,
+            #00bce6,
+            #6366f1
+        );
+}
+
+.btn-secondary {
+    background:rgba(255,255,255,.05);
+    border:1px solid var(--border);
+}
+
+.btn-green {
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #22c55e
+        );
+}
+
+/* =========================================================
+   AI VISUAL
+========================================================= */
+
+.ai-visual {
+    height:420px;
+
+    position:relative;
+
+    display:grid;
+    place-items:center;
+}
+
+.ai-core {
+    width:145px;
+    height:145px;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    font-size:55px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            white,
+            #00d9ff 7%,
+            #4f46e5 45%,
+            #111827 73%
+        );
+
+    box-shadow:
+        0 0 45px rgba(0,217,255,.45),
+        0 0 120px rgba(124,58,237,.25);
+
+    z-index:4;
+}
+
+.orbit {
+    position:absolute;
+
+    border:1px solid rgba(0,217,255,.22);
+
+    border-radius:50%;
+
+    animation:orbit 18s linear infinite;
+}
+
+.orbit.one {
+    width:250px;
+    height:250px;
+}
+
+.orbit.two {
+    width:365px;
+    height:365px;
+
+    animation-duration:25s;
+    animation-direction:reverse;
+}
+
+.orbit span {
+    position:absolute;
+
+    padding:5px 9px;
+
+    border-radius:9px;
+
+    background:#10233a;
+    border:1px solid var(--border);
+
+    color:#d8f9ff;
+
+    font-size:11px;
+}
+
+.orbit.one span:first-child {
+    top:-13px;
+    left:45%;
+}
+
+.orbit.one span:last-child {
+    bottom:15px;
+    right:-18px;
+}
+
+.orbit.two span:first-child {
+    bottom:15px;
+    left:5px;
+}
+
+.orbit.two span:last-child {
+    top:35px;
+    right:-20px;
+}
+
+@keyframes orbit {
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+    max-width:1450px;
+    margin:auto;
+    padding:70px 22px;
+}
+
+.section-heading {
+    margin-bottom:30px;
+}
+
+.eyebrow {
+    color:var(--primary);
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-weight:800;
+}
+
+.section-heading h2 {
+    font-size:clamp(28px,4vw,46px);
+    margin:5px 0;
+}
+
+.section-heading p {
+    color:var(--muted);
+    max-width:850px;
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+    max-width:1450px;
+    margin:auto;
+    padding:0 22px 50px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.stat {
+    padding:24px;
+
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+}
+
+.stat strong {
+    display:block;
+
+    font-size:31px;
+    color:var(--primary);
+}
+
+.stat span {
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* =========================================================
+   TOPIC GRID
+========================================================= */
+
+.grid-4 {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:17px;
+}
+
+.topic-card {
+    padding:23px;
+
+    min-height:220px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.015)
+        ),
+        var(--card);
+
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+
+    transition:.25s;
+}
+
+.topic-card:hover {
+    transform:translateY(-6px);
+    border-color:rgba(0,217,255,.3);
+}
+
+.topic-icon {
+    width:48px;
+    height:48px;
+
+    display:grid;
+    place-items:center;
+
+    margin-bottom:14px;
+
+    border-radius:14px;
+
+    background:rgba(0,217,255,.08);
+
+    font-size:23px;
+}
+
+.topic-card p {
+    color:var(--muted);
+    font-size:13px;
+    margin-top:6px;
+}
+
+.tag {
+    display:inline-block;
+
+    margin-top:13px;
+    padding:4px 8px;
+
+    border-radius:7px;
+
+    background:rgba(0,217,255,.07);
+    color:#b8f4ff;
+
+    font-size:10px;
+}
+
+/* =========================================================
+   ALGORITHM SELECTOR
+========================================================= */
+
+.algorithm-tools {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+
+    margin-bottom:20px;
+}
+
+.algorithm-btn {
+    padding:9px 12px;
+
+    border:1px solid var(--border);
+    border-radius:10px;
+
+    color:var(--muted);
+    background:var(--card);
+}
+
+.algorithm-btn.active {
+    color:white;
+
+    border-color:rgba(0,217,255,.35);
+    background:rgba(0,217,255,.11);
+}
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.story-container {
+    display:grid;
+    grid-template-columns:270px 1fr;
+    gap:20px;
+}
+
+.story-sidebar {
+    height:max-content;
+
+    position:sticky;
+    top:85px;
+
+    padding:13px;
+
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+}
+
+.story-sidebar button {
+    display:block;
+
+    width:100%;
+
+    padding:11px 12px;
+    margin-bottom:3px;
+
+    text-align:left;
+
+    border:none;
+    border-radius:9px;
+
+    color:var(--muted);
+    background:transparent;
+}
+
+.story-sidebar button:hover,
+.story-sidebar button.active {
+    color:white;
+    background:rgba(0,217,255,.10);
+}
+
+.story-main {
+    padding:30px;
+
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+}
+
+.story {
+    display:none;
+}
+
+.story.active {
+    display:block;
+}
+
+.story-badge {
+    display:inline-block;
+
+    padding:5px 9px;
+
+    border-radius:8px;
+
+    color:#d0fbff;
+    background:rgba(0,217,255,.08);
+
+    font-size:11px;
+}
+
+.story h3 {
+    font-size:30px;
+    margin:8px 0;
+}
+
+.story-intro {
+    color:var(--muted);
+    font-size:15px;
+}
+
+.story-card {
+    margin:23px 0;
+
+    padding:22px;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,217,255,.07),
+            rgba(124,58,237,.07)
+        );
+
+    border:1px solid var(--border);
+}
+
+.story-card h4 {
+    color:var(--primary);
+    margin-bottom:8px;
+}
+
+.story-card p {
+    color:#d2dfeb;
+    margin-bottom:9px;
+}
+
+/* =========================================================
+   STORY STEPS
+========================================================= */
+
+.story-steps {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+
+    margin:20px 0;
+}
+
+.story-step {
+    padding:17px;
+
+    border:1px solid var(--border);
+    border-radius:14px;
+
+    background:rgba(255,255,255,.025);
+}
+
+.story-step .number {
+    width:30px;
+    height:30px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    color:white;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    margin-bottom:9px;
+}
+
+.story-step h4 {
+    font-size:14px;
+}
+
+.story-step p {
+    color:var(--muted);
+    font-size:12px;
+    margin-top:4px;
+}
+
+/* =========================================================
+   FORMULA
+========================================================= */
+
+.explanation-box {
+    padding:22px;
+
+    margin:20px 0;
+
+    background:rgba(0,0,0,.17);
+    border:1px solid var(--border);
+    border-radius:16px;
+}
+
+.explanation-box h4 {
+    color:var(--primary);
+    margin-bottom:8px;
+}
+
+.formula {
+    margin:15px 0;
+    padding:16px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-family:Consolas,monospace;
+    font-size:23px;
+
+    color:#d9faff;
+    background:#030912;
+
+    border:1px solid #18324c;
+}
+
+.explanation-box ul,
+.real-world ul {
+    padding-left:22px;
+}
+
+.explanation-box li,
+.real-world li {
+    color:var(--muted);
+    margin:4px 0;
+}
+
+/* =========================================================
+   DATA TABLE
+========================================================= */
+
+.data-table {
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:15px;
+}
+
+.data-table th,
+.data-table td {
+    padding:10px;
+
+    text-align:left;
+
+    border-bottom:1px solid var(--border);
+}
+
+.data-table th {
+    color:var(--primary);
+    background:rgba(0,217,255,.04);
+}
+
+.data-table td {
+    color:#d5e3ef;
+}
+
+/* =========================================================
+   CODE
+========================================================= */
+
+.code-window {
+    margin:20px 0;
+
+    overflow:hidden;
+
+    border-radius:15px;
+    border:1px solid #203950;
+
+    background:#030911;
+}
+
+.code-header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:10px 14px;
+
+    background:#0b1725;
+
+    color:#8fa8c0;
+
+    font-size:11px;
+}
+
+.copy-code {
+    color:var(--primary);
+    cursor:pointer;
+}
+
+pre {
+    overflow-x:auto;
+
+    padding:19px;
+
+    color:#cce9ff;
+
+    font-family:
+        "Fira Code",
+        Consolas,
+        monospace;
+
+    font-size:12px;
+    line-height:1.7;
+}
+
+/* =========================================================
+   REAL WORLD
+========================================================= */
+
+.real-world {
+    padding:20px;
+
+    border-left:3px solid var(--green);
+
+    background:rgba(34,197,94,.05);
+
+    border-radius:0 14px 14px 0;
+}
+
+/* =========================================================
+   CHALLENGE
+========================================================= */
+
+.challenge {
+    margin-top:20px;
+
+    padding:22px;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(245,158,11,.07),
+            rgba(236,72,153,.05)
+        );
+
+    border:1px solid rgba(245,158,11,.15);
+}
+
+.challenge h4 {
+    color:var(--yellow);
+    margin-bottom:6px;
+}
+
+.answer {
+    display:none;
+
+    margin-top:13px;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    background:rgba(34,197,94,.08);
+
+    color:#c9f8d5;
+}
+
+.answer.show {
+    display:block;
+}
+
+/* =========================================================
+   LIVE DEMO
+========================================================= */
+
+.live-demo {
+    margin-top:25px;
+
+    padding:25px;
+
+    border:1px solid rgba(0,217,255,.18);
+
+    border-radius:18px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0,217,255,.08),
+            transparent 50%
+        ),
+        rgba(0,0,0,.13);
+}
+
+.demo-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.control-group {
+    margin-bottom:15px;
+}
+
+.control-group label {
+    display:block;
+
+    color:#bdd0e2;
+
+    font-size:13px;
+
+    margin-bottom:6px;
+}
+
+.range {
+    width:100%;
+}
+
+.prediction {
+    min-height:160px;
+
+    display:grid;
+    place-items:center;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:#030a12;
+
+    border:1px solid #18334c;
+
+    text-align:center;
+}
+
+.prediction strong {
+    display:block;
+
+    font-size:32px;
+
+    color:var(--primary);
+}
+
+/* =========================================================
+   MODEL CARDS
+========================================================= */
+
+.model-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:17px;
+}
+
+.model-card {
+    padding:22px;
+
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+}
+
+.model-icon {
+    width:50px;
+    height:50px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:14px;
+
+    background:rgba(124,58,237,.13);
+
+    font-size:23px;
+
+    margin-bottom:12px;
+}
+
+.model-card p {
+    color:var(--muted);
+    font-size:13px;
+
+    margin:8px 0 14px;
+}
+
+.model-card ul {
+    padding-left:18px;
+}
+
+.model-card li {
+    color:#cad8e6;
+    font-size:12px;
+}
+
+/* =========================================================
+   DATASETS
+========================================================= */
+
+.search-row {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+
+    margin-bottom:20px;
+}
+
+.search {
+    flex:1;
+    min-width:230px;
+
+    padding:12px 14px;
+
+    border:1px solid var(--border);
+    border-radius:11px;
+
+    color:white;
+    background:var(--card);
+
+    outline:none;
+}
+
+.filter {
+    padding:10px 13px;
+
+    border:1px solid var(--border);
+    border-radius:10px;
+
+    color:var(--muted);
+    background:var(--card);
+}
+
+.filter.active {
+    color:white;
+    background:rgba(0,217,255,.10);
+}
+
+.dataset-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:17px;
+}
+
+.dataset {
+    padding:21px;
+
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+}
+
+.dataset p {
+    color:var(--muted);
+    font-size:13px;
+    margin:7px 0;
+}
+
+.meta {
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+}
+
+.meta span {
+    padding:4px 7px;
+
+    border-radius:6px;
+
+    background:rgba(255,255,255,.05);
+
+    font-size:10px;
+}
+
+/* =========================================================
+   PROBLEMS
+========================================================= */
+
+.problem-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:17px;
+}
+
+.problem {
+    padding:21px;
+
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+}
+
+.level {
+    color:var(--yellow);
+    font-size:10px;
+    font-weight:800;
+}
+
+.problem h3 {
+    margin:7px 0;
+}
+
+.problem p {
+    color:var(--muted);
+    font-size:13px;
+}
+
+.solution {
+    display:none;
+
+    margin-top:13px;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    color:#c7f6d2;
+    background:rgba(34,197,94,.07);
+
+    font-size:12px;
+}
+
+.solution.show {
+    display:block;
+}
+
+/* =========================================================
+   ROADMAP
+========================================================= */
+
+.roadmap {
+    max-width:950px;
+
+    position:relative;
+}
+
+.roadmap:before {
+    content:"";
+
+    position:absolute;
+
+    left:14px;
+    top:0;
+    bottom:0;
+
+    width:2px;
+
+    background:
+        linear-gradient(
+            var(--primary),
+            var(--secondary)
+        );
+}
+
+.roadmap-item {
+    position:relative;
+
+    padding-left:55px;
+
+    margin-bottom:30px;
+}
+
+.roadmap-dot {
+    position:absolute;
+
+    left:3px;
+    top:5px;
+
+    width:24px;
+    height:24px;
+
+    border-radius:50%;
+
+    background:var(--bg);
+
+    border:3px solid var(--primary);
+}
+
+.roadmap-item p {
+    color:var(--muted);
+}
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz {
+    max-width:900px;
+
+    padding:28px;
+
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+}
+
+.question {
+    margin-bottom:28px;
+}
+
+.question h3 {
+    margin-bottom:11px;
+}
+
+.options {
+    display:grid;
+    gap:7px;
+}
+
+.option {
+    padding:11px 13px;
+
+    border:1px solid var(--border);
+    border-radius:10px;
+
+    color:#c8d8e7;
+
+    background:rgba(255,255,255,.02);
+}
+
+.option:hover {
+    background:rgba(0,217,255,.06);
+}
+
+.option.correct {
+    color:#c8ffd5;
+    background:rgba(34,197,94,.14);
+    border-color:var(--green);
+}
+
+.option.wrong {
+    color:#ffd1d1;
+    background:rgba(239,68,68,.13);
+    border-color:var(--red);
+}
+
+.quiz-result {
+    margin-top:17px;
+
+    font-size:18px;
+
+    color:var(--primary);
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-card {
+    padding:25px;
+
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+}
+
+.progress-bar {
+    height:13px;
+
+    margin:15px 0;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.07);
+}
+
+.progress-fill {
+    width:0%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    transition:.4s;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    margin-top:50px;
+
+    padding:50px 22px;
+
+    border-top:1px solid var(--border);
+
+    background:rgba(0,0,0,.20);
+}
+
+.footer-grid {
+    max-width:1450px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:30px;
+}
+
+footer p,
+footer a {
+    color:var(--muted);
+    font-size:12px;
+}
+
+footer a {
+    display:block;
+    text-decoration:none;
+    margin:5px 0;
+}
+
+.copyright {
+    max-width:1450px;
+
+    margin:30px auto 0;
+
+    padding-top:20px;
+
+    border-top:1px solid var(--border);
+
+    color:#65788c;
+
+    font-size:11px;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+    position:fixed;
+    inset:0;
+    z-index:3000;
+
+    display:none;
+    place-items:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.76);
+
+    backdrop-filter:blur(8px);
+}
+
+.modal.show {
+    display:grid;
+}
+
+.modal-box {
+    max-width:650px;
+    width:100%;
+
+    padding:28px;
+
+    border:1px solid var(--border);
+    border-radius:20px;
+
+    background:#0b1a2c;
+
+    box-shadow:var(--shadow);
+}
+
+.close {
+    float:right;
+
+    color:var(--muted);
+
+    font-size:24px;
+
+    cursor:pointer;
+}
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+body.light {
+    --bg:#eef7fc;
+    --card:#ffffff;
+    --card2:#ffffff;
+    --text:#102033;
+    --muted:#52677c;
+    --border:rgba(10,30,50,.12);
+
+    background:
+        radial-gradient(
+            circle at 10% 5%,
+            rgba(0,217,255,.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #edf8ff,
+            #f8f5ff
+        );
+}
+
+body.light .navbar {
+    background:rgba(255,255,255,.90);
+}
+
+body.light .code-window,
+body.light .prediction,
+body.light .formula {
+    background:#f5f9fc;
+}
+
+body.light .logo {
+    color:#102033;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px) {
+
+    .hero {
+        grid-template-columns:1fr;
+    }
+
+    .grid-4 {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .model-grid,
+    .dataset-grid,
+    .problem-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:850px) {
+
+    .nav-links {
+        display:none;
+    }
+
+    .stats {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .story-container {
+        grid-template-columns:1fr;
+    }
+
+    .story-sidebar {
+        position:static;
+    }
+
+    .story-sidebar button {
+        display:inline-block;
+        width:auto;
+    }
+
+    .story-steps {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .demo-grid {
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .hero {
+        padding-top:55px;
+    }
+
+    .hero h1 {
+        font-size:45px;
+    }
+
+    .stats,
+    .grid-4,
+    .model-grid,
+    .dataset-grid,
+    .problem-grid,
+    .story-steps {
+        grid-template-columns:1fr;
+    }
+
+    .story-main {
+        padding:19px;
+    }
+
+    .ai-visual {
+        height:330px;
+    }
+
+    .orbit.two {
+        width:285px;
+        height:285px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ======================================================
+     NAVBAR
+====================================================== -->
+
+<nav class="navbar">
+
+<div class="nav-container">
+
+<a href="#home" class="logo">
+
+<div class="logo-icon">
+AI
+</div>
+
+<div>
+<strong>AI உலகமும் மனிதனும்</strong>
+<small>சுந்தர்ராஜூ • Tamil AI Academy</small>
+</div>
+
+</a>
+
+<ul class="nav-links">
+
+<li><a href="#topics">Topics</a></li>
+<li><a href="#algorithms">Algorithms</a></li>
+<li><a href="#models">Models</a></li>
+<li><a href="#datasets">Datasets</a></li>
+<li><a href="#problems">Problems</a></li>
+<li><a href="#quiz">Quiz</a></li>
+
+</ul>
+
+<div class="nav-actions">
+
+<button class="icon-btn" id="themeBtn">
+☀
+</button>
+
+<button class="icon-btn" id="menuBtn">
+☰
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<header class="hero" id="home">
+
+<div>
+
+<div class="badge">
+🧠 தமிழ் AI Interactive Learning Platform
+</div>
+
+<h1>
+AI உலகமும்
+<br>
+<span class="gradient">
+மனிதனும்
+</span>
+</h1>
+
+<p class="hero-description">
+
+Machine Learning முதல் Deep Learning,
+NLP, Transformers, LLM, RAG,
+Generative AI மற்றும் AI Agents வரை —
+ஒவ்வொரு algorithm-ஐயும்
+தமிழ் real-world story மூலம் கற்றுக்கொள்ளுங்கள்.
+
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="#algorithms"
+class="btn btn-primary">
+
+🚀 Algorithm Lab
+
+</a>
+
+<a
+href="#roadmap"
+class="btn btn-secondary">
+
+🗺 AI Roadmap
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="ai-visual">
+
+<div class="orbit one">
+
+<span>ML</span>
+<span>NLP</span>
+
+</div>
+
+<div class="orbit two">
+
+<span>LLM</span>
+<span>DL</span>
+
+</div>
+
+<div class="ai-core">
+🤖
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ======================================================
+     STATS
+====================================================== -->
+
+<section class="stats">
+
+<div class="stat">
+<strong>20+</strong>
+<span>AI Algorithms & Concepts</span>
+</div>
+
+<div class="stat">
+<strong>50+</strong>
+<span>Practice Problems</span>
+</div>
+
+<div class="stat">
+<strong>20+</strong>
+<span>Dataset Ideas</span>
+</div>
+
+<div class="stat">
+<strong>100%</strong>
+<span>Interactive Learning</span>
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     TOPICS
+====================================================== -->
+
+<section class="section" id="topics">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+AI Universe
+</div>
+
+<h2>
+AI கற்றலின் முழு உலகம்
+</h2>
+
+<p>
+Beginner முதல் advanced AI engineer வரை
+படிப்படியாக முன்னேறக்கூடிய learning path.
+</p>
+
+</div>
+
+
+<div class="grid-4">
+
+<div class="topic-card">
+<div class="topic-icon">📊</div>
+<h3>Machine Learning</h3>
+<p>
+Data மூலம் prediction மற்றும் classification
+செய்யும் algorithms.
+</p>
+<span class="tag">ML</span>
+</div>
+
+
+<div class="topic-card">
+<div class="topic-icon">🧠</div>
+<h3>Deep Learning</h3>
+<p>
+Neural networks, CNN, RNN மற்றும்
+Transformer architectures.
+</p>
+<span class="tag">DL</span>
+</div>
+
+
+<div class="topic-card">
+<div class="topic-icon">💬</div>
+<h3>NLP</h3>
+<p>
+Human language processing,
+classification மற்றும் generation.
+</p>
+<span class="tag">NLP</span>
+</div>
+
+
+<div class="topic-card">
+<div class="topic-icon">🔤</div>
+<h3>LLM</h3>
+<p>
+Tokens, embeddings, attention,
+transformers மற்றும் inference.
+</p>
+<span class="tag">LLM</span>
+</div>
+
+
+<div class="topic-card">
+<div class="topic-icon">✨</div>
+<h3>Generative AI</h3>
+<p>
+Text, image, audio மற்றும் code
+generation systems.
+</p>
+<span class="tag">GenAI</span>
+</div>
+
+
+<div class="topic-card">
+<div class="topic-icon">🔗</div>
+<h3>RAG</h3>
+<p>
+Retrieval + knowledge + LLM
+architecture.
+</p>
+<span class="tag">Advanced</span>
+</div>
+
+
+<div class="topic-card">
+<div class="topic-icon">🤖</div>
+<h3>AI Agents</h3>
+<p>
+LLM + tools + memory + planning.
+</p>
+<span class="tag">Agents</span>
+</div>
+
+
+<div class="topic-card">
+<div class="topic-icon">🛡️</div>
+<h3>Responsible AI</h3>
+<p>
+Safety, privacy, bias, evaluation
+மற்றும் human oversight.
+</p>
+<span class="tag">Ethics</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     ALGORITHM STORY LAB
+====================================================== -->
+
+<section class="section" id="algorithms">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Tamil Algorithm Story Lab
+</div>
+
+<h2>
+📖 Algorithm-ஐ கதையாக கற்றுக்கொள்வோம்
+</h2>
+
+<p>
+ஒவ்வொரு algorithm-க்கும்:
+Story → Problem → Dataset → Formula →
+Step-by-Step → Code → Real-world Use → Challenge.
+</p>
+
+</div>
+
+
+<div class="algorithm-tools">
+
+<button class="algorithm-btn active" data-story="linear">
+Linear Regression
+</button>
+
+<button class="algorithm-btn" data-story="logistic">
+Logistic Regression
+</button>
+
+<button class="algorithm-btn" data-story="tree">
+Decision Tree
+</button>
+
+<button class="algorithm-btn" data-story="forest">
+Random Forest
+</button>
+
+<button class="algorithm-btn" data-story="knn">
+KNN
+</button>
+
+<button class="algorithm-btn" data-story="kmeans">
+K-Means
+</button>
+
+<button class="algorithm-btn" data-story="bayes">
+Naive Bayes
+</button>
+
+<button class="algorithm-btn" data-story="svm">
+SVM
+</button>
+
+<button class="algorithm-btn" data-story="pca">
+PCA
+</button>
+
+<button class="algorithm-btn" data-story="gradient">
+Gradient Descent
+</button>
+
+<button class="algorithm-btn" data-story="neural">
+Neural Network
+</button>
+
+<button class="algorithm-btn" data-story="cnn">
+CNN
+</button>
+
+<button class="algorithm-btn" data-story="rnn">
+RNN / LSTM
+</button>
+
+<button class="algorithm-btn" data-story="attention">
+Attention
+</button>
+
+<button class="algorithm-btn" data-story="rag">
+RAG
+</button>
+
+</div>
+
+
+<div class="story-container">
+
+<aside class="story-sidebar">
+
+<button class="story-side active" data-story="linear">
+🏠 வீட்டு விலை
+</button>
+
+<button class="story-side" data-story="logistic">
+🏦 Loan Approval
+</button>
+
+<button class="story-side" data-story="tree">
+🎓 Student Result
+</button>
+
+<button class="story-side" data-story="forest">
+🌳 Medical Risk
+</button>
+
+<button class="story-side" data-story="knn">
+👨‍🎓 Student Group
+</button>
+
+<button class="story-side" data-story="kmeans">
+🛒 Customer Groups
+</button>
+
+<button class="story-side" data-story="bayes">
+📱 Spam SMS
+</button>
+
+<button class="story-side" data-story="svm">
+🏭 Quality Control
+</button>
+
+<button class="story-side" data-story="pca">
+📉 Feature Reduction
+</button>
+
+<button class="story-side" data-story="gradient">
+🎯 Model Learning
+</button>
+
+<button class="story-side" data-story="neural">
+✍️ Digit Recognition
+</button>
+
+<button class="story-side" data-story="cnn">
+🍅 Image Recognition
+</button>
+
+<button class="story-side" data-story="rnn">
+📝 Next Word
+</button>
+
+<button class="story-side" data-story="attention">
+🔍 Context Attention
+</button>
+
+<button class="story-side" data-story="rag">
+📚 College PDF AI
+</button>
+
+</aside>
+
+
+<main class="story-main">
+
+
+<!-- ====================================================
+     LINEAR REGRESSION
+==================================================== -->
+
+<article class="story active" data-story-content="linear">
+
+<span class="story-badge">
+📖 Real-Time Tamil Story
+</span>
+
+<h3>
+🏠 Linear Regression — குமாரின் வீடு
+</h3>
+
+<p class="story-intro">
+சென்னையில் குமார் ஒரு வீட்டை வாங்க விரும்புகிறார்.
+அவரிடம் பழைய வீடுகளின் area மற்றும் price data உள்ளது.
+</p>
+
+
+<div class="story-card">
+
+<h4>
+🎬 கதை
+</h4>
+
+<p>
+800 sq.ft வீடு ₹45 லட்சம்.
+1000 sq.ft வீடு ₹55 லட்சம்.
+1200 sq.ft வீடு ₹65 லட்சம்.
+1400 sq.ft வீடு ₹75 லட்சம்.
+</p>
+
+<p>
+குமார் கேட்கிறார்:
+<strong>
+"1500 sq.ft வீடு சுமார் எவ்வளவு இருக்கும்?"
+</strong>
+</p>
+
+<p>
+இதுதான் regression problem.
+</p>
+
+</div>
+
+
+<div class="story-steps">
+
+<div class="story-step">
+<div class="number">1</div>
+<h4>Data</h4>
+<p>Area + Price</p>
+</div>
+
+<div class="story-step">
+<div class="number">2</div>
+<h4>Pattern</h4>
+<p>Area அதிகரிக்க price அதிகரிக்கிறது</p>
+</div>
+
+<div class="story-step">
+<div class="number">3</div>
+<h4>Model</h4>
+<p>Linear Regression</p>
+</div>
+
+<div class="story-step">
+<div class="number">4</div>
+<h4>Prediction</h4>
+<p>1500 sq.ft → price estimate</p>
+</div>
+
+</div>
+
+
+<div class="explanation-box">
+
+<h4>
+🧮 Formula
+</h4>
+
+<div class="formula">
+y = mx + b
+</div>
+
+<ul>
+
+<li>
+x = Area
+</li>
+
+<li>
+y = Price
+</li>
+
+<li>
+m = slope
+</li>
+
+<li>
+b = intercept
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="explanation-box">
+
+<h4>
+📊 Mini Dataset
+</h4>
+
+<table class="data-table">
+
+<tr>
+<th>Area</th>
+<th>Price</th>
+</tr>
+
+<tr>
+<td>800</td>
+<td>45 Lakh</td>
+</tr>
+
+<tr>
+<td>1000</td>
+<td>55 Lakh</td>
+</tr>
+
+<tr>
+<td>1200</td>
+<td>65 Lakh</td>
+</tr>
+
+<tr>
+<td>1400</td>
+<td>75 Lakh</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="code-window">
+
+<div class="code-header">
+
+<span>
+Python • Scikit-learn
+</span>
+
+<span class="copy-code">
+Copy
+</span>
+
+</div>
+
+<pre><code>
+from sklearn.linear_model import LinearRegression
+
+X = [
+    [800],
+    [1000],
+    [1200],
+    [1400]
+]
+
+y = [
+    45,
+    55,
+    65,
+    75
+]
+
+model = LinearRegression()
+
+model.fit(X, y)
+
+prediction = model.predict([[1500]])
+
+print(prediction)
+</code></pre>
+
+</div>
+
+
+<div class="real-world">
+
+<h4>
+🌍 Real-world பயன்பாடுகள்
+</h4>
+
+<ul>
+
+<li>House price prediction</li>
+<li>Sales forecasting</li>
+<li>Revenue prediction</li>
+<li>Demand forecasting</li>
+<li>Business analytics</li>
+
+</ul>
+
+</div>
+
+
+<div class="challenge">
+
+<h4>
+🎯 Challenge
+</h4>
+
+<p>
+700, 900, 1100 மற்றும் 1300 sq.ft வீடுகளின்
+உங்கள் சொந்த dataset உருவாக்கி,
+1600 sq.ft price predict செய்யுங்கள்.
+</p>
+
+<button
+class="btn btn-primary answer-btn">
+Answer பார்க்க
+</button>
+
+<div class="answer">
+
+Dataset → model.fit() →
+model.predict([[1600]]).
+Prediction உங்கள் training data pattern-ஐ
+பொறுத்து மாறும்.
+
+</div>
+
+</div>
+
+
+<!-- LIVE LINEAR DEMO -->
+
+<div class="live-demo">
+
+<h4>
+⚡ Live Prediction Demo
+</h4>
+
+<p style="color:var(--muted);font-size:13px;">
+Area-ஐ மாற்றிப் பாருங்கள்.
+</p>
+
+<div class="demo-grid">
+
+<div class="control-group">
+
+<label>
+House Area:
+<span id="areaValue">1500</span>
+sq.ft
+</label>
+
+<input
+type="range"
+class="range"
+id="areaRange"
+min="500"
+max="3000"
+value="1500"
+step="100">
+
+</div>
+
+<div class="prediction">
+
+<div>
+
+<span>
+Estimated Price
+</span>
+
+<strong id="pricePrediction">
+80 Lakh
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     LOGISTIC REGRESSION
+==================================================== -->
+
+<article class="story" data-story-content="logistic">
+
+<span class="story-badge">
+🏦 Classification Story
+</span>
+
+<h3>
+Logistic Regression — லதாவின் Loan
+</h3>
+
+<div class="story-card">
+
+<h4>
+🎬 கதை
+</h4>
+
+<p>
+லதா bank-ல் loan கேட்கிறார்.
+Bank-க்கு ஒரு முக்கியமான கேள்வி:
+<strong>
+"இந்த application approve செய்யலாமா?"
+</strong>
+</p>
+
+<p>
+Income, credit score, age, existing loans போன்ற
+features அடிப்படையில் model
+Approved / Rejected probability கணிக்கிறது.
+</p>
+
+</div>
+
+<div class="story-steps">
+
+<div class="story-step">
+<div class="number">1</div>
+<h4>Input</h4>
+<p>Income, score, age</p>
+</div>
+
+<div class="story-step">
+<div class="number">2</div>
+<h4>Calculation</h4>
+<p>Weighted sum</p>
+</div>
+
+<div class="story-step">
+<div class="number">3</div>
+<h4>Sigmoid</h4>
+<p>0 முதல் 1 probability</p>
+</div>
+
+<div class="story-step">
+<div class="number">4</div>
+<h4>Decision</h4>
+<p>Approve / Reject</p>
+</div>
+
+</div>
+
+<div class="explanation-box">
+
+<h4>🧮 Formula</h4>
+
+<div class="formula">
+P(y=1) = 1 / (1 + e<sup>-z</sup>)
+</div>
+
+<p>
+Sigmoid function model output-ஐ 0 மற்றும் 1 இடையே
+probability ஆக மாற்றுகிறது.
+</p>
+
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • Classification</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+
+model.fit(X_train, y_train)
+
+probability = model.predict_proba(X_test)
+
+prediction = model.predict(X_test)
+
+print(prediction)
+print(probability)
+</code></pre>
+
+</div>
+
+<div class="real-world">
+
+<h4>🌍 Real-world பயன்பாடுகள்</h4>
+
+<ul>
+<li>Loan approval classification</li>
+<li>Spam detection</li>
+<li>Customer churn</li>
+<li>Medical risk classification</li>
+<li>Fraud detection</li>
+</ul>
+
+</div>
+
+<div class="challenge">
+
+<h4>🎯 Challenge</h4>
+
+<p>
+ஒரு customer-ன் income, credit score மற்றும் loan history
+கொடுத்து loan approval model உருவாக்குங்கள்.
+</p>
+
+<button class="btn btn-primary answer-btn">
+Answer பார்க்க
+</button>
+
+<div class="answer">
+இது binary classification problem.
+Logistic Regression-ஐ baseline model ஆக பயன்படுத்தலாம்.
+Accuracy மட்டும் அல்லாமல் Precision, Recall, F1-score ஆகியவற்றையும் பாருங்கள்.
+</div>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     DECISION TREE
+==================================================== -->
+
+<article class="story" data-story-content="tree">
+
+<span class="story-badge">
+🌳 Decision Story
+</span>
+
+<h3>
+Decision Tree — அருணின் மாணவர்கள்
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஆசிரியர் அருண் ஒரு மாணவர் தேர்வில் pass ஆகிறாரா
+என்பதை முன்கூட்டியே புரிந்துகொள்ள விரும்புகிறார்.
+</p>
+
+<p>
+அவர் கேட்கிறார்:
+</p>
+
+<p>
+<strong>
+Attendance > 75%?
+<br>
+Study hours > 2?
+<br>
+Previous score > 40?
+</strong>
+</p>
+
+<p>
+ஒவ்வொரு கேள்வியும் tree-ல் ஒரு decision node ஆகிறது.
+</p>
+
+</div>
+
+<div class="story-steps">
+
+<div class="story-step">
+<div class="number">1</div>
+<h4>Root</h4>
+<p>முக்கிய feature தேர்வு</p>
+</div>
+
+<div class="story-step">
+<div class="number">2</div>
+<h4>Question</h4>
+<p>Feature அடிப்படையில் split</p>
+</div>
+
+<div class="story-step">
+<div class="number">3</div>
+<h4>Branch</h4>
+<p>Yes / No path</p>
+</div>
+
+<div class="story-step">
+<div class="number">4</div>
+<h4>Leaf</h4>
+<p>Final prediction</p>
+</div>
+
+</div>
+
+<div class="explanation-box">
+
+<h4>
+🌳 Tree Structure
+</h4>
+
+<div class="formula">
+Attendance → Study Hours → Previous Score → PASS
+</div>
+
+<p>
+Decision Tree-ல் data-ஐ பல சிறிய பகுதிகளாக
+பிரித்து இறுதியில் prediction செய்யப்படுகிறது.
+</p>
+
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • Decision Tree</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+from sklearn.tree import DecisionTreeClassifier
+
+model = DecisionTreeClassifier(
+    max_depth=4,
+    random_state=42
+)
+
+model.fit(X_train, y_train)
+
+prediction = model.predict(X_test)
+
+print(prediction)
+</code></pre>
+
+</div>
+
+<div class="real-world">
+
+<h4>🌍 Real-world</h4>
+
+<ul>
+<li>Loan decisions</li>
+<li>Customer classification</li>
+<li>Medical decision support</li>
+<li>Student performance</li>
+<li>Fraud detection</li>
+</ul>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     RANDOM FOREST
+==================================================== -->
+
+<article class="story" data-story-content="forest">
+
+<span class="story-badge">
+🌳 Ensemble Learning
+</span>
+
+<h3>
+Random Forest — பல மருத்துவர்கள்
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஒரு patient-க்கு disease risk இருக்கிறதா என்று
+ஒரே ஒரு மருத்துவரிடம் கேட்பதற்குப் பதிலாக
+பல மருத்துவர்கள் தனித்தனியாக கருத்து சொல்கிறார்கள்.
+</p>
+
+<p>
+பின்னர் majority decision எடுக்கப்படுகிறது.
+இதுதான் Random Forest concept-ஐ புரிந்துகொள்ள
+ஒரு எளிய analogy.
+</p>
+
+</div>
+
+<div class="story-steps">
+
+<div class="story-step">
+<div class="number">1</div>
+<h4>Many Trees</h4>
+<p>பல decision trees</p>
+</div>
+
+<div class="story-step">
+<div class="number">2</div>
+<h4>Different Samples</h4>
+<p>Random data samples</p>
+</div>
+
+<div class="story-step">
+<div class="number">3</div>
+<h4>Vote</h4>
+<p>Predictions combine</p>
+</div>
+
+<div class="story-step">
+<div class="number">4</div>
+<h4>Result</h4>
+<p>Majority / average</p>
+</div>
+
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • Random Forest</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier(
+    n_estimators=100,
+    random_state=42
+)
+
+model.fit(X_train, y_train)
+
+prediction = model.predict(X_test)
+
+print(prediction)
+</code></pre>
+
+</div>
+
+<div class="real-world">
+
+<h4>🌍 பயன்பாடுகள்</h4>
+
+<ul>
+<li>Risk classification</li>
+<li>Fraud detection</li>
+<li>Customer churn</li>
+<li>Feature importance</li>
+<li>Tabular business data</li>
+</ul>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     KNN
+==================================================== -->
+
+<article class="story" data-story-content="knn">
+
+<span class="story-badge">
+👨‍🎓 Similarity Learning
+</span>
+
+<h3>
+KNN — புதிய மாணவர் எந்த குழுவில்?
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஒரு புதிய மாணவர் class-க்கு வருகிறார்.
+அவருடைய study hours மற்றும் test score தெரியும்.
+</p>
+
+<p>
+அவருக்கு அருகில் இருக்கும் மாணவர்களைப் பார்த்து
+அவர் எந்த performance group-க்கு சேர்ந்தவர்
+என்று கண்டறியலாம்.
+</p>
+
+</div>
+
+<div class="story-steps">
+
+<div class="story-step">
+<div class="number">1</div>
+<h4>New Point</h4>
+<p>புதிய student</p>
+</div>
+
+<div class="story-step">
+<div class="number">2</div>
+<h4>Distance</h4>
+<p>அருகிலுள்ள points</p>
+</div>
+
+<div class="story-step">
+<div class="number">3</div>
+<h4>K Neighbors</h4>
+<p>முக்கியமான K points</p>
+</div>
+
+<div class="story-step">
+<div class="number">4</div>
+<h4>Vote</h4>
+<p>Majority class</p>
+</div>
+
+</div>
+
+<div class="formula">
+distance = √((x₂-x₁)² + (y₂-y₁)²)
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • KNN</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+from sklearn.neighbors import KNeighborsClassifier
+
+model = KNeighborsClassifier(
+    n_neighbors=5
+)
+
+model.fit(X_train, y_train)
+
+prediction = model.predict(X_test)
+
+print(prediction)
+</code></pre>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     KMEANS
+==================================================== -->
+
+<article class="story" data-story-content="kmeans">
+
+<span class="story-badge">
+🛒 Unsupervised Learning
+</span>
+
+<h3>
+K-Means — Shopping Mall Customer Groups
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஒரு shopping mall manager-க்கு
+customers-ன் பெயர் தெரியாது.
+ஆனால் அவர்களின் annual income மற்றும் spending score தெரியும்.
+</p>
+
+<p>
+அவர் customers-ஐ:
+<strong>
+Budget, Regular, Premium
+</strong>
+என்று groups-ஆக பிரிக்க விரும்புகிறார்.
+</p>
+
+<p>
+Labels முன்கூட்டியே இல்லை.
+அதனால் இது unsupervised learning.
+</p>
+
+</div>
+
+<div class="story-steps">
+
+<div class="story-step">
+<div class="number">1</div>
+<h4>K Centers</h4>
+<p>Cluster centers தேர்வு</p>
+</div>
+
+<div class="story-step">
+<div class="number">2</div>
+<h4>Assign</h4>
+<p>Nearest center</p>
+</div>
+
+<div class="story-step">
+<div class="number">3</div>
+<h4>Update</h4>
+<p>New center calculate</p>
+</div>
+
+<div class="story-step">
+<div class="number">4</div>
+<h4>Repeat</h4>
+<p>Stable clusters</p>
+</div>
+
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • K-Means</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+from sklearn.cluster import KMeans
+
+model = KMeans(
+    n_clusters=3,
+    random_state=42,
+    n_init=10
+)
+
+model.fit(X)
+
+labels = model.labels_
+
+print(labels)
+</code></pre>
+
+</div>
+
+<div class="real-world">
+
+<h4>🌍 பயன்பாடுகள்</h4>
+
+<ul>
+<li>Customer segmentation</li>
+<li>Image compression</li>
+<li>Market segmentation</li>
+<li>Document clustering</li>
+<li>Behavior analysis</li>
+</ul>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     NAIVE BAYES
+==================================================== -->
+
+<article class="story" data-story-content="bayes">
+
+<span class="story-badge">
+📱 Probability + NLP
+</span>
+
+<h3>
+Naive Bayes — செல்வியின் Spam SMS
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+செல்விக்கு தினமும் பல SMS வருகிறது.
+</p>
+
+<p>
+"Congratulations! You won a prize!"
+</p>
+
+<p>
+இது spam-ஆ?
+அல்லது உண்மையான message-ஆ?
+</p>
+
+<p>
+பழைய messages-ல் எந்த words spam messages-ல்
+அதிகமாக வருகின்றன என்பதை model கற்றுக்கொள்கிறது.
+</p>
+
+</div>
+
+<div class="formula">
+P(Class | Words) ∝ P(Class) × P(Words | Class)
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • Naive Bayes</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+from sklearn.naive_bayes import MultinomialNB
+
+model = MultinomialNB()
+
+model.fit(X_train, y_train)
+
+prediction = model.predict(X_test)
+
+print(prediction)
+</code></pre>
+
+</div>
+
+<div class="real-world">
+
+<h4>🌍 பயன்பாடுகள்</h4>
+
+<ul>
+<li>Spam filtering</li>
+<li>Text classification</li>
+<li>Sentiment classification</li>
+<li>Document classification</li>
+</ul>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     SVM
+==================================================== -->
+
+<article class="story" data-story-content="svm">
+
+<span class="story-badge">
+🏭 Classification Boundary
+</span>
+
+<h3>
+SVM — Factory Quality Control
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஒரு factory-ல் products உருவாக்கப்படுகின்றன.
+ஒவ்வொரு product-க்கும் size, weight, temperature போன்ற
+measurements உள்ளன.
+</p>
+
+<p>
+Quality Engineer:
+<strong>
+"Good product எது? Defective product எது?"
+</strong>
+என்று பிரிக்க வேண்டும்.
+</p>
+
+<p>
+SVM classes-ஐ பிரிக்கும் decision boundary-ஐ
+கண்டுபிடிக்க முயற்சிக்கிறது.
+</p>
+
+</div>
+
+<div class="formula">
+Maximum Margin Decision Boundary
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • SVM</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+from sklearn.svm import SVC
+
+model = SVC(
+    kernel="rbf",
+    probability=True
+)
+
+model.fit(X_train, y_train)
+
+prediction = model.predict(X_test)
+
+print(prediction)
+</code></pre>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     PCA
+==================================================== -->
+
+<article class="story" data-story-content="pca">
+
+<span class="story-badge">
+📉 Dimensionality Reduction
+</span>
+
+<h3>
+PCA — 100 Features-ஐ குறைக்கும் AI
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஒரு company customer dataset-ல் 100 columns இருக்கிறது.
+அனைத்தையும் model-க்கு கொடுத்தால் data complex ஆகிறது.
+</p>
+
+<p>
+அதில் இருக்கும் முக்கியமான variation-ஐ
+குறைந்த dimensions-ல் represent செய்ய PCA உதவுகிறது.
+</p>
+
+</div>
+
+<div class="story-steps">
+
+<div class="story-step">
+<div class="number">1</div>
+<h4>Center</h4>
+<p>Data center செய்யும்</p>
+</div>
+
+<div class="story-step">
+<div class="number">2</div>
+<h4>Variance</h4>
+<p>Variation கண்டறிதல்</p>
+</div>
+
+<div class="story-step">
+<div class="number">3</div>
+<h4>Components</h4>
+<p>Principal directions</p>
+</div>
+
+<div class="story-step">
+<div class="number">4</div>
+<h4>Reduce</h4>
+<p>குறைந்த dimensions</p>
+</div>
+
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • PCA</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+from sklearn.decomposition import PCA
+
+pca = PCA(
+    n_components=2
+)
+
+X_reduced = pca.fit_transform(X)
+
+print(X_reduced.shape)
+</code></pre>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     GRADIENT DESCENT
+==================================================== -->
+
+<article class="story" data-story-content="gradient">
+
+<span class="story-badge">
+🎯 Optimization
+</span>
+
+<h3>
+Gradient Descent — AI எப்படி தன் தவறை குறைக்கிறது?
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஒரு மாணவர் maths problem solve செய்கிறார்.
+முதல் answer தவறாக இருக்கிறது.
+</p>
+
+<p>
+அவர் error எவ்வளவு என்று பார்த்து,
+அடுத்த முயற்சியில் answer-ஐ சிறிது மாற்றுகிறார்.
+மீண்டும் error பார்க்கிறார்.
+</p>
+
+<p>
+பல iterations-க்கு பிறகு error குறைகிறது.
+இதுதான் Gradient Descent-ஐ புரிந்துகொள்ள
+ஒரு எளிய analogy.
+</p>
+
+</div>
+
+<div class="formula">
+θ = θ − α ∇J(θ)
+</div>
+
+<div class="explanation-box">
+
+<h4>
+இங்கே:
+</h4>
+
+<ul>
+<li>θ = model parameters</li>
+<li>α = learning rate</li>
+<li>J = loss function</li>
+<li>∇J = gradient</li>
+</ul>
+
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • Concept</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+weight = 0.0
+learning_rate = 0.01
+
+for step in range(1000):
+
+    prediction = weight * x
+
+    error = prediction - y
+
+    gradient = 2 * x * error
+
+    weight = weight - learning_rate * gradient
+
+print(weight)
+</code></pre>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     NEURAL NETWORK
+==================================================== -->
+
+<article class="story" data-story-content="neural">
+
+<span class="story-badge">
+🧠 Deep Learning
+</span>
+
+<h3>
+Neural Network — 8 என்ற எண்ணை அறியும் AI
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஒரு குழந்தைக்கு handwritten numbers காட்டப்படுகின்றன.
+முதலில் அது 8 மற்றும் 3-ஐ குழப்புகிறது.
+</p>
+
+<p>
+AI-க்கும் இதேபோன்ற learning process உள்ளது.
+பல examples → prediction → error → weight update.
+</p>
+
+</div>
+
+<div class="story-steps">
+
+<div class="story-step">
+<div class="number">1</div>
+<h4>Input</h4>
+<p>Pixels</p>
+</div>
+
+<div class="story-step">
+<div class="number">2</div>
+<h4>Hidden Layers</h4>
+<p>Patterns</p>
+</div>
+
+<div class="story-step">
+<div class="number">3</div>
+<h4>Loss</h4>
+<p>Prediction error</p>
+</div>
+
+<div class="story-step">
+<div class="number">4</div>
+<h4>Backprop</h4>
+<p>Weights update</p>
+</div>
+
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • TensorFlow</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+import tensorflow as tf
+
+model = tf.keras.Sequential([
+
+    tf.keras.layers.Input(
+        shape=(784,)
+    ),
+
+    tf.keras.layers.Dense(
+        128,
+        activation="relu"
+    ),
+
+    tf.keras.layers.Dense(
+        10,
+        activation="softmax"
+    )
+])
+
+model.compile(
+    optimizer="adam",
+    loss="sparse_categorical_crossentropy",
+    metrics=["accuracy"]
+])
+</code></pre>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     CNN
+==================================================== -->
+
+<article class="story" data-story-content="cnn">
+
+<span class="story-badge">
+🍅 Computer Vision
+</span>
+
+<h3>
+CNN — தக்காளியா? உருளைக்கிழங்கா?
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஒரு supermarket-ல் vegetables automatic-ஆக
+identify செய்யும் camera system உருவாக்கப்படுகிறது.
+</p>
+
+<p>
+Image pixels-ல் இருக்கும் edges, textures மற்றும் shapes-ஐ
+CNN layers படிப்படியாக கற்றுக்கொள்கின்றன.
+</p>
+
+</div>
+
+<div class="story-steps">
+
+<div class="story-step">
+<div class="number">1</div>
+<h4>Image</h4>
+<p>Pixels</p>
+</div>
+
+<div class="story-step">
+<div class="number">2</div>
+<h4>Convolution</h4>
+<p>Features</p>
+</div>
+
+<div class="story-step">
+<div class="number">3</div>
+<h4>Pooling</h4>
+<p>Compress</p>
+</div>
+
+<div class="story-step">
+<div class="number">4</div>
+<h4>Classify</h4>
+<p>Final category</p>
+</div>
+
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • CNN</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+model = tf.keras.Sequential([
+
+    tf.keras.layers.Conv2D(
+        32,
+        (3,3),
+        activation="relu",
+        input_shape=(128,128,3)
+    ),
+
+    tf.keras.layers.MaxPooling2D(),
+
+    tf.keras.layers.Conv2D(
+        64,
+        (3,3),
+        activation="relu"
+    ),
+
+    tf.keras.layers.GlobalAveragePooling2D(),
+
+    tf.keras.layers.Dense(
+        2,
+        activation="softmax"
+    )
+])
+</code></pre>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     RNN
+==================================================== -->
+
+<article class="story" data-story-content="rnn">
+
+<span class="story-badge">
+📝 Sequence Learning
+</span>
+
+<h3>
+RNN / LSTM — அடுத்த வார்த்தை என்ன?
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஒரு தமிழ் sentence:
+</p>
+
+<p>
+<strong>
+"சென்னை ஒரு அழகான ______"
+</strong>
+</p>
+
+<p>
+முந்தைய words-ஐ context ஆக பயன்படுத்தி
+அடுத்த word-ஐ predict செய்யும் model உருவாக்கலாம்.
+</p>
+
+<p>
+LSTM நீண்ட sequence information-ஐ handle செய்ய
+RNN-ன் முக்கியமான architecture ஆக பயன்படுத்தப்பட்டது.
+</p>
+
+</div>
+
+<div class="formula">
+Previous Context → Current Input → Next Prediction
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • LSTM</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+model = tf.keras.Sequential([
+
+    tf.keras.layers.Embedding(
+        input_dim=10000,
+        output_dim=128
+    ),
+
+    tf.keras.layers.LSTM(128),
+
+    tf.keras.layers.Dense(
+        10000,
+        activation="softmax"
+    )
+])
+</code></pre>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     ATTENTION
+==================================================== -->
+
+<article class="story" data-story-content="attention">
+
+<span class="story-badge">
+🔍 Transformer Concept
+</span>
+
+<h3>
+Attention — எந்த வார்த்தை முக்கியம்?
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஒரு teacher ஒரு நீண்ட paragraph படிக்கிறார்.
+ஒவ்வொரு word-க்கும் ஒரே அளவு முக்கியத்துவம் கொடுக்கவில்லை.
+Question-க்கு relevant words மீது அதிக கவனம் செலுத்துகிறார்.
+</p>
+
+<p>
+Transformer attention-ஐ புரிந்துகொள்ள இது ஒரு useful analogy.
+</p>
+
+</div>
+
+<div class="formula">
+Attention(Q,K,V)
+=
+softmax(QKᵀ / √dₖ)V
+</div>
+
+<div class="explanation-box">
+
+<h4>
+🔑 Three முக்கிய concepts
+</h4>
+
+<ul>
+<li>Query — என்ன தேடுகிறோம்?</li>
+<li>Key — எந்த information பொருந்துகிறது?</li>
+<li>Value — என்ன information எடுக்க வேண்டும்?</li>
+</ul>
+
+</div>
+
+<div class="real-world">
+
+<h4>🌍 பயன்பாடுகள்</h4>
+
+<ul>
+<li>Machine Translation</li>
+<li>Text Generation</li>
+<li>Document Understanding</li>
+<li>Large Language Models</li>
+<li>Multimodal AI</li>
+</ul>
+
+</div>
+
+</article>
+
+
+<!-- ====================================================
+     RAG
+==================================================== -->
+
+<article class="story" data-story-content="rag">
+
+<span class="story-badge">
+📚 Modern LLM Architecture
+</span>
+
+<h3>
+RAG — கல்லூரி PDF-ஐ படிக்கும் AI
+</h3>
+
+<div class="story-card">
+
+<h4>🎬 கதை</h4>
+
+<p>
+ஒரு கல்லூரியில் 500 PDF notes இருக்கின்றன.
+ஒரு மாணவர் கேட்கிறார்:
+</p>
+
+<p>
+<strong>
+"Unit 3-ல் Backpropagation என்றால் என்ன?"
+</strong>
+</p>
+
+<p>
+LLM-க்கு முழு library-யையும் prompt-ல் அனுப்புவதற்குப் பதிலாக,
+documents-ஐ chunks-ஆக பிரித்து embeddings உருவாக்கலாம்.
+</p>
+
+<p>
+Question வந்ததும் relevant chunks retrieve செய்து,
+அவற்றை context ஆக LLM-க்கு கொடுக்கலாம்.
+</p>
+
+</div>
+
+<div class="story-steps">
+
+<div class="story-step">
+<div class="number">1</div>
+<h4>Documents</h4>
+<p>PDF / notes</p>
+</div>
+
+<div class="story-step">
+<div class="number">2</div>
+<h4>Embeddings</h4>
+<p>Vector representation</p>
+</div>
+
+<div class="story-step">
+<div class="number">3</div>
+<h4>Retrieve</h4>
+<p>Relevant chunks</p>
+</div>
+
+<div class="story-step">
+<div class="number">4</div>
+<h4>Generate</h4>
+<p>LLM answer</p>
+</div>
+
+</div>
+
+<div class="formula">
+Documents → Chunks → Embeddings → Vector Search → LLM
+</div>
+
+<div class="code-window">
+
+<div class="code-header">
+<span>Python • RAG Concept</span>
+<span class="copy-code">Copy</span>
+</div>
+
+<pre><code>
+documents = load_documents()
+
+chunks = split_into_chunks(
+    documents
+)
+
+vectors = embed(chunks)
+
+question = "Backpropagation என்றால் என்ன?"
+
+relevant_chunks = search(
+    vectors,
+    question
+)
+
+context = "\n".join(
+    relevant_chunks
+)
+
+answer = llm(
+    context=context,
+    question=question
+)
+
+print(answer)
+</code></pre>
+
+</div>
+
+<div class="real-world">
+
+<h4>🌍 பயன்பாடுகள்</h4>
+
+<ul>
+<li>College knowledge assistant</li>
+<li>Company document assistant</li>
+<li>Legal document search</li>
+<li>Technical documentation assistant</li>
+<li>Research assistant</li>
+</ul>
+
+</div>
+
+</article>
+
+</main>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     MODERN AI MODELS
+====================================================== -->
+
+<section class="section" id="models">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Modern AI
+</div>
+
+<h2>
+🤖 ChatGPT • DeepSeek • Gemini • Claude • LLM
+</h2>
+
+<p>
+Modern AI assistants-ஐ பயன்படுத்தும்போது
+model concepts, prompting, context, tools மற்றும் evaluation
+பற்றி புரிந்துகொள்ளுங்கள்.
+</p>
+
+</div>
+
+
+<div class="model-grid">
+
+
+<div class="model-card">
+
+<div class="model-icon">◎</div>
+
+<h3>ChatGPT</h3>
+
+<p>
+Conversational AI, reasoning, coding,
+structured outputs மற்றும் AI workflows.
+</p>
+
+<ul>
+<li>Prompt Engineering</li>
+<li>Code Assistance</li>
+<li>Structured Output</li>
+<li>AI Workflows</li>
+</ul>
+
+<br>
+
+<button
+class="btn btn-secondary model-btn"
+data-model="ChatGPT">
+Tutorial
+</button>
+
+</div>
+
+
+<div class="model-card">
+
+<div class="model-icon">DS</div>
+
+<h3>DeepSeek</h3>
+
+<p>
+Reasoning மற்றும் coding-oriented
+AI workflows பற்றி கற்றுக்கொள்ளுங்கள்.
+</p>
+
+<ul>
+<li>Reasoning</li>
+<li>Coding</li>
+<li>Prompt Design</li>
+<li>Evaluation</li>
+</ul>
+
+<br>
+
+<button
+class="btn btn-secondary model-btn"
+data-model="DeepSeek">
+Tutorial
+</button>
+
+</div>
+
+
+<div class="model-card">
+
+<div class="model-icon">G</div>
+
+<h3>Gemini</h3>
+
+<p>
+Multimodal AI மற்றும் document,
+image, code workflows.
+</p>
+
+<ul>
+<li>Multimodal AI</li>
+<li>Long Context</li>
+<li>Prompting</li>
+<li>Applications</li>
+</ul>
+
+<br>
+
+<button
+class="btn btn-secondary model-btn"
+data-model="Gemini">
+Tutorial
+</button>
+
+</div>
+
+
+<div class="model-card">
+
+<div class="model-icon">✦</div>
+
+<h3>Claude</h3>
+
+<p>
+Long-form reasoning, documents,
+coding மற்றும் assistant workflows.
+</p>
+
+<ul>
+<li>Long Context</li>
+<li>Documents</li>
+<li>Coding</li>
+<li>Prompt Engineering</li>
+</ul>
+
+<br>
+
+<button
+class="btn btn-secondary model-btn"
+data-model="Claude">
+Tutorial
+</button>
+
+</div>
+
+
+<div class="model-card">
+
+<div class="model-icon">🔮</div>
+
+<h3>Open LLMs</h3>
+
+<p>
+Open-weight models, local inference,
+quantization மற்றும் fine-tuning.
+</p>
+
+<ul>
+<li>Local Inference</li>
+<li>Quantization</li>
+<li>Fine-tuning</li>
+<li>Deployment</li>
+</ul>
+
+<br>
+
+<button
+class="btn btn-secondary model-btn"
+data-model="Open LLM">
+Tutorial
+</button>
+
+</div>
+
+
+<div class="model-card">
+
+<div class="model-icon">🧩</div>
+
+<h3>AI Agents</h3>
+
+<p>
+LLM + tools + memory + planning
+கொண்டு agent systems.
+</p>
+
+<ul>
+<li>Tools</li>
+<li>Memory</li>
+<li>Planning</li>
+<li>Agent Loop</li>
+</ul>
+
+<br>
+
+<button
+class="btn btn-secondary model-btn"
+data-model="Agents">
+Tutorial
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     DATASETS
+====================================================== -->
+
+<section class="section" id="datasets">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Dataset Lab
+</div>
+
+<h2>
+📊 Dataset & Project Lab
+</h2>
+
+<p>
+Algorithm கற்ற பிறகு dataset-ல் experiment செய்யுங்கள்.
+</p>
+
+</div>
+
+
+<div class="search-row">
+
+<input
+class="search"
+id="datasetSearch"
+placeholder="Dataset / topic தேடுங்கள்...">
+
+<button class="filter active" data-filter="all">
+All
+</button>
+
+<button class="filter" data-filter="ML">
+ML
+</button>
+
+<button class="filter" data-filter="NLP">
+NLP
+</button>
+
+<button class="filter" data-filter="DL">
+DL
+</button>
+
+</div>
+
+
+<div class="dataset-grid" id="datasetGrid">
+
+
+<div class="dataset" data-type="ML">
+<h3>🏠 House Price</h3>
+<p>
+Area, bedrooms, location → price prediction.
+</p>
+
+<div class="meta">
+<span>ML</span>
+<span>Regression</span>
+<span>Beginner</span>
+</div>
+</div>
+
+
+<div class="dataset" data-type="ML">
+<h3>💳 Customer Churn</h3>
+<p>
+Customer service-ஐ விட்டு வெளியேறுவாரா?
+</p>
+
+<div class="meta">
+<span>ML</span>
+<span>Classification</span>
+<span>Intermediate</span>
+</div>
+</div>
+
+
+<div class="dataset" data-type="NLP">
+<h3>😊 Sentiment</h3>
+<p>
+Review positive, negative அல்லது neutral?
+</p>
+
+<div class="meta">
+<span>NLP</span>
+<span>Text</span>
+</div>
+</div>
+
+
+<div class="dataset" data-type="DL">
+<h3>🖼 Image Classification</h3>
+<p>
+பல image categories classify செய்யவும்.
+</p>
+
+<div class="meta">
+<span>DL</span>
+<span>CNN</span>
+</div>
+</div>
+
+
+<div class="dataset" data-type="NLP">
+<h3>📰 News Classification</h3>
+<p>
+News-ஐ category அடிப்படையில் classify செய்யவும்.
+</p>
+
+<div class="meta">
+<span>NLP</span>
+<span>Classification</span>
+</div>
+</div>
+
+
+<div class="dataset" data-type="DL">
+<h3>🎙 Speech Dataset</h3>
+<p>
+Audio signals மூலம் spoken commands identify செய்யவும்.
+</p>
+
+<div class="meta">
+<span>DL</span>
+<span>Audio</span>
+</div>
+</div>
+
+
+<div class="dataset" data-type="NLP">
+<h3>📚 Tamil Text</h3>
+<p>
+Tamil sentiment, classification, summarization.
+</p>
+
+<div class="meta">
+<span>NLP</span>
+<span>Tamil</span>
+</div>
+</div>
+
+
+<div class="dataset" data-type="ML">
+<h3>🚗 Vehicle Dataset</h3>
+<p>
+Vehicle specifications → price / mileage prediction.
+</p>
+
+<div class="meta">
+<span>ML</span>
+<span>Regression</span>
+</div>
+</div>
+
+
+<div class="dataset" data-type="DL">
+<h3>🧬 Image Research</h3>
+<p>
+Computer vision classification experiments.
+</p>
+
+<div class="meta">
+<span>DL</span>
+<span>Vision</span>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     PROBLEM LAB
+====================================================== -->
+
+<section class="section" id="problems">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Challenge Lab
+</div>
+
+<h2>
+🎯 AI Problem Solving Lab
+</h2>
+
+<p>
+Story-ஐ படித்த பிறகு நீங்களே problem solve செய்யுங்கள்.
+</p>
+
+</div>
+
+
+<div class="problem-grid">
+
+
+<div class="problem">
+
+<span class="level">
+BEGINNER
+</span>
+
+<h3>
+01. House Price
+</h3>
+
+<p>
+Area மற்றும் bedrooms மூலம் house price predict செய்யுங்கள்.
+</p>
+
+<button class="btn btn-secondary solution-btn">
+Solution
+</button>
+
+<div class="solution">
+Regression problem.
+Linear Regression அல்லது Random Forest Regressor பயன்படுத்தலாம்.
+MAE / RMSE evaluate செய்யலாம்.
+</div>
+
+</div>
+
+
+<div class="problem">
+
+<span class="level">
+BEGINNER
+</span>
+
+<h3>
+02. Spam SMS
+</h3>
+
+<p>
+SMS spam அல்லது normal என்று classify செய்யுங்கள்.
+</p>
+
+<button class="btn btn-secondary solution-btn">
+Solution
+</button>
+
+<div class="solution">
+TF-IDF + Naive Bayes அல்லது Logistic Regression ஒரு நல்ல baseline.
+</div>
+
+</div>
+
+
+<div class="problem">
+
+<span class="level">
+INTERMEDIATE
+</span>
+
+<h3>
+03. Image Classifier
+</h3>
+
+<p>
+Vegetable images-ஐ category அடிப்படையில் classify செய்யுங்கள்.
+</p>
+
+<button class="btn btn-secondary solution-btn">
+Solution
+</button>
+
+<div class="solution">
+CNN அல்லது transfer learning பயன்படுத்தலாம்.
+</div>
+
+</div>
+
+
+<div class="problem">
+
+<span class="level">
+INTERMEDIATE
+</span>
+
+<h3>
+04. Tamil Sentiment
+</h3>
+
+<p>
+Tamil customer review sentiment கண்டறியுங்கள்.
+</p>
+
+<button class="btn btn-secondary solution-btn">
+Solution
+</button>
+
+<div class="solution">
+Text preprocessing → tokenizer / embeddings →
+classifier என்ற pipeline அமைக்கலாம்.
+</div>
+
+</div>
+
+
+<div class="problem">
+
+<span class="level">
+ADVANCED
+</span>
+
+<h3>
+05. PDF RAG
+</h3>
+
+<p>
+College PDF notes-ஐ வைத்து question answering assistant உருவாக்குங்கள்.
+</p>
+
+<button class="btn btn-secondary solution-btn">
+Solution
+</button>
+
+<div class="solution">
+PDF → chunks → embeddings → vector search →
+context → LLM answer.
+</div>
+
+</div>
+
+
+<div class="problem">
+
+<span class="level">
+ADVANCED
+</span>
+
+<h3>
+06. AI Agent
+</h3>
+
+<p>
+Tools பயன்படுத்தும் AI agent உருவாக்குங்கள்.
+</p>
+
+<button class="btn btn-secondary solution-btn">
+Solution
+</button>
+
+<div class="solution">
+Observe → Reason → Tool Call → Result →
+Next Action → Final Response.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     ROADMAP
+====================================================== -->
+
+<section class="section" id="roadmap">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Career Roadmap
+</div>
+
+<h2>
+🗺 Beginner → AI Engineer
+</h2>
+
+<p>
+இந்த roadmap-ஐ project-based learning உடன் follow செய்யுங்கள்.
+</p>
+
+</div>
+
+
+<div class="roadmap">
+
+
+<div class="roadmap-item">
+
+<div class="roadmap-dot"></div>
+
+<h3>
+01 — Python
+</h3>
+
+<p>
+Python basics, NumPy, Pandas, functions,
+classes, Git மற்றும் APIs.
+</p>
+
+</div>
+
+
+<div class="roadmap-item">
+
+<div class="roadmap-dot"></div>
+
+<h3>
+02 — Mathematics
+</h3>
+
+<p>
+Statistics, probability, linear algebra,
+calculus மற்றும் optimization.
+</p>
+
+</div>
+
+
+<div class="roadmap-item">
+
+<div class="roadmap-dot"></div>
+
+<h3>
+03 — Machine Learning
+</h3>
+
+<p>
+Regression, classification, clustering,
+feature engineering, evaluation.
+</p>
+
+</div>
+
+
+<div class="roadmap-item">
+
+<div class="roadmap-dot"></div>
+
+<h3>
+04 — Deep Learning
+</h3>
+
+<p>
+Neural networks, CNN, RNN, LSTM,
+transformers.
+</p>
+
+</div>
+
+
+<div class="roadmap-item">
+
+<div class="roadmap-dot"></div>
+
+<h3>
+05 — NLP & LLM
+</h3>
+
+<p>
+Tokenization, embeddings, attention,
+prompting, inference.
+</p>
+
+</div>
+
+
+<div class="roadmap-item">
+
+<div class="roadmap-dot"></div>
+
+<h3>
+06 — RAG & Agents
+</h3>
+
+<p>
+Vector database, retrieval, tools,
+memory மற்றும் agent architecture.
+</p>
+
+</div>
+
+
+<div class="roadmap-item">
+
+<div class="roadmap-dot"></div>
+
+<h3>
+07 — Production AI
+</h3>
+
+<p>
+API, deployment, monitoring,
+security மற்றும் evaluation.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     QUIZ
+====================================================== -->
+
+<section class="section" id="quiz">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Knowledge Check
+</div>
+
+<h2>
+🧪 AI Quiz
+</h2>
+
+<p>
+நீங்கள் கற்ற concepts-ஐ test செய்யுங்கள்.
+</p>
+
+</div>
+
+
+<div class="quiz">
+
+
+<div class="question">
+
+<h3>
+1. Regression problem-ன் output பொதுவாக?
+</h3>
+
+<div class="options">
+
+<div class="option" data-correct="true">
+Continuous numerical value
+</div>
+
+<div class="option" data-correct="false">
+Only image
+</div>
+
+<div class="option" data-correct="false">
+Only audio
+</div>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+2. K-Means எந்த வகை learning?
+</h3>
+
+<div class="options">
+
+<div class="option" data-correct="false">
+Supervised only
+</div>
+
+<div class="option" data-correct="true">
+Unsupervised learning
+</div>
+
+<div class="option" data-correct="false">
+Reinforcement only
+</div>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+3. CNN முக்கியமாக எதற்கு பயன்படுத்தப்படுகிறது?
+</h3>
+
+<div class="options">
+
+<div class="option" data-correct="false">
+Only database queries
+</div>
+
+<div class="option" data-correct="true">
+Image / visual pattern processing
+</div>
+
+<div class="option" data-correct="false">
+Only spreadsheets
+</div>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+4. RAG-ன் முக்கிய idea என்ன?
+</h3>
+
+<div class="options">
+
+<div class="option" data-correct="true">
+Relevant external information retrieve செய்து LLM-க்கு context கொடுத்தல்
+</div>
+
+<div class="option" data-correct="false">
+GPU மட்டும் பயன்படுத்துதல்
+</div>
+
+<div class="option" data-correct="false">
+Images compress செய்தல்
+</div>
+
+</div>
+
+</div>
+
+
+<button
+class="btn btn-primary"
+id="checkQuiz">
+
+🎯 Score பார்க்க
+
+</button>
+
+<div
+class="quiz-result"
+id="quizResult">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     PROGRESS
+====================================================== -->
+
+<section class="section">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Your Learning
+</div>
+
+<h2>
+📈 Learning Progress
+</h2>
+
+</div>
+
+
+<div class="progress-card">
+
+<strong id="progressText">
+0% Complete
+</strong>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+id="progressFill">
+</div>
+
+</div>
+
+<button
+class="btn btn-green"
+id="completeLesson">
+
+✓ Lesson Complete
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     FINAL PROJECT
+====================================================== -->
+
+<section class="section">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Capstone
+</div>
+
+<h2>
+🚀 Final AI Projects
+</h2>
+
+<p>
+இந்த projects-ல் ஒன்றை build செய்து உங்கள் AI portfolio-வில் சேர்க்கலாம்.
+</p>
+
+</div>
+
+
+<div class="grid-4">
+
+
+<div class="topic-card">
+
+<div class="topic-icon">
+📚
+</div>
+
+<h3>
+Tamil AI Tutor
+</h3>
+
+<p>
+தமிழில் பாடங்களை விளக்கும்,
+quiz உருவாக்கும் AI tutor.
+</p>
+
+</div>
+
+
+<div class="topic-card">
+
+<div class="topic-icon">
+📄
+</div>
+
+<h3>
+Document RAG
+</h3>
+
+<p>
+PDF upload செய்து அதன் content
+அடிப்படையில் answers வழங்கும் AI.
+</p>
+
+</div>
+
+
+<div class="topic-card">
+
+<div class="topic-icon">
+🤖
+</div>
+
+<h3>
+AI Agent
+</h3>
+
+<p>
+Search, calculation, documents போன்ற
+tools பயன்படுத்தும் agent.
+</p>
+
+</div>
+
+
+<div class="topic-card">
+
+<div class="topic-icon">
+🌐
+</div>
+
+<h3>
+AI Web Application
+</h3>
+
+<p>
+Frontend + backend + AI API
+இணைந்த production-style application.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h3>
+🤖 AI உலகமும் மனிதனும்
+</h3>
+
+<p>
+AI-ஐ புரிந்துகொண்டு,
+மனிதனுக்கு பயனுள்ள AI systems
+உருவாக்குவோம்.
+</p>
+
+<p style="margin-top:10px;">
+<strong>— Sundarraju</strong>
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Learning
+</h3>
+
+<a href="#topics">AI Topics</a>
+<a href="#algorithms">Algorithms</a>
+<a href="#datasets">Datasets</a>
+<a href="#problems">Problems</a>
+
+</div>
+
+
+<div>
+
+<h3>
+Advanced
+</h3>
+
+<a href="#models">AI Models</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#quiz">Quiz</a>
+<a href="#home">Back to Top ↑</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 AI உலகமும் மனிதனும் — Sundarraju.
+Educational AI project built with HTML, CSS and JavaScript.
+
+</div>
+
+</footer>
+
+
+<!-- ======================================================
+     MODEL MODAL
+====================================================== -->
+
+<div class="modal" id="modelModal">
+
+<div class="modal-box">
+
+<span class="close" id="modalClose">
+×
+</span>
+
+<h2 id="modalTitle">
+AI Model Tutorial
+</h2>
+
+<p
+id="modalContent"
+style="color:var(--muted);margin-top:12px;">
+</p>
+
+<div class="story-card">
+
+<h4>
+🎯 Practice Challenge
+</h4>
+
+<p id="modalChallenge">
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+/* =========================================================
+   JAVASCRIPT
+========================================================= */
+
+
+/* =========================================================
+   THEME
+========================================================= */
+
+const themeBtn =
+document.getElementById("themeBtn");
+
+const savedTheme =
+localStorage.getItem("ai-theme");
+
+if (savedTheme === "light") {
+
+    document.body.classList.add("light");
+
+    themeBtn.textContent = "🌙";
+}
+
+themeBtn.addEventListener(
+"click",
+() => {
+
+    document.body.classList.toggle("light");
+
+    const light =
+        document.body.classList.contains("light");
+
+    localStorage.setItem(
+        "ai-theme",
+        light ? "light" : "dark"
+    );
+
+    themeBtn.textContent =
+        light ? "🌙" : "☀";
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+document
+.getElementById("menuBtn")
+.addEventListener(
+"click",
+() => {
+
+    const nav =
+        document.querySelector(".nav-links");
+
+    if (
+        nav.style.display === "flex"
+    ) {
+
+        nav.style.display = "";
+
+    } else {
+
+        nav.style.display = "flex";
+        nav.style.flexDirection = "column";
+        nav.style.position = "absolute";
+        nav.style.right = "20px";
+        nav.style.top = "68px";
+        nav.style.padding = "12px";
+        nav.style.background = "#081321";
+        nav.style.border =
+            "1px solid rgba(255,255,255,.1)";
+        nav.style.borderRadius = "15px";
+
+    }
+
+});
+
+
+/* =========================================================
+   STORY SELECTOR
+========================================================= */
+
+const algorithmButtons =
+document.querySelectorAll(".algorithm-btn");
+
+const storySideButtons =
+document.querySelectorAll(".story-side");
+
+const stories =
+document.querySelectorAll(".story");
+
+
+function selectStory(name) {
+
+    algorithmButtons.forEach(
+        button => {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.story === name
+            );
+
+        }
+    );
+
+
+    storySideButtons.forEach(
+        button => {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.story === name
+            );
+
+        }
+    );
+
+
+    stories.forEach(
+        story => {
+
+            story.classList.toggle(
+                "active",
+                story.dataset.storyContent === name
+            );
+
+        }
+    );
+
+
+    document
+    .getElementById("algorithms")
+    .scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
+}
+
+
+algorithmButtons.forEach(
+button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+            selectStory(
+                button.dataset.story
+            );
+        }
+    );
+
+});
+
+
+storySideButtons.forEach(
+button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+            selectStory(
+                button.dataset.story
+            );
+        }
+    );
+
+});
+
+
+/* =========================================================
+   ANSWERS
+========================================================= */
+
+document
+.querySelectorAll(".answer-btn")
+.forEach(
+button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const answer =
+                button.nextElementSibling;
+
+            answer.classList.toggle(
+                "show"
+            );
+
+            button.textContent =
+                answer.classList.contains("show")
+                ? "Answer மறைக்க"
+                : "Answer பார்க்க";
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   LIVE LINEAR REGRESSION DEMO
+========================================================= */
+
+const areaRange =
+document.getElementById("areaRange");
+
+const areaValue =
+document.getElementById("areaValue");
+
+const pricePrediction =
+document.getElementById(
+    "pricePrediction"
+);
+
+
+function updatePrediction() {
+
+    const area =
+        Number(areaRange.value);
+
+    areaValue.textContent =
+        area;
+
+    /*
+        Demo approximation:
+
+        800 -> 45
+        1000 -> 55
+        1200 -> 65
+        1400 -> 75
+
+        Approximate formula:
+        price = 0.05 * area + 5
+    */
+
+    const price =
+        (0.05 * area) + 5;
+
+    pricePrediction.textContent =
+        Math.round(price) + " Lakh";
+
+}
+
+
+areaRange.addEventListener(
+    "input",
+    updatePrediction
+);
+
+updatePrediction();
+
+
+/* =========================================================
+   CODE COPY
+========================================================= */
+
+document
+.querySelectorAll(".copy-code")
+.forEach(
+button => {
+
+    button.addEventListener(
+        "click",
+        async () => {
+
+            const code =
+                button
+                .closest(".code-window")
+                .querySelector("code")
+                .innerText;
+
+            try {
+
+                await navigator.clipboard
+                    .writeText(code);
+
+                button.textContent =
+                    "Copied ✓";
+
+                setTimeout(
+                    () => {
+                        button.textContent =
+                            "Copy";
+                    },
+                    1500
+                );
+
+            } catch {
+
+                alert(
+                    "Code copy செய்ய முடியவில்லை."
+                );
+
+            }
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   DATASET SEARCH
+========================================================= */
+
+const searchInput =
+document.getElementById(
+    "datasetSearch"
+);
+
+const datasetCards =
+document.querySelectorAll(
+    ".dataset"
+);
+
+let activeFilter = "all";
+
+
+function filterDatasets() {
+
+    const query =
+        searchInput.value
+        .toLowerCase();
+
+    datasetCards.forEach(
+        card => {
+
+            const text =
+                card.textContent
+                .toLowerCase();
+
+            const type =
+                card.dataset.type;
+
+            const searchMatch =
+                text.includes(query);
+
+            const filterMatch =
+                activeFilter === "all" ||
+                type === activeFilter;
+
+            card.style.display =
+                searchMatch && filterMatch
+                ? ""
+                : "none";
+
+        }
+    );
+
+}
+
+
+searchInput.addEventListener(
+    "input",
+    filterDatasets
+);
+
+
+document
+.querySelectorAll(".filter")
+.forEach(
+button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            document
+            .querySelectorAll(".filter")
+            .forEach(
+                item =>
+                    item.classList.remove(
+                        "active"
+                    )
+            );
+
+            button.classList.add(
+                "active"
+            );
+
+            activeFilter =
+                button.dataset.filter;
+
+            filterDatasets();
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   PROBLEM SOLUTIONS
+========================================================= */
+
+document
+.querySelectorAll(".solution-btn")
+.forEach(
+button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const solution =
+                button.nextElementSibling;
+
+            solution.classList.toggle(
+                "show"
+            );
+
+            button.textContent =
+                solution.classList.contains("show")
+                ? "Hide Solution"
+                : "Solution";
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   MODEL MODAL
+========================================================= */
+
+const modelInfo = {
+
+    "ChatGPT": {
+
+        text:
+        "Conversational AI, coding, reasoning, structured outputs மற்றும் AI workflows பற்றி கற்றுக்கொள்ளுங்கள்.",
+
+        challenge:
+        "ஒரு Tamil AI tutor-க்கு system prompt உருவாக்குங்கள். Beginner-க்கு simple Tamil-ல் explanation வழங்க வேண்டும்."
+
+    },
+
+    "DeepSeek": {
+
+        text:
+        "Reasoning மற்றும் coding workflows-ஐ model evaluation உடன் study செய்யுங்கள்.",
+
+        challenge:
+        "ஒரு Python programming problem-க்கு explanation, code மற்றும் test cases கேட்கும் structured prompt எழுதுங்கள்."
+
+    },
+
+    "Gemini": {
+
+        text:
+        "Multimodal AI மற்றும் text/image/document workflows பற்றி கற்றுக்கொள்ளுங்கள்.",
+
+        challenge:
+        "ஒரு image + text analysis application architecture உருவாக்குங்கள்."
+
+    },
+
+    "Claude": {
+
+        text:
+        "Long-form document analysis, coding மற்றும் assistant workflows பற்றி study செய்யுங்கள்.",
+
+        challenge:
+        "ஒரு பெரிய document-ஐ section-wise summarize செய்யும் prompt எழுதுங்கள்."
+
+    },
+
+    "Open LLM": {
+
+        text:
+        "Open-weight models, local inference, quantization மற்றும் fine-tuning concepts.",
+
+        challenge:
+        "ஒரு local LLM application-ன் architecture diagram உருவாக்குங்கள்."
+
+    },
+
+    "Agents": {
+
+        text:
+        "LLM + tools + memory + planning கொண்டு agent systems உருவாக்கும் concepts.",
+
+        challenge:
+        "Search + calculator + document tools கொண்ட ஒரு AI agent workflow எழுதுங்கள்."
+
+    }
+
+};
+
+
+const modal =
+document.getElementById(
+    "modelModal"
+);
+
+const modalTitle =
+document.getElementById(
+    "modalTitle"
+);
+
+const modalContent =
+document.getElementById(
+    "modalContent"
+);
+
+const modalChallenge =
+document.getElementById(
+    "modalChallenge"
+);
+
+
+document
+.querySelectorAll(".model-btn")
+.forEach(
+button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const model =
+                button.dataset.model;
+
+            const info =
+                modelInfo[model];
+
+            modalTitle.textContent =
+                model + " Tutorial";
+
+            modalContent.textContent =
+                info.text;
+
+            modalChallenge.textContent =
+                info.challenge;
+
+            modal.classList.add(
+                "show"
+            );
+
+        }
+    );
+
+});
+
+
+document
+.getElementById("modalClose")
+.addEventListener(
+"click",
+() => {
+
+    modal.classList.remove(
+        "show"
+    );
+
+});
+
+
+modal.addEventListener(
+"click",
+event => {
+
+    if (
+        event.target === modal
+    ) {
+
+        modal.classList.remove(
+            "show"
+        );
+
+    }
+
+});
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+document
+.querySelectorAll(".option")
+.forEach(
+option => {
+
+    option.addEventListener(
+        "click",
+        () => {
+
+            const options =
+                option.parentElement
+                .querySelectorAll(
+                    ".option"
+                );
+
+            options.forEach(
+                item => {
+
+                    item.classList.remove(
+                        "correct"
+                    );
+
+                    item.classList.remove(
+                        "wrong"
+                    );
+
+                }
+            );
+
+
+            if (
+                option.dataset.correct ===
+                "true"
+            ) {
+
+                option.classList.add(
+                    "correct"
+                );
+
+            } else {
+
+                option.classList.add(
+                    "wrong"
+                );
+
+            }
+
+        }
+    );
+
+});
+
+
+document
+.getElementById("checkQuiz")
+.addEventListener(
+"click",
+() => {
+
+    let score = 0;
+    let total = 0;
+
+
+    document
+    .querySelectorAll(".question")
+    .forEach(
+        question => {
+
+            total++;
+
+            const correct =
+                question.querySelector(
+                    ".option.correct"
+                );
+
+            if (correct) {
+                score++;
+            }
+
+        }
+    );
+
+
+    const result =
+        document.getElementById(
+            "quizResult"
+        );
+
+    result.textContent =
+        `உங்கள் Score: ${score}/${total}`;
+
+    localStorage.setItem(
+        "ai-quiz-score",
+        score
+    );
+
+});
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+let progress =
+Number(
+    localStorage.getItem(
+        "ai-progress"
+    ) || 0
+);
+
+
+function updateProgress() {
+
+    document
+    .getElementById(
+        "progressFill"
+    )
+    .style.width =
+        progress + "%";
+
+
+    document
+    .getElementById(
+        "progressText"
+    )
+    .textContent =
+        progress + "% Complete";
+
+}
+
+
+document
+.getElementById(
+    "completeLesson"
+)
+.addEventListener(
+"click",
+() => {
+
+    progress += 10;
+
+    if (progress > 100) {
+        progress = 100;
+    }
+
+    localStorage.setItem(
+        "ai-progress",
+        progress
+    );
+
+    updateProgress();
+
+});
+
+
+updateProgress();
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const reveal =
+document.querySelectorAll(
+    ".topic-card," +
+    ".model-card," +
+    ".dataset," +
+    ".problem," +
+    ".roadmap-item"
+);
+
+
+const observer =
+new IntersectionObserver(
+entries => {
+
+    entries.forEach(
+        entry => {
+
+            if (
+                entry.isIntersecting
+            ) {
+
+                entry.target.style.opacity =
+                    "1";
+
+                entry.target.style.transform =
+                    "translateY(0)";
+
+                observer.unobserve(
+                    entry.target
+                );
+
+            }
+
+        }
+    );
+
+},
+{
+    threshold:.08
+});
+
+
+reveal.forEach(
+element => {
+
+    element.style.opacity = "0";
+    element.style.transform =
+        "translateY(20px)";
+
+    element.style.transition =
+        "opacity .5s ease, transform .5s ease";
+
+    observer.observe(
+        element
+    );
+
+});
+
+
+/* =========================================================
+   KEYBOARD SHORTCUT
+========================================================= */
+
+document.addEventListener(
+"keydown",
+event => {
+
+    if (
+        event.key === "/" &&
+        document.activeElement.tagName !== "INPUT"
+    ) {
+
+        event.preventDefault();
+
+        searchInput.focus();
+
+    }
+
+    if (
+        event.key === "Escape"
+    ) {
+
+        modal.classList.remove(
+            "show"
+        );
+
+    }
+
+});
+
+
+/* =========================================================
+   CONSOLE
+========================================================= */
+
+console.log(`
+╔══════════════════════════════════════════════╗
+║        AI உலகமும் மனிதனும்                  ║
+║        Sundarraju                            ║
+║                                              ║
+║  Tamil AI Story + Algorithm Learning Lab    ║
+╚══════════════════════════════════════════════╝
+`);
+
+</script>
+
+</body>
+</html>
