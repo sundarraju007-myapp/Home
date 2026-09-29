@@ -1,0 +1,3016 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="சுந்தர்ராஜு மருத்துவக் குறிப்பேடு - தமிழ் மற்றும் ஆங்கிலத்தில் சித்த மருத்துவம், இயற்கை பராமரிப்பு, மூலிகை மற்றும் ஆரோக்கிய தகவல்கள்">
+
+<title>
+    சுந்தர்ராஜு மருத்துவக் குறிப்பேடு | Sundarraju Maruthuva Kurippedu
+</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Noto Sans Tamil",
+        "Latha",
+        "Arial",
+        sans-serif;
+
+    background: #f5f9f3;
+    color: #26352a;
+    line-height: 1.8;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    background:
+        linear-gradient(
+            135deg,
+            #064d2b,
+            #08783c,
+            #159447
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 38px 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.15);
+}
+
+.logo {
+    font-size: 48px;
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 800;
+}
+
+header .english-title {
+    font-size: 19px;
+    margin-top: 2px;
+    opacity: 0.9;
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    background: #04391f;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.18);
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+
+    padding: 12px 16px;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #159447;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    color: white;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0,70,35,0.88),
+            rgba(0,70,35,0.88)
+        ),
+        url("https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.hero .english {
+    font-size: 21px;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 820px;
+    margin: auto;
+
+    font-size: 17px;
+}
+
+.search-area {
+    max-width: 750px;
+
+    margin:
+        30px auto 0;
+}
+
+#searchBox {
+    width: 100%;
+
+    padding:
+        17px 25px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 35px;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.25);
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    padding: 65px 0;
+}
+
+.section-title {
+    text-align: center;
+
+    color: #075e32;
+
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+.section-english {
+    text-align: center;
+
+    color: #777;
+
+    font-size: 17px;
+
+    margin-bottom: 12px;
+}
+
+.section-description {
+    max-width: 800px;
+
+    margin:
+        0 auto 40px;
+
+    text-align: center;
+
+    color: #5d685f;
+}
+
+
+/* =========================================================
+   DISEASE GRID
+========================================================= */
+
+.disease-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.card {
+    background: white;
+
+    padding: 27px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    border-top:
+        5px solid #159447;
+
+    box-shadow:
+        0 6px 22px rgba(0,0,0,0.08);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,0.14);
+}
+
+.card-icon {
+    font-size: 48px;
+
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    color: #075e32;
+
+    font-size: 20px;
+}
+
+.card .english-name {
+    display: block;
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #626d65;
+
+    font-size: 14px;
+}
+
+.read-btn {
+    margin-top: 16px;
+
+    padding:
+        10px 22px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #08783c;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.read-btn:hover {
+    background: #054d27;
+
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+#noResults {
+    display: none;
+
+    text-align: center;
+
+    padding: 35px;
+
+    color: #a33;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   NATURAL SECTION
+========================================================= */
+
+.natural-section {
+    background: #eaf5e9;
+
+    padding: 65px 0;
+}
+
+.natural-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.natural-card {
+    background: white;
+
+    padding: 24px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    border:
+        1px solid #d5e7d6;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.06);
+
+    transition: 0.3s;
+}
+
+.natural-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #159447;
+}
+
+.natural-icon {
+    font-size: 42px;
+}
+
+.natural-card h3 {
+    color: #08783c;
+
+    margin:
+        8px 0;
+}
+
+.natural-card .english {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.natural-card p {
+    color: #5e685f;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   HERBAL SECTION
+========================================================= */
+
+.herbal-section {
+    padding: 65px 0;
+}
+
+.herbal-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.herbal-card {
+    background: white;
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+}
+
+.herbal-top {
+    padding: 25px;
+
+    color: white;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #08783c,
+            #37a65d
+        );
+}
+
+.herbal-icon {
+    font-size: 43px;
+}
+
+.herbal-top h3 {
+    margin-top: 5px;
+}
+
+.herbal-top small {
+    opacity: 0.9;
+}
+
+.herbal-body {
+    padding: 22px;
+}
+
+.herbal-body p {
+    color: #5d675f;
+
+    font-size: 14px;
+}
+
+.herbal-note {
+    background: #eef8ef;
+
+    border-left:
+        4px solid #159447;
+
+    padding: 10px;
+
+    margin-top: 13px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FOOD
+========================================================= */
+
+.food-section {
+    background: #fffdf3;
+
+    padding: 65px 0;
+}
+
+.food-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.food-card {
+    background: white;
+
+    padding: 24px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.06);
+}
+
+.food-card h3 {
+    color: #795900;
+
+    margin-bottom: 7px;
+}
+
+.food-card .english {
+    color: #888;
+
+    font-size: 13px;
+
+    display: block;
+}
+
+.food-card p {
+    color: #625f57;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    background: #dff0e2;
+
+    padding: 65px 0;
+}
+
+.about-content {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.about h2 {
+    color: #075e32;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.about p {
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.warning {
+    background: #fff3cd;
+
+    padding: 45px 0;
+
+    border-top:
+        1px solid #e0c76b;
+
+    border-bottom:
+        1px solid #e0c76b;
+}
+
+.warning-box {
+    max-width: 950px;
+
+    margin: auto;
+}
+
+.warning h2 {
+    color: #795900;
+
+    margin-bottom: 10px;
+}
+
+.warning .english {
+    color: #856d20;
+
+    margin-bottom: 12px;
+}
+
+.warning p {
+    color: #5d4b15;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 3000;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    background:
+        rgba(0,0,0,0.72);
+}
+
+.modal-box {
+    width: 100%;
+
+    max-width: 720px;
+
+    margin:
+        4vh auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    position: relative;
+
+    animation:
+        popup 0.25s ease;
+}
+
+@keyframes popup {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(-20px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+.close {
+    position: absolute;
+
+    right: 17px;
+    top: 10px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    color: #555;
+}
+
+.close:hover {
+    color: #c00;
+}
+
+#modalTitle {
+    color: #075e32;
+
+    padding-right: 35px;
+
+    margin-bottom: 5px;
+}
+
+#modalEnglishTitle {
+    color: #777;
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+}
+
+.modal-info {
+    background: #eef8ef;
+
+    border-left:
+        5px solid #159447;
+
+    padding: 16px;
+
+    margin:
+        15px 0;
+
+    border-radius: 5px;
+}
+
+.modal-info h3 {
+    color: #08783c;
+
+    margin-bottom: 6px;
+}
+
+.modal-warning {
+    background: #fff3cd;
+
+    border-left:
+        5px solid #e0a900;
+
+    padding: 16px;
+
+    margin-top: 20px;
+
+    color: #5c4a13;
+}
+
+.modal-warning h3 {
+    color: #795900;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #04391f;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 15px;
+}
+
+footer h3 {
+    margin-bottom: 5px;
+}
+
+footer .english {
+    opacity: 0.85;
+
+    font-size: 14px;
+}
+
+footer p {
+    opacity: 0.8;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TOP BUTTON
+========================================================= */
+
+#topButton {
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 46px;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #08783c;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 1500;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .disease-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .natural-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .herbal-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .food-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    header .english-title {
+        font-size: 15px;
+    }
+
+    .logo {
+        font-size: 38px;
+    }
+
+    nav a {
+        padding:
+            8px 9px;
+
+        font-size: 12px;
+    }
+
+    .hero {
+        padding:
+            55px 15px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .hero .english {
+        font-size: 17px;
+    }
+
+    .disease-grid,
+    .natural-grid,
+    .herbal-grid,
+    .food-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding:
+            45px 0;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .modal-box {
+        margin-top: 4vh;
+
+        padding:
+            28px 20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header>
+
+    <div class="container">
+
+        <div class="logo">
+            🌿
+        </div>
+
+        <h1>
+            சுந்தர்ராஜு மருத்துவக் குறிப்பேடு
+        </h1>
+
+        <div class="english-title">
+            Sundarraju Maruthuva Kurippedu
+        </div>
+
+        <p>
+            தமிழ் சித்த மருத்துவம் • இயற்கை பராமரிப்பு • ஆரோக்கிய வாழ்க்கை
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
+
+<nav>
+
+    <div class="container nav-inner">
+
+        <a href="#home">
+            முகப்பு
+        </a>
+
+        <a href="#diseases">
+            நோய்கள்
+        </a>
+
+        <a href="#natural">
+            இயற்கை
+        </a>
+
+        <a href="#herbs">
+            மூலிகைகள்
+        </a>
+
+        <a href="#food">
+            உணவு
+        </a>
+
+        <a href="#about">
+            சித்த மருத்துவம்
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="container">
+
+        <h2>
+            இயற்கையுடன் இணைந்து ஆரோக்கியமாக வாழ்வோம்
+        </h2>
+
+        <div class="english">
+            Traditional Wellness & Siddha Information
+        </div>
+
+        <p>
+            சித்த மருத்துவம், இயற்கை பராமரிப்பு,
+            மூலிகைகள், உணவு மற்றும் பொதுவான
+            உடல்நலத் தகவல்களை தமிழிலும் ஆங்கிலத்திலும்
+            அறிந்துகொள்ளுங்கள்.
+        </p>
+
+        <div class="search-area">
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="🔍 நோய் / Disease / அறிகுறி தேடுங்கள்..."
+                onkeyup="searchDiseases()"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DISEASES
+====================================================== -->
+
+<section
+    class="section"
+    id="diseases"
+>
+
+<div class="container">
+
+    <h2 class="section-title">
+        🩺 நோய்கள் மற்றும் மருத்துவக் குறிப்புகள்
+    </h2>
+
+    <div class="section-english">
+        Diseases & Medicine Information
+    </div>
+
+    <p class="section-description">
+
+        தமிழ் மற்றும் English பெயர்கள், பொதுவான அறிகுறிகள்,
+        மருந்து/மூலிகை தகவல்கள் மற்றும் பாதுகாப்பு குறிப்புகள்.
+
+    </p>
+
+
+    <div
+        class="disease-grid"
+        id="diseaseGrid"
+    >
+
+
+        <!-- 1 -->
+
+        <article
+            class="card"
+            data-name="சளி இருமல் cold common cold cough"
+        >
+
+            <div class="card-icon">
+                🤧
+            </div>
+
+            <h3>
+                சளி மற்றும் இருமல்
+            </h3>
+
+            <span class="english-name">
+                Common Cold & Cough
+            </span>
+
+            <p>
+                சளி, இருமல், மூக்கடைப்பு மற்றும்
+                தொண்டை அசௌகரியம்.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('cold')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 2 -->
+
+        <article
+            class="card"
+            data-name="தலைவலி headache"
+        >
+
+            <div class="card-icon">
+                🤕
+            </div>
+
+            <h3>
+                தலைவலி
+            </h3>
+
+            <span class="english-name">
+                Headache
+            </span>
+
+            <p>
+                தலைப்பகுதியில் ஏற்படும் வலி
+                மற்றும் அசௌகரியம்.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('headache')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 3 -->
+
+        <article
+            class="card"
+            data-name="அஜீரணம் செரிமானம் indigestion digestion"
+        >
+
+            <div class="card-icon">
+                🍃
+            </div>
+
+            <h3>
+                செரிமானக் கோளாறு
+            </h3>
+
+            <span class="english-name">
+                Indigestion
+            </span>
+
+            <p>
+                அஜீரணம், வயிற்றுப்பெருமல்,
+                ஏப்பம் போன்றவை.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('digestion')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 4 -->
+
+        <article
+            class="card"
+            data-name="மலச்சிக்கல் constipation"
+        >
+
+            <div class="card-icon">
+                🌿
+            </div>
+
+            <h3>
+                மலச்சிக்கல்
+            </h3>
+
+            <span class="english-name">
+                Constipation
+            </span>
+
+            <p>
+                மலம் கழிப்பதில் சிரமம் அல்லது
+                குடல் இயக்கத்தில் மாற்றம்.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('constipation')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 5 -->
+
+        <article
+            class="card"
+            data-name="தோல் skin itching allergy"
+        >
+
+            <div class="card-icon">
+                🌱
+            </div>
+
+            <h3>
+                தோல் பிரச்சினைகள்
+            </h3>
+
+            <span class="english-name">
+                Skin Problems
+            </span>
+
+            <p>
+                அரிப்பு, உலர்ச்சி, சிவத்தல்
+                மற்றும் எரிச்சல்.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('skin')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 6 -->
+
+        <article
+            class="card"
+            data-name="மூட்டு வலி joint pain arthritis"
+        >
+
+            <div class="card-icon">
+                🦴
+            </div>
+
+            <h3>
+                மூட்டு வலி
+            </h3>
+
+            <span class="english-name">
+                Joint Pain
+            </span>
+
+            <p>
+                மூட்டு வலி, இறுக்கம்
+                அல்லது வீக்கம்.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('joint')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 7 -->
+
+        <article
+            class="card"
+            data-name="நீரிழிவு diabetes sugar"
+        >
+
+            <div class="card-icon">
+                🩺
+            </div>
+
+            <h3>
+                நீரிழிவு
+            </h3>
+
+            <span class="english-name">
+                Diabetes
+            </span>
+
+            <p>
+                இரத்தச் சர்க்கரை தொடர்பான
+                நீண்டகால உடல்நிலை.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('diabetes')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 8 -->
+
+        <article
+            class="card"
+            data-name="உயர் இரத்த அழுத்தம் bp hypertension blood pressure"
+        >
+
+            <div class="card-icon">
+                ❤️
+            </div>
+
+            <h3>
+                உயர் இரத்த அழுத்தம்
+            </h3>
+
+            <span class="english-name">
+                High Blood Pressure
+            </span>
+
+            <p>
+                இரத்த அழுத்தம் தொடர்பான
+                உடல்நிலை.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('bp')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 9 -->
+
+        <article
+            class="card"
+            data-name="காய்ச்சல் fever temperature"
+        >
+
+            <div class="card-icon">
+                🌡️
+            </div>
+
+            <h3>
+                காய்ச்சல்
+            </h3>
+
+            <span class="english-name">
+                Fever
+            </span>
+
+            <p>
+                உடல் வெப்பநிலை அதிகரித்தல்
+                போன்ற அறிகுறிகள்.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('fever')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 10 -->
+
+        <article
+            class="card"
+            data-name="தொண்டை வலி sore throat throat"
+        >
+
+            <div class="card-icon">
+                🍵
+            </div>
+
+            <h3>
+                தொண்டை வலி
+            </h3>
+
+            <span class="english-name">
+                Sore Throat
+            </span>
+
+            <p>
+                தொண்டை வலி, எரிச்சல்
+                மற்றும் விழுங்குவதில் சிரமம்.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('throat')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 11 -->
+
+        <article
+            class="card"
+            data-name="தூக்கமின்மை insomnia sleep"
+        >
+
+            <div class="card-icon">
+                😴
+            </div>
+
+            <h3>
+                தூக்கப் பிரச்சினை
+            </h3>
+
+            <span class="english-name">
+                Insomnia / Sleep Problems
+            </span>
+
+            <p>
+                தூங்குவதில் சிரமம் அல்லது
+                தூக்கம் பாதிக்கப்படுதல்.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('sleep')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 12 -->
+
+        <article
+            class="card"
+            data-name="மன அழுத்தம் stress anxiety"
+        >
+
+            <div class="card-icon">
+                🧘
+            </div>
+
+            <h3>
+                மன அழுத்தம்
+            </h3>
+
+            <span class="english-name">
+                Stress
+            </span>
+
+            <p>
+                மன அழுத்தம் மற்றும்
+                பதற்றம் தொடர்பான தகவல்கள்.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('stress')"
+            >
+                💊 தகவல்கள் / Information
+            </button>
+
+        </article>
+
+
+        <!-- 13 -->
+
+        <article
+            class="card"
+            data-name="வயிற்று வலி stomach pain abdominal pain"
+        >
+
+            <div class="card-icon">
+                🫄
+            </div>
+
+            <h3>
+                வயிற்று வலி
+            </h3>
+
+            <span class="english-name">
+                Stomach / Abdominal Pain
+            </span>
+
+            <p>
+                வயிற்று வலி அல்லது
+                அசௌகரியம்.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('stomach')"
+            >
+                💊 தகவல்கள் / Information
+            </button>
+
+        </article>
+
+
+        <!-- 14 -->
+
+        <article
+            class="card"
+            data-name="அலர்ஜி allergy allergy symptoms"
+        >
+
+            <div class="card-icon">
+                🤧
+            </div>
+
+            <h3>
+                ஒவ்வாமை
+            </h3>
+
+            <span class="english-name">
+                Allergy
+            </span>
+
+            <p>
+                தும்மல், அரிப்பு,
+                தோல் தடிப்பு போன்றவை.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('allergy')"
+            >
+                💊 மருந்து / Medicine
+            </button>
+
+        </article>
+
+
+        <!-- 15 -->
+
+        <article
+            class="card"
+            data-name="உடல் சோர்வு fatigue tiredness weakness"
+        >
+
+            <div class="card-icon">
+                💤
+            </div>
+
+            <h3>
+                உடல் சோர்வு
+            </h3>
+
+            <span class="english-name">
+                Fatigue
+            </span>
+
+            <p>
+                சோர்வு, ஆற்றல் குறைவு
+                அல்லது பலவீனம்.
+            </p>
+
+            <button
+                class="read-btn"
+                onclick="showInfo('fatigue')"
+            >
+                💊 தகவல்கள் / Information
+            </button>
+
+        </article>
+
+
+    </div>
+
+
+    <div id="noResults">
+
+        🔍 தேடப்பட்ட நோய் கிடைக்கவில்லை.
+        <br>
+        No matching disease found.
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NATURAL CARE
+====================================================== -->
+
+<section
+    class="natural-section"
+    id="natural"
+>
+
+<div class="container">
+
+    <h2 class="section-title">
+        🌿 இயற்கை பராமரிப்பு
+    </h2>
+
+    <div class="section-english">
+        Natural Wellness
+    </div>
+
+    <p class="section-description">
+
+        அன்றாட ஆரோக்கியமான வாழ்க்கை முறைக்கு
+        உதவும் பொதுவான இயற்கை பராமரிப்பு குறிப்புகள்.
+
+    </p>
+
+
+    <div class="natural-grid">
+
+
+        <div class="natural-card">
+
+            <div class="natural-icon">
+                💧
+            </div>
+
+            <h3>
+                போதுமான தண்ணீர்
+            </h3>
+
+            <div class="english">
+                Adequate Hydration
+            </div>
+
+            <p>
+                உடலுக்குத் தேவையான அளவு திரவத்தை
+                எடுத்துக்கொள்ளுங்கள்.
+            </p>
+
+        </div>
+
+
+        <div class="natural-card">
+
+            <div class="natural-icon">
+                🥗
+            </div>
+
+            <h3>
+                சத்தான உணவு
+            </h3>
+
+            <div class="english">
+                Healthy Diet
+            </div>
+
+            <p>
+                காய்கறிகள், பழங்கள், முழுத்தானியங்கள்
+                உள்ளிட்ட பல்வேறு உணவுகளைச் சேர்க்கவும்.
+            </p>
+
+        </div>
+
+
+        <div class="natural-card">
+
+            <div class="natural-icon">
+                🚶
+            </div>
+
+            <h3>
+                நடைப்பயிற்சி
+            </h3>
+
+            <div class="english">
+                Walking / Exercise
+            </div>
+
+            <p>
+                உடல்நிலைக்கு ஏற்ற வழக்கமான
+                உடல் இயக்கத்தைப் பராமரிக்கவும்.
+            </p>
+
+        </div>
+
+
+        <div class="natural-card">
+
+            <div class="natural-icon">
+                😴
+            </div>
+
+            <h3>
+                நல்ல தூக்கம்
+            </h3>
+
+            <div class="english">
+                Good Sleep
+            </div>
+
+            <p>
+                ஒழுங்கான தூக்க நேரத்தையும்
+                போதுமான ஓய்வையும் பராமரிக்கவும்.
+            </p>
+
+        </div>
+
+
+        <div class="natural-card">
+
+            <div class="natural-icon">
+                🧘
+            </div>
+
+            <h3>
+                யோகா
+            </h3>
+
+            <div class="english">
+                Yoga
+            </div>
+
+            <p>
+                தகுந்த முறையில் யோகா மற்றும்
+                மூச்சுப்பயிற்சி செய்யலாம்.
+            </p>
+
+        </div>
+
+
+        <div class="natural-card">
+
+            <div class="natural-icon">
+                🌞
+            </div>
+
+            <h3>
+                வெளிப்புற செயல்பாடு
+            </h3>
+
+            <div class="english">
+                Outdoor Activity
+            </div>
+
+            <p>
+                பாதுகாப்பான சூழலில் உடல் இயக்கத்தை
+                அதிகரிக்கலாம்.
+            </p>
+
+        </div>
+
+
+        <div class="natural-card">
+
+            <div class="natural-icon">
+                🍵
+            </div>
+
+            <h3>
+                வெதுவெதுப்பான திரவம்
+            </h3>
+
+            <div class="english">
+                Warm Fluids
+            </div>
+
+            <p>
+                சில பொதுவான தொண்டை அசௌகரியங்களில்
+                வெதுவெதுப்பான திரவம் நிம்மதியளிக்கலாம்.
+            </p>
+
+        </div>
+
+
+        <div class="natural-card">
+
+            <div class="natural-icon">
+                🌱
+            </div>
+
+            <h3>
+                இயற்கை உணவுகள்
+            </h3>
+
+            <div class="english">
+                Natural Foods
+            </div>
+
+            <p>
+                குறைவாக பதப்படுத்தப்பட்ட உணவுகளை
+                சமநிலையான உணவின் பகுதியாக எடுத்துக்கொள்ளலாம்.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     HERBS
+====================================================== -->
+
+<section
+    class="herbal-section"
+    id="herbs"
+>
+
+<div class="container">
+
+    <h2 class="section-title">
+        🌱 மூலிகை தகவல்கள்
+    </h2>
+
+    <div class="section-english">
+        Traditional Herbal Information
+    </div>
+
+    <p class="section-description">
+
+        கீழே உள்ளவை பாரம்பரிய பயன்பாடுகளைப் பற்றிய
+        பொதுவான தகவல்கள். இவை தனிநபருக்கான மருந்து
+        பரிந்துரைகள் அல்ல.
+
+    </p>
+
+
+    <div class="herbal-grid">
+
+
+        <div class="herbal-card">
+
+            <div class="herbal-top">
+
+                <div class="herbal-icon">
+                    🌿
+                </div>
+
+                <h3>
+                    துளசி
+                </h3>
+
+                <small>
+                    Tulsi / Holy Basil
+                </small>
+
+            </div>
+
+            <div class="herbal-body">
+
+                <p>
+                    துளசி பாரம்பரியமாக பல்வேறு வீட்டு
+                    பயன்பாடுகள் மற்றும் பானங்களில் பயன்படுத்தப்படுகிறது.
+                </p>
+
+                <div class="herbal-note">
+                    மருத்துவ பயன்பாட்டிற்கு முன்
+                    தகுதியான நிபுணரிடம் ஆலோசிக்கவும்.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="herbal-card">
+
+            <div class="herbal-top">
+
+                <div class="herbal-icon">
+                    🫚
+                </div>
+
+                <h3>
+                    இஞ்சி
+                </h3>
+
+                <small>
+                    Ginger
+                </small>
+
+            </div>
+
+            <div class="herbal-body">
+
+                <p>
+                    இஞ்சி சமையலிலும் பாரம்பரிய பானங்களிலும்
+                    பரவலாகப் பயன்படுத்தப்படுகிறது.
+                </p>
+
+                <div class="herbal-note">
+                    அதிக அளவு பயன்படுத்துவதற்கு முன்
+                    மருத்துவ ஆலோசனை பெறவும்.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="herbal-card">
+
+            <div class="herbal-top">
+
+                <div class="herbal-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    கற்றாழை
+                </h3>
+
+                <small>
+                    Aloe Vera
+                </small>
+
+            </div>
+
+            <div class="herbal-body">
+
+                <p>
+                    கற்றாழை பாரம்பரியமாக தோல் பராமரிப்பு
+                    உள்ளிட்ட சில பயன்பாடுகளில் இடம்பெறுகிறது.
+                </p>
+
+                <div class="herbal-note">
+                    தோலில் பயன்படுத்துவதற்கு முன்
+                    ஒவ்வாமை குறித்து கவனிக்கவும்.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="herbal-card">
+
+            <div class="herbal-top">
+
+                <div class="herbal-icon">
+                    🍃
+                </div>
+
+                <h3>
+                    முருங்கை
+                </h3>
+
+                <small>
+                    Moringa
+                </small>
+
+            </div>
+
+            <div class="herbal-body">
+
+                <p>
+                    முருங்கை இலை மற்றும் காய் உணவில்
+                    பரவலாகப் பயன்படுத்தப்படுகிறது.
+                </p>
+
+                <div class="herbal-note">
+                    சமநிலையான உணவின் ஒரு பகுதியாக
+                    பயன்படுத்தலாம்.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="herbal-card">
+
+            <div class="herbal-top">
+
+                <div class="herbal-icon">
+                    🌾
+                </div>
+
+                <h3>
+                    சீரகம்
+                </h3>
+
+                <small>
+                    Cumin
+                </small>
+
+            </div>
+
+            <div class="herbal-body">
+
+                <p>
+                    சீரகம் பொதுவாக சமையலில் பயன்படுத்தப்படும்
+                    ஒரு நறுமணப் பொருள்.
+                </p>
+
+                <div class="herbal-note">
+                    இது மருத்துவ சிகிச்சைக்கு மாற்றாகாது.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="herbal-card">
+
+            <div class="herbal-top">
+
+                <div class="herbal-icon">
+                    🌿
+                </div>
+
+                <h3>
+                    புதினா
+                </h3>
+
+                <small>
+                    Mint
+                </small>
+
+            </div>
+
+            <div class="herbal-body">
+
+                <p>
+                    புதினா உணவு மற்றும் பானங்களில்
+                    பொதுவாகப் பயன்படுத்தப்படுகிறது.
+                </p>
+
+                <div class="herbal-note">
+                    குறிப்பிட்ட நோய்க்கான சிகிச்சையாக
+                    பயன்படுத்துவதற்கு முன் நிபுணரை அணுகவும்.
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOD
+====================================================== -->
+
+<section
+    class="food-section"
+    id="food"
+>
+
+<div class="container">
+
+    <h2 class="section-title">
+        🥗 உணவு மற்றும் ஆரோக்கியம்
+    </h2>
+
+    <div class="section-english">
+        Food & Healthy Lifestyle
+    </div>
+
+    <p class="section-description">
+        ஆரோக்கியமான வாழ்க்கை முறைக்கான பொதுவான
+        உணவு குறிப்புகள்.
+    </p>
+
+
+    <div class="food-grid">
+
+
+        <div class="food-card">
+
+            <h3>
+                🥬 காய்கறிகள்
+            </h3>
+
+            <span class="english">
+                Vegetables
+            </span>
+
+            <p>
+                பல்வேறு நிறங்களிலான காய்கறிகளை
+                உணவில் சேர்க்க முயற்சிக்கவும்.
+            </p>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <h3>
+                🍎 பழங்கள்
+            </h3>
+
+            <span class="english">
+                Fruits
+            </span>
+
+            <p>
+                பருவத்திற்கேற்ற பழங்களை சமநிலையான
+                உணவின் ஒரு பகுதியாக எடுத்துக்கொள்ளலாம்.
+            </p>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <h3>
+                🌾 முழுத்தானியங்கள்
+            </h3>
+
+            <span class="english">
+                Whole Grains
+            </span>
+
+            <p>
+                நார்ச்சத்து உள்ள முழுத்தானிய உணவுகளை
+                உணவில் சேர்க்கலாம்.
+            </p>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <h3>
+                🫘 பருப்பு வகைகள்
+            </h3>
+
+            <span class="english">
+                Pulses & Legumes
+            </span>
+
+            <p>
+                பருப்பு மற்றும் பயறு வகைகள்
+                சமநிலையான உணவில் இடம்பெறலாம்.
+            </p>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <h3>
+                🥜 கொட்டைகள்
+            </h3>
+
+            <span class="english">
+                Nuts
+            </span>
+
+            <p>
+                தனிநபரின் உணவு தேவைக்கு ஏற்ப
+                கொட்டைகளை அளவோடு எடுத்துக்கொள்ளலாம்.
+            </p>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <h3>
+                🍚 சமநிலை உணவு
+            </h3>
+
+            <span class="english">
+                Balanced Diet
+            </span>
+
+            <p>
+                பல்வேறு உணவுக் குழுக்களை உள்ளடக்கிய
+                சமநிலையான உணவைத் தேர்ந்தெடுக்கவும்.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+
+<section
+    class="about"
+    id="about"
+>
+
+<div class="container">
+
+    <div class="about-content">
+
+        <h2>
+            🌿 சித்த மருத்துவம் பற்றி
+        </h2>
+
+        <p>
+            <strong>Siddha Medicine</strong> என்பது தமிழ்நாட்டின்
+            பாரம்பரிய மருத்துவ மரபுகளில் ஒன்றாகும்.
+            மூலிகைகள், உணவு முறைகள், வாழ்க்கை முறை மற்றும்
+            பல்வேறு பாரம்பரிய அணுகுமுறைகள் இதில் இடம்பெறுகின்றன.
+        </p>
+
+        <p>
+            <strong>சுந்தர்ராஜு மருத்துவக் குறிப்பேடு</strong>
+            தளம் தமிழ் மற்றும் English மொழிகளில் பொதுவான
+            சுகாதாரத் தகவல்களை எளிதாகப் புரிந்துகொள்ளும்
+            வகையில் வழங்குவதற்காக உருவாக்கப்பட்டுள்ளது.
+        </p>
+
+        <p>
+            ஒவ்வொரு நபரின் உடல்நிலையும் வேறுபடும்.
+            எனவே குறிப்பிட்ட நோய்க்கு மருந்து தேர்வு,
+            அளவு மற்றும் சிகிச்சை முறையை தகுதியான
+            மருத்துவர் அல்லது Siddha மருத்துவருடன்
+            ஆலோசித்து தீர்மானிக்க வேண்டும்.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     WARNING
+====================================================== -->
+
+<section class="warning">
+
+<div class="container">
+
+    <div class="warning-box">
+
+        <h2>
+            ⚠️ முக்கிய மருத்துவக் குறிப்பு
+        </h2>
+
+        <div class="english">
+            Important Medical Disclaimer
+        </div>
+
+        <p>
+            இத்தளத்தில் உள்ள தகவல்கள் கல்வி மற்றும்
+            பொதுவான சுகாதாரத் தகவல் நோக்கங்களுக்காக மட்டுமே.
+            இவை மருத்துவரின் நேரடி ஆலோசனை, நோயறிதல்
+            அல்லது சிகிச்சைக்கு மாற்றாகாது.
+        </p>
+
+        <p>
+            Diabetes, Blood Pressure, Heart Disease,
+            Kidney Disease, Liver Disease, Pregnancy,
+            Children மற்றும் நீண்டகால மருந்து பயன்பாடு
+            போன்ற சூழ்நிலைகளில் மூலிகை அல்லது Siddha
+            மருந்துகளை மருத்துவ ஆலோசனையின்றி பயன்படுத்த வேண்டாம்.
+        </p>
+
+        <p>
+            மூச்சுத்திணறல், மார்பு வலி, திடீர் மயக்கம்,
+            கடுமையான இரத்தப்போக்கு, திடீர் உடல் பலவீனம்
+            அல்லது பிற அவசர அறிகுறிகள் இருந்தால் உடனடி
+            மருத்துவ உதவியை நாடுங்கள்.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <h3>
+        🌿 சுந்தர்ராஜு மருத்துவக் குறிப்பேடு
+    </h3>
+
+    <div class="english">
+        Sundarraju Maruthuva Kurippedu
+    </div>
+
+    <p>
+        பாரம்பரிய மருத்துவத் தகவல் • இயற்கை வாழ்க்கை முறை
+    </p>
+
+    <p>
+        © 2026 All Rights Reserved
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     MODAL
+====================================================== -->
+
+<div
+    class="modal"
+    id="modal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeModal()"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <h2 id="modalTitle">
+            மருத்துவக் குறிப்பு
+        </h2>
+
+        <div id="modalEnglishTitle">
+        </div>
+
+        <div id="modalContent">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     BACK TO TOP
+====================================================== -->
+
+<button
+    id="topButton"
+    onclick="window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })"
+>
+    ↑
+</button>
+
+
+<script>
+
+/* =========================================================
+   DISEASE DATABASE
+========================================================= */
+
+const diseaseInfo = {
+
+
+    cold: {
+
+        tamil: "சளி மற்றும் இருமல்",
+
+        english: "Common Cold & Cough",
+
+        symptoms: `
+            மூக்கடைப்பு, மூக்கு ஒழுகுதல்,
+            இருமல், தொண்டை எரிச்சல் போன்றவை.
+        `,
+
+        medicine: `
+            <strong>பாரம்பரியமாக பயன்படுத்தப்படுபவை:</strong><br>
+            துளசி (Tulsi / Holy Basil),
+            இஞ்சி (Ginger),
+            மிளகு (Black Pepper) போன்றவை.
+            <br><br>
+            இவை பாரம்பரிய பயன்பாடுகள் மட்டுமே.
+        `,
+
+        note: `
+            மூச்சுத்திணறல், மார்பு வலி அல்லது நீடித்த
+            அதிக காய்ச்சல் இருந்தால் மருத்துவ உதவி பெறவும்.
+        `
+    },
+
+
+    headache: {
+
+        tamil: "தலைவலி",
+
+        english: "Headache",
+
+        symptoms: `
+            தலைப்பகுதியில் வலி, அழுத்தம் அல்லது
+            அசௌகரியம்.
+        `,
+
+        medicine: `
+            போதுமான தண்ணீர், ஓய்வு மற்றும்
+            ஒழுங்கான தூக்கம் உதவியாக இருக்கலாம்.
+            <br><br>
+            காரணத்தைப் பொறுத்து மருத்துவ சிகிச்சை மாறுபடும்.
+        `,
+
+        note: `
+            திடீரென ஏற்படும் மிகக் கடுமையான தலைவலி,
+            பார்வை அல்லது பேச்சு மாற்றம் இருந்தால்
+            உடனடி மருத்துவ உதவி பெறவும்.
+        `
+    },
+
+
+    digestion: {
+
+        tamil: "செரிமானக் கோளாறு",
+
+        english: "Indigestion",
+
+        symptoms: `
+            வயிற்றுப்பெருமல், ஏப்பம்,
+            அஜீரணம் அல்லது வயிற்றில் அசௌகரியம்.
+        `,
+
+        medicine: `
+            சீரகம் (Cumin), இஞ்சி (Ginger),
+            புதினா (Mint) போன்றவை பாரம்பரிய உணவு
+            மற்றும் பானங்களில் பயன்படுத்தப்படுகின்றன.
+            <br><br>
+            குறிப்பிட்ட நோய்க்கான மருந்தாக இதை கருத வேண்டாம்.
+        `,
+
+        note: `
+            தொடர்ந்து இருக்கும் செரிமானப் பிரச்சினைக்கு
+            மருத்துவரை அணுகவும்.
+        `
+    },
+
+
+    constipation: {
+
+        tamil: "மலச்சிக்கல்",
+
+        english: "Constipation",
+
+        symptoms: `
+            மலம் கழிப்பதில் சிரமம் அல்லது
+            வழக்கத்தைவிட குறைவான குடல் இயக்கம்.
+        `,
+
+        medicine: `
+            நார்ச்சத்து உள்ள உணவுகள்,
+            காய்கறிகள், பழங்கள் மற்றும்
+            போதுமான திரவம் உதவியாக இருக்கலாம்.
+        `,
+
+        note: `
+            நீண்டகால மலச்சிக்கல் அல்லது கடுமையான
+            வயிற்று வலி இருந்தால் மருத்துவரை அணுகவும்.
+        `
+    },
+
+
+    skin: {
+
+        tamil: "தோல் பிரச்சினைகள்",
+
+        english: "Common Skin Problems",
+
+        symptoms: `
+            அரிப்பு, உலர்ச்சி, சிவத்தல்
+            அல்லது தோல் எரிச்சல்.
+        `,
+
+        medicine: `
+            கற்றாழை (Aloe Vera) போன்றவை
+            பாரம்பரியமாக சில தோல் பராமரிப்பு
+            பயன்பாடுகளில் இடம்பெறுகின்றன.
+            <br><br>
+            தோலில் பயன்படுத்துவதற்கு முன்
+            ஒவ்வாமை குறித்து கவனிக்கவும்.
+        `,
+
+        note: `
+            திறந்த காயம், தொற்று அல்லது காரணம் தெரியாத
+            தோல் பிரச்சினைகளில் தானாக மூலிகை பயன்படுத்த வேண்டாம்.
+        `
+    },
+
+
+    joint: {
+
+        tamil: "மூட்டு வலி",
+
+        english: "Joint Pain",
+
+        symptoms: `
+            மூட்டு வலி, இறுக்கம் அல்லது வீக்கம்.
+        `,
+
+        medicine: `
+            மூட்டு பிரச்சினைகளுக்கு பல்வேறு
+            Siddha preparations பயன்படுத்தப்படலாம்.
+            <br><br>
+            எந்த மருந்து பொருத்தமானது என்பது
+            நோயின் காரணம் மற்றும் நபரின் உடல்நிலையைப் பொறுத்தது.
+        `,
+
+        note: `
+            தொடர்ந்து இருக்கும் வலி, அதிக வீக்கம்
+            அல்லது காயம் இருந்தால் மருத்துவ பரிசோதனை பெறவும்.
+        `
+    },
+
+
+    diabetes: {
+
+        tamil: "நீரிழிவு",
+
+        english: "Diabetes",
+
+        symptoms: `
+            அதிக தாகம், அடிக்கடி சிறுநீர் கழித்தல்,
+            சோர்வு போன்றவை சிலருக்கு இருக்கலாம்.
+        `,
+
+        medicine: `
+            நீரிழிவுக்கு மருத்துவர் பரிந்துரைக்கும்
+            மருந்துகள் மற்றும் சிகிச்சைத் திட்டமே முக்கியம்.
+            <br><br>
+            உணவு, உடற்பயிற்சி மற்றும் இரத்தச் சர்க்கரை
+            கண்காணிப்பும் முக்கியமானவை.
+        `,
+
+        note: `
+            மருத்துவர் பரிந்துரைத்த Diabetes medicine-ஐ
+            நிறுத்திவிட்டு மூலிகை அல்லது Siddha medicine
+            மட்டும் பயன்படுத்தக் கூடாது.
+        `
+    },
+
+
+    bp: {
+
+        tamil: "உயர் இரத்த அழுத்தம்",
+
+        english: "High Blood Pressure",
+
+        symptoms: `
+            பல நேரங்களில் வெளிப்படையான அறிகுறிகள்
+            இல்லாமலும் இருக்கலாம்.
+        `,
+
+        medicine: `
+            Blood Pressure medicine-ஐ மருத்துவர்
+            பரிந்துரைப்படி மட்டுமே பயன்படுத்த வேண்டும்.
+            <br><br>
+            உப்பு குறைப்பு, உடல் இயக்கம் மற்றும்
+            ஆரோக்கியமான வாழ்க்கை முறை குறித்து
+            மருத்துவரிடம் ஆலோசிக்கலாம்.
+        `,
+
+        note: `
+            பரிந்துரைக்கப்பட்ட BP medicine-ஐ
+            மருத்துவரின் ஆலோசனையின்றி நிறுத்த வேண்டாம்.
+        `
+    },
+
+
+    fever: {
+
+        tamil: "காய்ச்சல்",
+
+        english: "Fever",
+
+        symptoms: `
+            உடல் வெப்பநிலை அதிகரித்தல்,
+            சோர்வு அல்லது உடல் வலி.
+        `,
+
+        medicine: `
+            ஓய்வு மற்றும் போதுமான திரவம்
+            பொதுவான பராமரிப்பின் ஒரு பகுதியாக இருக்கலாம்.
+            <br><br>
+            காய்ச்சலின் காரணத்தைப் பொறுத்து
+            சிகிச்சை மாறுபடும்.
+        `,
+
+        note: `
+            அதிக அல்லது நீடித்த காய்ச்சல்,
+            மூச்சுத்திணறல், குழப்பம் அல்லது கடுமையான
+            உடல்நலக்குறைவு இருந்தால் மருத்துவரை அணுகவும்.
+        `
+    },
+
+
+    throat: {
+
+        tamil: "தொண்டை வலி",
+
+        english: "Sore Throat",
+
+        symptoms: `
+            தொண்டை வலி, எரிச்சல் அல்லது
+            விழுங்குவதில் அசௌகரியம்.
+        `,
+
+        medicine: `
+            வெதுவெதுப்பான திரவங்கள் சிலருக்கு
+            தற்காலிக நிம்மதியளிக்கலாம்.
+            <br><br>
+            சில பாரம்பரிய மூலிகை பானங்கள் பயன்படுத்தப்படலாம்,
+            ஆனால் அவை அனைவருக்கும் பொருத்தமானவை அல்ல.
+        `,
+
+        note: `
+            மூச்சுத்திணறல் அல்லது கடுமையான விழுங்கும்
+            சிரமம் இருந்தால் உடனடி மருத்துவ உதவி பெறவும்.
+        `
+    },
+
+
+    sleep: {
+
+        tamil: "தூக்கப் பிரச்சினை",
+
+        english: "Insomnia / Sleep Problems",
+
+        symptoms: `
+            தூங்குவதில் சிரமம் அல்லது இரவில்
+            அடிக்கடி விழித்துக்கொள்வது.
+        `,
+
+        medicine: `
+            ஒழுங்கான தூக்க நேரம்,
+            இரவு நேரத்தில் screen usage குறைத்தல்,
+            அமைதியான தூக்க சூழல் போன்றவை உதவலாம்.
+        `,
+
+        note: `
+            நீண்டகால தூக்கப் பிரச்சினைக்கு
+            மருத்துவர் அல்லது sleep specialist-ஐ அணுகவும்.
+        `
+    },
+
+
+    stress: {
+
+        tamil: "மன அழுத்தம்",
+
+        english: "Stress",
+
+        symptoms: `
+            பதற்றம், மன அமைதியின்மை,
+            தூக்கப் பிரச்சினை அல்லது கவலை.
+        `,
+
+        medicine: `
+            யோகா (Yoga), மூச்சுப்பயிற்சி,
+            உடற்பயிற்சி, போதுமான தூக்கம் மற்றும்
+            relaxation techniques உதவியாக இருக்கலாம்.
+        `,
+
+        note: `
+            கடுமையான அல்லது நீடித்த மனநலப் பிரச்சினைகளுக்கு
+            தகுதியான சுகாதார நிபுணரை அணுகவும்.
+        `
+    },
+
+
+    stomach: {
+
+        tamil: "வயிற்று வலி",
+
+        english: "Stomach / Abdominal Pain",
+
+        symptoms: `
+            வயிற்றில் வலி, அசௌகரியம்,
+            வயிற்றுப்பெருமல் அல்லது பிற அறிகுறிகள்.
+        `,
+
+        medicine: `
+            வயிற்று வலிக்கு பல்வேறு காரணங்கள் இருப்பதால்
+            காரணம் தெரியாமல் மருந்து எடுத்துக்கொள்ள வேண்டாம்.
+        `,
+
+        note: `
+            திடீர் கடுமையான வயிற்று வலி,
+            இரத்தப்போக்கு அல்லது தொடர்ந்து வாந்தி
+            இருந்தால் உடனடி மருத்துவ உதவி பெறவும்.
+        `
+    },
+
+
+    allergy: {
+
+        tamil: "ஒவ்வாமை",
+
+        english: "Allergy",
+
+        symptoms: `
+            தும்மல், மூக்கு ஒழுகுதல், அரிப்பு,
+            தோல் தடிப்பு போன்றவை.
+        `,
+
+        medicine: `
+            ஒவ்வாமையின் காரணத்தைப் பொறுத்து
+            மருத்துவர் சிகிச்சையைத் தேர்வு செய்வார்.
+            <br><br>
+            காரணமான பொருளைத் தவிர்ப்பது சில சூழ்நிலைகளில் உதவலாம்.
+        `,
+
+        note: `
+            முகம் அல்லது தொண்டை வீக்கம்,
+            மூச்சுத்திணறல் போன்ற கடுமையான அறிகுறிகள்
+            இருந்தால் உடனடி அவசர மருத்துவ உதவி பெறவும்.
+        `
+    },
+
+
+    fatigue: {
+
+        tamil: "உடல் சோர்வு",
+
+        english: "Fatigue",
+
+        symptoms: `
+            தொடர்ந்து சோர்வு, ஆற்றல் குறைவு
+            அல்லது உடல் பலவீனம்.
+        `,
+
+        medicine: `
+            போதுமான தூக்கம், சமநிலையான உணவு,
+            தேவையான திரவம் மற்றும் தகுந்த உடற்பயிற்சி
+            பொதுவான ஆரோக்கியத்திற்கு உதவலாம்.
+        `,
+
+        note: `
+            காரணம் தெரியாமல் நீண்டகாலமாக சோர்வு
+            இருந்தால் மருத்துவ பரிசோதனை பெறவும்.
+        `
+    }
+
+};
+
+
+/* =========================================================
+   SHOW INFORMATION
+========================================================= */
+
+function showInfo(type) {
+
+    const data = diseaseInfo[type];
+
+    if (!data) {
+        return;
+    }
+
+    document.getElementById(
+        "modalTitle"
+    ).textContent = data.tamil;
+
+
+    document.getElementById(
+        "modalEnglishTitle"
+    ).textContent = data.english;
+
+
+    document.getElementById(
+        "modalContent"
+    ).innerHTML = `
+
+        <div class="modal-info">
+
+            <h3>
+                🩺 அறிகுறிகள் / Symptoms
+            </h3>
+
+            <p>
+                ${data.symptoms}
+            </p>
+
+        </div>
+
+
+        <div class="modal-info">
+
+            <h3>
+                💊 மருந்து / Medicine
+            </h3>
+
+            <p>
+                ${data.medicine}
+            </p>
+
+        </div>
+
+
+        <div class="modal-warning">
+
+            <h3>
+                ⚠️ முக்கிய குறிப்பு / Important Note
+            </h3>
+
+            <p>
+                ${data.note}
+            </p>
+
+            <br>
+
+            <p>
+                எந்த மருந்தையும், குறிப்பாக Siddha அல்லது
+                herbal preparations-ஐ, உங்கள் உடல்நிலை மற்றும்
+                நீங்கள் எடுத்துக்கொள்ளும் பிற மருந்துகளை
+                கருத்தில் கொண்டு தகுதியான மருத்துவர் அல்லது
+                Siddha மருத்துவரின் ஆலோசனையுடன் பயன்படுத்தவும்.
+            </p>
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "modal"
+    ).style.display = "block";
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL
+========================================================= */
+
+function closeModal() {
+
+    document.getElementById(
+        "modal"
+    ).style.display = "none";
+
+
+    document.body.style.overflow = "auto";
+
+}
+
+
+/* =========================================================
+   OUTSIDE MODAL CLICK
+========================================================= */
+
+document.getElementById(
+    "modal"
+).addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === this
+        ) {
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchDiseases() {
+
+    const search =
+        document
+        .getElementById("searchBox")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const cards =
+        document.querySelectorAll(
+            ".card"
+        );
+
+
+    let found = 0;
+
+
+    cards.forEach(
+        function(card) {
+
+            const name =
+                card
+                .getAttribute("data-name")
+                .toLowerCase();
+
+
+            if (
+                name.includes(search)
+            ) {
+
+                card.style.display =
+                    "block";
+
+                found++;
+
+            } else {
+
+                card.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+
+    document.getElementById(
+        "noResults"
+    ).style.display =
+        found === 0
+        ? "block"
+        : "none";
+
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function() {
+
+        const button =
+            document.getElementById(
+                "topButton"
+            );
+
+
+        if (
+            window.scrollY > 400
+        ) {
+
+            button.style.display =
+                "block";
+
+        } else {
+
+            button.style.display =
+                "none";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        document.getElementById(
+            "noResults"
+        ).style.display = "none";
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
