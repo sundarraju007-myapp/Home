@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>சுந்தர்ராஜு கற்றல் உலகம்</title>
+
+<style>
+:root {
+    --bg:#07111f;
+    --card:#101d30;
+    --card2:#14263d;
+    --text:#f5f7fa;
+    --muted:#a9b8ca;
+    --primary:#00d4ff;
+    --secondary:#7c4dff;
+    --green:#00e676;
+    --orange:#ffb300;
+    --danger:#ff5252;
+    --border:rgba(255,255,255,.1);
+}
+
+* {
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body {
+    margin:0;
+    font-family:Arial,"Noto Sans Tamil",sans-serif;
+    background:linear-gradient(135deg,#07111f,#0b1630,#07111f);
+    color:var(--text);
+    line-height:1.7;
+}
+
+header {
+    min-height:420px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:50px 20px;
+    background:
+      radial-gradient(circle at 20% 20%,#174d75 0,transparent 35%),
+      radial-gradient(circle at 80% 30%,#412080 0,transparent 35%),
+      linear-gradient(135deg,#050b16,#0c1c35);
+    border-bottom:1px solid var(--border);
+}
+
+.hero h1 {
+    font-size:clamp(2.2rem,7vw,5.5rem);
+    margin:0;
+    color:#fff;
+    text-shadow:0 0 30px #00d4ff66;
+}
+
+.hero h2 {
+    color:var(--primary);
+    margin:15px 0;
+    font-size:clamp(1.1rem,3vw,2rem);
+}
+
+.hero p {
+    max-width:800px;
+    margin:20px auto;
+    color:var(--muted);
+}
+
+.btn {
+    border:0;
+    padding:12px 22px;
+    margin:7px;
+    border-radius:30px;
+    color:white;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover {
+    transform:translateY(-3px);
+    box-shadow:0 8px 25px #00d4ff44;
+}
+
+nav {
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:#07111fee;
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
+    padding:12px;
+    text-align:center;
+}
+
+nav a {
+    color:#dcecff;
+    text-decoration:none;
+    margin:5px 8px;
+    font-size:.9rem;
+}
+
+nav a:hover {
+    color:var(--primary);
+}
+
+.container {
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+section {
+    padding:65px 0;
+}
+
+.section-title {
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2 {
+    font-size:2.3rem;
+    color:var(--primary);
+}
+
+.section-title p {
+    color:var(--muted);
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+.card {
+    background:linear-gradient(145deg,var(--card),var(--card2));
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+    transition:.3s;
+}
+
+.card:hover {
+    transform:translateY(-6px);
+    border-color:#00d4ff66;
+    box-shadow:0 15px 40px #0006;
+}
+
+.card h3 {
+    color:#fff;
+    margin-top:0;
+}
+
+.icon {
+    font-size:45px;
+}
+
+.tag {
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:15px;
+    background:#00d4ff1c;
+    color:var(--primary);
+    font-size:.8rem;
+    margin:3px;
+}
+
+.story {
+    background:
+      linear-gradient(135deg,#102b40,#18143a);
+    border-left:5px solid var(--primary);
+    padding:30px;
+    border-radius:18px;
+}
+
+.story strong {
+    color:var(--orange);
+}
+
+.timeline {
+    position:relative;
+    max-width:850px;
+    margin:auto;
+}
+
+.timeline-item {
+    margin:25px 0;
+    padding:20px;
+    background:var(--card);
+    border-radius:15px;
+    border:1px solid var(--border);
+}
+
+.timeline-item h3 {
+    color:var(--green);
+}
+
+table {
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:15px;
+    background:var(--card);
+}
+
+th,td {
+    padding:15px;
+    border:1px solid var(--border);
+    text-align:left;
+}
+
+th {
+    background:#12304a;
+    color:var(--primary);
+}
+
+tr:hover {
+    background:#ffffff08;
+}
+
+.search {
+    width:100%;
+    padding:16px;
+    border-radius:15px;
+    border:1px solid var(--border);
+    background:#081524;
+    color:white;
+    outline:none;
+    margin-bottom:25px;
+}
+
+.simulator {
+    text-align:center;
+}
+
+.network {
+    min-height:280px;
+    position:relative;
+    margin:25px auto;
+    max-width:800px;
+    background:#06101d;
+    border:1px solid var(--border);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.node {
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    position:absolute;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#00d4ff,#7c4dff);
+    box-shadow:0 0 25px #00d4ff88;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.line {
+    position:absolute;
+    height:3px;
+    background:linear-gradient(90deg,#00d4ff,#7c4dff);
+    transform-origin:left center;
+    opacity:.6;
+}
+
+.packet {
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#00e676;
+    position:absolute;
+    box-shadow:0 0 15px #00e676;
+}
+
+pre {
+    background:#020812;
+    padding:20px;
+    overflow:auto;
+    border-radius:15px;
+    color:#b8f4ff;
+    border:1px solid var(--border);
+}
+
+code {
+    font-family:Consolas,monospace;
+}
+
+.progress {
+    height:12px;
+    background:#07101b;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
+}
+
+.progress div {
+    height:100%;
+    background:linear-gradient(90deg,var(--primary),var(--green));
+}
+
+.quiz {
+    background:var(--card);
+    padding:25px;
+    border-radius:20px;
+    border:1px solid var(--border);
+}
+
+.option {
+    display:block;
+    padding:12px;
+    margin:8px 0;
+    border:1px solid var(--border);
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.option:hover {
+    background:#ffffff0a;
+}
+
+#result {
+    font-weight:bold;
+    margin-top:15px;
+}
+
+footer {
+    text-align:center;
+    padding:40px 20px;
+    color:var(--muted);
+    border-top:1px solid var(--border);
+}
+
+@media(max-width:600px) {
+    nav a {
+        display:inline-block;
+        font-size:.75rem;
+    }
+
+    table {
+        font-size:.8rem;
+    }
+
+    .card {
+        padding:18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="hero">
+    <div style="font-size:55px">📡 🌐 🚗 📱 🛰️</div>
+
+    <h1>சுந்தர்ராஜு கற்றல் உலகம்</h1>
+
+    <h2>Wireless Communication & Network Tutorial</h2>
+
+    <p>
+        MANET • VANET • WSN • CRN • Wireless Communication •
+        2G • 3G • 4G • 5G • NS-2 • NS-3
+    </p>
+
+    <button class="btn" onclick="scrollToSection('topics')">
+        🚀 கற்றலை தொடங்குங்கள்
+    </button>
+
+    <button class="btn" onclick="toggleTheme()">
+        🌙 Theme
+    </button>
+</div>
+</header>
+
+<nav>
+    <a href="#story">📖 Story</a>
+    <a href="#topics">📚 Topics</a>
+    <a href="#generations">📱 2G-5G</a>
+    <a href="#simulation">🛰️ Simulation</a>
+    <a href="#ns">💻 NS-2/NS-3</a>
+    <a href="#quiz">🧠 Quiz</a>
+</nav>
+
+<main>
+
+<section id="story">
+<div class="container">
+
+<div class="section-title">
+    <h2>📖 ஒரு Real-Time Story</h2>
+    <p>Network concepts-ஐ ஒரு நகரத்தின் கதையாக புரிந்துகொள்வோம்.</p>
+</div>
+
+<div class="story">
+
+<h2>🌆 "சுந்தர்ராஜுவின் Smart City"</h2>
+
+<p>
+ஒரு நாள் சுந்தர்ராஜு ஒரு Smart City-க்கு செல்கிறார்.
+அவருடைய கையில் ஒரு smartphone. சாலையில் connected cars.
+மருத்துவமனையில் wireless sensors. நகரம் முழுவதும்
+wireless communication devices.
+</p>
+
+<p>
+அப்போது ஒரு கார் மற்றொரு காருக்கு
+<strong>"முன்னால் accident!"</strong>
+என்று message அனுப்புகிறது.
+இது <strong>VANET</strong>.
+</p>
+
+<p>
+அதே நேரத்தில் சாலையில் infrastructure இல்லாவிட்டாலும்
+பல mobile devices ஒன்றுக்கொன்று தகவல் அனுப்புகின்றன.
+இது <strong>MANET</strong>.
+</p>
+
+<p>
+மருத்துவமனையில் heartbeat, temperature போன்ற தகவல்களை
+சிறிய sensors சேகரித்து gateway-க்கு அனுப்புகின்றன.
+இது <strong>WSN</strong>.
+</p>
+
+<p>
+Wireless spectrum குறைவாக இருக்கும்போது,
+unused spectrum-ஐ intelligent முறையில் பயன்படுத்தும்
+technology <strong>CRN</strong>.
+</p>
+
+<p>
+அந்த smartphone 2G-ல் தொடங்கி 3G, 4G, பின்னர்
+5G network-ஐ பயன்படுத்துகிறது.
+இதுவே wireless communication-ன் evolution.
+</p>
+
+<p>
+இந்த முழு network-ஐ computer-ல் experiment செய்ய
+<strong>NS-2 / NS-3</strong> simulation tools பயன்படுத்தலாம்.
+</p>
+
+</div>
+</div>
+</section>
+
+
+<section id="topics">
+<div class="container">
+
+<div class="section-title">
+    <h2>📚 முக்கியமான Topics</h2>
+    <p>ஒவ்வொரு technology-யையும் practical example மூலம் கற்றுக்கொள்ளுங்கள்.</p>
+</div>
+
+<input
+    id="search"
+    class="search"
+    placeholder="🔎 MANET, VANET, 5G, NS-3... என்று தேடுங்கள்"
+    onkeyup="searchTopics()"
+>
+
+<div class="grid" id="topicGrid">
+
+<div class="card topic">
+    <div class="icon">📱</div>
+    <h3>MANET</h3>
+    <span class="tag">Mobile Ad Hoc Network</span>
+    <p>
+        Fixed infrastructure இல்லாமல் mobile nodes
+        தங்களுக்குள் communication செய்யும் network.
+    </p>
+    <p><strong>Example:</strong> Disaster area emergency communication.</p>
+</div>
+
+<div class="card topic">
+    <div class="icon">🚗</div>
+    <h3>VANET</h3>
+    <span class="tag">Vehicular Network</span>
+    <p>
+        Vehicles ஒன்றுக்கொன்று மற்றும் roadside infrastructure-உடன்
+        communication செய்வது.
+    </p>
+    <p><strong>Example:</strong> Accident warning.</p>
+</div>
+
+<div class="card topic">
+    <div class="icon">🌡️</div>
+    <h3>WSN</h3>
+    <span class="tag">Wireless Sensor Network</span>
+    <p>
+        பல sensor nodes environmental அல்லது physical information
+        collect செய்து gateway/base station-க்கு அனுப்பும்.
+    </p>
+    <p><strong>Example:</strong> Temperature monitoring.</p>
+</div>
+
+<div class="card topic">
+    <div class="icon">📡</div>
+    <h3>CRN</h3>
+    <span class="tag">Cognitive Radio Network</span>
+    <p>
+        Spectrum availability-ஐ உணர்ந்து available spectrum-ஐ
+        பயன்படுத்தும் intelligent wireless network.
+    </p>
+    <p><strong>Example:</strong> Dynamic spectrum access.</p>
+</div>
+
+<div class="card topic">
+    <div class="icon">📶</div>
+    <h3>Wireless Communication</h3>
+    <p>
+        Physical cable இல்லாமல் radio, microwave போன்ற
+        electromagnetic communication மூலம் தகவல் பரிமாற்றம்.
+    </p>
+</div>
+
+<div class="card topic">
+    <div class="icon">💻</div>
+    <h3>Network Simulation</h3>
+    <p>
+        Real hardware இல்லாமல் network protocols,
+        routing, packet delivery போன்றவற்றை simulation செய்வது.
+    </p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section id="generations">
+<div class="container">
+
+<div class="section-title">
+    <h2>📱 Mobile Network Evolution</h2>
+</div>
+
+<table>
+<tr>
+    <th>Generation</th>
+    <th>முக்கிய நோக்கம்</th>
+    <th>Typical Technologies</th>
+    <th>Example</th>
+</tr>
+
+<tr>
+    <td><strong>2G</strong></td>
+    <td>Digital voice & basic data</td>
+    <td>GSM, GPRS, EDGE</td>
+    <td>SMS, Voice call</td>
+</tr>
+
+<tr>
+    <td><strong>3G</strong></td>
+    <td>Mobile internet</td>
+    <td>UMTS, HSPA</td>
+    <td>Video calling</td>
+</tr>
+
+<tr>
+    <td><strong>4G</strong></td>
+    <td>High-speed IP broadband</td>
+    <td>LTE</td>
+    <td>HD streaming</td>
+</tr>
+
+<tr>
+    <td><strong>5G</strong></td>
+    <td>High capacity & low-latency applications</td>
+    <td>5G NR</td>
+    <td>IoT, connected systems</td>
+</tr>
+</table>
+
+<br>
+
+<div class="grid">
+
+<div class="card">
+<h3>2G → Digital Communication</h3>
+<div class="progress"><div style="width:40%"></div></div>
+<p>Voice + SMS + limited data services.</p>
+</div>
+
+<div class="card">
+<h3>3G → Mobile Internet</h3>
+<div class="progress"><div style="width:55%"></div></div>
+<p>Better data connectivity and multimedia.</p>
+</div>
+
+<div class="card">
+<h3>4G → Broadband</h3>
+<div class="progress"><div style="width:75%"></div></div>
+<p>High-speed packet-based mobile internet.</p>
+</div>
+
+<div class="card">
+<h3>5G → Connected World</h3>
+<div class="progress"><div style="width:95%"></div></div>
+<p>Designed for diverse use cases including massive IoT and low-latency applications.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section id="simulation">
+<div class="container">
+
+<div class="section-title">
+<h2>🛰️ Interactive MANET Simulation</h2>
+<p>Nodes எப்படி packet-ஐ forward செய்கின்றன என்பதை பார்க்கலாம்.</p>
+</div>
+
+<div class="simulator">
+
+<button class="btn" onclick="createNetwork()">
+🔄 Create Network
+</button>
+
+<button class="btn" onclick="sendPacket()">
+📦 Send Packet
+</button>
+
+<div class="network" id="network"></div>
+
+<p id="simulationStatus">
+Simulation ready...
+</p>
+
+</div>
+</div>
+</section>
+
+
+<section id="ns">
+<div class="container">
+
+<div class="section-title">
+<h2>💻 NS-2 & NS-3 Tutorial</h2>
+<p>Network simulation-ன் அடிப்படைகள்.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>NS-2 என்றால்?</h3>
+<p>
+NS-2 என்பது network research மற்றும் education-ல்
+பயன்படுத்தப்பட்ட discrete-event network simulator.
+</p>
+
+<p>Common workflow:</p>
+
+<ol>
+<li>Topology உருவாக்குதல்</li>
+<li>Nodes உருவாக்குதல்</li>
+<li>Links அமைத்தல்</li>
+<li>Traffic உருவாக்குதல்</li>
+<li>Simulation run செய்தல்</li>
+<li>Trace analysis</li>
+</ol>
+</div>
+
+<div class="card">
+<h3>NS-3 என்றால்?</h3>
+<p>
+NS-3 என்பது network research, education மற்றும்
+protocol experimentation-க்கு பயன்படும் modern
+discrete-event network simulator.
+</p>
+
+<p>
+C++ மற்றும் Python API-களைப் பயன்படுத்தி
+network models உருவாக்கலாம்.
+</p>
+</div>
+
+</div>
+
+<h3>📝 Basic NS-3 Concept</h3>
+
+<pre><code>#include "ns3/core-module.h"
+#include "ns3/network-module.h"
+#include "ns3/internet-module.h"
+
+using namespace ns3;
+
+int main()
+{
+    NodeContainer nodes;
+
+    // Create two nodes
+    nodes.Create(2);
+
+    InternetStackHelper internet;
+    internet.Install(nodes);
+
+    Simulator::Run();
+    Simulator::Destroy();
+
+    return 0;
+}</code></pre>
+
+<h3>🔬 Simulation Learning Flow</h3>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>01 — Create Nodes</h3>
+<p>Network-ல் communication devices / nodes உருவாக்கவும்.</p>
+</div>
+
+<div class="timeline-item">
+<h3>02 — Configure Network</h3>
+<p>Channels, devices, IP addresses போன்றவற்றை configure செய்யவும்.</p>
+</div>
+
+<div class="timeline-item">
+<h3>03 — Install Applications</h3>
+<p>Traffic source மற்றும் destination applications அமைக்கவும்.</p>
+</div>
+
+<div class="timeline-item">
+<h3>04 — Run Simulation</h3>
+<p>Simulator-ஐ இயக்கி packets travel செய்வதை observe செய்யவும்.</p>
+</div>
+
+<div class="timeline-item">
+<h3>05 — Analyze Results</h3>
+<p>Throughput, delay, packet loss, PDR போன்ற metrics-ஐ ஆய்வு செய்யவும்.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section>
+<div class="container">
+
+<div class="section-title">
+<h2>🧠 Important Network Metrics</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>📦 Packet Delivery Ratio</h3>
+<p>
+Destination-க்கு வெற்றிகரமாக சென்ற packets-ன்
+விகிதம்.
+</p>
+
+<pre><code>PDR =
+Received Packets
+---------------- × 100
+Sent Packets</code></pre>
+</div>
+
+<div class="card">
+<h3>⏱️ End-to-End Delay</h3>
+<p>
+Packet source-ல் இருந்து destination வரை செல்ல
+எடுக்கும் நேரம்.
+</p>
+</div>
+
+<div class="card">
+<h3>🚀 Throughput</h3>
+<p>
+ஒரு குறிப்பிட்ட நேரத்தில் successfully delivered
+data அளவு.
+</p>
+</div>
+
+<div class="card">
+<h3>❌ Packet Loss</h3>
+<p>
+Send செய்யப்பட்ட packets-ல் destination-க்கு
+செல்லாமல் இழக்கப்படும் packets.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section id="quiz">
+<div class="container">
+
+<div class="section-title">
+<h2>🧠 Mini Quiz</h2>
+<p>நீங்கள் கற்றதை test செய்து பாருங்கள்!</p>
+</div>
+
+<div class="quiz">
+
+<h3>1. Vehicles communication செய்யும் network எது?</h3>
+
+<label class="option">
+<input type="radio" name="q1" value="wrong">
+WSN
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="correct">
+VANET
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="wrong">
+CRN
+</label>
+
+<h3>2. Wireless sensors பயன்படுத்தும் network?</h3>
+
+<label class="option">
+<input type="radio" name="q2" value="correct">
+WSN
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="wrong">
+VANET
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="wrong">
+2G
+</label>
+
+<h3>3. Modern network simulation tool?</h3>
+
+<label class="option">
+<input type="radio" name="q3" value="wrong">
+Paint
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="correct">
+NS-3
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="wrong">
+HTML
+</label>
+
+<button class="btn" onclick="checkQuiz()">
+✅ Check Answer
+</button>
+
+<div id="result"></div>
+
+</div>
+</div>
+</section>
+
+
+<section>
+<div class="container">
+
+<div class="section-title">
+<h2>🎯 Learning Roadmap</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Level 1</h3>
+<p>Wireless Communication Basics</p>
+<p>📶 Radio → Signal → Channel → Receiver</p>
+</div>
+
+<div class="card">
+<h3>Level 2</h3>
+<p>MANET / VANET / WSN / CRN</p>
+<p>🌐 Network architecture + routing concepts</p>
+</div>
+
+<div class="card">
+<h3>Level 3</h3>
+<p>2G → 5G</p>
+<p>📱 Mobile communication evolution</p>
+</div>
+
+<div class="card">
+<h3>Level 4</h3>
+<p>NS-2 / NS-3</p>
+<p>💻 Simulation + metrics + protocol analysis</p>
+</div>
+
+<div class="card">
+<h3>Level 5</h3>
+<p>Research Project</p>
+<p>🚀 Protocol design + simulation + result analysis</p>
+</div>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+    <h2>🌐 சுந்தர்ராஜு கற்றல் உலகம்</h2>
+    <p>Learn • Experiment • Simulate • Research • Innovate</p>
+    <p>© 2026 Sundarraju Kattral Ulagam</p>
+</footer>
+
+
+<script>
+
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+
+/* DARK / LIGHT THEME */
+
+function toggleTheme() {
+
+    const root = document.documentElement;
+
+    if(root.style.getPropertyValue("--bg") === "#f4f7fb") {
+
+        root.style.setProperty("--bg","#07111f");
+        root.style.setProperty("--card","#101d30");
+        root.style.setProperty("--card2","#14263d");
+        root.style.setProperty("--text","#f5f7fa");
+        root.style.setProperty("--muted","#a9b8ca");
+
+    } else {
+
+        root.style.setProperty("--bg","#f4f7fb");
+        root.style.setProperty("--card","#ffffff");
+        root.style.setProperty("--card2","#eef5ff");
+        root.style.setProperty("--text","#102030");
+        root.style.setProperty("--muted","#536579");
+    }
+
+    document.body.style.background =
+        "var(--bg)";
+}
+
+
+/* TOPIC SEARCH */
+
+function searchTopics() {
+
+    const input =
+        document.getElementById("search")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".topic");
+
+    cards.forEach(card => {
+
+        const text =
+            card.innerText.toLowerCase();
+
+        card.style.display =
+            text.includes(input)
+            ? "block"
+            : "none";
+    });
+}
+
+
+/* MANET SIMULATION */
+
+const network =
+    document.getElementById("network");
+
+const statusText =
+    document.getElementById("simulationStatus");
+
+let nodes = [];
+
+
+function createNetwork() {
+
+    network.innerHTML = "";
+    nodes = [];
+
+    const positions = [
+        [12,45],
+        [32,20],
+        [52,55],
+        [72,25],
+        [88,65]
+    ];
+
+    positions.forEach((pos,index) => {
+
+        const node =
+            document.createElement("div");
+
+        node.className = "node";
+
+        node.innerText =
+            "N" + (index + 1);
+
+        node.style.left =
+            pos[0] + "%";
+
+        node.style.top =
+            pos[1] + "%";
+
+        network.appendChild(node);
+
+        nodes.push(node);
+    });
+
+    /*
+       Draw links between adjacent nodes
+    */
+
+    for(let i=0;i<nodes.length-1;i++) {
+
+        drawLine(nodes[i],nodes[i+1]);
+    }
+
+    statusText.innerText =
+        "✅ 5 mobile nodes உருவாக்கப்பட்டுள்ளன.";
+
+}
+
+
+function getCenter(element) {
+
+    return {
+        x:element.offsetLeft + element.offsetWidth/2,
+        y:element.offsetTop + element.offsetHeight/2
+    };
+}
+
+
+function drawLine(a,b) {
+
+    const p1 = getCenter(a);
+    const p2 = getCenter(b);
+
+    const dx = p2.x-p1.x;
+    const dy = p2.y-p1.y;
+
+    const length =
+        Math.sqrt(dx*dx + dy*dy);
+
+    const angle =
+        Math.atan2(dy,dx) *
+        180/Math.PI;
+
+    const line =
+        document.createElement("div");
+
+    line.className = "line";
+
+    line.style.width =
+        length + "px";
+
+    line.style.left =
+        p1.x + "px";
+
+    line.style.top =
+        p1.y + "px";
+
+    line.style.transform =
+        "rotate(" + angle + "deg)";
+
+    network.appendChild(line);
+}
+
+
+function sendPacket() {
+
+    if(nodes.length === 0) {
+
+        createNetwork();
+    }
+
+    const packet =
+        document.createElement("div");
+
+    packet.className = "packet";
+
+    network.appendChild(packet);
+
+    let startX = 55;
+    let startY = 145;
+
+    let endX = 690;
+    let endY = 180;
+
+    packet.style.left =
+        startX + "px";
+
+    packet.style.top =
+        startY + "px";
+
+    let progress = 0;
+
+    const timer =
+        setInterval(() => {
+
+            progress += 2;
+
+            packet.style.left =
+                (startX +
+                (endX-startX) *
+                progress/100) + "px";
+
+            packet.style.top =
+                (startY +
+                (endY-startY) *
+                progress/100) + "px";
+
+            if(progress >= 100) {
+
+                clearInterval(timer);
+
+                packet.remove();
+
+                statusText.innerText =
+                    "📦 Packet successfully reached destination!";
+            }
+
+        },30);
+
+    statusText.innerText =
+        "📡 Packet N1 → N2 → N3 → N4 → N5...";
+}
+
+
+/* QUIZ */
+
+function checkQuiz() {
+
+    const answers =
+        document.querySelectorAll(
+            'input[type="radio"]:checked'
+        );
+
+    let score = 0;
+
+    answers.forEach(answer => {
+
+        if(answer.value === "correct") {
+            score++;
+        }
+
+    });
+
+    const result =
+        document.getElementById("result");
+
+    if(score === 3) {
+
+        result.style.color =
+            "#00e676";
+
+        result.innerText =
+            "🎉 Excellent! 3/3 — Network concepts நன்றாக புரிந்துள்ளது!";
+    }
+
+    else {
+
+        result.style.color =
+            "#ffb300";
+
+        result.innerText =
+            "📚 Score: " + score +
+            "/3 — Topics-ஐ மீண்டும் படித்து முயற்சி செய்யுங்கள்!";
+    }
+}
+
+
+/* Initial network */
+
+window.addEventListener(
+    "load",
+    createNetwork
+);
+
+</script>
+
+</body>
+</html>

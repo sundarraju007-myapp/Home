@@ -1,0 +1,2694 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="சுந்தர்ராஜு கற்றல் உலகம் - Blockchain, Cybersecurity, SDN, Cloud Computing மற்றும் Cryptography"
+  >
+
+  <title>சுந்தர்ராஜு கற்றல் உலகம்</title>
+
+  <style>
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #2563eb;
+      --secondary: #06b6d4;
+      --dark: #0f172a;
+      --dark2: #1e293b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --success: #16a34a;
+      --warning: #f59e0b;
+      --danger: #dc2626;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    body {
+      font-family:
+        "Noto Sans Tamil",
+        "Latha",
+        "Arial",
+        sans-serif;
+
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.8;
+      transition: 0.3s;
+    }
+
+    body.dark {
+      --light: #020617;
+      --white: #0f172a;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --card: #0f172a;
+      --border: #334155;
+      --dark: #020617;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    /* =====================================================
+       PROGRESS BAR
+    ===================================================== */
+
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      background: linear-gradient(
+        90deg,
+        #06b6d4,
+        #2563eb,
+        #7c3aed
+      );
+      z-index: 9999;
+    }
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      color: white;
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(6, 182, 212, 0.3),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 80% 80%,
+          rgba(124, 58, 237, 0.3),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #020617,
+          #172554,
+          #075985
+        );
+    }
+
+    .hero-content {
+      max-width: 950px;
+    }
+
+    .hero-icon {
+      font-size: 65px;
+      margin-bottom: 10px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    header h1 {
+      font-size: clamp(34px, 6vw, 64px);
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    header h1 span {
+      color: #67e8f9;
+    }
+
+    header p {
+      font-size: 20px;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      padding: 11px 20px;
+      border-radius: 9px;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--primary);
+    }
+
+    .btn-secondary {
+      color: white;
+      background: #0891b2;
+    }
+
+    .btn-dark {
+      color: white;
+      background: #0f172a;
+    }
+
+    .btn-success {
+      color: white;
+      background: var(--success);
+    }
+
+    .btn-warning {
+      color: white;
+      background: var(--warning);
+    }
+
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+
+      padding: 12px;
+
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 7px 12px;
+      border-radius: 7px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      background: #2563eb;
+    }
+
+    .theme-btn {
+      background: #334155;
+      color: white;
+      border: none;
+      border-radius: 7px;
+      padding: 7px 12px;
+      cursor: pointer;
+    }
+
+    /* =====================================================
+       MAIN
+    ===================================================== */
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+      padding: 35px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      color: var(--primary);
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    /* =====================================================
+       CARDS
+    ===================================================== */
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      margin: 25px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-top: 22px;
+      margin-bottom: 8px;
+      color: var(--secondary);
+    }
+
+    .card p {
+      margin-bottom: 10px;
+    }
+
+    /* =====================================================
+       HERO INTRO
+    ===================================================== */
+
+    .intro {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(37, 99, 235, 0.1),
+          rgba(6, 182, 212, 0.1)
+        );
+
+      border-left: 6px solid var(--primary);
+    }
+
+    /* =====================================================
+       TECHNOLOGY GRID
+    ===================================================== */
+
+    .technology-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .technology-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 22px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .technology-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .technology-card .icon {
+      font-size: 45px;
+      margin-bottom: 8px;
+    }
+
+    .technology-card h3 {
+      margin: 5px 0;
+      color: var(--primary);
+    }
+
+    /* =====================================================
+       LIST
+    ===================================================== */
+
+    ul,
+    ol {
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    /* =====================================================
+       STORY
+    ===================================================== */
+
+    .story {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 15px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(37, 99, 235, 0.08),
+          rgba(6, 182, 212, 0.08)
+        );
+      border: 1px solid var(--border);
+    }
+
+    .story-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .story-step {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 13px;
+      border-radius: 10px;
+      margin: 9px 0;
+
+      opacity: 0.45;
+      transform: translateX(-10px);
+      transition: 0.5s;
+    }
+
+    .story-step.active {
+      opacity: 1;
+      transform: translateX(0);
+      border-color: var(--secondary);
+      box-shadow: 0 4px 15px rgba(6, 182, 212, 0.15);
+    }
+
+    .step-number {
+      min-width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--primary);
+      font-weight: bold;
+    }
+
+    /* =====================================================
+       FLOW
+    ===================================================== */
+
+    .flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .flow-box {
+      padding: 15px 20px;
+      border-radius: 12px;
+      background: var(--card);
+      border: 2px solid var(--primary);
+      text-align: center;
+      min-width: 130px;
+    }
+
+    .arrow {
+      font-size: 25px;
+      color: var(--primary);
+    }
+
+    /* =====================================================
+       CODE
+    ===================================================== */
+
+    pre {
+      background: #020617;
+      color: #dbeafe;
+      padding: 20px;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin: 15px 0;
+      border: 1px solid #334155;
+    }
+
+    code {
+      color: #67e8f9;
+    }
+
+    /* =====================================================
+       DEMO
+    ===================================================== */
+
+    .demo {
+      background: var(--card);
+      border: 1px dashed var(--primary);
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .demo input,
+    .demo select {
+      width: 100%;
+      max-width: 500px;
+      padding: 11px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--light);
+      color: var(--text);
+      margin: 5px 0;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 9px;
+      background: rgba(37, 99, 235, 0.08);
+      border-left: 4px solid var(--primary);
+      min-height: 30px;
+    }
+
+    /* =====================================================
+       HASH
+    ===================================================== */
+
+    .hash-output {
+      word-break: break-all;
+      font-family: monospace;
+    }
+
+    /* =====================================================
+       PASSWORD
+    ===================================================== */
+
+    .strength-bar {
+      width: 100%;
+      max-width: 500px;
+      height: 12px;
+      background: #cbd5e1;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .strength-fill {
+      width: 0%;
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    /* =====================================================
+       SDN
+    ===================================================== */
+
+    .controller {
+      padding: 20px;
+      border-radius: 12px;
+      background: #2563eb;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      margin: 15px auto;
+      max-width: 300px;
+    }
+
+    .switches {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .switch {
+      padding: 15px 25px;
+      border-radius: 10px;
+      background: var(--card);
+      border: 2px solid var(--border);
+      transition: 0.5s;
+    }
+
+    .switch.active {
+      border-color: var(--success);
+      background: rgba(22, 163, 74, 0.12);
+      transform: scale(1.05);
+    }
+
+    /* =====================================================
+       CLOUD
+    ===================================================== */
+
+    .server-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .server {
+      width: 100px;
+      height: 80px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--card);
+      border: 2px solid var(--border);
+      transition: 0.4s;
+    }
+
+    .server.running {
+      border-color: var(--success);
+      box-shadow:
+        0 0 15px rgba(22, 163, 74, 0.25);
+    }
+
+    /* =====================================================
+       QUIZ
+    ===================================================== */
+
+    .quiz-question {
+      padding: 18px;
+      margin: 15px 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card);
+    }
+
+    .quiz-option {
+      display: block;
+      width: 100%;
+      text-align: left;
+      margin: 8px 0;
+      background: var(--light);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 10px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    .quiz-option:hover {
+      border-color: var(--primary);
+    }
+
+    .correct {
+      background: rgba(22, 163, 74, 0.2) !important;
+      border-color: var(--success) !important;
+    }
+
+    .wrong {
+      background: rgba(220, 38, 38, 0.2) !important;
+      border-color: var(--danger) !important;
+    }
+
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
+    .search-box {
+      margin: 20px 0;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+      text-align: center;
+      background: #020617;
+      color: white;
+      padding: 35px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+
+    #topButton {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+
+      width: 45px;
+      height: 45px;
+
+      border: none;
+      border-radius: 50%;
+
+      background: var(--primary);
+      color: white;
+
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+    }
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 700px) {
+
+      header {
+        min-height: 360px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .flow {
+        flex-direction: column;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+
+      nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+      }
+
+      nav a {
+        white-space: nowrap;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- PROGRESS -->
+  <div id="progressBar"></div>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header>
+
+    <div class="hero-content">
+
+      <div class="hero-icon">🌐</div>
+
+      <h1>
+        சுந்தர்ராஜு
+        <span>கற்றல் உலகம்</span>
+      </h1>
+
+      <p>
+        HTML • CSS • JavaScript • Blockchain • Cybersecurity
+        • SDN • Cloud Computing • Cryptography
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#start" class="btn btn-primary">
+          🚀 கற்றலை தொடங்கு
+        </a>
+
+        <button
+          class="btn btn-secondary"
+          onclick="toggleTheme()"
+        >
+          🌙 Theme
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <nav>
+
+    <a href="#start">🏠 Home</a>
+
+    <a href="#blockchain">⛓️ Blockchain</a>
+
+    <a href="#cybersecurity">🛡️ Cybersecurity</a>
+
+    <a href="#sdn">🌐 SDN</a>
+
+    <a href="#cloud">☁️ Cloud</a>
+
+    <a href="#cryptography">🔐 Cryptography</a>
+
+    <a href="#quiz">📝 Quiz</a>
+
+  </nav>
+
+
+  <main class="container">
+
+
+    <!-- ===================================================
+         INTRO
+    ==================================================== -->
+
+    <section id="start" class="card intro">
+
+      <h2>🎓 சுந்தர்ராஜு கற்றல் உலகத்திற்கு வரவேற்கிறோம்!</h2>
+
+      <p>
+        இந்த website-ல் modern computing மற்றும் cybersecurity
+        technologies-ஐ theory மட்டும் இல்லாமல் real-world stories,
+        interactive demonstrations மற்றும் quiz மூலம் கற்றுக்கொள்ளலாம்.
+      </p>
+
+      <p>
+        முதலில் HTML, CSS மற்றும் JavaScript அடிப்படைகளை அறிந்து,
+        பின்னர் Blockchain, Cybersecurity, SDN, Cloud Computing
+        மற்றும் Cryptography ஆகியவற்றை கற்றுக்கொள்ளலாம்.
+      </p>
+
+    </section>
+
+
+    <!-- ===================================================
+         TECHNOLOGY CARDS
+    ==================================================== -->
+
+    <section class="card">
+
+      <div class="section-title">
+
+        <h2>🚀 Technologies</h2>
+
+        <p>
+          கீழே உள்ள technology-ஐ தேர்ந்தெடுத்து கற்றுக்கொள்ளுங்கள்.
+        </p>
+
+      </div>
+
+      <div class="technology-grid">
+
+        <a
+          href="#blockchain"
+          class="technology-card"
+          style="text-decoration:none"
+        >
+          <div class="icon">⛓️</div>
+          <h3>Blockchain</h3>
+          <p>Distributed Ledger</p>
+        </a>
+
+        <a
+          href="#cybersecurity"
+          class="technology-card"
+          style="text-decoration:none"
+        >
+          <div class="icon">🛡️</div>
+          <h3>Cybersecurity</h3>
+          <p>Digital Protection</p>
+        </a>
+
+        <a
+          href="#sdn"
+          class="technology-card"
+          style="text-decoration:none"
+        >
+          <div class="icon">🌐</div>
+          <h3>SDN</h3>
+          <p>Software Defined Networking</p>
+        </a>
+
+        <a
+          href="#cloud"
+          class="technology-card"
+          style="text-decoration:none"
+        >
+          <div class="icon">☁️</div>
+          <h3>Cloud</h3>
+          <p>Cloud Computing</p>
+        </a>
+
+        <a
+          href="#cryptography"
+          class="technology-card"
+          style="text-decoration:none"
+        >
+          <div class="icon">🔐</div>
+          <h3>Cryptography</h3>
+          <p>Secure Information</p>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         SEARCH
+    ==================================================== -->
+
+    <section class="card">
+
+      <h2>🔎 Topic Search</h2>
+
+      <div class="search-box">
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Blockchain, Cloud, SDN..."
+          oninput="searchTopics()"
+        >
+
+      </div>
+
+      <div id="searchResult">
+        அனைத்து topics-ம் காட்டப்படுகின்றன.
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         HTML CSS JAVASCRIPT
+    ==================================================== -->
+
+    <section class="card">
+
+      <h2>💻 HTML + CSS + JavaScript</h2>
+
+      <p>
+        இந்த website-ஐ உருவாக்க பயன்படுத்தப்பட்ட மூன்று முக்கிய
+        web technologies:
+      </p>
+
+      <ul>
+
+        <li>
+          <b>HTML:</b>
+          Web page structure உருவாக்குகிறது.
+        </li>
+
+        <li>
+          <b>CSS:</b>
+          Design, colors, layout மற்றும் responsive UI வழங்குகிறது.
+        </li>
+
+        <li>
+          <b>JavaScript:</b>
+          Interactivity மற்றும் dynamic behavior வழங்குகிறது.
+        </li>
+
+      </ul>
+
+      <h3>Simple JavaScript Example</h3>
+
+      <pre><code>
+function hello() {
+    alert("சுந்தர்ராஜு கற்றல் உலகத்திற்கு வரவேற்கிறோம்!");
+}
+      </code></pre>
+
+      <button
+        class="btn btn-primary"
+        onclick="hello()"
+      >
+        ▶ Run JavaScript
+      </button>
+
+    </section>
+
+
+    <!-- ===================================================
+         BLOCKCHAIN
+    ==================================================== -->
+
+    <section id="blockchain" class="card">
+
+      <h2>⛓️ 1. Blockchain</h2>
+
+      <p>
+        Blockchain என்பது transactions அல்லது records-ஐ
+        blocks ஆக அமைத்து, cryptographic links மூலம்
+        chain உருவாக்கும் distributed ledger technology.
+      </p>
+
+      <h3>📚 முக்கிய concepts</h3>
+
+      <ul>
+        <li>Block</li>
+        <li>Hash</li>
+        <li>Previous Hash</li>
+        <li>Distributed Ledger</li>
+        <li>Consensus</li>
+        <li>Smart Contracts</li>
+      </ul>
+
+
+      <h3>📖 Real-Time Story: விவசாயப் பொருளின் பயணம்</h3>
+
+      <div class="story">
+
+        <div class="story-title">
+          🌱 Farmer → 📦 Warehouse → 🚚 Transport →
+          🏪 Store → 📱 Customer
+        </div>
+
+        <div class="story-step" id="bc1">
+          <span class="step-number">1</span>
+          <span>
+            🌱 Farmer product-ஐ உருவாக்கி பதிவு செய்கிறார்.
+          </span>
+        </div>
+
+        <div class="story-step" id="bc2">
+          <span class="step-number">2</span>
+          <span>
+            📦 Warehouse product information-ஐ பதிவு செய்கிறது.
+          </span>
+        </div>
+
+        <div class="story-step" id="bc3">
+          <span class="step-number">3</span>
+          <span>
+            🚚 Transport shipment information-ஐ பதிவு செய்கிறது.
+          </span>
+        </div>
+
+        <div class="story-step" id="bc4">
+          <span class="step-number">4</span>
+          <span>
+            🏪 Store product-ஐ பெறுகிறது.
+          </span>
+        </div>
+
+        <div class="story-step" id="bc5">
+          <span class="step-number">5</span>
+          <span>
+            📱 Customer QR மூலம் product history-ஐ பார்க்கிறார்.
+          </span>
+        </div>
+
+      </div>
+
+      <button
+        class="btn btn-primary"
+        onclick="runBlockchainStory()"
+      >
+        ▶ Run Story
+      </button>
+
+      <div
+        id="blockchainStoryOutput"
+        class="output"
+      ></div>
+
+
+      <h3>💻 Blockchain Block Example</h3>
+
+      <pre><code>
+const block = {
+    index: 1,
+    data: "Organic Tomatoes",
+    previousHash: "000abc",
+    timestamp: Date.now()
+};
+
+console.log(block);
+      </code></pre>
+
+
+      <div class="demo">
+
+        <h3>⛓️ Blockchain Simulator</h3>
+
+        <input
+          id="blockData"
+          type="text"
+          placeholder="Block data"
+        >
+
+        <button
+          class="btn btn-success"
+          onclick="addBlock()"
+        >
+          Add Block
+        </button>
+
+        <div
+          id="blockchainOutput"
+          class="output"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CYBERSECURITY
+    ==================================================== -->
+
+    <section id="cybersecurity" class="card">
+
+      <h2>🛡️ 2. Cybersecurity</h2>
+
+      <p>
+        Cybersecurity என்பது computers, networks, applications
+        மற்றும் data ஆகியவற்றை cyber threats-இலிருந்து
+        பாதுகாக்கும் நடைமுறைகள் மற்றும் technologies.
+      </p>
+
+      <h3>🔐 CIA Triad</h3>
+
+      <ul>
+
+        <li>
+          <b>Confidentiality:</b>
+          தகவலை authorized users மட்டும் அணுகுதல்.
+        </li>
+
+        <li>
+          <b>Integrity:</b>
+          தகவல் unauthorized-ஆக மாற்றப்படாமல் பாதுகாத்தல்.
+        </li>
+
+        <li>
+          <b>Availability:</b>
+          தேவையான நேரத்தில் system/data கிடைப்பதை உறுதி செய்தல்.
+        </li>
+
+      </ul>
+
+
+      <h3>📖 Real-Time Story: Company Login Security</h3>
+
+      <div class="story">
+
+        <div class="story-step" id="cy1">
+          <span class="step-number">1</span>
+          <span>👤 Employee login செய்கிறார்.</span>
+        </div>
+
+        <div class="story-step" id="cy2">
+          <span class="step-number">2</span>
+          <span>🔐 Password verification நடைபெறுகிறது.</span>
+        </div>
+
+        <div class="story-step" id="cy3">
+          <span class="step-number">3</span>
+          <span>📱 MFA verification நடைபெறுகிறது.</span>
+        </div>
+
+        <div class="story-step" id="cy4">
+          <span class="step-number">4</span>
+          <span>🛡️ Access policy சரிபார்க்கப்படுகிறது.</span>
+        </div>
+
+        <div class="story-step" id="cy5">
+          <span class="step-number">5</span>
+          <span>✅ Authorized user application-ஐ அணுகுகிறார்.</span>
+        </div>
+
+      </div>
+
+      <button
+        class="btn btn-primary"
+        onclick="runCyberStory()"
+      >
+        ▶ Run Security Story
+      </button>
+
+      <div
+        id="cyberStoryOutput"
+        class="output"
+      ></div>
+
+
+      <h3>🔑 Password Strength Demo</h3>
+
+      <div class="demo">
+
+        <input
+          id="password"
+          type="password"
+          placeholder="Password உள்ளிடவும்"
+          oninput="checkPassword()"
+        >
+
+        <div class="strength-bar">
+
+          <div
+            id="strengthFill"
+            class="strength-fill"
+          ></div>
+
+        </div>
+
+        <p id="passwordResult">
+          Password strength பார்க்க typing செய்யவும்.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         SDN
+    ==================================================== -->
+
+    <section id="sdn" class="card">
+
+      <h2>🌐 3. Software Defined Networking (SDN)</h2>
+
+      <p>
+        SDN architecture-ல் network control-ஐ software-based
+        controller மூலம் centralized-ஆக நிர்வகிக்க முடியும்.
+      </p>
+
+      <h3>📖 Real-Time Story: Smart University Campus</h3>
+
+      <p>
+        ஒரு university-யில் பல buildings, switches மற்றும்
+        network users உள்ளனர். Administrator centralized
+        SDN controller மூலம் policies-ஐ நிர்வகிக்கிறார்.
+      </p>
+
+
+      <div class="controller">
+        🧠 SDN Controller
+      </div>
+
+      <div style="text-align:center">
+        ⬇️
+      </div>
+
+      <div class="switches">
+
+        <div class="switch" id="sw1">
+          🔀 Switch 1
+        </div>
+
+        <div class="switch" id="sw2">
+          🔀 Switch 2
+        </div>
+
+        <div class="switch" id="sw3">
+          🔀 Switch 3
+        </div>
+
+        <div class="switch" id="sw4">
+          🔀 Switch 4
+        </div>
+
+      </div>
+
+      <br>
+
+      <button
+        class="btn btn-primary"
+        onclick="runSDNStory()"
+      >
+        ▶ Send Network Policy
+      </button>
+
+      <div
+        id="sdnStoryOutput"
+        class="output"
+      ></div>
+
+
+      <h3>SDN Components</h3>
+
+      <ul>
+
+        <li>
+          <b>Application Plane:</b>
+          Network applications.
+        </li>
+
+        <li>
+          <b>Control Plane:</b>
+          SDN controller.
+        </li>
+
+        <li>
+          <b>Data Plane:</b>
+          Switches மற்றும் forwarding devices.
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- ===================================================
+         CLOUD
+    ==================================================== -->
+
+    <section id="cloud" class="card">
+
+      <h2>☁️ 4. Cloud Computing</h2>
+
+      <p>
+        Cloud Computing மூலம் computing, storage, networking
+        போன்ற resources-ஐ internet வழியாக தேவைக்கேற்ப
+        பயன்படுத்தலாம்.
+      </p>
+
+      <h3>📖 Real-Time Story: Online Shopping Festival</h3>
+
+      <p>
+        ஒரு online shopping website-க்கு சாதாரணமாக 100 users
+        இருக்கிறார்கள். Festival sale தொடங்கியதும் traffic
+        அதிகரிக்கிறது.
+      </p>
+
+      <p>
+        Cloud infrastructure-ல் தேவைக்கேற்ப additional
+        resources பயன்படுத்தி application-ஐ scale செய்யலாம்.
+      </p>
+
+
+      <div class="flow">
+
+        <div class="flow-box">
+          👥 Users
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          🌐 Load Balancer
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          🖥️ Servers
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          🗄️ Database
+        </div>
+
+      </div>
+
+
+      <h3>☁️ Cloud Scaling Simulator</h3>
+
+      <div class="demo">
+
+        <p>
+          Current users:
+          <strong id="userCount">100</strong>
+        </p>
+
+        <div class="server-container">
+
+          <div class="server running">
+            🖥️<br>
+            Server 1
+          </div>
+
+          <div
+            id="server2"
+            class="server"
+          >
+            🖥️<br>
+            Server 2
+          </div>
+
+          <div
+            id="server3"
+            class="server"
+          >
+            🖥️<br>
+            Server 3
+          </div>
+
+          <div
+            id="server4"
+            class="server"
+          >
+            🖥️<br>
+            Server 4
+          </div>
+
+          <div
+            id="server5"
+            class="server"
+          >
+            🖥️<br>
+            Server 5
+          </div>
+
+        </div>
+
+        <button
+          class="btn btn-primary"
+          onclick="runCloudStory()"
+        >
+          📈 Increase Traffic
+        </button>
+
+        <div
+          id="cloudStoryOutput"
+          class="output"
+        ></div>
+
+      </div>
+
+
+      <h3>Cloud Service Models</h3>
+
+      <ul>
+
+        <li>
+          <b>IaaS:</b>
+          Infrastructure as a Service
+        </li>
+
+        <li>
+          <b>PaaS:</b>
+          Platform as a Service
+        </li>
+
+        <li>
+          <b>SaaS:</b>
+          Software as a Service
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- ===================================================
+         CRYPTOGRAPHY
+    ==================================================== -->
+
+    <section id="cryptography" class="card">
+
+      <h2>🔐 5. Cryptography</h2>
+
+      <p>
+        Cryptography என்பது information-ஐ பாதுகாப்பதற்காக
+        mathematical algorithms மற்றும் keys பயன்படுத்தும்
+        security discipline.
+      </p>
+
+      <h3>📖 Real-Time Story: Online Payment</h3>
+
+      <div class="story">
+
+        <div class="story-step" id="cr1">
+          <span class="step-number">1</span>
+          <span>
+            👩 User online shopping website-ல் payment செய்கிறார்.
+          </span>
+        </div>
+
+        <div class="story-step" id="cr2">
+          <span class="step-number">2</span>
+          <span>
+            🔐 Secure communication பயன்படுத்தப்படுகிறது.
+          </span>
+        </div>
+
+        <div class="story-step" id="cr3">
+          <span class="step-number">3</span>
+          <span>
+            🏦 Payment service transaction-ஐ process செய்கிறது.
+          </span>
+        </div>
+
+        <div class="story-step" id="cr4">
+          <span class="step-number">4</span>
+          <span>
+            🔎 Integrity மற்றும் authentication mechanisms பயன்படுத்தப்படுகின்றன.
+          </span>
+        </div>
+
+        <div class="story-step" id="cr5">
+          <span class="step-number">5</span>
+          <span>
+            ✅ Transaction result user-க்கு கிடைக்கிறது.
+          </span>
+        </div>
+
+      </div>
+
+      <button
+        class="btn btn-primary"
+        onclick="runCryptoStory()"
+      >
+        ▶ Run Crypto Story
+      </button>
+
+      <div
+        id="cryptoStoryOutput"
+        class="output"
+      ></div>
+
+
+      <h3>🔑 SHA-256 Hash Demo</h3>
+
+      <div class="demo">
+
+        <input
+          id="hashInput"
+          type="text"
+          placeholder="ஒரு message உள்ளிடவும்"
+        >
+
+        <br>
+
+        <button
+          class="btn btn-success"
+          onclick="generateHash()"
+        >
+          🔐 Generate SHA-256 Hash
+        </button>
+
+        <div
+          id="hashOutput"
+          class="output hash-output"
+        ></div>
+
+      </div>
+
+
+      <h3>Cryptography Types</h3>
+
+      <ul>
+
+        <li>
+          <b>Symmetric Cryptography</b>
+        </li>
+
+        <li>
+          <b>Asymmetric Cryptography</b>
+        </li>
+
+        <li>
+          <b>Hash Functions</b>
+        </li>
+
+        <li>
+          <b>Digital Signatures</b>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- ===================================================
+         LEARNING PATH
+    ==================================================== -->
+
+    <section class="card">
+
+      <div class="section-title">
+
+        <h2>📚 Learning Path</h2>
+
+        <p>
+          Beginner முதல் advanced concepts வரை படிப்படியாக கற்கலாம்.
+        </p>
+
+      </div>
+
+      <ol>
+
+        <li>HTML Fundamentals</li>
+
+        <li>CSS Fundamentals</li>
+
+        <li>JavaScript Fundamentals</li>
+
+        <li>Computer Networks</li>
+
+        <li>Cybersecurity Fundamentals</li>
+
+        <li>Cryptography</li>
+
+        <li>Cloud Computing</li>
+
+        <li>Software Defined Networking</li>
+
+        <li>Blockchain</li>
+
+        <li>Mini Projects</li>
+
+        <li>Practical Labs</li>
+
+      </ol>
+
+    </section>
+
+
+    <!-- ===================================================
+         QUIZ
+    ==================================================== -->
+
+    <section id="quiz" class="card">
+
+      <div class="section-title">
+
+        <h2>📝 Knowledge Quiz</h2>
+
+        <p>
+          நீங்கள் கற்றதை இப்போது test செய்யுங்கள்!
+        </p>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <h3>1. Blockchain-ல் data பொதுவாக எவ்வாறு அமைக்கப்படுகிறது?</h3>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, false)"
+        >
+          A. Random files
+        </button>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, true)"
+        >
+          B. Blocks
+        </button>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, false)"
+        >
+          C. Images மட்டும்
+        </button>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <h3>2. CIA Triad-ல் I என்பது?</h3>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, false)"
+        >
+          A. Internet
+        </button>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, true)"
+        >
+          B. Integrity
+        </button>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, false)"
+        >
+          C. Infrastructure
+        </button>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <h3>3. SDN-ல் centralized control-ஐ வழங்குவது?</h3>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, false)"
+        >
+          A. Database
+        </button>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, true)"
+        >
+          B. SDN Controller
+        </button>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, false)"
+        >
+          C. Keyboard
+        </button>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <h3>4. Cloud Computing-ன் ஒரு முக்கிய characteristic?</h3>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, true)"
+        >
+          A. On-demand resources
+        </button>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, false)"
+        >
+          B. No networking
+        </button>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, false)"
+        >
+          C. No storage
+        </button>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <h3>5. SHA-256 எந்த category?</h3>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, false)"
+        >
+          A. Database
+        </button>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, true)"
+        >
+          B. Hash function
+        </button>
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(this, false)"
+        >
+          C. Web browser
+        </button>
+
+      </div>
+
+
+      <div
+        id="quizScore"
+        class="output"
+      >
+        Score: 0
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         FINAL MESSAGE
+    ==================================================== -->
+
+    <section class="card intro">
+
+      <h2>🎯 உங்கள் அடுத்த படி</h2>
+
+      <p>
+        Theory-ஐ படித்த பிறகு ஒவ்வொரு technology-க்கும்
+        ஒரு சிறிய practical project உருவாக்குங்கள்.
+      </p>
+
+      <ul>
+
+        <li>
+          ⛓️ Blockchain → Simple Blockchain Simulator
+        </li>
+
+        <li>
+          🛡️ Cybersecurity → Password Security Dashboard
+        </li>
+
+        <li>
+          🌐 SDN → Network Topology Simulator
+        </li>
+
+        <li>
+          ☁️ Cloud → Cloud Scaling Simulator
+        </li>
+
+        <li>
+          🔐 Cryptography → Hashing / Encryption Learning Tool
+        </li>
+
+      </ul>
+
+      <p>
+        <b>Learn → Practice → Build → Secure 🚀</b>
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <h2>சுந்தர்ராஜு கற்றல் உலகம்</h2>
+
+    <p>
+      Learn • Practice • Build • Secure
+    </p>
+
+    <p>
+      © 2026 Sundarraju Kattral Ulagam
+    </p>
+
+  </footer>
+
+
+  <!-- BACK TO TOP -->
+
+  <button
+    id="topButton"
+    onclick="window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })"
+  >
+    ↑
+  </button>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    /* =====================================================
+       HELLO
+    ===================================================== */
+
+    function hello() {
+
+      alert(
+        "வணக்கம்! சுந்தர்ராஜு கற்றல் உலகத்திற்கு வரவேற்கிறோம்! 🚀"
+      );
+
+    }
+
+
+    /* =====================================================
+       DARK MODE
+    ===================================================== */
+
+    function toggleTheme() {
+
+      document.body.classList.toggle("dark");
+
+      const dark =
+        document.body.classList.contains("dark");
+
+      localStorage.setItem(
+        "theme",
+        dark ? "dark" : "light"
+      );
+
+    }
+
+
+    /* Load Theme */
+
+    if (
+      localStorage.getItem("theme") === "dark"
+    ) {
+
+      document.body.classList.add("dark");
+
+    }
+
+
+    /* =====================================================
+       SCROLL PROGRESS
+    ===================================================== */
+
+    window.addEventListener(
+      "scroll",
+      function () {
+
+        const scrollTop =
+          document.documentElement.scrollTop;
+
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+
+        const progress =
+          (scrollTop / scrollHeight) * 100;
+
+        document.getElementById(
+          "progressBar"
+        ).style.width = progress + "%";
+
+
+        /* Back to top */
+
+        const topButton =
+          document.getElementById("topButton");
+
+        if (scrollTop > 400) {
+
+          topButton.style.display = "block";
+
+        } else {
+
+          topButton.style.display = "none";
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       BLOCKCHAIN STORY
+    ====================================================== */
+
+    function runBlockchainStory() {
+
+      const steps = [
+        "bc1",
+        "bc2",
+        "bc3",
+        "bc4",
+        "bc5"
+      ];
+
+      const output =
+        document.getElementById(
+          "blockchainStoryOutput"
+        );
+
+      steps.forEach(function (id) {
+
+        document.getElementById(id)
+          .classList.remove("active");
+
+      });
+
+      output.innerHTML =
+        "⏳ Blockchain story ஆரம்பமாகிறது...";
+
+      let index = 0;
+
+      const timer = setInterval(
+        function () {
+
+          if (index < steps.length) {
+
+            document
+              .getElementById(steps[index])
+              .classList.add("active");
+
+            index++;
+
+          } else {
+
+            clearInterval(timer);
+
+            output.innerHTML =
+              "✅ Product journey blockchain records மூலம் "
+              + "step-by-step பதிவு செய்யப்பட்டதாக இந்த demo காட்டுகிறது.";
+
+          }
+
+        },
+        900
+      );
+
+    }
+
+
+    /* =====================================================
+       ADD BLOCK
+    ====================================================== */
+
+    let blockchain = [];
+
+    function addBlock() {
+
+      const data =
+        document.getElementById(
+          "blockData"
+        ).value.trim();
+
+      if (!data) {
+
+        alert("Block data உள்ளிடவும்.");
+
+        return;
+
+      }
+
+      const block = {
+
+        index: blockchain.length,
+
+        data: data,
+
+        previousHash:
+          blockchain.length === 0
+            ? "GENESIS"
+            : "BLOCK_" +
+              (blockchain.length - 1),
+
+        timestamp:
+          new Date().toLocaleTimeString()
+
+      };
+
+      blockchain.push(block);
+
+      document.getElementById(
+        "blockData"
+      ).value = "";
+
+      document.getElementById(
+        "blockchainOutput"
+      ).innerHTML =
+        blockchain
+          .map(
+            function (item) {
+
+              return `
+                <div style="
+                  padding:12px;
+                  margin:8px 0;
+                  border:1px solid var(--border);
+                  border-radius:8px;
+                ">
+                  <b>Block ${item.index}</b><br>
+                  Data: ${escapeHTML(item.data)}<br>
+                  Previous Hash:
+                  ${item.previousHash}<br>
+                  Time: ${item.timestamp}
+                </div>
+              `;
+
+            }
+          )
+          .join("");
+
+    }
+
+
+    /* =====================================================
+       CYBERSECURITY STORY
+    ====================================================== */
+
+    function runCyberStory() {
+
+      const steps = [
+        "cy1",
+        "cy2",
+        "cy3",
+        "cy4",
+        "cy5"
+      ];
+
+      const output =
+        document.getElementById(
+          "cyberStoryOutput"
+        );
+
+      steps.forEach(function (id) {
+
+        document
+          .getElementById(id)
+          .classList.remove("active");
+
+      });
+
+      output.innerHTML =
+        "🔎 Security checks ஆரம்பமாகின்றன...";
+
+      let index = 0;
+
+      const timer = setInterval(
+        function () {
+
+          if (index < steps.length) {
+
+            document
+              .getElementById(steps[index])
+              .classList.add("active");
+
+            index++;
+
+          } else {
+
+            clearInterval(timer);
+
+            output.innerHTML =
+              "✅ Demo: authentication மற்றும் access-control "
+              + "checks முடிந்துள்ளன.";
+
+          }
+
+        },
+        850
+      );
+
+    }
+
+
+    /* =====================================================
+       PASSWORD STRENGTH
+    ====================================================== */
+
+    function checkPassword() {
+
+      const password =
+        document.getElementById(
+          "password"
+        ).value;
+
+      const result =
+        document.getElementById(
+          "passwordResult"
+        );
+
+      const fill =
+        document.getElementById(
+          "strengthFill"
+        );
+
+      let score = 0;
+
+      if (password.length >= 6) {
+        score++;
+      }
+
+      if (password.length >= 10) {
+        score++;
+      }
+
+      if (/[A-Z]/.test(password)) {
+        score++;
+      }
+
+      if (/[0-9]/.test(password)) {
+        score++;
+      }
+
+      if (/[^A-Za-z0-9]/.test(password)) {
+        score++;
+      }
+
+
+      if (!password) {
+
+        fill.style.width = "0%";
+
+        result.innerText =
+          "Password strength பார்க்க typing செய்யவும்.";
+
+        return;
+
+      }
+
+
+      const percentage =
+        (score / 5) * 100;
+
+      fill.style.width =
+        percentage + "%";
+
+
+      if (score <= 1) {
+
+        fill.style.background =
+          "#dc2626";
+
+        result.innerText =
+          "🔴 Weak Password";
+
+      }
+
+      else if (score <= 3) {
+
+        fill.style.background =
+          "#f59e0b";
+
+        result.innerText =
+          "🟡 Medium Password";
+
+      }
+
+      else {
+
+        fill.style.background =
+          "#16a34a";
+
+        result.innerText =
+          "🟢 Stronger Password";
+
+      }
+
+    }
+
+
+    /* =====================================================
+       SDN STORY
+    ====================================================== */
+
+    function runSDNStory() {
+
+      const switches = [
+        "sw1",
+        "sw2",
+        "sw3",
+        "sw4"
+      ];
+
+      const output =
+        document.getElementById(
+          "sdnStoryOutput"
+        );
+
+      switches.forEach(function (id) {
+
+        document
+          .getElementById(id)
+          .classList.remove("active");
+
+      });
+
+      output.innerHTML =
+        "🧠 SDN Controller policy அனுப்புகிறது...";
+
+      let index = 0;
+
+      const timer = setInterval(
+        function () {
+
+          if (index < switches.length) {
+
+            document
+              .getElementById(
+                switches[index]
+              )
+              .classList.add("active");
+
+            index++;
+
+          } else {
+
+            clearInterval(timer);
+
+            output.innerHTML =
+              "✅ Demo: controller policy அனைத்து switches-க்கும் "
+              + "பயன்படுத்தப்பட்டது.";
+
+          }
+
+        },
+        650
+      );
+
+    }
+
+
+    /* =====================================================
+       CLOUD STORY
+    ====================================================== */
+
+    let cloudUsers = 100;
+
+    function runCloudStory() {
+
+      cloudUsers += 500;
+
+      document.getElementById(
+        "userCount"
+      ).innerText = cloudUsers;
+
+
+      const servers = [
+        "server2",
+        "server3",
+        "server4",
+        "server5"
+      ];
+
+
+      let requiredServers = 1;
+
+      if (cloudUsers >= 600) {
+        requiredServers = 2;
+      }
+
+      if (cloudUsers >= 1100) {
+        requiredServers = 3;
+      }
+
+      if (cloudUsers >= 1600) {
+        requiredServers = 4;
+      }
+
+      if (cloudUsers >= 2100) {
+        requiredServers = 5;
+      }
+
+
+      servers.forEach(
+        function (id, index) {
+
+          const server =
+            document.getElementById(id);
+
+          if (
+            index < requiredServers - 1
+          ) {
+
+            server.classList.add("running");
+
+          }
+
+        }
+      );
+
+
+      document.getElementById(
+        "cloudStoryOutput"
+      ).innerHTML =
+        "📈 Traffic increased to "
+        + cloudUsers
+        + " users.<br>"
+        + "☁️ Cloud demo: additional server capacity "
+        + "activated based on traffic.";
+
+    }
+
+
+    /* =====================================================
+       CRYPTO STORY
+    ====================================================== */
+
+    function runCryptoStory() {
+
+      const steps = [
+        "cr1",
+        "cr2",
+        "cr3",
+        "cr4",
+        "cr5"
+      ];
+
+      const output =
+        document.getElementById(
+          "cryptoStoryOutput"
+        );
+
+      steps.forEach(function (id) {
+
+        document
+          .getElementById(id)
+          .classList.remove("active");
+
+      });
+
+      output.innerHTML =
+        "🔐 Secure payment flow ஆரம்பமாகிறது...";
+
+      let index = 0;
+
+      const timer = setInterval(
+        function () {
+
+          if (index < steps.length) {
+
+            document
+              .getElementById(steps[index])
+              .classList.add("active");
+
+            index++;
+
+          } else {
+
+            clearInterval(timer);
+
+            output.innerHTML =
+              "✅ Demo: secure payment flow completed.";
+
+          }
+
+        },
+        850
+      );
+
+    }
+
+
+    /* =====================================================
+       SHA-256
+    ====================================================== */
+
+    async function generateHash() {
+
+      const input =
+        document.getElementById(
+          "hashInput"
+        ).value;
+
+      const output =
+        document.getElementById(
+          "hashOutput"
+        );
+
+
+      if (!input) {
+
+        output.innerText =
+          "Message உள்ளிடவும்.";
+
+        return;
+
+      }
+
+
+      try {
+
+        const data =
+          new TextEncoder().encode(input);
+
+        const hashBuffer =
+          await crypto.subtle.digest(
+            "SHA-256",
+            data
+          );
+
+        const hashArray =
+          Array.from(
+            new Uint8Array(hashBuffer)
+          );
+
+        const hashHex =
+          hashArray
+            .map(
+              byte =>
+                byte
+                  .toString(16)
+                  .padStart(2, "0")
+            )
+            .join("");
+
+        output.innerHTML =
+          "<b>SHA-256:</b><br>" +
+          hashHex;
+
+      }
+
+      catch (error) {
+
+        output.innerText =
+          "Hash generation failed.";
+
+      }
+
+    }
+
+
+    /* =====================================================
+       QUIZ
+    ====================================================== */
+
+    let quizScore = 0;
+
+    function answerQuiz(button, correct) {
+
+      const buttons =
+        button.parentElement
+          .querySelectorAll(
+            ".quiz-option"
+          );
+
+      buttons.forEach(
+        function (item) {
+
+          item.disabled = true;
+
+        }
+      );
+
+
+      if (correct) {
+
+        button.classList.add(
+          "correct"
+        );
+
+        quizScore++;
+
+      } else {
+
+        button.classList.add(
+          "wrong"
+        );
+
+      }
+
+
+      document.getElementById(
+        "quizScore"
+      ).innerHTML =
+        "🏆 Score: <b>"
+        + quizScore
+        + "</b>";
+
+    }
+
+
+    /* =====================================================
+       SEARCH
+    ====================================================== */
+
+    function searchTopics() {
+
+      const query =
+        document.getElementById(
+          "searchInput"
+        ).value
+          .toLowerCase()
+          .trim();
+
+
+      const topics = [
+
+        {
+          name: "⛓️ Blockchain",
+          keywords:
+            "blockchain block hash smart contract ledger",
+          link: "#blockchain"
+        },
+
+        {
+          name: "🛡️ Cybersecurity",
+          keywords:
+            "cyber security password malware phishing cia",
+          link: "#cybersecurity"
+        },
+
+        {
+          name: "🌐 SDN",
+          keywords:
+            "sdn network controller switch networking",
+          link: "#sdn"
+        },
+
+        {
+          name: "☁️ Cloud Computing",
+          keywords:
+            "cloud iaas paas saas server scaling",
+          link: "#cloud"
+        },
+
+        {
+          name: "🔐 Cryptography",
+          keywords:
+            "crypto encryption hashing sha security",
+          link: "#cryptography"
+        }
+
+      ];
+
+
+      const results =
+        topics.filter(
+          function (topic) {
+
+            return (
+              topic.name
+                .toLowerCase()
+                .includes(query)
+              ||
+              topic.keywords
+                .includes(query)
+            );
+
+          }
+        );
+
+
+      const resultBox =
+        document.getElementById(
+          "searchResult"
+        );
+
+
+      if (!query) {
+
+        resultBox.innerHTML =
+          "அனைத்து topics-ம் காட்டப்படுகின்றன.";
+
+        return;
+
+      }
+
+
+      if (results.length === 0) {
+
+        resultBox.innerHTML =
+          "❌ Topic கிடைக்கவில்லை.";
+
+        return;
+
+      }
+
+
+      resultBox.innerHTML =
+        results
+          .map(
+            function (topic) {
+
+              return `
+                <p>
+                  <a
+                    href="${topic.link}"
+                    style="
+                      color:var(--primary);
+                      font-weight:bold;
+                    "
+                  >
+                    ${topic.name}
+                  </a>
+                </p>
+              `;
+
+            }
+          )
+          .join("");
+
+    }
+
+
+    /* =====================================================
+       SECURITY HELPER
+    ====================================================== */
+
+    function escapeHTML(text) {
+
+      return text
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+    }
+
+  </script>
+
+</body>
+</html>
