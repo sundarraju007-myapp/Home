@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>சுந்தர்ராஜு கற்றல் உலகம் - Python Tutorials</title>
+
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #3776ab, #ffd43b);
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 42px;
+}
+
+header p {
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+nav {
+    background: #17202a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px;
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: #3776ab;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.hero {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #ccc;
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    color: #3776ab;
+    margin-bottom: 10px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #3776ab;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.topic {
+    background: white;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #ddd;
+}
+
+.topic h2 {
+    color: #3776ab;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #ffd43b;
+    padding-bottom: 8px;
+}
+
+.topic h3 {
+    margin: 15px 0 8px;
+    color: #333;
+}
+
+pre {
+    background: #1e1e1e;
+    color: #f8f8f2;
+    padding: 18px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 12px 0;
+}
+
+code {
+    font-family: Consolas, monospace;
+}
+
+.example {
+    background: #eef7ff;
+    padding: 15px;
+    border-left: 5px solid #3776ab;
+    margin: 12px 0;
+    border-radius: 5px;
+}
+
+button {
+    background: #3776ab;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+button:hover {
+    background: #285b83;
+}
+
+.output {
+    background: #f0f0f0;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-family: monospace;
+}
+
+.quiz {
+    background: #fff8dc;
+    border: 2px solid #ffd43b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    background: #17202a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 3px;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+
+<h1>🐍 சுந்தர்ராஜு கற்றல் உலகம்</h1>
+    <p>Python Tutorials – Learn Python with Simple Examples</p>
+</header>
+
+<nav>
+    <a href="#intro">Introduction</a>
+    <a href="#variables">Variables</a>
+    <a href="#datatypes">Data Types</a>
+    <a href="#operators">Operators</a>
+    <a href="#conditions">Conditions</a>
+    <a href="#loops">Loops</a>
+    <a href="#functions">Functions</a>
+    <a href="#collections">Collections</a>
+    <a href="#oop">OOP</a>
+    <a href="#exceptions">Exceptions</a>
+    <a href="#files">Files</a>
+    <a href="#quiz">Quiz</a>
+</nav>
+
+<div class="container">
+
+<section class="hero">
+    <h2>Welcome to Sundarraju Kattral Ulagam</h2>
+    <p>
+        This website provides beginner-friendly Python tutorials with
+        practical examples.
+    </p>
+
+    <input
+        type="text"
+        id="search"
+        class="search-box"
+        placeholder="🔍 Search Python topics..."
+        onkeyup="searchTopics()"
+    >
+</section>
+
+<section class="topic" id="intro">
+<h2>1. Python Introduction</h2>
+
+<p>Python is a high-level, interpreted and beginner-friendly programming language.</p>
+
+<h3>Hello World</h3>
+
+<pre><code>print("Hello, World!")</code></pre>
+
+<button onclick="showOutput('output1', 'Hello, World!')">
+Run Example
+</button>
+
+<div class="output" id="output1"></div>
+</section>
+
+<section class="topic" id="variables">
+<h2>2. Variables</h2>
+
+<p>Variables are used to store data.</p>
+
+<pre><code>
+name = "Sundarraju"
+age = 25
+salary = 25000.50
+
+print(name)
+print(age)
+print(salary)
+</code></pre>
+
+<div class="example">
+<strong>Output:</strong><br>
+Sundarraju<br>
+25<br>
+25000.5
+</div>
+</section>
+
+<section class="topic" id="datatypes">
+<h2>3. Python Data Types</h2>
+
+<ul>
+<li>String</li>
+<li>Integer</li>
+<li>Float</li>
+<li>Boolean</li>
+<li>List</li>
+<li>Tuple</li>
+<li>Set</li>
+<li>Dictionary</li>
+</ul>
+
+<pre><code>
+name = "Python"
+age = 30
+price = 99.99
+is_active = True
+
+print(type(name))
+print(type(age))
+print(type(price))
+print(type(is_active))
+</code></pre>
+</section>
+
+<section class="topic" id="operators">
+<h2>4. Operators</h2>
+
+<h3>Arithmetic Operators</h3>
+
+<pre><code>
+a = 10
+b = 3
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a % b)
+print(a ** b)
+</code></pre>
+
+<h3>Comparison Operators</h3>
+
+<pre><code>
+x = 10
+y = 20
+
+print(x == y)
+print(x != y)
+print(x < y)
+print(x > y)
+</code></pre>
+</section>
+
+<section class="topic" id="conditions">
+<h2>5. If, Elif and Else</h2>
+
+<pre><code>
+mark = 75
+
+if mark >= 90:
+    print("Grade A")
+elif mark >= 60:
+    print("Grade B")
+else:
+    print("Grade C")
+</code></pre>
+
+<div class="example">
+<strong>Output:</strong> Grade B
+</div>
+</section>
+
+<section class="topic" id="loops">
+<h2>6. Loops</h2>
+
+<h3>For Loop</h3>
+
+<pre><code>
+for i in range(1, 6):
+    print(i)
+</code></pre>
+
+<h3>While Loop</h3>
+
+<pre><code>
+i = 1
+
+while i <= 5:
+    print(i)
+    i += 1
+</code></pre>
+
+<h3>Break and Continue</h3>
+
+<pre><code>
+for i in range(1, 10):
+
+    if i == 5:
+        break
+
+    print(i)
+</code></pre>
+</section>
+
+<section class="topic" id="functions">
+<h2>7. Functions</h2>
+
+<p>Functions allow us to reuse code.</p>
+
+<pre><code>
+def greet(name):
+    return "Hello " + name
+
+message = greet("Sundarraju")
+
+print(message)
+</code></pre>
+
+<div class="example">
+<strong>Output:</strong> Hello Sundarraju
+</div>
+</section>
+
+<section class="topic" id="collections">
+<h2>8. Python Collections</h2>
+
+<h3>List</h3>
+
+<pre><code>
+fruits = ["Apple", "Banana", "Mango"]
+
+print(fruits)
+print(fruits[0])
+
+fruits.append("Orange")
+print(fruits)
+</code></pre>
+
+<h3>Tuple</h3>
+
+<pre><code>
+colors = ("Red", "Green", "Blue")
+
+print(colors)
+print(colors[1])
+</code></pre>
+
+<h3>Set</h3>
+
+<pre><code>
+numbers = {1, 2, 3, 3, 4}
+
+print(numbers)
+</code></pre>
+
+<h3>Dictionary</h3>
+
+<pre><code>
+student = {
+    "name": "Sundarraju",
+    "age": 25,
+    "course": "Python"
+}
+
+print(student["name"])
+print(student["course"])
+</code></pre>
+</section>
+
+<section class="topic">
+<h2>9. Strings</h2>
+
+<pre><code>
+text = "Python Programming"
+
+print(text.upper())
+print(text.lower())
+print(text.replace("Python", "Java"))
+print(len(text))
+</code></pre>
+
+<h3>String Slicing</h3>
+
+<pre><code>
+name = "Sundarraju"
+
+print(name[0:5])
+print(name[:5])
+print(name[5:])
+</code></pre>
+</section>
+
+<section class="topic">
+<h2>10. List Comprehension</h2>
+
+<pre><code>
+numbers = [1, 2, 3, 4, 5]
+
+squares = [x * x for x in numbers]
+
+print(squares)
+</code></pre>
+
+<div class="example">
+<strong>Output:</strong> [1, 4, 9, 16, 25]
+</div>
+</section>
+
+<section class="topic">
+<h2>11. Lambda Function</h2>
+
+<pre><code>
+square = lambda x: x * x
+
+print(square(5))
+</code></pre>
+
+<div class="example">
+<strong>Output:</strong> 25
+</div>
+</section>
+
+<section class="topic" id="exceptions">
+<h2>12. Exception Handling</h2>
+
+<p>Exceptions can be handled using try, except, else and finally.</p>
+
+<pre><code>
+try:
+    number = int(input("Enter a number: "))
+    print(10 / number)
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+except ValueError:
+    print("Please enter a valid number")
+
+finally:
+    print("Program completed")
+</code></pre>
+</section>
+
+<section class="topic" id="oop">
+<h2>13. Object-Oriented Programming</h2>
+
+<h3>Class and Object</h3>
+
+<pre><code>
+class Student:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+
+
+student1 = Student("Sundarraju", 25)
+
+student1.display()
+</code></pre>
+
+<h3>Inheritance</h3>
+
+<pre><code>
+class Animal:
+
+    def speak(self):
+        print("Animal speaks")
+
+
+class Dog(Animal):
+
+    def bark(self):
+        print("Dog barks")
+
+
+dog = Dog()
+
+dog.speak()
+dog.bark()
+</code></pre>
+</section>
+
+<section class="topic" id="files">
+<h2>14. File Handling</h2>
+
+<h3>Writing a File</h3>
+
+<pre><code>
+with open("example.txt", "w") as file:
+    file.write("Welcome to Python")
+</code></pre>
+
+<h3>Reading a File</h3>
+
+<pre><code>
+with open("example.txt", "r") as file:
+    content = file.read()
+
+print(content)
+</code></pre>
+</section>
+
+<section class="topic">
+<h2>15. Modules</h2>
+
+<pre><code>
+import math
+
+print(math.sqrt(25))
+print(math.pi)
+</code></pre>
+
+<h3>Random Module</h3>
+
+<pre><code>
+import random
+
+number = random.randint(1, 100)
+
+print(number)
+</code></pre>
+</section>
+
+<section class="topic">
+<h2>16. Date and Time</h2>
+
+<pre><code>
+from datetime import datetime
+
+now = datetime.now()
+
+print(now)
+print(now.year)
+print(now.month)
+print(now.day)
+</code></pre>
+</section>
+
+<section class="topic">
+<h2>17. Python User Input</h2>
+
+<pre><code>
+name = input("Enter your name: ")
+
+print("Welcome", name)
+</code></pre>
+</section>
+
+<section class="topic">
+<h2>18. Mini Calculator</h2>
+
+<pre><code>
+a = 10
+b = 5
+
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Division:", a / b)
+</code></pre>
+
+<button onclick="calculator()">Run Calculator</button>
+
+<div class="output" id="calculatorOutput"></div>
+</section>
+
+<section class="topic">
+<h2>19. Even or Odd Program</h2>
+
+<pre><code>
+number = 10
+
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+</code></pre>
+
+<button onclick="evenOdd()">Try Example</button>
+
+<div class="output" id="evenOutput"></div>
+</section>
+
+<section class="topic">
+<h2>20. Factorial Program</h2>
+
+<pre><code>
+number = 5
+factorial = 1
+
+for i in range(1, number + 1):
+    factorial *= i
+
+print(factorial)
+</code></pre>
+
+<div class="example">
+<strong>Output:</strong> 120
+</div>
+</section>
+
+<section class="topic">
+<h2>21. Fibonacci Series</h2>
+
+<pre><code>
+a = 0
+b = 1
+
+for i in range(10):
+    print(a)
+    a, b = b, a + b
+</code></pre>
+</section>
+
+<section class="topic" id="quiz">
+<h2>📝 Python Quiz</h2>
+
+<div class="quiz">
+<p><strong>Question:</strong> Which function is used to display output in Python?</p>
+
+<button onclick="checkAnswer('print')">print()</button>
+<button onclick="checkAnswer('input')">input()</button>
+<button onclick="checkAnswer('display')">display()</button>
+
+<div class="output" id="quizResult"></div>
+</div>
+</section>
+
+</div>
+
+<footer>
+    <h3>Sundarraju Kattral Ulagam</h3>
+    <p>Learn • Practice • Create with Python 🐍</p>
+    <p>© 2026 Sundarraju Kattral Ulagam</p>
+</footer>
+
+<script>
+
+function showOutput(id, message) {
+    document.getElementById(id).textContent = message;
+}
+
+function calculator() {
+
+    let a = 10;
+    let b = 5;
+
+    document.getElementById("calculatorOutput").innerHTML =
+        "Addition: " + (a + b) +
+        "<br>Subtraction: " + (a - b) +
+        "<br>Multiplication: " + (a * b) +
+        "<br>Division: " + (a / b);
+}
+
+function evenOdd() {
+
+    let number = 10;
+
+    if (number % 2 === 0) {
+        document.getElementById("evenOutput").textContent =
+            number + " is Even";
+    } else {
+        document.getElementById("evenOutput").textContent =
+            number + " is Odd";
+    }
+}
+
+function checkAnswer(answer) {
+
+    let result = document.getElementById("quizResult");
+
+    if (answer === "print") {
+        result.textContent = "✅ Correct Answer!";
+        result.style.color = "green";
+    } else {
+        result.textContent = "❌ Try Again!";
+        result.style.color = "red";
+    }
+}
+
+function searchTopics() {
+
+    let input = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    let topics = document.querySelectorAll(".topic");
+
+    topics.forEach(function(topic) {
+
+        let text = topic.textContent.toLowerCase();
+
+        if (text.includes(input)) {
+            topic.classList.remove("hidden");
+        } else {
+            topic.classList.add("hidden");
+        }
+
+    });
+}
+
+</script>
+
+</body>
+</html>

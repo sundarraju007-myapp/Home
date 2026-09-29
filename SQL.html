@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>சுந்தர்ராஜு கற்றல் உலகம் - SQL Tutorial</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:"Noto Sans Tamil","Latha","Arial",sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#111827,#2563eb);
+    color:white;
+    padding:50px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:42px;
+    margin:0 0 10px;
+}
+
+header h2{
+    color:white;
+    border:0;
+    margin:0;
+}
+
+header p{
+    font-size:18px;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:#111827;
+    padding:12px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:5px 10px;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#60a5fa;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px;
+}
+
+.card{
+    background:white;
+    margin:20px 0;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+h2{
+    color:#1d4ed8;
+    border-bottom:2px solid #dbeafe;
+    padding-bottom:8px;
+}
+
+h3{
+    color:#374151;
+}
+
+pre{
+    background:#111827;
+    color:#e5e7eb;
+    padding:18px;
+    border-radius:8px;
+    overflow:auto;
+}
+
+code{
+    font-family:Consolas,monospace;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:15px 0;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:left;
+}
+
+th{
+    background:#2563eb;
+    color:white;
+}
+
+.badge{
+    display:inline-block;
+    background:#dbeafe;
+    color:#1d4ed8;
+    padding:5px 10px;
+    border-radius:20px;
+    margin:3px;
+}
+
+.question{
+    background:#f9fafb;
+    border-left:5px solid #2563eb;
+    padding:15px;
+    margin:12px 0;
+    border-radius:5px;
+}
+
+.answer{
+    display:none;
+    background:#ecfdf5;
+    padding:12px;
+    margin-top:8px;
+    border-radius:5px;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:0;
+    padding:8px 14px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    margin:10px 0;
+    font-size:16px;
+}
+
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    display:none;
+}
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:40px;
+}
+
+@media(max-width:700px){
+
+    header h1{
+        font-size:30px;
+    }
+
+    nav a{
+        display:inline-block;
+    }
+
+    .container{
+        padding:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>சுந்தர்ராஜு கற்றல் உலகம்</h1>
+
+<h2>SQL முழுமையான பயிற்சி</h2>
+
+<p>
+SQL Concepts • Examples • Interview Questions • Practice
+</p>
+
+</header>
+
+<nav>
+
+<a href="#intro">அறிமுகம்</a>
+<a href="#ddl">DDL</a>
+<a href="#dml">DML</a>
+<a href="#select">SELECT</a>
+<a href="#joins">Joins</a>
+<a href="#advanced">Advanced SQL</a>
+<a href="#questions">100 கேள்விகள்</a>
+
+</nav>
+
+<div class="container">
+
+<section id="intro" class="card">
+
+<h2>1. SQL என்றால் என்ன?</h2>
+
+<p>
+SQL என்பது <b>Structured Query Language</b> என்பதன் சுருக்கமாகும்.
+Relational Database-ல் Data-வை உருவாக்க, சேமிக்க, தேட, மாற்ற
+மற்றும் நீக்க SQL பயன்படுத்தப்படுகிறது.
+</p>
+
+<span class="badge">MySQL</span>
+<span class="badge">PostgreSQL</span>
+<span class="badge">SQL Server</span>
+<span class="badge">Oracle</span>
+<span class="badge">SQLite</span>
+
+<h3>எளிய SQL Example</h3>
+
+<pre><code>
+SELECT *
+FROM employees;
+</code></pre>
+
+<p>
+இந்த Query employees table-ல் உள்ள அனைத்து columns மற்றும் rows-ஐ
+காட்டும்.
+</p>
+
+</section>
+
+
+<section id="ddl" class="card">
+
+<h2>2. DDL — Data Definition Language</h2>
+
+<p>
+Database structure-ஐ உருவாக்கவும் மாற்றவும் DDL commands பயன்படுத்தப்படுகின்றன.
+</p>
+
+<table>
+
+<tr>
+<th>Command</th>
+<th>பயன்</th>
+</tr>
+
+<tr>
+<td>CREATE</td>
+<td>Database object உருவாக்குதல்</td>
+</tr>
+
+<tr>
+<td>ALTER</td>
+<td>Database object-ஐ மாற்றுதல்</td>
+</tr>
+
+<tr>
+<td>DROP</td>
+<td>Object-ஐ நீக்குதல்</td>
+</tr>
+
+<tr>
+<td>TRUNCATE</td>
+<td>Table-ல் உள்ள அனைத்து rows-ஐ நீக்குதல்</td>
+</tr>
+
+</table>
+
+<h3>CREATE TABLE</h3>
+
+<pre><code>
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    department VARCHAR(50),
+    salary DECIMAL(10,2)
+);
+</code></pre>
+
+<h3>ALTER TABLE</h3>
+
+<pre><code>
+ALTER TABLE employees
+ADD email VARCHAR(150);
+</code></pre>
+
+<h3>DROP TABLE</h3>
+
+<pre><code>
+DROP TABLE employees;
+</code></pre>
+
+<h3>TRUNCATE TABLE</h3>
+
+<pre><code>
+TRUNCATE TABLE employees;
+</code></pre>
+
+</section>
+
+
+<section id="dml" class="card">
+
+<h2>3. DML — Data Manipulation Language</h2>
+
+<h3>INSERT</h3>
+
+<pre><code>
+INSERT INTO employees
+(employee_id,name,department,salary)
+VALUES
+(1,'John','IT',60000);
+</code></pre>
+
+<h3>UPDATE</h3>
+
+<pre><code>
+UPDATE employees
+SET salary = 65000
+WHERE employee_id = 1;
+</code></pre>
+
+<h3>DELETE</h3>
+
+<pre><code>
+DELETE FROM employees
+WHERE employee_id = 1;
+</code></pre>
+
+</section>
+
+
+<section id="select" class="card">
+
+<h2>4. SELECT Statement</h2>
+
+<h3>குறிப்பிட்ட Columns-ஐ SELECT செய்வது</h3>
+
+<pre><code>
+SELECT name, salary
+FROM employees;
+</code></pre>
+
+<h3>WHERE</h3>
+
+<pre><code>
+SELECT *
+FROM employees
+WHERE salary > 50000;
+</code></pre>
+
+<h3>DISTINCT</h3>
+
+<pre><code>
+SELECT DISTINCT department
+FROM employees;
+</code></pre>
+
+<h3>ORDER BY</h3>
+
+<pre><code>
+SELECT *
+FROM employees
+ORDER BY salary DESC;
+</code></pre>
+
+<h3>LIMIT</h3>
+
+<pre><code>
+SELECT *
+FROM employees
+LIMIT 10;
+</code></pre>
+
+</section>
+
+
+<section class="card">
+
+<h2>5. SQL Operators</h2>
+
+<table>
+
+<tr>
+<th>Operator</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td>=</td>
+<td>salary = 50000</td>
+</tr>
+
+<tr>
+<td>&gt;</td>
+<td>salary &gt; 50000</td>
+</tr>
+
+<tr>
+<td>&lt;</td>
+<td>salary &lt; 50000</td>
+</tr>
+
+<tr>
+<td>&gt;=</td>
+<td>salary &gt;= 50000</td>
+</tr>
+
+<tr>
+<td>&lt;=</td>
+<td>salary &lt;= 50000</td>
+</tr>
+
+<tr>
+<td>&lt;&gt;</td>
+<td>salary &lt;&gt; 50000</td>
+</tr>
+
+</table>
+
+<h3>BETWEEN</h3>
+
+<pre><code>
+SELECT *
+FROM employees
+WHERE salary BETWEEN 40000 AND 70000;
+</code></pre>
+
+<h3>IN</h3>
+
+<pre><code>
+SELECT *
+FROM employees
+WHERE department IN ('IT','HR','Sales');
+</code></pre>
+
+<h3>LIKE</h3>
+
+<pre><code>
+SELECT *
+FROM employees
+WHERE name LIKE 'A%';
+</code></pre>
+
+<h3>IS NULL</h3>
+
+<pre><code>
+SELECT *
+FROM employees
+WHERE email IS NULL;
+</code></pre>
+
+</section>
+
+
+<section class="card">
+
+<h2>6. Aggregate Functions</h2>
+
+<pre><code>
+SELECT COUNT(*) FROM employees;
+
+SELECT SUM(salary) FROM employees;
+
+SELECT AVG(salary) FROM employees;
+
+SELECT MIN(salary) FROM employees;
+
+SELECT MAX(salary) FROM employees;
+</code></pre>
+
+<h3>GROUP BY</h3>
+
+<pre><code>
+SELECT department, AVG(salary)
+FROM employees
+GROUP BY department;
+</code></pre>
+
+<h3>HAVING</h3>
+
+<pre><code>
+SELECT department, AVG(salary)
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 60000;
+</code></pre>
+
+</section>
+
+
+<section id="joins" class="card">
+
+<h2>7. SQL Joins</h2>
+
+<p>
+இரண்டு அல்லது அதற்கு மேற்பட்ட tables-ல் உள்ள தொடர்புடைய data-வை
+இணைக்க JOIN பயன்படுத்தப்படுகிறது.
+</p>
+
+<h3>INNER JOIN</h3>
+
+<pre><code>
+SELECT e.name, d.department_name
+FROM employees e
+INNER JOIN departments d
+ON e.department_id = d.department_id;
+</code></pre>
+
+<h3>LEFT JOIN</h3>
+
+<pre><code>
+SELECT e.name, d.department_name
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.department_id;
+</code></pre>
+
+<h3>RIGHT JOIN</h3>
+
+<pre><code>
+SELECT e.name, d.department_name
+FROM employees e
+RIGHT JOIN departments d
+ON e.department_id = d.department_id;
+</code></pre>
+
+<h3>FULL OUTER JOIN</h3>
+
+<pre><code>
+SELECT e.name, d.department_name
+FROM employees e
+FULL OUTER JOIN departments d
+ON e.department_id = d.department_id;
+</code></pre>
+
+<h3>CROSS JOIN</h3>
+
+<pre><code>
+SELECT *
+FROM employees
+CROSS JOIN departments;
+</code></pre>
+
+<h3>SELF JOIN</h3>
+
+<pre><code>
+SELECT
+    e.name AS employee,
+    m.name AS manager
+FROM employees e
+JOIN employees m
+ON e.manager_id = m.employee_id;
+</code></pre>
+
+</section>
+
+
+<section class="card">
+
+<h2>8. Constraints</h2>
+
+<table>
+
+<tr>
+<th>Constraint</th>
+<th>பயன்</th>
+</tr>
+
+<tr>
+<td>PRIMARY KEY</td>
+<td>ஒவ்வொரு row-ஐ தனித்துவமாக அடையாளம் காணும்</td>
+</tr>
+
+<tr>
+<td>FOREIGN KEY</td>
+<td>மற்றொரு table-ஐ reference செய்யும்</td>
+</tr>
+
+<tr>
+<td>UNIQUE</td>
+<td>Duplicate values-ஐ கட்டுப்படுத்தும்</td>
+</tr>
+
+<tr>
+<td>NOT NULL</td>
+<td>NULL value-ஐ அனுமதிக்காது</td>
+</tr>
+
+<tr>
+<td>CHECK</td>
+<td>ஒரு condition-ஐ enforce செய்யும்</td>
+</tr>
+
+<tr>
+<td>DEFAULT</td>
+<td>Default value வழங்கும்</td>
+</tr>
+
+</table>
+
+<pre><code>
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+
+    email VARCHAR(150) UNIQUE,
+
+    salary DECIMAL(10,2)
+        CHECK (salary >= 0),
+
+    country VARCHAR(50)
+        DEFAULT 'India'
+);
+</code></pre>
+
+</section>
+
+
+<section class="card">
+
+<h2>9. Subquery</h2>
+
+<h3>Average Salary-ஐ விட அதிகமாக பெறும் Employees</h3>
+
+<pre><code>
+SELECT name, salary
+FROM employees
+WHERE salary >
+(
+    SELECT AVG(salary)
+    FROM employees
+);
+</code></pre>
+
+</section>
+
+
+<section id="advanced" class="card">
+
+<h2>10. Advanced SQL</h2>
+
+<h3>CASE</h3>
+
+<pre><code>
+SELECT
+    name,
+    salary,
+
+    CASE
+        WHEN salary >= 100000
+            THEN 'High'
+
+        WHEN salary >= 50000
+            THEN 'Medium'
+
+        ELSE 'Low'
+    END AS salary_level
+
+FROM employees;
+</code></pre>
+
+<h3>CTE</h3>
+
+<pre><code>
+WITH high_salary AS
+(
+    SELECT *
+    FROM employees
+    WHERE salary > 100000
+)
+
+SELECT *
+FROM high_salary;
+</code></pre>
+
+<h3>ROW_NUMBER</h3>
+
+<pre><code>
+SELECT
+    name,
+    department,
+    salary,
+
+    ROW_NUMBER() OVER(
+        PARTITION BY department
+        ORDER BY salary DESC
+    ) AS row_num
+
+FROM employees;
+</code></pre>
+
+<h3>RANK</h3>
+
+<pre><code>
+SELECT
+    name,
+    salary,
+
+    RANK() OVER(
+        ORDER BY salary DESC
+    ) AS salary_rank
+
+FROM employees;
+</code></pre>
+
+<h3>LAG</h3>
+
+<pre><code>
+SELECT
+    employee_id,
+    salary,
+
+    LAG(salary) OVER(
+        ORDER BY employee_id
+    ) AS previous_salary
+
+FROM employees;
+</code></pre>
+
+</section>
+
+
+<section class="card">
+
+<h2>11. Transactions</h2>
+
+<pre><code>
+BEGIN;
+
+UPDATE accounts
+SET balance = balance - 100
+WHERE id = 1;
+
+UPDATE accounts
+SET balance = balance + 100
+WHERE id = 2;
+
+COMMIT;
+</code></pre>
+
+<h3>ROLLBACK</h3>
+
+<pre><code>
+BEGIN;
+
+DELETE FROM employees
+WHERE employee_id = 10;
+
+ROLLBACK;
+</code></pre>
+
+</section>
+
+
+<section class="card">
+
+<h2>12. Normalization</h2>
+
+<ul>
+
+<li>
+<b>1NF:</b>
+Atomic values மற்றும் repeating groups இல்லாமல் அமைத்தல்.
+</li>
+
+<li>
+<b>2NF:</b>
+1NF + partial dependency இல்லாமல் அமைத்தல்.
+</li>
+
+<li>
+<b>3NF:</b>
+2NF + transitive dependency இல்லாமல் அமைத்தல்.
+</li>
+
+<li>
+<b>BCNF:</b>
+3NF-ஐ விட வலுவான normalization வடிவம்.
+</li>
+
+</ul>
+
+</section>
+
+
+<section class="card">
+
+<h2>13. Query Execution Order</h2>
+
+<ol>
+
+<li>FROM</li>
+<li>JOIN</li>
+<li>WHERE</li>
+<li>GROUP BY</li>
+<li>HAVING</li>
+<li>SELECT</li>
+<li>DISTINCT</li>
+<li>ORDER BY</li>
+<li>LIMIT / OFFSET</li>
+
+</ol>
+
+</section>
+
+
+<section id="questions" class="card">
+
+<h2>14. 100 முக்கியமான SQL Interview Questions & Answers</h2>
+
+<input
+    type="text"
+    id="search"
+    placeholder="கேள்வியை தேடுங்கள்..."
+    onkeyup="searchQuestions()">
+
+<div id="questionList">
+
+<div class="question">
+<b>1. SQL என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+SQL என்பது relational database-ல் data-வை query மற்றும் manipulate செய்யப் பயன்படும் language.
+</div>
+</div>
+
+<div class="question">
+<b>2. Database என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Database என்பது ஒழுங்குபடுத்தப்பட்ட data-வின் தொகுப்பு.
+</div>
+</div>
+
+<div class="question">
+<b>3. DBMS என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Database-ஐ உருவாக்கவும் நிர்வகிக்கவும் பயன்படும் software DBMS ஆகும்.
+</div>
+</div>
+
+<div class="question">
+<b>4. RDBMS என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Tables மற்றும் அவற்றுக்கிடையிலான relationships அடிப்படையில் data-வை நிர்வகிக்கும் DBMS relational DBMS ஆகும்.
+</div>
+</div>
+
+<div class="question">
+<b>5. Table என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Rows மற்றும் columns கொண்ட database object table ஆகும்.
+</div>
+</div>
+
+<div class="question">
+<b>6. Primary Key என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரு table-ல் ஒவ்வொரு row-ஐ unique-ஆக identify செய்யும் key primary key ஆகும்.
+</div>
+</div>
+
+<div class="question">
+<b>7. Foreign Key என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+மற்றொரு table-ன் key-ஐ reference செய்யும் column அல்லது columns foreign key ஆகும்.
+</div>
+</div>
+
+<div class="question">
+<b>8. UNIQUE constraint என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரே value மீண்டும் வராமல் கட்டுப்படுத்த UNIQUE constraint பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>9. NOT NULL என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரு column-ல் NULL value இருக்கக்கூடாது என்பதை NOT NULL குறிப்பிடுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>10. CHECK constraint என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரு குறிப்பிட்ட condition-ஐ column values பின்பற்ற CHECK constraint பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>11. DEFAULT என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+INSERT செய்யும்போது value வழங்கப்படாவிட்டால் பயன்படுத்தப்படும் default value.
+</div>
+</div>
+
+<div class="question">
+<b>12. DDL என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Data Definition Language. CREATE, ALTER, DROP போன்ற commands இதில் அடங்கும்.
+</div>
+</div>
+
+<div class="question">
+<b>13. DML என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Data Manipulation Language. INSERT, UPDATE, DELETE போன்ற data manipulation commands இதில் அடங்கும்.
+</div>
+</div>
+
+<div class="question">
+<b>14. SELECT என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Database-ல் இருந்து data-வை retrieve செய்ய SELECT பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>15. WHERE என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+குறிப்பிட்ட condition அடிப்படையில் rows-ஐ filter செய்ய WHERE பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>16. GROUP BY என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒத்த values கொண்ட rows-ஐ groups-ஆக பிரித்து aggregate calculation செய்ய GROUP BY பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>17. HAVING என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+GROUP BY மூலம் உருவாக்கப்பட்ட groups-ஐ filter செய்ய HAVING பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>18. WHERE மற்றும் HAVING வித்தியாசம்?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+WHERE rows-ஐ filter செய்கிறது; HAVING groups அல்லது aggregate results-ஐ filter செய்கிறது.
+</div>
+</div>
+
+<div class="question">
+<b>19. ORDER BY என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Query result-ஐ ascending அல்லது descending order-ல் sort செய்ய ORDER BY பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>20. DISTINCT என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Duplicate result rows-ஐ நீக்க DISTINCT பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>21. INNER JOIN என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+இரண்டு tables-லும் matching rows மட்டும் INNER JOIN மூலம் கிடைக்கும்.
+</div>
+</div>
+
+<div class="question">
+<b>22. LEFT JOIN என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Left table-ன் அனைத்து rows மற்றும் matching right table rows கிடைக்கும்.
+</div>
+</div>
+
+<div class="question">
+<b>23. RIGHT JOIN என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Right table-ன் அனைத்து rows மற்றும் matching left table rows கிடைக்கும்.
+</div>
+</div>
+
+<div class="question">
+<b>24. FULL OUTER JOIN என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+இரு tables-ல் matching மற்றும் unmatched rows இரண்டையும் பெற FULL OUTER JOIN பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>25. CROSS JOIN என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+இரண்டு tables-ன் அனைத்து possible row combinations-ஐ CROSS JOIN உருவாக்கும்.
+</div>
+</div>
+
+<div class="question">
+<b>26. SELF JOIN என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரே table-ஐ இரண்டு aliases மூலம் அதே table-உடன் join செய்வது SELF JOIN.
+</div>
+</div>
+
+<div class="question">
+<b>27. Subquery என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரு SQL query-க்குள் இருக்கும் மற்றொரு query subquery எனப்படும்.
+</div>
+</div>
+
+<div class="question">
+<b>28. Correlated Subquery என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Outer query-ன் values-ஐ reference செய்யும் subquery correlated subquery ஆகும்.
+</div>
+</div>
+
+<div class="question">
+<b>29. CTE என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+WITH keyword மூலம் உருவாக்கப்படும் named temporary query result CTE ஆகும்.
+</div>
+</div>
+
+<div class="question">
+<b>30. Recursive CTE என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+தன்னைத்தானே reference செய்யும் CTE recursive CTE ஆகும்.
+</div>
+</div>
+
+<div class="question">
+<b>31. View என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Stored SELECT query-ஐ table போல பயன்படுத்துவது View.
+</div>
+</div>
+
+<div class="question">
+<b>32. Index என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+சில queries-ன் data access-ஐ வேகப்படுத்த database பயன்படுத்தும் data structure Index.
+</div>
+</div>
+
+<div class="question">
+<b>33. Composite Index என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+இரண்டு அல்லது அதற்கு மேற்பட்ட columns-ஐ கொண்ட index Composite Index.
+</div>
+</div>
+
+<div class="question">
+<b>34. Normalization என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Data redundancy மற்றும் undesirable dependencies-ஐ குறைக்க database structure-ஐ ஒழுங்குபடுத்துவது normalization.
+</div>
+</div>
+
+<div class="question">
+<b>35. Denormalization என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Performance அல்லது reporting தேவைக்காக திட்டமிட்டு சில redundancy-ஐ சேர்ப்பது denormalization.
+</div>
+</div>
+
+<div class="question">
+<b>36. 1NF என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Atomic values மற்றும் repeating groups இல்லாத table structure 1NF-ன் அடிப்படை கருத்து.
+</div>
+</div>
+
+<div class="question">
+<b>37. 2NF என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+1NF மற்றும் composite key-ன் ஒரு பகுதியை மட்டும் சார்ந்த partial dependency இல்லாத நிலை 2NF.
+</div>
+</div>
+
+<div class="question">
+<b>38. 3NF என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Transitive dependency-ஐ தவிர்க்கும் normalization நிலை 3NF.
+</div>
+</div>
+
+<div class="question">
+<b>39. ACID என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Atomicity, Consistency, Isolation, Durability என்பவை ACID properties.
+</div>
+</div>
+
+<div class="question">
+<b>40. Transaction என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரு logical unit of database work transaction எனப்படும்.
+</div>
+</div>
+
+<div class="question">
+<b>41. COMMIT என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Transaction changes-ஐ commit செய்ய COMMIT பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>42. ROLLBACK என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Rollback செய்யக்கூடிய transaction changes-ஐ undo செய்ய ROLLBACK பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>43. Deadlock என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Transactions ஒன்றுக்கொன்று வைத்திருக்கும் resources-க்காக காத்திருக்கும் cycle உருவானால் deadlock ஏற்படலாம்.
+</div>
+</div>
+
+<div class="question">
+<b>44. Window Function என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Individual rows-ஐ collapse செய்யாமல் related rows மீது calculation செய்ய window functions பயன்படுகின்றன.
+</div>
+</div>
+
+<div class="question">
+<b>45. ROW_NUMBER என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒவ்வொரு row-க்கும் sequential unique number வழங்க ROW_NUMBER பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>46. RANK என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Tie ஏற்பட்டால் ஒரே rank வழங்கி அடுத்த rank-ல் gap விடும் function RANK.
+</div>
+</div>
+
+<div class="question">
+<b>47. DENSE_RANK என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Tie-க்கு ஒரே rank வழங்கும்; ஆனால் அடுத்த rank-ல் gap இருக்காது.
+</div>
+</div>
+
+<div class="question">
+<b>48. PARTITION BY என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Window function calculation-க்காக rows-ஐ logical groups-ஆக பிரிக்க PARTITION BY பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>49. LAG என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Previous row-ன் value-ஐ பெற LAG பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>50. LEAD என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Next row-ன் value-ஐ பெற LEAD பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>51. COALESCE என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+கொடுக்கப்பட்ட expressions-ல் முதல் non-NULL value-ஐ COALESCE return செய்கிறது.
+</div>
+</div>
+
+<div class="question">
+<b>52. NULL என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+NULL என்பது unknown, missing அல்லது inapplicable value-ஐ குறிக்கிறது.
+</div>
+</div>
+
+<div class="question">
+<b>53. NULL-ஐ எப்படி check செய்வது?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+IS NULL அல்லது IS NOT NULL பயன்படுத்த வேண்டும். = NULL பயன்படுத்தக்கூடாது.
+</div>
+</div>
+
+<div class="question">
+<b>54. CASE என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+SQL-ல் conditional logic உருவாக்க CASE பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>55. UNION என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Compatible result sets-ஐ combine செய்து duplicate rows-ஐ remove செய்ய UNION பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>56. UNION மற்றும் UNION ALL வித்தியாசம்?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+UNION duplicates-ஐ remove செய்யும்; UNION ALL duplicates-ஐ retain செய்யும்.
+</div>
+</div>
+
+<div class="question">
+<b>57. EXISTS என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Subquery குறைந்தது ஒரு row return செய்கிறதா என்பதை EXISTS check செய்கிறது.
+</div>
+</div>
+
+<div class="question">
+<b>58. EXISTS மற்றும் IN வித்தியாசம்?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+இவை membership/existence logic-ஐ வெவ்வேறு விதமாக express செய்கின்றன; performance database மற்றும் query-ஐ பொறுத்தது.
+</div>
+</div>
+
+<div class="question">
+<b>59. Stored Procedure என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Database-ல் store செய்யப்பட்ட executable program logic Stored Procedure.
+</div>
+</div>
+
+<div class="question">
+<b>60. Trigger என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+குறிப்பிட்ட database event ஏற்பட்டவுடன் தானாக execute ஆகும் database logic Trigger.
+</div>
+</div>
+
+<div class="question">
+<b>61. Schema என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Database objects-க்கான logical namespace அல்லது container Schema.
+</div>
+</div>
+
+<div class="question">
+<b>62. Candidate Key என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Rows-ஐ uniquely identify செய்யும் minimal attribute set Candidate Key.
+</div>
+</div>
+
+<div class="question">
+<b>63. Surrogate Key என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Business meaning இல்லாத artificial identifier Surrogate Key.
+</div>
+</div>
+
+<div class="question">
+<b>64. Natural Key என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Real-world meaningful attribute-ஐ key ஆக பயன்படுத்துவது Natural Key.
+</div>
+</div>
+
+<div class="question">
+<b>65. Referential Integrity என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Foreign key relationships valid-ஆக இருப்பதை உறுதி செய்வது Referential Integrity.
+</div>
+</div>
+
+<div class="question">
+<b>66. CASCADE DELETE என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Parent row delete செய்யும்போது தொடர்புடைய child rows-ஐ database automatically delete செய்ய ON DELETE CASCADE பயன்படலாம்.
+</div>
+</div>
+
+<div class="question">
+<b>67. Cartesian Product என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+இரண்டு datasets-ன் அனைத்து possible row combinations Cartesian Product.
+</div>
+</div>
+
+<div class="question">
+<b>68. Alias என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Query-க்குள் table அல்லது expression-க்கு temporary name கொடுப்பது Alias.
+</div>
+</div>
+
+<div class="question">
+<b>69. COUNT(DISTINCT column) என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரு expression-ன் distinct non-NULL values-ஐ count செய்ய இது பயன்படும்.
+</div>
+</div>
+
+<div class="question">
+<b>70. Duplicate values-ஐ எப்படி கண்டுபிடிப்பது?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+GROUP BY மற்றும் HAVING COUNT(*) &gt; 1 பயன்படுத்தலாம்.
+</div>
+</div>
+
+<div class="question">
+<b>71. Second Highest Salary எப்படி கண்டுபிடிப்பது?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+MAX(salary)-ஐ விட குறைவான salaries-ல் MAX எடுப்பது ஒரு வழி. DENSE_RANK போன்ற window functions-ஐயும் பயன்படுத்தலாம்.
+</div>
+</div>
+
+<div class="question">
+<b>72. Average Salary-ஐ விட அதிகம் பெறுபவர்களை எப்படி கண்டுபிடிப்பது?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Salary-ஐ SELECT AVG(salary) FROM employees என்ற subquery-உடன் compare செய்யலாம்.
+</div>
+</div>
+
+<div class="question">
+<b>73. Query Optimization என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Query-ஐ execute செய்ய database engine efficient execution strategy தேர்வு செய்வது Query Optimization.
+</div>
+</div>
+
+<div class="question">
+<b>74. Execution Plan என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரு SQL query எப்படி execute செய்யப்படும் என்பதை database engine திட்டமிடும் representation Execution Plan.
+</div>
+</div>
+
+<div class="question">
+<b>75. Index ஏன் INSERT/UPDATE-ஐ slow செய்யலாம்?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Indexed data மாற்றப்படும்போது indexes-ஐயும் maintain செய்ய வேண்டியதால் additional work ஏற்படும்.
+</div>
+</div>
+
+<div class="question">
+<b>76. Covering Index என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Query-க்கு தேவையான தகவல்கள் index-லேயே போதுமானதாக இருந்தால் base table access குறையலாம்.
+</div>
+</div>
+
+<div class="question">
+<b>77. Clustered Index என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Table data storage organization index key-ஐ அடிப்படையாகக் கொண்ட அமைப்பு clustered indexing எனப்படும்; implementation DBMS-ஐ பொறுத்தது.
+</div>
+</div>
+
+<div class="question">
+<b>78. Non-Clustered Index என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Table data storage-இலிருந்து தனியாக இருக்கும் index structure non-clustered index எனப்படும்.
+</div>
+</div>
+
+<div class="question">
+<b>79. Isolation Level என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Concurrent transactions ஒன்றுக்கொன்று எவ்வாறு தெரியும் என்பதை transaction isolation level கட்டுப்படுத்துகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>80. Dirty Read என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+மற்றொரு transaction commit செய்யாத data-வை read செய்வது Dirty Read.
+</div>
+</div>
+
+<div class="question">
+<b>81. Non-Repeatable Read என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரே transaction-ல் ஒரே row-ஐ இரண்டு முறை படிக்கும்போது வேறுபட்ட committed values கிடைப்பது.
+</div>
+</div>
+
+<div class="question">
+<b>82. Phantom Read என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரே range query-ஐ மீண்டும் execute செய்யும்போது புதிய அல்லது நீக்கப்பட்ட qualifying rows காரணமாக result set மாறுவது.
+</div>
+</div>
+
+<div class="question">
+<b>83. SQL Injection என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Untrusted input மூலம் SQL statement-ன் intended meaning மாற்றப்படும் attack SQL Injection.
+</div>
+</div>
+
+<div class="question">
+<b>84. SQL Injection-ஐ எப்படி prevent செய்வது?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Parameterized queries அல்லது prepared statements பயன்படுத்துவது முக்கியமான பாதுகாப்பு நடைமுறை.
+</div>
+</div>
+
+<div class="question">
+<b>85. Prepared Statement என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+SQL structure மற்றும் parameter values-ஐ தனித்தனியாக handle செய்யும் mechanism Prepared Statement.
+</div>
+</div>
+
+<div class="question">
+<b>86. DELETE மற்றும் TRUNCATE வித்தியாசம்?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+DELETE குறிப்பிட்ட rows-ஐ WHERE மூலம் remove செய்யலாம்; TRUNCATE table-ல் உள்ள அனைத்து rows-ஐ DBMS-specific semantics மூலம் remove செய்கிறது.
+</div>
+</div>
+
+<div class="question">
+<b>87. DROP மற்றும் TRUNCATE வித்தியாசம்?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+DROP database object-ஐ remove செய்கிறது; TRUNCATE table structure-ஐ வைத்துக்கொண்டு rows-ஐ remove செய்கிறது.
+</div>
+</div>
+
+<div class="question">
+<b>88. NULLIF என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+இரண்டு expressions equal என்றால் NULL return செய்யும் function NULLIF.
+</div>
+</div>
+
+<div class="question">
+<b>89. Aggregate Function என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+பல rows-லிருந்து ஒரு calculation result உருவாக்கும் function Aggregate Function.
+</div>
+</div>
+
+<div class="question">
+<b>90. Scalar Function என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+ஒரு input அல்லது row expression-க்கு ஒரு single value return செய்யும் function.
+</div>
+</div>
+
+<div class="question">
+<b>91. SQL Pagination என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+பெரிய result set-ஐ சிறிய பகுதிகளாக retrieve செய்வது Pagination.
+</div>
+</div>
+
+<div class="question">
+<b>92. Upsert என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Row இல்லையெனில் INSERT மற்றும் இருந்தால் UPDATE செய்வது Upsert.
+</div>
+</div>
+
+<div class="question">
+<b>93. MERGE என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Conditional INSERT/UPDATE போன்ற operations-ஐ ஒரே statement மூலம் செய்ய சில DBMS-களில் MERGE பயன்படுகிறது.
+</div>
+</div>
+
+<div class="question">
+<b>94. Materialized View என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Query result-ஐ physically store செய்யும் view Materialized View.
+</div>
+</div>
+
+<div class="question">
+<b>95. Partitioning என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+பெரிய table அல்லது index-ஐ smaller partitions-ஆக பிரிப்பது Partitioning.
+</div>
+</div>
+
+<div class="question">
+<b>96. Horizontal Partitioning என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Rows-ஐ partitions-ஆக பிரிப்பது Horizontal Partitioning.
+</div>
+</div>
+
+<div class="question">
+<b>97. Vertical Partitioning என்றால் என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Columns-ஐ வெவ்வேறு storage structures அல்லது tables-ஆக பிரிப்பது Vertical Partitioning.
+</div>
+</div>
+
+<div class="question">
+<b>98. SQL-ல் Second Highest Salary கண்டுபிடிக்க மற்றொரு வழி என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+DENSE_RANK() OVER (ORDER BY salary DESC) பயன்படுத்தி rank = 2 உள்ள rows-ஐ தேர்வு செய்யலாம்.
+</div>
+</div>
+
+<div class="question">
+<b>99. SQL கற்க முக்கியமான topics என்ன?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+SELECT, WHERE, JOIN, GROUP BY, HAVING, subqueries, CTE, window functions, transactions, indexes மற்றும் query optimization ஆகியவை முக்கியமான topics.
+</div>
+</div>
+
+<div class="question">
+<b>100. SQL கற்ற பிறகு என்ன practice செய்ய வேண்டும்?</b>
+<button onclick="toggle(this)">பதில் பார்க்க</button>
+<div class="answer">
+Real-world tables உருவாக்கி JOIN, aggregation, subquery, CTE, window functions மற்றும் interview queries ஆகியவற்றை தொடர்ந்து practice செய்ய வேண்டும்.
+</div>
+</div>
+
+</div>
+</section>
+
+</div>
+
+<button id="topBtn" onclick="topFunction()">↑ மேலே</button>
+
+<footer>
+
+<h2 style="color:white;border:0">
+சுந்தர்ராஜு கற்றல் உலகம்
+</h2>
+
+<p>
+SQL கற்போம் • Practice செய்வோம் • முன்னேறுவோம்
+</p>
+
+<p>
+© 2026 Sundarraju Kattral Ulagam
+</p>
+
+</footer>
+
+
+<script>
+
+function toggle(button){
+
+    const answer = button.nextElementSibling;
+
+    if(answer.style.display === "block"){
+
+        answer.style.display = "none";
+
+        button.textContent = "பதில் பார்க்க";
+
+    }else{
+
+        answer.style.display = "block";
+
+        button.textContent = "பதிலை மறைக்க";
+
+    }
+}
+
+
+function searchQuestions(){
+
+    const input =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const questions =
+        document.querySelectorAll(".question");
+
+    questions.forEach(function(question){
+
+        const text =
+            question.innerText.toLowerCase();
+
+        if(text.includes(input)){
+
+            question.style.display = "block";
+
+        }else{
+
+            question.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+const topBtn =
+    document.getElementById("topBtn");
+
+
+window.onscroll = function(){
+
+    if(document.documentElement.scrollTop > 300){
+
+        topBtn.style.display = "block";
+
+    }else{
+
+        topBtn.style.display = "none";
+
+    }
+
+};
+
+
+function topFunction(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
