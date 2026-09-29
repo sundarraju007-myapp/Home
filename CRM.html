@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>சுந்தர்ராஜு கற்றல் உலகம்
+செயற்கை நுண்ணறிவு & இயந்திரக் கற்றல் கற்கும் தளம்</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+header {
+  background: linear-gradient(135deg, #071952, #088395, #35a29f);
+  color: white;
+  padding: 45px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #06152f;
+  padding: 12px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #61dafb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.hero {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px #00000012;
+}
+
+.hero h2 {
+  color: #087f8c;
+  margin-bottom: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 15px;
+  box-shadow: 0 5px 18px #00000012;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: #075985;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+  background: #dff7f5;
+  color: #087f8c;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+section {
+  margin: 35px 0;
+}
+
+section > h2 {
+  margin-bottom: 20px;
+  color: #071952;
+}
+
+.algorithm {
+  background: white;
+  border-left: 6px solid #088395;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.algorithm h3 {
+  color: #088395;
+  margin-bottom: 12px;
+}
+
+.steps {
+  margin: 15px 0 15px 25px;
+}
+
+.steps li {
+  margin-bottom: 8px;
+}
+
+.formula {
+  background: #101827;
+  color: #8fffe0;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  font-family: monospace;
+  overflow-x: auto;
+}
+
+.problem {
+  background: #fff7df;
+  border-left: 5px solid #f59e0b;
+  padding: 18px;
+  margin-top: 15px;
+  border-radius: 8px;
+}
+
+.solution {
+  display: none;
+  background: #ecfdf5;
+  border-left: 5px solid #10b981;
+  padding: 18px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+button {
+  border: none;
+  background: #087f8c;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #075985;
+}
+
+input, select {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+.demo {
+  background: #eef6ff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+#result {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #075985;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: white;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: #071952;
+  color: white;
+}
+
+footer {
+  background: #06152f;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+@media(max-width:600px) {
+  header h1 {
+    font-size: 29px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌍 சுந்தர்ராஜு கற்றல் உலகம்
+</h1>
+  <p>Machine Learning — Step-by-Step Interactive Tutorial</p>
+</header>
+
+<nav>
+  <a href="#basics">Basics</a>
+  <a href="#supervised">Supervised</a>
+  <a href="#unsupervised">Unsupervised</a>
+  <a href="#deep">Deep Learning</a>
+  <a href="#reinforcement">Reinforcement</a>
+  <a href="#demo">Demo</a>
+  <a href="#problems">Problems</a>
+</nav>
+
+<main class="container">
+
+<section id="basics">
+  <div class="hero">
+    <h2>📚 What is Machine Learning?</h2>
+    <p>
+      Machine Learning (ML) is a branch of Artificial Intelligence where
+      computers learn patterns from data and use those patterns to make
+      predictions or decisions.
+    </p>
+
+    <div class="formula">
+      Data → Algorithm → Training → Model → Prediction
+    </div>
+
+    <h3>Basic ML Workflow</h3>
+    <ol class="steps">
+      <li>Collect data</li>
+      <li>Clean the data</li>
+      <li>Explore the data</li>
+      <li>Choose features</li>
+      <li>Split training and testing data</li>
+      <li>Choose an algorithm</li>
+      <li>Train the model</li>
+      <li>Evaluate the model</li>
+      <li>Make predictions</li>
+      <li>Improve the model</li>
+    </ol>
+  </div>
+</section>
+
+<section id="supervised">
+<h2>1. 🎯 Supervised Learning</h2>
+
+<div class="algorithm">
+<span class="badge">Regression</span>
+<h3>Linear Regression</h3>
+
+<p>
+Used when the output is a continuous numerical value.
+Example: predicting house price from house size.
+</p>
+
+<div class="formula">
+y = mx + b
+</div>
+
+<ol class="steps">
+<li>Collect input X and output Y.</li>
+<li>Plot the data.</li>
+<li>Find the best-fit line.</li>
+<li>Calculate prediction error.</li>
+<li>Adjust model parameters.</li>
+<li>Use the trained model for prediction.</li>
+</ol>
+
+<div class="problem">
+<strong>Problem:</strong><br>
+A house has 1000 sq.ft. and costs ₹50 lakh.
+Another has 2000 sq.ft. and costs ₹90 lakh.
+What type of ML problem is this?
+</div>
+
+<button onclick="toggle('sol1')">Show Answer</button>
+<div id="sol1" class="solution">
+Regression, because the target value is a continuous number: house price.
+</div>
+</div>
+
+<div class="algorithm">
+<span class="badge">Classification</span>
+<h3>Logistic Regression</h3>
+
+<p>
+Used to classify data into categories such as Yes/No, Spam/Not Spam,
+Disease/No Disease.
+</p>
+
+<div class="formula">
+P(y=1) = 1 / (1 + e<sup>-z</sup>)
+</div>
+
+<ol class="steps">
+<li>Prepare labelled training data.</li>
+<li>Calculate weighted input.</li>
+<li>Apply the sigmoid function.</li>
+<li>Convert probability into a class.</li>
+<li>Measure classification error.</li>
+<li>Update the parameters.</li>
+</ol>
+</div>
+
+<div class="algorithm">
+<span class="badge">Classification / Regression</span>
+<h3>Decision Tree</h3>
+
+<p>
+A Decision Tree repeatedly asks questions about features and follows
+branches until it reaches a prediction.
+</p>
+
+<ol class="steps">
+<li>Select the best feature for splitting.</li>
+<li>Create a decision node.</li>
+<li>Split the dataset.</li>
+<li>Repeat for each branch.</li>
+<li>Stop when a suitable leaf is reached.</li>
+<li>Use the leaf value/class for prediction.</li>
+</ol>
+</div>
+
+<div class="algorithm">
+<span class="badge">Ensemble</span>
+<h3>Random Forest</h3>
+
+<p>
+Random Forest combines many decision trees to produce a stronger prediction.
+</p>
+
+<ol class="steps">
+<li>Create multiple random samples of the training data.</li>
+<li>Build a decision tree for each sample.</li>
+<li>Randomly select features at each split.</li>
+<li>Train many trees.</li>
+<li>Combine their predictions.</li>
+</ol>
+
+<div class="formula">
+Random Forest = Many Decision Trees + Aggregated Prediction
+</div>
+</div>
+
+<div class="algorithm">
+<span class="badge">Classification</span>
+<h3>K-Nearest Neighbors — KNN</h3>
+
+<p>
+KNN predicts a data point using the classes of its nearest neighbours.
+</p>
+
+<div class="formula">
+Distance = √((x₁-x₂)² + (y₁-y₂)²)
+</div>
+
+<ol class="steps">
+<li>Choose K.</li>
+<li>Calculate distance from the new point to training points.</li>
+<li>Find the K nearest points.</li>
+<li>Count their classes.</li>
+<li>Choose the majority class.</li>
+</ol>
+</div>
+
+<div class="algorithm">
+<span class="badge">Classification</span>
+<h3>Support Vector Machine — SVM</h3>
+
+<p>
+SVM finds a decision boundary that separates classes while attempting to
+maximize the margin between them.
+</p>
+
+<ol class="steps">
+<li>Represent data as feature vectors.</li>
+<li>Search for a separating hyperplane.</li>
+<li>Maximize the margin.</li>
+<li>Use kernel functions when nonlinear separation is required.</li>
+</ol>
+</div>
+
+<div class="algorithm">
+<span class="badge">Probabilistic</span>
+<h3>Naive Bayes</h3>
+
+<p>
+Naive Bayes uses Bayes' theorem and assumes conditional independence
+between features.
+</p>
+
+<div class="formula">
+P(A|B) = P(B|A)P(A) / P(B)
+</div>
+
+<p>
+Common application: email spam classification and text classification.
+</p>
+</div>
+
+</section>
+
+<section id="unsupervised">
+<h2>2. 🔍 Unsupervised Learning</h2>
+
+<div class="algorithm">
+<h3>K-Means Clustering</h3>
+
+<p>
+K-Means groups similar data points into K clusters.
+</p>
+
+<ol class="steps">
+<li>Choose the number of clusters K.</li>
+<li>Randomly initialize K centroids.</li>
+<li>Assign each point to its nearest centroid.</li>
+<li>Calculate new centroid positions.</li>
+<li>Repeat assignment and update steps.</li>
+<li>Stop when centroids stabilize.</li>
+</ol>
+
+<div class="formula">
+Goal: Minimize the distance between points and their cluster centroid.
+</div>
+</div>
+
+<div class="algorithm">
+<h3>Hierarchical Clustering</h3>
+
+<p>
+Creates a hierarchy of clusters, often represented using a dendrogram.
+</p>
+
+<ol class="steps">
+<li>Start with every point as a separate cluster.</li>
+<li>Find the closest clusters.</li>
+<li>Merge them.</li>
+<li>Repeat until one hierarchy is created.</li>
+<li>Choose the desired level of clusters.</li>
+</ol>
+</div>
+
+<div class="algorithm">
+<h3>PCA — Principal Component Analysis</h3>
+
+<p>
+PCA reduces the number of dimensions while attempting to preserve
+important variation in the data.
+</p>
+
+<ol class="steps">
+<li>Standardize the features.</li>
+<li>Calculate the covariance structure.</li>
+<li>Find principal directions.</li>
+<li>Rank components by explained variance.</li>
+<li>Project the data onto selected components.</li>
+</ol>
+</div>
+
+</section>
+
+<section id="deep">
+<h2>3. 🧠 Deep Learning</h2>
+
+<div class="algorithm">
+<h3>Artificial Neural Network — ANN</h3>
+
+<p>
+An ANN contains interconnected neurons organized into layers.
+</p>
+
+<div class="formula">
+Input Layer → Hidden Layer(s) → Output Layer
+</div>
+
+<ol class="steps">
+<li>Initialize weights.</li>
+<li>Pass input through the network.</li>
+<li>Calculate output.</li>
+<li>Calculate loss.</li>
+<li>Backpropagate the error.</li>
+<li>Update weights.</li>
+<li>Repeat for multiple epochs.</li>
+</ol>
+</div>
+
+<div class="algorithm">
+<h3>CNN — Convolutional Neural Network</h3>
+
+<p>
+CNNs are particularly useful for image and spatial data.
+</p>
+
+<ol class="steps">
+<li>Input image.</li>
+<li>Apply convolution filters.</li>
+<li>Apply activation.</li>
+<li>Perform pooling.</li>
+<li>Extract important features.</li>
+<li>Classify using final layers.</li>
+</ol>
+</div>
+
+<div class="algorithm">
+<h3>RNN — Recurrent Neural Network</h3>
+
+<p>
+RNNs process sequential information by maintaining information from
+previous time steps.
+</p>
+
+<p>
+Applications include sequence modelling, text and time-series problems.
+</p>
+</div>
+
+<div class="algorithm">
+<h3>Transformer</h3>
+
+<p>
+Transformers use attention mechanisms to model relationships between
+elements in sequences.
+</p>
+
+<ol class="steps">
+<li>Convert input into representations.</li>
+<li>Add positional information where required.</li>
+<li>Calculate attention.</li>
+<li>Combine contextual information.</li>
+<li>Pass through feed-forward layers.</li>
+<li>Repeat through transformer blocks.</li>
+</ol>
+</div>
+
+</section>
+
+<section id="reinforcement">
+<h2>4. 🎮 Reinforcement Learning</h2>
+
+<div class="algorithm">
+<h3>Q-Learning</h3>
+
+<p>
+An agent learns which actions are useful by interacting with an environment
+and receiving rewards.
+</p>
+
+<div class="formula">
+Q(s,a) ← Q(s,a) + α[r + γ max Q(s',a') - Q(s,a)]
+</div>
+
+<ol class="steps">
+<li>Initialize Q values.</li>
+<li>Observe the current state.</li>
+<li>Choose an action.</li>
+<li>Receive a reward.</li>
+<li>Observe the next state.</li>
+<li>Update the Q value.</li>
+<li>Repeat until the policy improves.</li>
+</ol>
+
+<p>
+Examples: games, robotics, resource allocation and sequential decision
+problems.
+</p>
+</div>
+
+</section>
+
+<section id="demo">
+<h2>5. 🧪 Interactive ML Demo — Linear Regression</h2>
+
+<div class="hero">
+
+<p>
+Enter two points. The demo calculates the slope and intercept of the line
+passing through them.
+</p>
+
+<div class="demo">
+
+<label>Point 1 X:</label>
+<input id="x1" type="number" value="1">
+
+<label>Point 1 Y:</label>
+<input id="y1" type="number" value="3">
+
+<br>
+
+<label>Point 2 X:</label>
+<input id="x2" type="number" value="3">
+
+<label>Point 2 Y:</label>
+<input id="y2" type="number" value="7">
+
+<br>
+
+<label>Prediction X:</label>
+<input id="xp" type="number" value="5">
+
+<br>
+
+<button onclick="linearRegressionDemo()">
+Calculate Prediction
+</button>
+
+<div id="result"></div>
+
+</div>
+</div>
+</section>
+
+<section id="problems">
+<h2>6. 📝 Practice Problems</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Problem 1</h3>
+<p>
+You have student attendance and want to predict whether a student
+will pass or fail.
+</p>
+<button onclick="toggle('p1')">Answer</button>
+<div id="p1" class="solution">
+This is a supervised classification problem.
+</div>
+</div>
+
+<div class="card">
+<h3>Problem 2</h3>
+<p>
+Predict the salary of an employee using years of experience.
+</p>
+<button onclick="toggle('p2')">Answer</button>
+<div id="p2" class="solution">
+This is a supervised regression problem.
+</div>
+</div>
+
+<div class="card">
+<h3>Problem 3</h3>
+<p>
+A company wants to divide customers into groups based on shopping
+behaviour without predefined labels.
+</p>
+<button onclick="toggle('p3')">Answer</button>
+<div id="p3" class="solution">
+This is an unsupervised clustering problem. K-Means is one possible approach.
+</div>
+</div>
+
+<div class="card">
+<h3>Problem 4</h3>
+<p>
+A robot learns to navigate a maze using rewards and penalties.
+</p>
+<button onclick="toggle('p4')">Answer</button>
+<div id="p4" class="solution">
+This is reinforcement learning.
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>7. 📊 Algorithm Selection Guide</h2>
+
+<table>
+<tr>
+<th>Problem</th>
+<th>Possible Algorithm</th>
+<th>Learning Type</th>
+</tr>
+
+<tr>
+<td>Predict house price</td>
+<td>Linear Regression</td>
+<td>Supervised</td>
+</tr>
+
+<tr>
+<td>Spam detection</td>
+<td>Logistic Regression / Naive Bayes / SVM</td>
+<td>Supervised</td>
+</tr>
+
+<tr>
+<td>Customer grouping</td>
+<td>K-Means</td>
+<td>Unsupervised</td>
+</tr>
+
+<tr>
+<td>Image classification</td>
+<td>CNN</td>
+<td>Deep Learning</td>
+</tr>
+
+<tr>
+<td>Sequential text problem</td>
+<td>RNN / Transformer</td>
+<td>Deep Learning</td>
+</tr>
+
+<tr>
+<td>Robot decision making</td>
+<td>Q-Learning / other RL methods</td>
+<td>Reinforcement</td>
+</tr>
+
+<tr>
+<td>Dimensionality reduction</td>
+<td>PCA</td>
+<td>Unsupervised</td>
+</tr>
+
+</table>
+</section>
+
+<section>
+<h2>8. 🚀 Complete ML Learning Path</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Level 1</h3>
+<p>Python basics</p>
+<p>Mathematics</p>
+<p>Statistics</p>
+</div>
+
+<div class="card">
+<h3>Level 2</h3>
+<p>Data preprocessing</p>
+<p>Visualization</p>
+<p>Feature engineering</p>
+</div>
+
+<div class="card">
+<h3>Level 3</h3>
+<p>Regression</p>
+<p>Classification</p>
+<p>Clustering</p>
+</div>
+
+<div class="card">
+<h3>Level 4</h3>
+<p>Neural Networks</p>
+<p>CNN</p>
+<p>RNN</p>
+<p>Transformers</p>
+</div>
+
+<div class="card">
+<h3>Level 5</h3>
+<p>Model evaluation</p>
+<p>Hyperparameter tuning</p>
+<p>Cross-validation</p>
+</div>
+
+<div class="card">
+<h3>Level 6</h3>
+<p>Real-world projects</p>
+<p>Deployment</p>
+<p>MLOps</p>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<h2>Sundarraju Kattral Ulagam</h2>
+<p>Learn • Practice • Build • Innovate</p>
+<p>Machine Learning Interactive Education</p>
+</footer>
+
+<script>
+
+function toggle(id) {
+  const element = document.getElementById(id);
+
+  if (element.style.display === "block") {
+    element.style.display = "none";
+  } else {
+    element.style.display = "block";
+  }
+}
+
+function linearRegressionDemo() {
+
+  const x1 = Number(document.getElementById("x1").value);
+  const y1 = Number(document.getElementById("y1").value);
+  const x2 = Number(document.getElementById("x2").value);
+  const y2 = Number(document.getElementById("y2").value);
+  const xp = Number(document.getElementById("xp").value);
+
+  if (x1 === x2) {
+    document.getElementById("result").innerHTML =
+      "X values must be different.";
+    return;
+  }
+
+  const m = (y2 - y1) / (x2 - x1);
+  const b = y1 - m * x1;
+  const prediction = m * xp + b;
+
+  document.getElementById("result").innerHTML = `
+    Slope (m): ${m.toFixed(2)}<br>
+    Intercept (b): ${b.toFixed(2)}<br>
+    Equation: y = ${m.toFixed(2)}x + ${b.toFixed(2)}<br>
+    Prediction for x = ${xp}: 
+    <strong>${prediction.toFixed(2)}</strong>
+  `;
+}
+
+</script>
+
+</body>
+</html>

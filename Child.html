@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>சுந்தர்ராஜுவின் குழந்தைகளுக்கான ஆலோசனைகள்</title>
+
+<style>
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Noto Sans Tamil", "Latha", Arial, sans-serif;
+    background: #fff8e1;
+    color: #263238;
+    line-height: 1.7;
+    transition: 0.3s;
+}
+
+body.dark {
+    background: #172027;
+    color: #eeeeee;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    background: linear-gradient(135deg, #ff6f00, #ff4081, #7e57c2);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "🌈 ⭐ 🎈 🦋 🌟 🎨";
+    position: absolute;
+    font-size: 45px;
+    opacity: 0.15;
+    left: 5%;
+    top: 15px;
+}
+
+header::after {
+    content: "🌟 🐰 🌳 🚀 ☀️ 🎵";
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.15;
+    right: 5%;
+    bottom: 10px;
+}
+
+header h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: clamp(16px, 2vw, 22px);
+}
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+    background: #00897b;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+
+nav a,
+nav button {
+    text-decoration: none;
+    border: none;
+    background: white;
+    color: #00695c;
+    padding: 9px 14px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+nav a:hover,
+nav button:hover {
+    background: #ffeb3b;
+    transform: translateY(-2px);
+}
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    margin-top: 25px;
+    background: linear-gradient(135deg, #e1f5fe, #fce4ec);
+    border-radius: 25px;
+    padding: 35px;
+    text-align: center;
+}
+
+.dark .hero {
+    background: #263238;
+}
+
+.hero h2 {
+    color: #e65100;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.main-btn {
+    border: none;
+    padding: 13px 22px;
+    border-radius: 30px;
+    background: #ff4081;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+    transition: .2s;
+}
+
+.main-btn:hover {
+    background: #c2185b;
+    transform: scale(1.04);
+}
+
+/* ================================
+   SECTION
+================================ */
+
+section {
+    padding: 35px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #ef6c00;
+}
+
+.section-title p {
+    opacity: .8;
+}
+
+/* ================================
+   CARDS
+================================ */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.10);
+    transition: .25s;
+    border-top: 6px solid #ff9800;
+}
+
+.dark .card {
+    background: #263238;
+    color: #eee;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.18);
+}
+
+.card .icon {
+    font-size: 45px;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    color: #1565c0;
+    margin-bottom: 8px;
+}
+
+.dark .card h3 {
+    color: #64b5f6;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+.card ul {
+    padding-left: 22px;
+}
+
+.card-btn {
+    border: none;
+    background: #4caf50;
+    color: white;
+    padding: 9px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.card-btn:hover {
+    background: #2e7d32;
+}
+
+/* Card colors */
+
+.song {
+    border-color: #ff9800;
+}
+
+.game {
+    border-color: #2196f3;
+}
+
+.mind {
+    border-color: #9c27b0;
+}
+
+.yoga {
+    border-color: #009688;
+}
+
+.story {
+    border-color: #795548;
+}
+
+.good {
+    border-color: #4caf50;
+}
+
+/* ================================
+   SEARCH
+================================ */
+
+.search-box {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: min(700px, 90%);
+    padding: 14px 20px;
+    border: 2px solid #80cbc4;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* ================================
+   QUIZ
+================================ */
+
+.quiz-box {
+    background: white;
+    max-width: 750px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 22px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.12);
+}
+
+.dark .quiz-box {
+    background: #263238;
+}
+
+.quiz-question {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.option {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0;
+    border: 2px solid #90caf9;
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    color: inherit;
+}
+
+.option:hover {
+    background: #e3f2fd;
+}
+
+.correct {
+    background: #c8e6c9 !important;
+    border-color: #4caf50;
+}
+
+.wrong {
+    background: #ffcdd2 !important;
+    border-color: #f44336;
+}
+
+.quiz-result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* ================================
+   PROGRESS
+================================ */
+
+.progress-box {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,.1);
+}
+
+.dark .progress-box {
+    background: #263238;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg,#4caf50,#ffeb3b,#ff9800);
+    transition: .5s;
+}
+
+/* ================================
+   MODAL
+================================ */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    color: #333;
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 25px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    color: #e65100;
+    margin-bottom: 15px;
+}
+
+.close {
+    float: right;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    margin-top: 30px;
+    background: #263238;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* ================================
+   BACK TO TOP
+================================ */
+
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #ff4081;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1500;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:600px) {
+
+    nav {
+        padding: 8px;
+    }
+
+    nav a,
+    nav button {
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+    .hero {
+        padding: 25px 15px;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================================
+     HEADER
+================================ -->
+
+<header>
+    <h1>🌈 சுந்தர்ராஜுவின் குழந்தைகளுக்கான ஆலோசனைகள்</h1>
+    <p>🎵 பாடல் • 🎮 விளையாட்டு • 🧠 உளவியல் • 🧘 யோகா • 📖 கதை • 🧩 Quiz</p>
+</header>
+
+
+<!-- ================================
+     NAVIGATION
+================================ -->
+
+<nav>
+
+    <a href="#home">🏠 முகப்பு</a>
+    <a href="#songs">🎵 பாடல்கள்</a>
+    <a href="#games">🎮 விளையாட்டு</a>
+    <a href="#mind">🧠 உளவியல்</a>
+    <a href="#yoga">🧘 யோகா</a>
+    <a href="#stories">📖 கதைகள்</a>
+    <a href="#quiz">🧩 Quiz</a>
+    <a href="#parents">👨‍👩‍👧 பெற்றோர்</a>
+
+    <button onclick="toggleDarkMode()">🌙</button>
+
+</nav>
+
+
+<main class="container">
+
+<!-- ================================
+     HOME
+================================ -->
+
+<section id="home">
+
+<div class="hero">
+
+    <h2>👋 வணக்கம் குட்டீஸ்!</h2>
+
+    <p>
+        இந்த இணையதளத்தில் குழந்தைகளுக்கான பாடல்கள்,
+        விளையாட்டுகள், நல்ல பழக்கங்கள், உளவியல் ஆலோசனைகள்,
+        யோகா, கதைகள் மற்றும் அறிவுப் போட்டிகளை
+        மகிழ்ச்சியாக கற்றுக்கொள்ளலாம்.
+    </p>
+
+    <div class="hero-buttons">
+
+        <button class="main-btn"
+                onclick="document.getElementById('songs').scrollIntoView()">
+            🎵 பாடல்களைப் பார்ப்போம்
+        </button>
+
+        <button class="main-btn"
+                onclick="document.getElementById('quiz').scrollIntoView()">
+            🧩 Quiz விளையாடலாம்
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     SEARCH
+================================ -->
+
+<section>
+
+<div class="search-box">
+
+    <h2>🔍 தேடுங்கள்</h2>
+
+    <br>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="பாடல், யோகா, விளையாட்டு, கதை..."
+        onkeyup="searchCards()"
+    >
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     SONGS
+================================ -->
+
+<section id="songs">
+
+<div class="section-title">
+
+    <h2>🎵 குழந்தைகளுக்கான பாடல்கள்</h2>
+
+    <p>பாடல்களைப் படித்து மகிழுங்கள்!</p>
+
+</div>
+
+<div class="cards" id="songCards">
+
+    <div class="card song">
+
+        <div class="icon">🌞</div>
+
+        <h3>காலை வணக்கம்</h3>
+
+        <p>
+            காலை எழுந்து சிரிப்போம்,<br>
+            கைகளை நன்றாய் கழுவுவோம்,<br>
+            அம்மா அப்பா சொல்வதைக் கேட்போம்,<br>
+            அன்போடு நாளை தொடங்குவோம்!
+        </p>
+
+        <button class="card-btn"
+                onclick="speak(this)">
+            🔊 கேட்க
+        </button>
+
+    </div>
+
+
+    <div class="card song">
+
+        <div class="icon">🌳</div>
+
+        <h3>இயற்கையை காப்போம்</h3>
+
+        <p>
+            மரங்களை நாம் வளர்ப்போம்,<br>
+            செடிகளை நாம் காப்போம்,<br>
+            தண்ணீரை வீணாக்காமல்,<br>
+            இயற்கையோடு வாழ்வோம்!
+        </p>
+
+        <button class="card-btn"
+                onclick="speak(this)">
+            🔊 கேட்க
+        </button>
+
+    </div>
+
+
+    <div class="card song">
+
+        <div class="icon">🤝</div>
+
+        <h3>நட்பின் சிறப்பு</h3>
+
+        <p>
+            நண்பர்களுடன் விளையாடுவோம்,<br>
+            அன்பான வார்த்தை பேசுவோம்,<br>
+            உதவி செய்து மகிழ்வோம்,<br>
+            நல்ல நண்பர்களாய் இருப்போம்!
+        </p>
+
+        <button class="card-btn"
+                onclick="speak(this)">
+            🔊 கேட்க
+        </button>
+
+    </div>
+
+
+    <div class="card song">
+
+        <div class="icon">🌧️</div>
+
+        <h3>மழைப் பாடல்</h3>
+
+        <p>
+            மழை வருகிறது சலசலவென்று,<br>
+            மண் மணக்குது மகிழ்ச்சியுடன்,<br>
+            குடை பிடித்து நடப்போம் நாம்,<br>
+            மழையை ரசித்து மகிழ்வோம் நாம்!
+        </p>
+
+        <button class="card-btn"
+                onclick="speak(this)">
+            🔊 கேட்க
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     GAMES
+================================ -->
+
+<section id="games">
+
+<div class="section-title">
+
+    <h2>🎮 குழந்தைகளுக்கான விளையாட்டுகள்</h2>
+
+    <p>விளையாடி கற்றுக்கொள்வோம்!</p>
+
+</div>
+
+<div class="cards">
+
+    <div class="card game">
+
+        <div class="icon">⚽</div>
+
+        <h3>பந்து விளையாட்டு</h3>
+
+        <p>
+            பந்தை எறிந்து பிடித்தல்,
+            உதைத்தல் போன்ற விளையாட்டுகளை
+            பாதுகாப்பான இடத்தில் விளையாடலாம்.
+        </p>
+
+    </div>
+
+
+    <div class="card game">
+
+        <div class="icon">🧩</div>
+
+        <h3>புதிர் விளையாட்டு</h3>
+
+        <p>
+            வயதுக்கு ஏற்ற புதிர்களைத் தீர்ப்பதன்
+            மூலம் சிந்தனை மற்றும் பிரச்சினைத்
+            தீர்க்கும் திறனைப் பயிற்சி செய்யலாம்.
+        </p>
+
+    </div>
+
+
+    <div class="card game">
+
+        <div class="icon">🏃</div>
+
+        <h3>ஓடி விளையாடு</h3>
+
+        <p>
+            ஓடுதல், குதித்தல் மற்றும் எளிய
+            உடல் இயக்க விளையாட்டுகள்
+            மகிழ்ச்சியான உடற்பயிற்சியாக அமையும்.
+        </p>
+
+    </div>
+
+
+    <div class="card game">
+
+        <div class="icon">🧠</div>
+
+        <h3>நினைவாற்றல் விளையாட்டு</h3>
+
+        <p>
+            சில பொருட்களைப் பார்த்த பிறகு
+            அவற்றை நினைவில் இருந்து சொல்ல முயற்சி செய்யுங்கள்.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     PSYCHOLOGY
+================================ -->
+
+<section id="mind">
+
+<div class="section-title">
+
+    <h2>🧠 குழந்தைகளுக்கான உளவியல் வழிகாட்டி</h2>
+
+    <p>உணர்வுகளைப் புரிந்துகொள்வோம்.</p>
+
+</div>
+
+<div class="cards">
+
+    <div class="card mind">
+
+        <div class="icon">❤️</div>
+
+        <h3>என் உணர்வுகள்</h3>
+
+        <p>
+            மகிழ்ச்சி, சோகம், கோபம், பயம் போன்ற
+            உணர்வுகள் அனைவருக்கும் ஏற்படலாம்.
+            அவற்றைப் பற்றி நம்பிக்கையான
+            பெரியவரிடம் பேசுவது உதவியாக இருக்கலாம்.
+        </p>
+
+    </div>
+
+
+    <div class="card mind">
+
+        <div class="icon">🌟</div>
+
+        <h3>தன்னம்பிக்கை</h3>
+
+        <p>
+            “என்னால் முடியும்” என்று முயற்சி செய்யுங்கள்.
+            தவறுகள் ஏற்பட்டாலும் அதிலிருந்து
+            கற்றுக்கொள்வது முக்கியம்.
+        </p>
+
+    </div>
+
+
+    <div class="card mind">
+
+        <div class="icon">😌</div>
+
+        <h3>கோபத்தை சமாளித்தல்</h3>
+
+        <p>
+            கோபமாக இருக்கும்போது சிறிது நேரம் அமைதியாக இருந்து,
+            மெதுவாக மூச்சை உள்ளிழுத்து வெளியே விடலாம்.
+        </p>
+
+    </div>
+
+
+    <div class="card mind">
+
+        <div class="icon">🤗</div>
+
+        <h3>அன்பும் நட்பும்</h3>
+
+        <p>
+            பிறரின் கருத்தைக் கேட்பது,
+            பகிர்ந்து கொள்வது மற்றும்
+            உதவி செய்வது நல்ல நட்பை வளர்க்க உதவும்.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     YOGA
+================================ -->
+
+<section id="yoga">
+
+<div class="section-title">
+
+    <h2>🧘 குழந்தைகளுக்கான யோகா</h2>
+
+    <p>மெதுவாகவும் பாதுகாப்பாகவும் பயிற்சி செய்வோம்.</p>
+
+</div>
+
+<div class="cards">
+
+    <div class="card yoga">
+
+        <div class="icon">🌳</div>
+
+        <h3>மர ஆசனம்</h3>
+
+        <p>
+            நேராக நின்று சமநிலையைப் பேண முயற்சி செய்யுங்கள்.
+            தேவையானால் சுவரை ஆதரவாகப் பயன்படுத்தலாம்.
+        </p>
+
+    </div>
+
+
+    <div class="card yoga">
+
+        <div class="icon">🦋</div>
+
+        <h3>பட்டாம்பூச்சி ஆசனம்</h3>
+
+        <p>
+            வசதியாக அமர்ந்து கால்களின் பாதங்களை
+            ஒன்றாக வைத்து, முழங்கால்களை மெதுவாக
+            மேலே கீழே இயக்கலாம்.
+        </p>
+
+    </div>
+
+
+    <div class="card yoga">
+
+        <div class="icon">🐱</div>
+
+        <h3>பூனை - மாடு இயக்கம்</h3>
+
+        <p>
+            நான்கு கால்களில் இருக்கும் நிலையில்
+            முதுகை மெதுவாக வளைத்து நேராக்கும்
+            இயக்கத்தைச் செய்யலாம்.
+        </p>
+
+    </div>
+
+
+    <div class="card yoga">
+
+        <div class="icon">🌬️</div>
+
+        <h3>மெதுவான மூச்சுப் பயிற்சி</h3>
+
+        <p>
+            வசதியாக அமர்ந்து இயல்பாக மூச்சை
+            உள்ளிழுத்து மெதுவாக வெளியே விடலாம்.
+        </p>
+
+    </div>
+
+</div>
+
+<div class="hero">
+
+    ⚠️ குழந்தைகள் யோகா செய்யும்போது பெரியவர்
+    கண்காணிப்பது நல்லது. வலி அல்லது அசௌகரியம்
+    ஏற்பட்டால் பயிற்சியை நிறுத்துங்கள்.
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     STORIES
+================================ -->
+
+<section id="stories">
+
+<div class="section-title">
+
+    <h2>📖 சிறுவர் கதைகள்</h2>
+
+    <p>கதைகள் மூலம் நல்ல கருத்துகளைக் கற்றுக்கொள்வோம்.</p>
+
+</div>
+
+<div class="cards">
+
+    <div class="card story">
+
+        <div class="icon">🐢</div>
+
+        <h3>முயலும் ஆமையும்</h3>
+
+        <p>
+            வேகம் மட்டுமல்ல, தொடர்ந்து முயற்சி செய்வதும்
+            முக்கியம் என்பதை நினைவூட்டும் கதை.
+        </p>
+
+        <button class="card-btn"
+                onclick="openStory('முயலும் ஆமையும்',
+                'முயல் வேகமாக ஓடியது. ஆமை மெதுவாக நடந்தாலும் தொடர்ந்து சென்றது. முயல் ஓய்வெடுத்துக் கொண்டிருந்த நேரத்தில் ஆமை தொடர்ந்து சென்று இலக்கை அடைந்தது. தொடர்ந்து முயற்சி செய்வதன் முக்கியத்துவத்தை இந்தக் கதை எடுத்துக்காட்டுகிறது.')">
+            📖 கதை படிக்க
+        </button>
+
+    </div>
+
+
+    <div class="card story">
+
+        <div class="icon">🐜</div>
+
+        <h3>எறும்பின் முயற்சி</h3>
+
+        <p>
+            சிறிய முயற்சிகளையும் தொடர்ந்து செய்வது
+            பெரிய முன்னேற்றத்திற்கு உதவலாம்.
+        </p>
+
+        <button class="card-btn"
+                onclick="openStory('எறும்பின் முயற்சி',
+                'ஒரு சிறிய எறும்பு உணவைச் சேகரிக்க தொடர்ந்து முயன்றது. பல தடைகள் வந்தாலும் அது விடாமல் முயற்சி செய்தது. இறுதியில் தேவையான உணவைச் சேகரித்தது. விடாமுயற்சியின் மதிப்பை இந்தக் கதை கற்றுக்கொடுக்கிறது.')">
+            📖 கதை படிக்க
+        </button>
+
+    </div>
+
+
+    <div class="card story">
+
+        <div class="icon">🦁</div>
+
+        <h3>சிங்கமும் எலியும்</h3>
+
+        <p>
+            ஒருவர் சிறியவராக இருந்தாலும் அவருடைய
+            உதவி மதிப்புமிக்கதாக இருக்கலாம்.
+        </p>
+
+        <button class="card-btn"
+                onclick="openStory('சிங்கமும் எலியும்',
+                'ஒரு நாள் சிங்கம் ஒரு சிறிய எலியைப் பிடித்தது. பின்னர் அதை விடுவித்தது. சில நாட்களுக்குப் பிறகு சிங்கம் வலையில் சிக்கியது. அந்த எலி வலையை கடித்து சிங்கத்திற்கு உதவியது. சிறிய உதவியும் பெரிய பயனைத் தரலாம்.')">
+            📖 கதை படிக்க
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     QUIZ
+================================ -->
+
+<section id="quiz">
+
+<div class="section-title">
+
+    <h2>🧩 குழந்தைகள் Quiz</h2>
+
+    <p>கேள்விகளுக்கு சரியான பதிலைத் தேர்ந்தெடுக்கவும்!</p>
+
+</div>
+
+<div class="quiz-box">
+
+    <div id="quizArea"></div>
+
+    <div class="quiz-result" id="quizResult"></div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     GOOD HABITS
+================================ -->
+
+<section>
+
+<div class="section-title">
+
+    <h2>⭐ என் நல்ல பழக்கங்கள்</h2>
+
+    <p>இன்றைய நல்ல செயல்களைச் சரிபார்க்கவும்.</p>
+
+</div>
+
+<div class="progress-box">
+
+    <label>
+        <input type="checkbox" onchange="updateHabits()">
+        🪥 பல் துலக்கினேன்
+    </label>
+
+    <br>
+
+    <label>
+        <input type="checkbox" onchange="updateHabits()">
+        🧼 கைகளை சுத்தமாக கழுவினேன்
+    </label>
+
+    <br>
+
+    <label>
+        <input type="checkbox" onchange="updateHabits()">
+        📚 புத்தகம் படித்தேன்
+    </label>
+
+    <br>
+
+    <label>
+        <input type="checkbox" onchange="updateHabits()">
+        🤝 ஒருவருக்கு உதவி செய்தேன்
+    </label>
+
+    <br>
+
+    <label>
+        <input type="checkbox" onchange="updateHabits()">
+        🧹 என் பொருட்களை ஒழுங்காக வைத்தேன்
+    </label>
+
+    <br>
+
+    <label>
+        <input type="checkbox" onchange="updateHabits()">
+        🧘 அமைதியாக சில நிமிடங்கள் இருந்தேன்
+    </label>
+
+    <div class="progress-bar">
+
+        <div class="progress-fill"
+             id="progressFill">
+        </div>
+
+    </div>
+
+    <h3 id="habitScore">
+        ⭐ இன்று 0 நல்ல செயல்கள்
+    </h3>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     PARENTS
+================================ -->
+
+<section id="parents">
+
+<div class="section-title">
+
+    <h2>👨‍👩‍👧 பெற்றோருக்கான வழிகாட்டி</h2>
+
+</div>
+
+<div class="cards">
+
+    <div class="card good">
+
+        <div class="icon">❤️</div>
+
+        <h3>குழந்தையை கேளுங்கள்</h3>
+
+        <p>
+            குழந்தை பேசும்போது கவனமாகக் கேட்டு,
+            அதன் கருத்துகளையும் உணர்வுகளையும் மதியுங்கள்.
+        </p>
+
+    </div>
+
+
+    <div class="card good">
+
+        <div class="icon">🌟</div>
+
+        <h3>முயற்சியைப் பாராட்டுங்கள்</h3>
+
+        <p>
+            முடிவை மட்டும் பார்க்காமல் குழந்தையின்
+            முயற்சியையும் முன்னேற்றத்தையும் பாராட்டுங்கள்.
+        </p>
+
+    </div>
+
+
+    <div class="card good">
+
+        <div class="icon">📵</div>
+
+        <h3>திரை நேர சமநிலை</h3>
+
+        <p>
+            குழந்தையின் வயது மற்றும் குடும்பச் சூழலுக்கு
+            ஏற்ற வகையில் திரை நேரம், விளையாட்டு,
+            தூக்கம் மற்றும் குடும்ப நேரத்திற்கு சமநிலை ஏற்படுத்துங்கள்.
+        </p>
+
+    </div>
+
+
+    <div class="card good">
+
+        <div class="icon">👨‍👩‍👧</div>
+
+        <h3>குடும்ப நேரம்</h3>
+
+        <p>
+            தினமும் குழந்தையுடன் பேசவும்,
+            விளையாடவும், ஒன்றாகச் செயல்படவும்
+            சிறிது நேரம் ஒதுக்குங்கள்.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================================
+     STORY MODAL
+================================ -->
+
+<div class="modal" id="storyModal">
+
+    <div class="modal-content">
+
+        <button class="close"
+                onclick="closeStory()">
+            ×
+        </button>
+
+        <h2 id="storyTitle"></h2>
+
+        <p id="storyText"></p>
+
+        <br>
+
+        <button class="main-btn"
+                onclick="speakStory()">
+            🔊 கேட்க
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================================
+     TOP BUTTON
+================================ -->
+
+<button id="topBtn"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑
+</button>
+
+
+<!-- ================================
+     FOOTER
+================================ -->
+
+<footer>
+
+    <h2>🌈 சுந்தர்ராஜுவின் குழந்தைகளுக்கான ஆலோசனைகள்</h2>
+
+    <p>
+        🎵 கற்போம் • 🎮 விளையாடுவோம் • 🧠 சிந்திப்போம் • 🧘 அமைதியாக இருப்போம்
+    </p>
+
+    <p>
+        © 2026 Sundarraju's Children's Guidance
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =================================
+   TEXT TO SPEECH
+================================= */
+
+function speak(button) {
+
+    const card = button.closest(".card");
+
+    const text = card.innerText;
+
+    if (!("speechSynthesis" in window)) {
+
+        alert("இந்த உலாவியில் குரல் வாசிப்பு வசதி இல்லை.");
+
+        return;
+    }
+
+    speechSynthesis.cancel();
+
+    const voice = new SpeechSynthesisUtterance(text);
+
+    voice.lang = "ta-IN";
+    voice.rate = 0.8;
+    voice.pitch = 1;
+
+    speechSynthesis.speak(voice);
+}
+
+
+/* =================================
+   DARK MODE
+================================= */
+
+function toggleDarkMode() {
+
+    document.body.classList.toggle("dark");
+
+    const dark =
+        document.body.classList.contains("dark");
+
+    localStorage.setItem("darkMode", dark);
+
+}
+
+
+/* Load dark mode */
+
+if (localStorage.getItem("darkMode") === "true") {
+
+    document.body.classList.add("dark");
+
+}
+
+
+/* =================================
+   SEARCH
+================================= */
+
+function searchCards() {
+
+    const input =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        const text =
+            card.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* =================================
+   STORY MODAL
+================================= */
+
+let currentStory = "";
+
+function openStory(title, text) {
+
+    document.getElementById("storyTitle")
+        .innerText = title;
+
+    document.getElementById("storyText")
+        .innerText = text;
+
+    currentStory = title + ". " + text;
+
+    document.getElementById("storyModal")
+        .style.display = "flex";
+
+}
+
+
+function closeStory() {
+
+    document.getElementById("storyModal")
+        .style.display = "none";
+
+}
+
+
+function speakStory() {
+
+    if (!("speechSynthesis" in window)) {
+
+        alert("குரல் வாசிப்பு வசதி இல்லை.");
+
+        return;
+    }
+
+    speechSynthesis.cancel();
+
+    const voice =
+        new SpeechSynthesisUtterance(currentStory);
+
+    voice.lang = "ta-IN";
+    voice.rate = .8;
+
+    speechSynthesis.speak(voice);
+
+}
+
+
+/* =================================
+   QUIZ
+================================= */
+
+const questions = [
+
+    {
+        question: "🌞 சூரியன் பொதுவாக எப்போது உதயமாகிறது?",
+        options: ["காலை", "நள்ளிரவு", "மாலை"],
+        answer: 0
+    },
+
+    {
+        question: "🌳 மரங்கள் நமக்கு எதை வழங்குகின்றன?",
+        options: ["காற்றுக்கு உதவி", "கற்கள்", "பொம்மைகள்"],
+        answer: 0
+    },
+
+    {
+        question: "🧘 யோகா செய்யும்போது எப்படி இருக்க வேண்டும்?",
+        options: ["அவசரமாக", "கவனமாக", "பிறரை தள்ளி"],
+        answer: 1
+    },
+
+    {
+        question: "🤝 நல்ல நண்பன் எப்படி இருப்பான்?",
+        options: ["உதவி செய்வான்", "எப்போதும் சண்டையிடுவான்", "பொருட்களை மறைப்பான்"],
+        answer: 0
+    },
+
+    {
+        question: "🧠 கோபமாக இருக்கும்போது என்ன செய்யலாம்?",
+        options: [
+            "மெதுவாக மூச்சை விடலாம்",
+            "பிறரை அடிக்கலாம்",
+            "பொருட்களை உடைக்கலாம்"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "📚 புத்தகம் படிப்பது எதற்கு உதவும்?",
+        options: ["கற்றலுக்கு", "தூங்காமல் இருப்பதற்கு மட்டும்", "விளையாடுவதற்கு மட்டும்"],
+        answer: 0
+    },
+
+    {
+        question: "💧 தண்ணீரை எப்படி பயன்படுத்த வேண்டும்?",
+        options: ["வீணாக்க வேண்டும்", "சிக்கனமாக பயன்படுத்த வேண்டும்", "எப்போதும் திறந்து வைக்க வேண்டும்"],
+        answer: 1
+    },
+
+    {
+        question: "❤️ குழந்தை சோகமாக இருந்தால் என்ன செய்வது நல்லது?",
+        options: [
+            "கவனமாகக் கேட்பது",
+            "கேலி செய்வது",
+            "புறக்கணிப்பது"
+        ],
+        answer: 0
+    }
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+
+function loadQuiz() {
+
+    const area =
+        document.getElementById("quizArea");
+
+    const q = questions[currentQuestion];
+
+    let html = `
+
+        <div class="quiz-question">
+            ${currentQuestion + 1}.
+            ${q.question}
+        </div>
+
+    `;
+
+    q.options.forEach((option, index) => {
+
+        html += `
+
+            <button
+                class="option"
+                onclick="answerQuiz(${index}, this)">
+                ${option}
+            </button>
+
+        `;
+
+    });
+
+    area.innerHTML = html;
+
+    document.getElementById("quizResult")
+        .innerText =
+        `⭐ மதிப்பெண்: ${score}`;
+
+}
+
+
+function answerQuiz(selected, button) {
+
+    const q = questions[currentQuestion];
+
+    const buttons =
+        document.querySelectorAll(".option");
+
+    buttons.forEach(btn => {
+        btn.disabled = true;
+    });
+
+    if (selected === q.answer) {
+
+        button.classList.add("correct");
+
+        score++;
+
+    } else {
+
+        button.classList.add("wrong");
+
+        buttons[q.answer]
+            .classList.add("correct");
+
+    }
+
+    setTimeout(() => {
+
+        currentQuestion++;
+
+        if (currentQuestion < questions.length) {
+
+            loadQuiz();
+
+        } else {
+
+            showQuizResult();
+
+        }
+
+    }, 900);
+
+}
+
+
+function showQuizResult() {
+
+    const area =
+        document.getElementById("quizArea");
+
+    let message = "";
+
+    const percentage =
+        Math.round((score / questions.length) * 100);
+
+    if (percentage >= 80) {
+
+        message = "🌟 அருமை! சிறப்பாக செய்துள்ளீர்கள்!";
+
+    } else if (percentage >= 50) {
+
+        message = "👏 நல்ல முயற்சி! இன்னும் முயற்சி செய்யுங்கள்!";
+
+    } else {
+
+        message = "💪 பரவாயில்லை! மீண்டும் முயற்சி செய்யலாம்!";
+
+    }
+
+    area.innerHTML = `
+
+        <div style="text-align:center">
+
+            <h2>🎉 Quiz முடிந்தது!</h2>
+
+            <br>
+
+            <p>
+                உங்கள் மதிப்பெண்:
+                <strong>${score}/${questions.length}</strong>
+            </p>
+
+            <br>
+
+            <h3>${message}</h3>
+
+            <br>
+
+            <button class="main-btn"
+                    onclick="restartQuiz()">
+                🔄 மீண்டும் விளையாடு
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    loadQuiz();
+
+}
+
+
+loadQuiz();
+
+
+/* =================================
+   GOOD HABITS
+================================= */
+
+function updateHabits() {
+
+    const checks =
+        document.querySelectorAll(
+            '.progress-box input[type="checkbox"]'
+        );
+
+    let count = 0;
+
+    checks.forEach(check => {
+
+        if (check.checked) {
+            count++;
+        }
+
+    });
+
+    const percentage =
+        (count / checks.length) * 100;
+
+    document.getElementById("progressFill")
+        .style.width = percentage + "%";
+
+    document.getElementById("habitScore")
+        .innerText =
+        `⭐ இன்று ${count} நல்ல செயல்கள்`;
+
+    localStorage.setItem(
+        "habitCount",
+        count
+    );
+
+}
+
+
+/* =================================
+   TOP BUTTON
+================================= */
+
+window.addEventListener("scroll", function() {
+
+    const btn =
+        document.getElementById("topBtn");
+
+    if (window.scrollY > 400) {
+
+        btn.style.display = "block";
+
+    } else {
+
+        btn.style.display = "none";
+
+    }
+
+});
+
+
+/* =================================
+   MODAL OUTSIDE CLICK
+================================= */
+
+window.addEventListener("click", function(event) {
+
+    const modal =
+        document.getElementById("storyModal");
+
+    if (event.target === modal) {
+
+        closeStory();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
