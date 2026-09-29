@@ -21,21 +21,22 @@ html {
 
 body {
     font-family: "Noto Sans Tamil", "Latha", sans-serif;
-    background:
-        radial-gradient(circle at 20% 10%, #5d3c1260, transparent 30%),
-        radial-gradient(circle at 80% 30%, #3b1d5260, transparent 30%),
-        linear-gradient(135deg, #090711, #171021, #0b1520);
-    color: #f5ead4;
+    color: #f7ead0;
     min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 15% 10%, #7b4d1825, transparent 30%),
+        radial-gradient(circle at 85% 25%, #4d216225, transparent 30%),
+        linear-gradient(135deg, #08070e, #171020, #0a141b);
 }
 
-/* ---------- HEADER ---------- */
+/* ================= HEADER ================= */
 
 header {
     min-height: 430px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 70px 20px;
     position: relative;
@@ -45,19 +46,20 @@ header {
 header::before {
     content: "";
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
-    background: #d39b3c18;
-    filter: blur(20px);
-    animation: glow 5s infinite alternate;
+    background: #d7a84c16;
+    filter: blur(25px);
+    animation: glow 5s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
     from {
-        transform: scale(.9);
-        opacity: .5;
+        transform: scale(.8);
+        opacity: .4;
     }
+
     to {
         transform: scale(1.15);
         opacity: 1;
@@ -70,63 +72,74 @@ header::before {
 }
 
 .hero-symbol {
-    font-size: 55px;
-    color: #e5b85f;
+    font-size: 60px;
+    color: #e7bb61;
+    text-shadow: 0 0 30px #e7bb6144;
     margin-bottom: 15px;
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 6vw, 4.7rem);
-    color: #ffd982;
-    line-height: 1.3;
+    font-size: clamp(2rem, 6vw, 4.6rem);
+    line-height: 1.35;
+    color: #ffda82;
     text-shadow:
-        0 0 10px #e2ad4c66,
-        0 0 35px #e2ad4c33;
+        0 0 15px #dba84d55,
+        0 0 40px #dba84d22;
 }
 
 .hero h2 {
-    margin-top: 15px;
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    color: #cdbd9f;
+    color: #cfc0a4;
     font-weight: 400;
+    margin-top: 18px;
+    font-size: clamp(1rem, 3vw, 1.45rem);
 }
 
 .hero-line {
-    width: 130px;
+    width: 150px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #d6a54d, transparent);
     margin: 25px auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d6a64f,
+        transparent
+    );
 }
 
 .hero p {
-    color: #a99c8a;
-    max-width: 700px;
-    margin: auto;
+    color: #a99d8a;
     line-height: 2;
 }
 
-/* ---------- NAVIGATION ---------- */
+/* ================= NAV ================= */
 
 nav {
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: #090711e8;
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid #d4a65333;
+    z-index: 1000;
+
     padding: 12px 10px;
     text-align: center;
+
+    background: #08070ee8;
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #d4a65333;
 }
 
 .nav-btn {
-    border: 1px solid #c2984c66;
-    background: #ffffff05;
-    color: #e8cb91;
+    font-family: inherit;
+
     padding: 9px 17px;
     margin: 4px;
+
     border-radius: 30px;
+    border: 1px solid #c2984c66;
+
+    color: #e8cb91;
+    background: #ffffff05;
+
     cursor: pointer;
-    font-family: inherit;
     transition: .3s;
 }
 
@@ -134,10 +147,10 @@ nav {
 .nav-btn.active {
     background: #c49a50;
     color: #140d18;
-    box-shadow: 0 0 18px #c49a5044;
+    box-shadow: 0 0 20px #c49a5044;
 }
 
-/* ---------- MAIN ---------- */
+/* ================= MAIN ================= */
 
 .container {
     width: min(1150px, 92%);
@@ -160,24 +173,29 @@ nav {
     line-height: 2;
 }
 
-/* ---------- SEARCH ---------- */
+/* ================= SEARCH ================= */
 
 .search-box {
-    position: relative;
-    margin: 25px auto 45px;
-    max-width: 700px;
+    max-width: 720px;
+    margin: 25px auto 40px;
 }
 
 #search {
     width: 100%;
+
     padding: 17px 25px;
+
     border-radius: 50px;
     border: 1px solid #bd954c88;
+
     background: #080610cc;
-    color: #fff;
+    color: white;
+
     outline: none;
+
     font-family: inherit;
     font-size: 1rem;
+
     transition: .3s;
 }
 
@@ -187,10 +205,10 @@ nav {
 }
 
 #search::placeholder {
-    color: #847969;
+    color: #837767;
 }
 
-/* ---------- STATS ---------- */
+/* ================= STATS ================= */
 
 .stats {
     display: flex;
@@ -201,18 +219,22 @@ nav {
 }
 
 .stat {
-    min-width: 150px;
+    min-width: 160px;
+
     text-align: center;
+
     padding: 18px;
-    border: 1px solid #c39a5044;
-    background: #ffffff08;
+
     border-radius: 15px;
+    border: 1px solid #c39a5044;
+
+    background: #ffffff08;
 }
 
 .stat strong {
     display: block;
     color: #e9bd68;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .stat span {
@@ -220,113 +242,128 @@ nav {
     font-size: .85rem;
 }
 
-/* ---------- SONG GRID ---------- */
+/* ================= SONG GRID ================= */
 
 .song-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns:
+        repeat(auto-fit, minmax(290px, 1fr));
+
     gap: 22px;
+
     padding-bottom: 70px;
 }
 
-/* ---------- CARD ---------- */
+/* ================= SONG CARD ================= */
 
 .song-card {
     position: relative;
     overflow: hidden;
+
     padding: 27px;
+
     min-height: 300px;
+
     border-radius: 20px;
     border: 1px solid #c69c5140;
+
     background:
-        linear-gradient(145deg, #ffffff0d, #ffffff03);
-    box-shadow: 0 15px 45px #00000045;
-    transition: transform .35s, border-color .35s, box-shadow .35s;
+        linear-gradient(
+            145deg,
+            #ffffff0d,
+            #ffffff03
+        );
+
+    box-shadow:
+        0 15px 45px #00000045;
+
+    transition:
+        transform .35s,
+        border-color .35s,
+        box-shadow .35s,
+        opacity .6s;
 }
 
 .song-card::before {
     content: "";
+
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 3px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #d5a64f,
-        transparent
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d5a64f,
+            transparent
+        );
 }
 
 .song-card:hover {
     transform: translateY(-8px);
+
     border-color: #d5aa5b99;
-    box-shadow: 0 20px 50px #00000066;
+
+    box-shadow:
+        0 20px 50px #00000066;
 }
 
 .song-number {
     color: #d5a64f;
-    font-size: .85rem;
+
+    font-size: .82rem;
+
     letter-spacing: 2px;
 }
 
 .song-card h3 {
     color: #ffd783;
-    font-size: 1.4rem;
+
+    font-size: 1.35rem;
+
     margin: 10px 0 15px;
 }
 
 .song-card p {
     color: #ddd1bd;
+
     line-height: 2;
+
     white-space: pre-line;
 }
 
 .song-tag {
     display: inline-block;
+
     margin-top: 18px;
+
     padding: 4px 12px;
+
     border-radius: 20px;
+
     background: #d3a55015;
+
     border: 1px solid #d3a55033;
+
     color: #bda97d;
+
     font-size: .75rem;
 }
 
-/* ---------- QUOTE ---------- */
-
-.quote-section {
-    padding: 30px 0 80px;
-}
-
-.quote {
-    text-align: center;
-    padding: 45px 25px;
-    border-top: 1px solid #d2a34d44;
-    border-bottom: 1px solid #d2a34d44;
-    background: #00000018;
-}
-
-.quote-symbol {
-    font-size: 40px;
-    color: #d8aa56;
-}
-
-.quote p {
-    max-width: 850px;
-    margin: 15px auto;
-    font-size: clamp(1.1rem, 3vw, 1.5rem);
-    line-height: 2.1;
-    color: #ecd9ae;
-}
-
-/* ---------- NO RESULT ---------- */
+/* ================= NO RESULT ================= */
 
 .no-result {
     display: none;
+
     text-align: center;
+
     padding: 60px 20px;
+
     color: #9d9281;
 }
 
@@ -335,13 +372,55 @@ nav {
     margin-bottom: 10px;
 }
 
-/* ---------- FOOTER ---------- */
+/* ================= QUOTE ================= */
+
+.quote-section {
+    padding: 20px 0 80px;
+}
+
+.quote {
+    text-align: center;
+
+    padding: 45px 25px;
+
+    border-top: 1px solid #d2a34d44;
+    border-bottom: 1px solid #d2a34d44;
+
+    background: #00000018;
+}
+
+.quote-symbol {
+    color: #d8aa56;
+    font-size: 40px;
+}
+
+.quote p {
+    max-width: 850px;
+
+    margin: 15px auto;
+
+    color: #ecd9ae;
+
+    font-size:
+        clamp(1.1rem, 3vw, 1.5rem);
+
+    line-height: 2.1;
+}
+
+.quote small {
+    color: #9f927d;
+}
+
+/* ================= FOOTER ================= */
 
 footer {
     text-align: center;
+
     padding: 45px 20px;
-    border-top: 1px solid #ffffff12;
+
     background: #05040a;
+
+    border-top: 1px solid #ffffff12;
 }
 
 footer h3 {
@@ -355,25 +434,35 @@ footer p {
     font-size: .85rem;
 }
 
-/* ---------- BACK TO TOP ---------- */
+/* ================= TOP BUTTON ================= */
 
 #topBtn {
     position: fixed;
+
     right: 20px;
     bottom: 20px;
-    width: 48px;
-    height: 48px;
+
+    width: 50px;
+    height: 50px;
+
     border-radius: 50%;
+
     border: 1px solid #d3a650;
+
     background: #171020dd;
+
     color: #e8bd69;
+
     cursor: pointer;
+
     display: none;
-    z-index: 200;
-    font-size: 20px;
+
+    z-index: 2000;
+
+    font-size: 22px;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ================= MOBILE ================= */
 
 @media (max-width: 600px) {
 
@@ -383,11 +472,7 @@ footer p {
     }
 
     .hero-symbol {
-        font-size: 40px;
-    }
-
-    .intro {
-        padding-top: 40px;
+        font-size: 42px;
     }
 
     .song-grid {
@@ -402,35 +487,53 @@ footer p {
         padding: 8px 12px;
         font-size: .8rem;
     }
+
+    .stats {
+        gap: 10px;
+    }
+
+    .stat {
+        min-width: 130px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
+
     <div class="hero">
 
         <div class="hero-symbol">☼</div>
 
-        <h2>அணைப்பாடி சுந்தர்ராஜனின் ஞானப் புலம்பல்கள்</h2>
+        <h2>
+            அணைப்பாடி சுந்தர்ராஜனின் ஞானப் புலம்பல்கள்
+        </h2>
 
         <div class="hero-line"></div>
 
-        <h2>வாழ்க்கையைத் தேடும் ஒரு உள்ளத்தின் பயணம்</h2>
+        <h2>
+            வாழ்க்கையைத் தேடும் ஒரு உள்ளத்தின் பயணம்
+        </h2>
 
         <p>
-            வாழ்க்கை • நிலையாமை • மனம் • ஆசை • அன்பு •
+            வாழ்க்கை • நிலையாமை • மனம் • அன்பு •
             தன்னறிவு • அமைதி • ஞானம்
         </p>
 
     </div>
+
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav>
 
@@ -457,18 +560,22 @@ footer p {
 </nav>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main class="container">
 
     <section class="intro">
 
-        <h2>50 ஞானப் புலம்பல்கள்</h2>
+        <h2>
+            100 ஞானப் புலம்பல்கள்
+        </h2>
 
         <p>
             சுந்தர்ராஜன் என்ற பெயரில் உருவாக்கப்பட்ட
-            தனித்துவமான பாடல் தொகுப்பு.
-         
+            தனித்துவமான கற்பனைப் பாடல் தொகுப்பு.
+            இவை வேறு சித்தர்களின் பாடல்கள் அல்ல.
         </p>
 
     </section>
@@ -481,7 +588,7 @@ footer p {
         <input
             type="text"
             id="search"
-            placeholder="பாடலைத் தேடுங்கள்... உதாரணம்: மனம், ஆசை, வாழ்க்கை, ஞானம்"
+            placeholder="பாடலைத் தேடுங்கள்... உதாரணம்: மனம், அன்பு, ஞானம்"
         >
 
     </div>
@@ -492,8 +599,13 @@ footer p {
     <div class="stats">
 
         <div class="stat">
-            <strong>50</strong>
-            <span>பாடல்கள்</span>
+            <strong id="totalCount">100</strong>
+            <span>மொத்த பாடல்கள்</span>
+        </div>
+
+        <div class="stat">
+            <strong id="visibleCount">100</strong>
+            <span>காணப்படும் பாடல்கள்</span>
         </div>
 
         <div class="stat">
@@ -501,1096 +613,746 @@ footer p {
             <span>சிந்தனைகள்</span>
         </div>
 
-        <div class="stat">
-            <strong>01</strong>
-            <span>உள்ளப் பயணம்</span>
-        </div>
-
     </div>
 
 
-    <!-- SONGS -->
+    <!-- =================================================
+         SONGS
+    ================================================= -->
 
     <section class="song-grid" id="songGrid">
 
 
-        <!-- 01 -->
+<!-- 001 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 01</span>
-
-            <h3>பிறப்பின் புதிர்</h3>
-
-            <p>
-பிறந்ததெதற்கென்று
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 01</span>
+<h3>பிறப்பின் புதிர்</h3>
+<p>பிறந்ததெதற்கென்று
 பிறந்தவன் கேட்கவில்லை;
 வாழ்ந்ததெதற்கென்று
 வாழ்ந்தபின் தேடுகின்றான்;
 தேடிய வழியிலே
-தன்னை மறந்தான் மனிதன்.
-            </p>
-
-            <span class="song-tag">வாழ்க்கை</span>
-
-        </article>
+தன்னை மறந்தான் மனிதன்.</p>
+<span class="song-tag">வாழ்க்கை</span>
+</article>
 
 
-        <!-- 02 -->
+<!-- 002 -->
 
-        <article class="song-card" data-category="mind">
-
-            <span class="song-number">பாடல் 02</span>
-
-            <h3>மனமே</h3>
-
-            <p>
-ஓடும் மனமே,
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 02</span>
+<h3>மனமே</h3>
+<p>ஓடும் மனமே,
 ஓய்வெடுக்கும் இடம் எது?
 தேடும் மனமே,
 தேடுவது யார் என்று பார்த்தாயா?
 உலகம் முழுவதும் சுற்றினாலும்
-உள்ளம் அறியாவிட்டால் பயன் என்ன?
-            </p>
-
-            <span class="song-tag">மனம்</span>
-
-        </article>
+உள்ளம் அறியாவிட்டால் பயன் என்ன?</p>
+<span class="song-tag">மனம்</span>
+</article>
 
 
-        <!-- 03 -->
+<!-- 003 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 03</span>
-
-            <h3>நிலையாமை</h3>
-
-            <p>
-கையில் இருந்த செல்வம்
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 03</span>
+<h3>நிலையாமை</h3>
+<p>கையில் இருந்த செல்வம்
 காற்றைப் போலப் போகும்;
 கண்ணில் இருந்த இளமை
 கனவுபோலக் கரையும்;
 நிலையானது எதுவென்று
-நினைத்தபோது நான் அமைதியானேன்.
-            </p>
-
-            <span class="song-tag">நிலையாமை</span>
-
-        </article>
+நினைத்தபோது நான் அமைதியானேன்.</p>
+<span class="song-tag">நிலையாமை</span>
+</article>
 
 
-        <!-- 04 -->
+<!-- 004 -->
 
-        <article class="song-card" data-category="mind">
-
-            <span class="song-number">பாடல் 04</span>
-
-            <h3>ஆசை</h3>
-
-            <p>
-ஒன்றை வேண்டினேன்,
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 04</span>
+<h3>ஆசை</h3>
+<p>ஒன்றை வேண்டினேன்,
 அது கிடைத்ததும் இன்னொன்றைத் தேடினேன்;
 தேடியதே வாழ்க்கையென்று
 தெரியாமல் ஓடினேன்;
 ஆசை குறைந்த நாளில்தான்
-அமைதி பிறந்தது.
-            </p>
-
-            <span class="song-tag">ஆசை</span>
-
-        </article>
+அமைதி பிறந்தது.</p>
+<span class="song-tag">ஆசை</span>
+</article>
 
 
-        <!-- 05 -->
+<!-- 005 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 05</span>
-
-            <h3>நான் யார்?</h3>
-
-            <p>
-பெயர் எனது அல்ல,
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 05</span>
+<h3>நான் யார்?</h3>
+<p>பெயர் எனது அல்ல,
 உடலும் முழுவதும் எனது அல்ல;
 எண்ணங்கள் வந்து போகின்றன,
 நினைவுகளும் மாறுகின்றன;
 மாறாததைத் தேடினபோது
-“நான் யார்?” என்ற கேள்வி மட்டும் நின்றது.
-            </p>
-
-            <span class="song-tag">தன்னறிவு</span>
-
-        </article>
+“நான் யார்?” என்ற கேள்வி மட்டும் நின்றது.</p>
+<span class="song-tag">தன்னறிவு</span>
+</article>
 
 
-        <!-- 06 -->
+<!-- 006 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 06</span>
-
-            <h3>காலம்</h3>
-
-            <p>
-நேற்று நினைவாயிற்று,
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 06</span>
+<h3>காலம்</h3>
+<p>நேற்று நினைவாயிற்று,
 நாளை கனவாயிற்று;
 இன்று மட்டும் கையில் இருந்தது—
 அதையும் கவலையில் கழித்தேன்;
 காலம் போகவில்லை,
-நான்தான் காலத்தோடு போனேன்.
-            </p>
-
-            <span class="song-tag">காலம்</span>
-
-        </article>
+நான்தான் காலத்தோடு போனேன்.</p>
+<span class="song-tag">காலம்</span>
+</article>
 
 
-        <!-- 07 -->
+<!-- 007 -->
 
-        <article class="song-card" data-category="spiritual">
-
-            <span class="song-number">பாடல் 07</span>
-
-            <h3>உடல்</h3>
-
-            <p>
-உடலை வீடென்று நினைத்தேன்,
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 07</span>
+<h3>உடல்</h3>
+<p>உடலை வீடென்று நினைத்தேன்,
 அது ஒரு நாள் வாடகை வீடென்று அறிந்தேன்;
 மூச்சு வரும் வரை வாழ்வு,
 மூச்சு நின்றால் பயணம்;
 உடலைப் பார்த்தபோது
-உயிரின் மர்மம் தெரிந்தது.
-            </p>
-
-            <span class="song-tag">உயிர்</span>
-
-        </article>
+உயிரின் மர்மம் தெரிந்தது.</p>
+<span class="song-tag">உயிர்</span>
+</article>
 
 
-        <!-- 08 -->
+<!-- 008 -->
 
-        <article class="song-card" data-category="spiritual">
-
-            <span class="song-number">பாடல் 08</span>
-
-            <h3>மௌனம்</h3>
-
-            <p>
-பல சொற்கள் பேசினேன்,
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 08</span>
+<h3>மௌனம்</h3>
+<p>பல சொற்கள் பேசினேன்,
 ஒரு உண்மையும் சொல்லவில்லை;
 ஒருநாள் மௌனமானேன்,
 என் உள்ளம் பேசத் தொடங்கியது;
 சத்தம் குறைந்த இடத்தில்
-சத்தியம் கேட்டது.
-            </p>
-
-            <span class="song-tag">மௌனம்</span>
-
-        </article>
+சத்தியம் கேட்டது.</p>
+<span class="song-tag">மௌனம்</span>
+</article>
 
 
-        <!-- 09 -->
+<!-- 009 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 09</span>
-
-            <h3>துன்பம்</h3>
-
-            <p>
-துன்பத்தைத் துரத்தினேன்,
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 09</span>
+<h3>துன்பம்</h3>
+<p>துன்பத்தைத் துரத்தினேன்,
 அது என்னைத் தொடர்ந்து வந்தது;
 அதை உட்கார வைத்து கேட்டேன்—
 “எதை கற்றுக்கொடுக்க வந்தாய்?”
 அன்றிலிருந்து துன்பமும்
-என் ஆசிரியனானது.
-            </p>
-
-            <span class="song-tag">அனுபவம்</span>
-
-        </article>
+என் ஆசிரியனானது.</p>
+<span class="song-tag">அனுபவம்</span>
+</article>
 
 
-        <!-- 10 -->
+<!-- 010 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 10</span>
-
-            <h3>இன்பம்</h3>
-
-            <p>
-இன்பம் வந்தபோது
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 10</span>
+<h3>இன்பம்</h3>
+<p>இன்பம் வந்தபோது
 “இது என்றும் இருக்கட்டும்” என்றேன்;
 அது சென்றபோது
 “ஏன் சென்றது?” என்றேன்;
 இன்பத்தின் இயல்பை அறிந்தபின்
-அதன் பின்னால் ஓடவில்லை.
-            </p>
-
-            <span class="song-tag">இன்பம்</span>
-
-        </article>
+அதன் பின்னால் ஓடவில்லை.</p>
+<span class="song-tag">இன்பம்</span>
+</article>
 
 
-        <!-- 11 -->
+<!-- 011 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 11</span>
-
-            <h3>செல்வம்</h3>
-
-            <p>
-சேர்த்த செல்வம்
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 11</span>
+<h3>செல்வம்</h3>
+<p>சேர்த்த செல்வம்
 என்னைச் சேர்ந்து வருமா?
 பூட்டிய பெட்டிகள்
 பிறவிப் பாதையில் திறக்குமா?
 கொடுத்த கைதான்
-செல்வத்தின் உண்மையை அறியும்.
-            </p>
-
-            <span class="song-tag">செல்வம்</span>
-
-        </article>
+செல்வத்தின் உண்மையை அறியும்.</p>
+<span class="song-tag">செல்வம்</span>
+</article>
 
 
-        <!-- 12 -->
+<!-- 012 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 12</span>
-
-            <h3>புகழ்</h3>
-
-            <p>
-நேற்று புகழ்ந்தவர்கள்
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 12</span>
+<h3>புகழ்</h3>
+<p>நேற்று புகழ்ந்தவர்கள்
 இன்று மறந்து போகலாம்;
 உலகத்தின் நினைவு
 அலைமேல் எழுதிய எழுத்து;
 உள்ளத்தின் சாட்சி மட்டும்
-நீண்ட பயணத்தில் துணை.
-            </p>
-
-            <span class="song-tag">புகழ்</span>
-
-        </article>
+நீண்ட பயணத்தில் துணை.</p>
+<span class="song-tag">புகழ்</span>
+</article>
 
 
-        <!-- 13 -->
+<!-- 013 -->
 
-        <article class="song-card" data-category="mind">
-
-            <span class="song-number">பாடல் 13</span>
-
-            <h3>கோபம்</h3>
-
-            <p>
-கோபத்தில் சொன்ன சொல்
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 13</span>
+<h3>கோபம்</h3>
+<p>கோபத்தில் சொன்ன சொல்
 கல்லாக மனதில் விழும்;
 மன்னிப்பில் சொன்ன சொல்
 மருந்தாக மாறும்;
 கோபத்தை வென்றவன்
-பிறரை அல்ல—தன்னையே வென்றான்.
-            </p>
-
-            <span class="song-tag">மனம்</span>
-
-        </article>
+பிறரை அல்ல—தன்னையே வென்றான்.</p>
+<span class="song-tag">மனம்</span>
+</article>
 
 
-        <!-- 14 -->
+<!-- 014 -->
 
-        <article class="song-card" data-category="mind">
-
-            <span class="song-number">பாடல் 14</span>
-
-            <h3>பொறாமை</h3>
-
-            <p>
-அவனிடம் இருப்பதை
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 14</span>
+<h3>பொறாமை</h3>
+<p>அவனிடம் இருப்பதை
 என் கையில் தேடினேன்;
 என்னிடம் இருப்பதை
 அவனிடம் தேடவில்லை;
 ஒப்பீடு முடிந்த இடத்தில்
-நன்றியுணர்வு பிறந்தது.
-            </p>
-
-            <span class="song-tag">மனம்</span>
-
-        </article>
+நன்றியுணர்வு பிறந்தது.</p>
+<span class="song-tag">மனம்</span>
+</article>
 
 
-        <!-- 15 -->
+<!-- 015 -->
 
-        <article class="song-card" data-category="mind">
-
-            <span class="song-number">பாடல் 15</span>
-
-            <h3>பயம்</h3>
-
-            <p>
-நாளை என்ன ஆகுமோ
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 15</span>
+<h3>பயம்</h3>
+<p>நாளை என்ன ஆகுமோ
 என்று இன்று அழுதேன்;
 நாளை வந்தபோது
 இன்று போய்விட்டதை அழுதேன்;
 பயத்தின் வேர் அறிந்தபோது
-நிகழ்காலம் எனக்குக் கிடைத்தது.
-            </p>
-
-            <span class="song-tag">பயம்</span>
-
-        </article>
+நிகழ்காலம் எனக்குக் கிடைத்தது.</p>
+<span class="song-tag">பயம்</span>
+</article>
 
 
-        <!-- 16 -->
+<!-- 016 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 16</span>
-
-            <h3>உறவு</h3>
-
-            <p>
-“என்னுடையவர்” என்றேன்,
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 16</span>
+<h3>உறவு</h3>
+<p>“என்னுடையவர்” என்றேன்,
 காலம் “யாருடையவர்?” என்றது;
 உறவு இருக்கட்டும்,
 பற்று சங்கிலியாகாதிருக்கட்டும்;
-அன்பு விடுதலை தரட்டும்.
-            </p>
-
-            <span class="song-tag">அன்பு</span>
-
-        </article>
+அன்பு விடுதலை தரட்டும்.</p>
+<span class="song-tag">அன்பு</span>
+</article>
 
 
-        <!-- 17 -->
+<!-- 017 -->
 
-        <article class="song-card" data-category="mind">
-
-            <span class="song-number">பாடல் 17</span>
-
-            <h3>தனிமை</h3>
-
-            <p>
-கூட்டத்தில் இருந்தும்
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 17</span>
+<h3>தனிமை</h3>
+<p>கூட்டத்தில் இருந்தும்
 தனிமை என்னைத் தேடியது;
 தனிமையில் இருந்தபோது
 என் உள்ளம் என்னைச் சந்தித்தது;
 தனிமை தண்டனை அல்ல—
-தன்னை அறியும் அறை.
-            </p>
-
-            <span class="song-tag">தனிமை</span>
-
-        </article>
+தன்னை அறியும் அறை.</p>
+<span class="song-tag">தனிமை</span>
+</article>
 
 
-        <!-- 18 -->
+<!-- 018 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 18</span>
-
-            <h3>கண்ணாடி</h3>
-
-            <p>
-கண்ணாடியில் முகத்தைப் பார்த்தேன்,
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 18</span>
+<h3>கண்ணாடி</h3>
+<p>கண்ணாடியில் முகத்தைப் பார்த்தேன்,
 மனத்தில் முகமொன்று இருந்தது;
 முகத்தைச் சுத்தம் செய்தேன்,
 மனத்தை மறந்தேன்;
 உண்மையான அழகு
-உள்ளம் தெளிந்தபோது பிறந்தது.
-            </p>
-
-            <span class="song-tag">தன்னறிவு</span>
-
-        </article>
+உள்ளம் தெளிந்தபோது பிறந்தது.</p>
+<span class="song-tag">தன்னறிவு</span>
+</article>
 
 
-        <!-- 19 -->
+<!-- 019 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 19</span>
-
-            <h3>நினைவு</h3>
-
-            <p>
-கடந்த காலம் கதவு அல்ல,
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 19</span>
+<h3>நினைவு</h3>
+<p>கடந்த காலம் கதவு அல்ல,
 திரும்பிச் செல்ல முடியாது;
 அது கற்றுக் கொடுத்த பாடம் மட்டும்
 இன்றுடன் நடக்கட்டும்;
 நினைவு வழிகாட்டட்டும்—
-சங்கிலியாகாதிருக்கட்டும்.
-            </p>
-
-            <span class="song-tag">ஞானம்</span>
-
-        </article>
+சங்கிலியாகாதிருக்கட்டும்.</p>
+<span class="song-tag">ஞானம்</span>
+</article>
 
 
-        <!-- 20 -->
+<!-- 020 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 20</span>
-
-            <h3>எதிர்காலம்</h3>
-
-            <p>
-வராத நாளுக்காக
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 20</span>
+<h3>எதிர்காலம்</h3>
+<p>வராத நாளுக்காக
 வந்த நாளை இழந்தேன்;
 காணாத பாதைக்காக
 காணும் பாதையை மறந்தேன்;
 எதிர்காலம் வரட்டும்,
-இன்று மட்டும் வாழட்டும்.
-            </p>
-
-            <span class="song-tag">நிகழ்காலம்</span>
-
-        </article>
+இன்று மட்டும் வாழட்டும்.</p>
+<span class="song-tag">நிகழ்காலம்</span>
+</article>
 
 
-        <!-- 21 -->
+<!-- 021 -->
 
-        <article class="song-card" data-category="spiritual">
-
-            <span class="song-number">பாடல் 21</span>
-
-            <h3>மரணம்</h3>
-
-            <p>
-மரணத்தைப் பார்த்து பயந்தேன்;
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 21</span>
+<h3>மரணம்</h3>
+<p>மரணத்தைப் பார்த்து பயந்தேன்;
 வாழ்க்கையைப் பார்த்து பயப்படவில்லை;
 வாழ்க்கையை எப்படி வாழ்கிறேன்
 என்பதே மரணத்தின் கேள்வி;
 மரண நினைவு வந்தபோது
-வாழ்க்கை விழித்தது.
-            </p>
-
-            <span class="song-tag">வாழ்வு</span>
-
-        </article>
+வாழ்க்கை விழித்தது.</p>
+<span class="song-tag">வாழ்வு</span>
+</article>
 
 
-        <!-- 22 -->
+<!-- 022 -->
 
-        <article class="song-card" data-category="spiritual">
-
-            <span class="song-number">பாடல் 22</span>
-
-            <h3>மூச்சு</h3>
-
-            <p>
-மூச்சை எண்ணிப் பார்த்தேன்—
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 22</span>
+<h3>மூச்சு</h3>
+<p>மூச்சை எண்ணிப் பார்த்தேன்—
 ஒவ்வொன்றும் திரும்புமா?
 வந்த மூச்சு போகிறது,
 போன மூச்சு திரும்புமா?
 மூச்சின் இடைவெளியில்
-வாழ்வின் அருமை தெரிந்தது.
-            </p>
-
-            <span class="song-tag">உயிர்</span>
-
-        </article>
+வாழ்வின் அருமை தெரிந்தது.</p>
+<span class="song-tag">உயிர்</span>
+</article>
 
 
-        <!-- 23 -->
+<!-- 023 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 23</span>
-
-            <h3>ஆசான்</h3>
-
-            <p>
-ஆசான் வெளியில் தேடினேன்,
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 23</span>
+<h3>ஆசான்</h3>
+<p>ஆசான் வெளியில் தேடினேன்,
 புத்தகங்களில் தேடினேன்;
 என் தவறுகள் பேசத் தொடங்கியபோது
-உள்ளே ஒரு ஆசான் இருந்ததை அறிந்தேன்.
-            </p>
-
-            <span class="song-tag">அறிவு</span>
-
-        </article>
+உள்ளே ஒரு ஆசான் இருந்ததை அறிந்தேன்.</p>
+<span class="song-tag">அறிவு</span>
+</article>
 
 
-        <!-- 24 -->
+<!-- 024 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 24</span>
-
-            <h3>அறிவு</h3>
-
-            <p>
-நூல்கள் பல படித்தேன்,
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 24</span>
+<h3>அறிவு</h3>
+<p>நூல்கள் பல படித்தேன்,
 என்னைப் படிக்கவில்லை;
 உலகம் பற்றி பேசினேன்,
 என் மனம் பற்றி மௌனமானேன்;
 தன்னைப் படித்த நாளே
-அறிவின் கதவு திறந்தது.
-            </p>
-
-            <span class="song-tag">ஞானம்</span>
-
-        </article>
+அறிவின் கதவு திறந்தது.</p>
+<span class="song-tag">ஞானம்</span>
+</article>
 
 
-        <!-- 25 -->
+<!-- 025 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 25</span>
-
-            <h3>உண்மை</h3>
-
-            <p>
-உண்மை கடினமென்று
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 25</span>
+<h3>உண்மை</h3>
+<p>உண்மை கடினமென்று
 பொய்யில் தங்கினேன்;
 பொய் இனிமையென்று
 மனதை ஏமாற்றினேன்;
 ஒருநாள் உண்மையை ஏற்றேன்—
-அதன் அமைதி இனிமையாக இருந்தது.
-            </p>
-
-            <span class="song-tag">உண்மை</span>
-
-        </article>
+அதன் அமைதி இனிமையாக இருந்தது.</p>
+<span class="song-tag">உண்மை</span>
+</article>
 
 
-        <!-- 26 -->
+<!-- 026 -->
 
-        <article class="song-card" data-category="mind">
-
-            <span class="song-number">பாடல் 26</span>
-
-            <h3>பற்றுதல்</h3>
-
-            <p>
-கையில் பிடித்த பொருள்
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 26</span>
+<h3>பற்றுதல்</h3>
+<p>கையில் பிடித்த பொருள்
 கையை விட்டு போகலாம்;
 மனதில் பிடித்த எண்ணம்
 மனத்தையே சிறையாக்கலாம்;
 பற்றை அறிந்தவன்
-பாதையை இலகுவாக்கினான்.
-            </p>
-
-            <span class="song-tag">பற்று</span>
-
-        </article>
+பாதையை இலகுவாக்கினான்.</p>
+<span class="song-tag">பற்று</span>
+</article>
 
 
-        <!-- 27 -->
+<!-- 027 -->
 
-        <article class="song-card" data-category="mind">
-
-            <span class="song-number">பாடல் 27</span>
-
-            <h3>மன்னிப்பு</h3>
-
-            <p>
-பிறரை மன்னிக்காமல்
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 27</span>
+<h3>மன்னிப்பு</h3>
+<p>பிறரை மன்னிக்காமல்
 என் மனத்தையே கட்டினேன்;
 மன்னித்தபோது
 கதவு திறந்தது;
 விடுதலை அவருக்கல்ல—
-எனக்குத்தான் கிடைத்தது.
-            </p>
-
-            <span class="song-tag">மன்னிப்பு</span>
-
-        </article>
+எனக்குத்தான் கிடைத்தது.</p>
+<span class="song-tag">மன்னிப்பு</span>
+</article>
 
 
-        <!-- 28 -->
+<!-- 028 -->
 
-        <article class="song-card" data-category="spiritual">
-
-            <span class="song-number">பாடல் 28</span>
-
-            <h3>கருணை</h3>
-
-            <p>
-ஒரு கண்ணீர் துளி
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 28</span>
+<h3>கருணை</h3>
+<p>ஒரு கண்ணீர் துளி
 மற்றொரு இதயத்தைத் தொடும்;
 ஒரு சிறு உதவி
 ஒரு நாளை மாற்றும்;
 கருணை செய்தவன்
-தன் மனிதத்தை கண்டான்.
-            </p>
-
-            <span class="song-tag">கருணை</span>
-
-        </article>
+தன் மனிதத்தை கண்டான்.</p>
+<span class="song-tag">கருணை</span>
+</article>
 
 
-        <!-- 29 -->
+<!-- 029 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 29</span>
-
-            <h3>பொறுமை</h3>
-
-            <p>
-விதை மண்ணுக்குள்
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 29</span>
+<h3>பொறுமை</h3>
+<p>விதை மண்ணுக்குள்
 இருளில் காத்திருந்தது;
 மரம் ஆக அவசரப்படவில்லை;
 நானோ எல்லாவற்றையும்
 இன்றே பெற நினைத்தேன்;
-பொறுமை எனக்கு மண்ணின் பாடம்.
-            </p>
-
-            <span class="song-tag">பொறுமை</span>
-
-        </article>
+பொறுமை எனக்கு மண்ணின் பாடம்.</p>
+<span class="song-tag">பொறுமை</span>
+</article>
 
 
-        <!-- 30 -->
+<!-- 030 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 30</span>
-
-            <h3>நன்றி</h3>
-
-            <p>
-இல்லாததை எண்ணி
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 30</span>
+<h3>நன்றி</h3>
+<p>இல்லாததை எண்ணி
 நாளை முழுதும் குறைத்தேன்;
 இருப்பதை எண்ணியபோது
 இதயம் நிறைந்தது;
 நன்றி என்பது
-வாழ்க்கையை மாற்றும் பார்வை.
-            </p>
-
-            <span class="song-tag">நன்றியுணர்வு</span>
-
-        </article>
+வாழ்க்கையை மாற்றும் பார்வை.</p>
+<span class="song-tag">நன்றியுணர்வு</span>
+</article>
 
 
-        <!-- 31 -->
+<!-- 031 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 31</span>
-
-            <h3>கனவு</h3>
-
-            <p>
-கனவு காண்பது தவறல்ல,
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 31</span>
+<h3>கனவு</h3>
+<p>கனவு காண்பது தவறல்ல,
 கனவையே வாழ்க்கை என்று நினைப்பதே தவறு;
 விழித்தபின் நடக்க வேண்டும்;
 நடந்தபின் உணர வேண்டும்;
-உணர்ந்தபின் மாற வேண்டும்.
-            </p>
-
-            <span class="song-tag">விழிப்பு</span>
-
-        </article>
+உணர்ந்தபின் மாற வேண்டும்.</p>
+<span class="song-tag">விழிப்பு</span>
+</article>
 
 
-        <!-- 32 -->
+<!-- 032 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 32</span>
-
-            <h3>தோல்வி</h3>
-
-            <p>
-தோல்வி கதவை மூடியது,
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 32</span>
+<h3>தோல்வி</h3>
+<p>தோல்வி கதவை மூடியது,
 நான் பாதையைப் பார்த்தேன்;
 பாதை மாறியபோது
 பயணத்தின் அர்த்தம் மாறியது;
 தோல்வி முடிவு அல்ல—
-திரும்பிப் பார்க்கும் தருணம்.
-            </p>
-
-            <span class="song-tag">அனுபவம்</span>
-
-        </article>
+திரும்பிப் பார்க்கும் தருணம்.</p>
+<span class="song-tag">அனுபவம்</span>
+</article>
 
 
-        <!-- 33 -->
+<!-- 033 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 33</span>
-
-            <h3>வெற்றி</h3>
-
-            <p>
-வெற்றி வந்தபோது
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 33</span>
+<h3>வெற்றி</h3>
+<p>வெற்றி வந்தபோது
 நான் உயர்ந்தேன் என்றேன்;
 வெற்றி போனபோது
 நான் யார் என்று கேட்டேன்;
 வெற்றி நிலையானதல்ல—
-அறிவு நிலைத்திருக்கட்டும்.
-            </p>
-
-            <span class="song-tag">வாழ்க்கை</span>
-
-        </article>
+அறிவு நிலைத்திருக்கட்டும்.</p>
+<span class="song-tag">வாழ்க்கை</span>
+</article>
 
 
-        <!-- 34 -->
+<!-- 034 -->
 
-        <article class="song-card" data-category="mind">
-
-            <span class="song-number">பாடல் 34</span>
-
-            <h3>பொய் முகம்</h3>
-
-            <p>
-உலகத்திற்காக முகம் ஒன்று,
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 34</span>
+<h3>பொய் முகம்</h3>
+<p>உலகத்திற்காக முகம் ஒன்று,
 தனக்காக முகம் ஒன்று;
 எந்த முகம் உண்மை என்று
 இரவில் மனம் கேட்டது;
 நடிப்பை கழற்றியபோது
-நான் என்னைக் கண்டேன்.
-            </p>
-
-            <span class="song-tag">மனம்</span>
-
-        </article>
+நான் என்னைக் கண்டேன்.</p>
+<span class="song-tag">மனம்</span>
+</article>
 
 
-        <!-- 35 -->
+<!-- 035 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 35</span>
-
-            <h3>வாழ்க்கை ஒரு பயணம்</h3>
-
-            <p>
-வழியில் சந்திப்பவர்கள்
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 35</span>
+<h3>வாழ்க்கை ஒரு பயணம்</h3>
+<p>வழியில் சந்திப்பவர்கள்
 சிலர் நிழல், சிலர் பாடம்;
 சிலர் காயம், சிலர் கருணை;
 அனைவரும் பயணத்தின் பாகம்;
-நான் மட்டும் பயணி.
-            </p>
-
-            <span class="song-tag">பயணம்</span>
-
-        </article>
+நான் மட்டும் பயணி.</p>
+<span class="song-tag">பயணம்</span>
+</article>
 
 
-        <!-- 36 -->
+<!-- 036 -->
 
-        <article class="song-card" data-category="spiritual">
-
-            <span class="song-number">பாடல் 36</span>
-
-            <h3>உள்ளம்</h3>
-
-            <p>
-வெளியில் கோயில் தேடினேன்,
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 36</span>
+<h3>உள்ளம்</h3>
+<p>வெளியில் கோயில் தேடினேன்,
 உள்ளத்தில் கதவு மூடியிருந்தது;
 அந்தக் கதவைத் திறக்க
 ஒரு விளக்கு போதும்—
-விழிப்புணர்வு என்ற விளக்கு.
-            </p>
-
-            <span class="song-tag">ஆன்மிகம்</span>
-
-        </article>
+விழிப்புணர்வு என்ற விளக்கு.</p>
+<span class="song-tag">ஆன்மிகம்</span>
+</article>
 
 
-        <!-- 37 -->
+<!-- 037 -->
 
-        <article class="song-card" data-category="spiritual">
-
-            <span class="song-number">பாடல் 37</span>
-
-            <h3>மௌனத்தின் மொழி</h3>
-
-            <p>
-சொல்லாத வார்த்தைகள்
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 37</span>
+<h3>மௌனத்தின் மொழி</h3>
+<p>சொல்லாத வார்த்தைகள்
 சில நேரம் பெரிதாகப் பேசும்;
 கண்களின் அமைதி
 இதயத்தின் மொழியாகும்;
 மௌனத்தை கேட்டவனுக்கு
-பல கேள்விகள் மறைந்தன.
-            </p>
-
-            <span class="song-tag">மௌனம்</span>
-
-        </article>
+பல கேள்விகள் மறைந்தன.</p>
+<span class="song-tag">மௌனம்</span>
+</article>
 
 
-        <!-- 38 -->
+<!-- 038 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 38</span>
-
-            <h3>நிழல்</h3>
-
-            <p>
-வெயிலில் நிழல் தேடினேன்,
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 38</span>
+<h3>நிழல்</h3>
+<p>வெயிலில் நிழல் தேடினேன்,
 இருளில் ஒளி தேடினேன்;
 இரண்டும் என்னுள் இருப்பதை
 அறியவில்லை;
 என்னை ஏற்ற நாளில்
-நிழலும் நண்பனானது.
-            </p>
-
-            <span class="song-tag">உள்ளுணர்வு</span>
-
-        </article>
+நிழலும் நண்பனானது.</p>
+<span class="song-tag">உள்ளுணர்வு</span>
+</article>
 
 
-        <!-- 39 -->
+<!-- 039 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 39</span>
-
-            <h3>மாற்றம்</h3>
-
-            <p>
-நான் மாறமாட்டேன் என்றேன்,
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 39</span>
+<h3>மாற்றம்</h3>
+<p>நான் மாறமாட்டேன் என்றேன்,
 காலம் என்னை மாற்றியது;
 உடல் மாறியது, எண்ணம் மாறியது,
 வாழ்க்கை மாறியது;
 மாற்றத்தை ஏற்றபோது
-எதிர்ப்பு குறைந்தது.
-            </p>
-
-            <span class="song-tag">மாற்றம்</span>
-
-        </article>
+எதிர்ப்பு குறைந்தது.</p>
+<span class="song-tag">மாற்றம்</span>
+</article>
 
 
-        <!-- 40 -->
+<!-- 040 -->
 
-        <article class="song-card" data-category="spiritual">
-
-            <span class="song-number">பாடல் 40</span>
-
-            <h3>விழிப்பு</h3>
-
-            <p>
-தூக்கம் கண்களை மூடும்,
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 40</span>
+<h3>விழிப்பு</h3>
+<p>தூக்கம் கண்களை மூடும்,
 அறியாமை வாழ்க்கையை மூடும்;
 கண்கள் திறந்தால் மட்டும் போதாது,
 உள்ளமும் விழிக்க வேண்டும்;
 விழிப்பு வந்த இடத்தில்
-வாழ்க்கை புதியதாகிறது.
-            </p>
-
-            <span class="song-tag">விழிப்பு</span>
-
-        </article>
+வாழ்க்கை புதியதாகிறது.</p>
+<span class="song-tag">விழிப்பு</span>
+</article>
 
 
-        <!-- 41 -->
+<!-- 041 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 41</span>
-
-            <h3>எளிமை</h3>
-
-            <p>
-அதிகம் வேண்டுமென்று
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 41</span>
+<h3>எளிமை</h3>
+<p>அதிகம் வேண்டுமென்று
 அதிகமாகச் சுமந்தேன்;
 குறைவாக வைத்தபோது
 கைகள் காலியாகின;
 கைகள் காலியானபோது
-இதயம் நிறைந்தது.
-            </p>
-
-            <span class="song-tag">எளிமை</span>
-
-        </article>
+இதயம் நிறைந்தது.</p>
+<span class="song-tag">எளிமை</span>
+</article>
 
 
-        <!-- 42 -->
+<!-- 042 -->
 
-        <article class="song-card" data-category="mind">
-
-            <span class="song-number">பாடல் 42</span>
-
-            <h3>அமைதி</h3>
-
-            <p>
-அமைதியை உலகத்தில் தேடினேன்;
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 42</span>
+<h3>அமைதி</h3>
+<p>அமைதியை உலகத்தில் தேடினேன்;
 உலகம் சத்தமிட்டது;
 என் எண்ணங்களைப் பார்த்தேன்—
 அவைதான் அதிகம் சத்தமிட்டன;
 எண்ணங்கள் அமைந்தபோது
-அமைதி என்னைத் தேடி வந்தது.
-            </p>
-
-            <span class="song-tag">அமைதி</span>
-
-        </article>
+அமைதி என்னைத் தேடி வந்தது.</p>
+<span class="song-tag">அமைதி</span>
+</article>
 
 
-        <!-- 43 -->
+<!-- 043 -->
 
-        <article class="song-card" data-category="life">
-
-            <span class="song-number">பாடல் 43</span>
-
-            <h3>காலடிச் சுவடு</h3>
-
-            <p>
-மணலில் நடந்தவன்
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 43</span>
+<h3>காலடிச் சுவடு</h3>
+<p>மணலில் நடந்தவன்
 தன் காலடிச் சுவட்டை பார்த்தான்;
 அலை வந்ததும் அது மறைந்தது;
 “என் வாழ்க்கையும் இப்படியா?” என்றான்;
-பதில் சொல்லாமல் கடல் சிரித்தது.
-            </p>
-
-            <span class="song-tag">நிலையாமை</span>
-
-        </article>
+பதில் சொல்லாமல் கடல் சிரித்தது.</p>
+<span class="song-tag">நிலையாமை</span>
+</article>
 
 
-        <!-- 44 -->
+<!-- 044 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 44</span>
-
-            <h3>உணர்வு</h3>
-
-            <p>
-கண்ணால் பார்த்தது உலகம்,
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 44</span>
+<h3>உணர்வு</h3>
+<p>கண்ணால் பார்த்தது உலகம்,
 மனதால் பார்த்தது பொருள்,
 உள்ளத்தால் பார்த்தது உண்மை;
 பார்வை மாறியபோது
-உலகமும் மாறியது.
-            </p>
-
-            <span class="song-tag">ஞானம்</span>
-
-        </article>
+உலகமும் மாறியது.</p>
+<span class="song-tag">ஞானம்</span>
+</article>
 
 
-        <!-- 45 -->
+<!-- 045 -->
 
-        <article class="song-card" data-category="spiritual">
-
-            <span class="song-number">பாடல் 45</span>
-
-            <h3>துறவு</h3>
-
-            <p>
-ஆடையை மாற்றுவது துறவு அல்ல;
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 45</span>
+<h3>துறவு</h3>
+<p>ஆடையை மாற்றுவது துறவு அல்ல;
 உள்ளத்தின் பற்றை அறுப்பதே துறவு;
 உலகத்தை விட்டுப் போவது அல்ல,
-உலகம் உள்ளத்தை ஆளாமல் இருப்பதே துறவு.
-            </p>
-
-            <span class="song-tag">துறவு</span>
-
-        </article>
+உலகம் உள்ளத்தை ஆளாமல் இருப்பதே துறவு.</p>
+<span class="song-tag">துறவு</span>
+</article>
 
 
-        <!-- 46 -->
+<!-- 046 -->
 
-        <article class="song-card" data-category="spiritual">
-
-            <span class="song-number">பாடல் 46</span>
-
-            <h3>இறை உணர்வு</h3>
-
-            <p>
-தேடித் தேடி
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 46</span>
+<h3>இறை உணர்வு</h3>
+<p>தேடித் தேடி
 தூரத்தில் இறையை வைத்தேன்;
 ஒரு நாள் அமைதியாக அமர்ந்தேன்;
 தேடுபவனையும் தேடப்பட்டவனையும்
-பிரித்தது என் எண்ணமே என்று உணர்ந்தேன்.
-            </p>
-
-            <span class="song-tag">இறை உணர்வு</span>
-
-        </article>
+பிரித்தது என் எண்ணமே என்று உணர்ந்தேன்.</p>
+<span class="song-tag">இறை உணர்வு</span>
+</article>
 
 
-        <!-- 47 -->
+<!-- 047 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 47</span>
-
-            <h3>ஞானம்</h3>
-
-            <p>
-ஞானம் என்பது
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 47</span>
+<h3>ஞானம்</h3>
+<p>ஞானம் என்பது
 பல பதில்களை வைத்திருப்பது அல்ல;
 தேவையற்ற கேள்விகள்
 மெதுவாக அமைதியாகும் நிலை;
 அமைதியில் பிறக்கும் தெளிவே
-என் தேடலின் விளக்கு.
-            </p>
-
-            <span class="song-tag">ஞானம்</span>
-
-        </article>
+என் தேடலின் விளக்கு.</p>
+<span class="song-tag">ஞானம்</span>
+</article>
 
 
-        <!-- 48 -->
+<!-- 048 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 48</span>
-
-            <h3>இறுதி கேள்வி</h3>
-
-            <p>
-வாழ்ந்தேன்—எதற்காக?
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 48</span>
+<h3>இறுதி கேள்வி</h3>
+<p>வாழ்ந்தேன்—எதற்காக?
 சேர்த்தேன்—யாருக்காக?
 ஓடினேன்—எதற்காக?
 நின்றபோது கேள்விகள் வந்தன;
 பதில் ஒன்றே—
-என்னை அறியாமல் வாழ்ந்தேன்.
-            </p>
-
-            <span class="song-tag">தன்னறிவு</span>
-
-        </article>
+என்னை அறியாமல் வாழ்ந்தேன்.</p>
+<span class="song-tag">தன்னறிவு</span>
+</article>
 
 
-        <!-- 49 -->
+<!-- 049 -->
 
-        <article class="song-card" data-category="spiritual">
-
-            <span class="song-number">பாடல் 49</span>
-
-            <h3>விடுதலை</h3>
-
-            <p>
-எதையும் பிடிக்காமல்
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 49</span>
+<h3>விடுதலை</h3>
+<p>எதையும் பிடிக்காமல்
 எதையும் வெறுக்காமல்,
 வருவதை வரவாகவும்
 போவதை போகவாகவும் பார்த்தேன்;
 அந்தப் பார்வையில்
-மனம் சுதந்திரமானது.
-            </p>
-
-            <span class="song-tag">விடுதலை</span>
-
-        </article>
+மனம் சுதந்திரமானது.</p>
+<span class="song-tag">விடுதலை</span>
+</article>
 
 
-        <!-- 50 -->
+<!-- 050 -->
 
-        <article class="song-card" data-category="wisdom">
-
-            <span class="song-number">பாடல் 50</span>
-
-            <h3>சுந்தர்ராஜனின் இறுதி புலம்பல்</h3>
-
-            <p>
-வாழ்க்கை என்னை அழைத்தது,
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 50</span>
+<h3>சுந்தர்ராஜனின் இறுதி புலம்பல்</h3>
+<p>வாழ்க்கை என்னை அழைத்தது,
 நான் உலகத்தைத் தேடி ஓடினேன்;
 உலகம் என்னைச் சோர்வடையச் செய்தது,
 நான் என்னைத் தேடி திரும்பினேன்;
@@ -1599,12 +1361,759 @@ footer p {
 
 தேடிய பாதையும் நானே,
 தேடிய பயணியும் நானே,
-தேடிய ஞானமும் நானே.
-            </p>
+தேடிய ஞானமும் நானே.</p>
+<span class="song-tag">ஞானம்</span>
+</article>
 
-            <span class="song-tag">ஞானம்</span>
 
-        </article>
+<!-- 051 -->
+
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 51</span>
+<h3>அணைப்பாடி</h3>
+<p>அணைத்திடும் கரங்கள்
+அன்பின் மொழி பேசும்;
+வார்த்தைகள் மறந்தாலும்
+இதயம் பேசிக்கொண்டே இருக்கும்;
+அன்பை உணர்ந்த உள்ளம்
+தனிமையை மறந்திடும்.</p>
+<span class="song-tag">அன்பு</span>
+</article>
+
+
+<!-- 052 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 52</span>
+<h3>உள்ளத்தின் கதவு</h3>
+<p>வெளிக்கதவைத் திறந்தேன்,
+உலகம் உள்ளே வந்தது;
+உள்ளத்தின் கதவைத் திறந்தேன்,
+நான் என்னுள் வந்தேன்;
+அந்த ஒரு திறப்பிலே
+ஆயிரம் உண்மைகள் தெரிந்தன.</p>
+<span class="song-tag">தன்னறிவு</span>
+</article>
+
+
+<!-- 053 -->
+
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 53</span>
+<h3>தேடல்</h3>
+<p>தேடினேன் மலையிலே,
+தேடினேன் கோயிலிலே;
+தேடினேன் நூல்களிலே,
+தேடினேன் மனிதர்களிலே;
+தேடல் நின்ற தருணத்தில்
+தேடியது என்னுள் இருந்தது.</p>
+<span class="song-tag">தேடல்</span>
+</article>
+
+
+<!-- 054 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 54</span>
+<h3>காலடியில் மண்</h3>
+<p>நான் உயர்ந்தவன் என்றேன்,
+காலடியில் மண் சிரித்தது;
+நான் பெரியவன் என்றேன்,
+வானம் அமைதியாக இருந்தது;
+இயற்கையைப் பார்த்தபோது
+என் அகந்தை சிறிதானது.</p>
+<span class="song-tag">அகந்தை</span>
+</article>
+
+
+<!-- 055 -->
+
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 55</span>
+<h3>கண்ணீர்</h3>
+<p>கண்ணீர் பலவீனம் அல்ல,
+உள்ளத்தின் மழைத்துளி;
+மழை பெய்த பின்னே
+மண் மணம் வீசுவது போல,
+கண்ணீர் வந்த பின்னே
+மனம் தெளிவடைகிறது.</p>
+<span class="song-tag">உணர்வு</span>
+</article>
+
+
+<!-- 056 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 56</span>
+<h3>அன்பின் பாதை</h3>
+<p>அன்பு கொடுத்தேன்,
+அது திரும்புமா என்று பார்க்கவில்லை;
+திரும்பி வந்தபோது
+அது ஆயிரம் மடங்கு இருந்தது;
+அன்பு விதைத்த நிலத்தில்
+மனிதம் மலர்ந்தது.</p>
+<span class="song-tag">அன்பு</span>
+</article>
+
+
+<!-- 057 -->
+
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 57</span>
+<h3>சுமை</h3>
+<p>தோளில் இருந்த சுமையை
+கீழே வைத்தேன்;
+மனதில் இருந்த சுமையை
+எங்கே வைப்பது என்று தெரியவில்லை;
+மனதை விடுவித்தபோது
+தோளும் இலகுவானது.</p>
+<span class="song-tag">மனம்</span>
+</article>
+
+
+<!-- 058 -->
+
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 58</span>
+<h3>ஆசையின் நிழல்</h3>
+<p>ஆசையைப் பிடிக்க ஓடினேன்,
+நிழல் போல அது விலகியது;
+நின்று பார்த்தபோது
+நிழலும் என்னோடு நின்றது;
+ஓட்டம் நின்ற இடத்தில்
+ஆசையின் இயல்பு தெரிந்தது.</p>
+<span class="song-tag">ஆசை</span>
+</article>
+
+
+<!-- 059 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 59</span>
+<h3>வாழ்க்கையின் ஓவியம்</h3>
+<p>சில கோடுகள் நேராக,
+சில கோடுகள் வளைந்து;
+சில நிறங்கள் இருண்டு,
+சில நிறங்கள் ஒளிர்ந்து;
+முழு ஓவியத்தைப் பார்த்தபோது
+வாழ்க்கை அழகாக இருந்தது.</p>
+<span class="song-tag">வாழ்க்கை</span>
+</article>
+
+
+<!-- 060 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 60</span>
+<h3>நதி</h3>
+<p>நதி பின்னோக்கி ஓடாது,
+வாழ்க்கையும் திரும்பாது;
+கல்லைச் சந்தித்தால் வளைந்து,
+பள்ளத்தைச் சந்தித்தால் இறங்கி,
+கடலை நோக்கிச் செல்லும்—
+அதுதான் பயணத்தின் ஞானம்.</p>
+<span class="song-tag">ஞானம்</span>
+</article>
+
+
+<!-- 061 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 61</span>
+<h3>விதை</h3>
+<p>சிறிய விதைக்குள்
+பெரிய மரம் மறைந்திருந்தது;
+சிறிய எண்ணத்துக்குள்
+பெரிய வாழ்க்கை மறைந்திருந்தது;
+நல்ல எண்ணம் விதைத்தேன்—
+நல்ல நாளை முளைத்தது.</p>
+<span class="song-tag">நம்பிக்கை</span>
+</article>
+
+
+<!-- 062 -->
+
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 62</span>
+<h3>ஒளி</h3>
+<p>இருளைத் திட்டிக்கொண்டிருந்தேன்,
+ஒரு விளக்கை ஏற்ற மறந்தேன்;
+சிறிய ஒளி வந்ததும்
+பெரிய இருள் விலகியது;
+மாற்றம் எங்கிருந்து தொடங்கும்?
+என்னிடமிருந்தே.</p>
+<span class="song-tag">விழிப்பு</span>
+</article>
+
+
+<!-- 063 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 63</span>
+<h3>நிழலும் நானும்</h3>
+<p>என் நிழலைப் பார்த்து
+அது ஏன் என்னைப் பின்தொடர்கிறது என்றேன்;
+நான் நடந்த இடமெல்லாம்
+அது என்னுடன் நடந்தது;
+என்னை ஏற்றபோது
+நிழலையும் நேசித்தேன்.</p>
+<span class="song-tag">தன்னறிவு</span>
+</article>
+
+
+<!-- 064 -->
+
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 64</span>
+<h3>மழை</h3>
+<p>மழை யாரையும் கேட்கவில்லை,
+எங்கே விழ வேண்டும் என்று;
+அது விழுந்த இடமெல்லாம்
+உயிர் முளைத்தது;
+கருணையும் அப்படியே—
+பாகுபாடு அறியாது பொழியட்டும்.</p>
+<span class="song-tag">கருணை</span>
+</article>
+
+
+<!-- 065 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 65</span>
+<h3>காற்று</h3>
+<p>காற்றை பிடிக்க முயன்றேன்,
+கைகள் காலியாகின;
+அதை உணர முயன்றேன்,
+உயிர் நிறைந்தது;
+சில உண்மைகள்
+பிடிக்க முடியாது—உணர மட்டுமே முடியும்.</p>
+<span class="song-tag">உணர்வு</span>
+</article>
+
+
+<!-- 066 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 66</span>
+<h3>மரம்</h3>
+<p>மரம் தன் நிழலை
+தானே அனுபவிப்பதில்லை;
+பிறருக்காக நிழல் தருகிறது;
+அதன் உயரம் அதற்காக அல்ல;
+பிறருக்கு உதவிய வாழ்க்கையே
+உயர்ந்த வாழ்க்கை.</p>
+<span class="song-tag">கருணை</span>
+</article>
+
+
+<!-- 067 -->
+
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 67</span>
+<h3>பசி</h3>
+<p>உடலின் பசியை உணவால் தீர்த்தேன்;
+மனத்தின் பசியை எதனால் தீர்ப்பது?
+பொருளால் நிரப்பினேன்—
+மீண்டும் வெறுமை வந்தது;
+அர்த்தமுள்ள வாழ்க்கை வந்தபோது
+மனத்தின் பசி குறைந்தது.</p>
+<span class="song-tag">மனம்</span>
+</article>
+
+
+<!-- 068 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 68</span>
+<h3>வெறுமை</h3>
+<p>வெறுமையைப் பார்த்து பயந்தேன்;
+அதில்தான் புதிய இடம் இருந்தது;
+பழையதை விடுத்தபோது
+புதியது வந்தது;
+வெறுமையும் ஒரு வாய்ப்பு என்று
+அப்போது புரிந்தது.</p>
+<span class="song-tag">ஞானம்</span>
+</article>
+
+
+<!-- 069 -->
+
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 69</span>
+<h3>சொல்</h3>
+<p>ஒரு சொல் காயப்படுத்தும்,
+ஒரு சொல் காப்பாற்றும்;
+நாக்கு சிறியது,
+அதன் விளைவு பெரியது;
+சொல்லும் முன் சிந்தித்தால்
+பல கண்ணீர் குறையும்.</p>
+<span class="song-tag">மனம்</span>
+</article>
+
+
+<!-- 070 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 70</span>
+<h3>கண்கள்</h3>
+<p>கண்கள் உலகத்தைப் பார்க்கின்றன;
+இதயம் மனிதனைப் பார்க்கிறது;
+அறிவு உண்மையைப் பார்க்கிறது;
+பார்வை ஆழமானபோது
+மனிதன் மாறத் தொடங்குகிறான்.</p>
+<span class="song-tag">பார்வை</span>
+</article>
+
+
+<!-- 071 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 71</span>
+<h3>பாதை</h3>
+<p>எந்த பாதை சரி என்று
+நான் பலரிடம் கேட்டேன்;
+நடக்கத் தொடங்கியபோது
+என் பாதை எனக்குத் தெரிந்தது;
+பிறர் பாதையைப் பின்பற்றாமல்
+என் உண்மையைத் தேடினேன்.</p>
+<span class="song-tag">பயணம்</span>
+</article>
+
+
+<!-- 072 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 72</span>
+<h3>காத்திருப்பு</h3>
+<p>காத்திருப்பது வீணல்ல;
+விதையும் காத்திருக்கிறது;
+காலை ஒளியும் காத்திருக்கிறது;
+சரியான நேரம் வரும் வரை
+அமைதியாக இருப்பதும்
+ஒரு ஞானம்.</p>
+<span class="song-tag">பொறுமை</span>
+</article>
+
+
+<!-- 073 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 73</span>
+<h3>தோழன்</h3>
+<p>பலர் அருகில் இருந்தார்கள்,
+சிலர் மட்டும் உள்ளத்தில் இருந்தார்கள்;
+உண்மையான தோழன்
+வெற்றியில் கைதட்டுபவன் அல்ல;
+தவறும்போது உண்மையைச் சொல்பவன்.</p>
+<span class="song-tag">உறவு</span>
+</article>
+
+
+<!-- 074 -->
+
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 74</span>
+<h3>பகை</h3>
+<p>பகையை மனதில் வைத்தேன்,
+அவன் இல்லாத நாளிலும் அது இருந்தது;
+மன்னித்தபோது
+பகை வெளியேறியது;
+எதிரி மாறவில்லை—
+என் உள்ளம்தான் மாறியது.</p>
+<span class="song-tag">மன்னிப்பு</span>
+</article>
+
+
+<!-- 075 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 75</span>
+<h3>நம்பிக்கை</h3>
+<p>இருள் நீண்டாலும்
+காலை வராமல் போகாது;
+தோல்வி வந்தாலும்
+பாதை முடிந்து போகாது;
+நம்பிக்கை இருக்கும் வரை
+மனிதன் மீண்டும் எழ முடியும்.</p>
+<span class="song-tag">நம்பிக்கை</span>
+</article>
+
+
+<!-- 076 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 76</span>
+<h3>உழைப்பு</h3>
+<p>கனவு மட்டும் போதாது,
+காலடி வேண்டும்;
+ஆசை மட்டும் போதாது,
+உழைப்பு வேண்டும்;
+விதி என்ன செய்தாலும்
+முயற்சி என் கையில் இருந்தது.</p>
+<span class="song-tag">முயற்சி</span>
+</article>
+
+
+<!-- 077 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 77</span>
+<h3>நேர்மை</h3>
+<p>யாரும் பார்க்காத இடத்தில்
+நான் என்ன செய்கிறேன்?
+அதுதான் என் உண்மையான முகம்;
+உலகத்தின் பார்வைக்காக அல்ல,
+உள்ளத்தின் பார்வைக்காக
+நேர்மையாக வாழ வேண்டும்.</p>
+<span class="song-tag">நேர்மை</span>
+</article>
+
+
+<!-- 078 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 78</span>
+<h3>சிரிப்பு</h3>
+<p>சிறிய சிரிப்பு கூட
+ஒரு நாளை மாற்றலாம்;
+ஒரு அன்பான பார்வை
+ஒரு இதயத்தை காப்பாற்றலாம்;
+நல்லதைச் செய்ய
+எப்போதும் பெரிய செயல் தேவையில்லை.</p>
+<span class="song-tag">அன்பு</span>
+</article>
+
+
+<!-- 079 -->
+
+<article class="song-card" data-category="mind">
+<span class="song-number">பாடல் 79</span>
+<h3>மன்னிப்பின் பாதை</h3>
+<p>மன்னிக்க மறுத்த மனம்
+கடந்த காலத்தில் வாழ்ந்தது;
+மன்னித்த மனம்
+இன்றைக்கு வந்தது;
+கடந்த காயங்களை விட்டபோது
+புதிய வாழ்க்கை தொடங்கியது.</p>
+<span class="song-tag">மன்னிப்பு</span>
+</article>
+
+
+<!-- 080 -->
+
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 80</span>
+<h3>அமைதியான இரவு</h3>
+<p>இரவு எல்லாவற்றையும்
+மெதுவாக அமைதிப்படுத்தியது;
+அந்த அமைதியில்
+என் எண்ணங்கள் மட்டும் விழித்திருந்தன;
+அவற்றையும் பார்த்தபோது
+உள்ளம் தூங்கியது.</p>
+<span class="song-tag">அமைதி</span>
+</article>
+
+
+<!-- 081 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 81</span>
+<h3>உணவின் அர்த்தம்</h3>
+<p>உணவு உடலை வளர்க்கும்,
+அறிவு மனதை வளர்க்கும்;
+அன்பு உயிரை வளர்க்கும்;
+கருணை மனிதத்தை வளர்க்கும்;
+வாழ்க்கைக்கு அனைத்தும் தேவை.</p>
+<span class="song-tag">வாழ்க்கை</span>
+</article>
+
+
+<!-- 082 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 82</span>
+<h3>காலத்தின் கண்ணாடி</h3>
+<p>காலம் கண்ணாடி போன்றது;
+நாம் செய்ததை நமக்கே காட்டும்;
+நேற்றைய தவறுகள்
+இன்றைய பாடங்களாகும்;
+நாளைய மாற்றம்
+இன்றைய முடிவில் பிறக்கும்.</p>
+<span class="song-tag">ஞானம்</span>
+</article>
+
+
+<!-- 083 -->
+
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 83</span>
+<h3>அமைதியின் விதை</h3>
+<p>ஒரு நல்ல எண்ணம்
+ஒரு அமைதியான சொல்லாகும்;
+ஒரு அமைதியான சொல்
+ஒரு நல்ல செயலாகும்;
+நல்ல செயல் வளர்ந்தால்
+உலகமும் சிறிது மாறும்.</p>
+<span class="song-tag">அமைதி</span>
+</article>
+
+
+<!-- 084 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 84</span>
+<h3>மனிதன்</h3>
+<p>மனிதன் உயர்ந்தவன்
+அவன் அறிவால் மட்டும் அல்ல;
+அவன் இரக்கத்தாலும்;
+பிறரின் கண்ணீரை உணரும்
+இதயம் இருந்தாலே
+மனிதம் முழுமையாகிறது.</p>
+<span class="song-tag">மனிதம்</span>
+</article>
+
+
+<!-- 085 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 85</span>
+<h3>பயணத்தின் முடிவு</h3>
+<p>பயணத்தின் முடிவை
+முன்கூட்டியே தேடினேன்;
+வழியில் கிடைத்த அனுபவங்களே
+உண்மையான செல்வம் என்று
+புரிந்தபோது
+முடிவைப் பற்றிய பயம் குறைந்தது.</p>
+<span class="song-tag">பயணம்</span>
+</article>
+
+
+<!-- 086 -->
+
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 86</span>
+<h3>இறைவனின் அமைதி</h3>
+<p>கேள்விகள் பல கேட்டேன்;
+பதில் உடனே வரவில்லை;
+அமைதியாக இருந்தேன்;
+பதில் வார்த்தையாக வரவில்லை—
+உள்ளத்தின் தெளிவாக வந்தது.</p>
+<span class="song-tag">இறை உணர்வு</span>
+</article>
+
+
+<!-- 087 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 87</span>
+<h3>தன்னம்பிக்கை</h3>
+<p>உலகம் என்னை நம்பாவிட்டாலும்
+நான் என்னை விட்டுவிடக்கூடாது;
+தவறினாலும் எழ வேண்டும்;
+விழுந்தாலும் நடக்க வேண்டும்;
+தன்னம்பிக்கை என்பது
+தன்னை மீண்டும் எழுப்புவது.</p>
+<span class="song-tag">நம்பிக்கை</span>
+</article>
+
+
+<!-- 088 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 88</span>
+<h3>நிழலான செல்வம்</h3>
+<p>பொருள் சேர்த்தேன்,
+பாதுகாக்க ஓடினேன்;
+பாதுகாத்த செல்வம்
+என்னைப் பாதுகாக்கவில்லை;
+பிறருடன் பகிர்ந்தபோதுதான்
+அதன் அர்த்தம் தெரிந்தது.</p>
+<span class="song-tag">செல்வம்</span>
+</article>
+
+
+<!-- 089 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 89</span>
+<h3>இதயம்</h3>
+<p>இதயம் கணக்குப் பார்க்காது;
+அன்பு விலை கேட்காது;
+கருணை லாபம் தேடாது;
+அதனால் தான்
+உலகத்தில் இன்னும்
+மனிதம் உயிரோடு இருக்கிறது.</p>
+<span class="song-tag">அன்பு</span>
+</article>
+
+
+<!-- 090 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 90</span>
+<h3>சிறிய வாழ்க்கை</h3>
+<p>வாழ்க்கை நீண்டது என்று
+நாளைத் தள்ளிக்கொண்டிருந்தேன்;
+ஒருநாள் திரும்பிப் பார்த்தேன்—
+பல ஆண்டுகள் கடந்திருந்தன;
+வாழ்க்கை நீண்டதல்ல,
+வாழும் தருணம்தான் நமக்குள்ளது.</p>
+<span class="song-tag">வாழ்க்கை</span>
+</article>
+
+
+<!-- 091 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 91</span>
+<h3>தன்னை ஏற்றல்</h3>
+<p>என் குறைகளை மறைத்தேன்,
+என் காயங்களை மறைத்தேன்;
+என்னை முழுமையாக ஏற்ற நாளில்
+அவை என்னை ஆளவில்லை;
+தன்னை ஏற்றுக் கொள்வதும்
+ஒரு வகை விடுதலை.</p>
+<span class="song-tag">தன்னறிவு</span>
+</article>
+
+
+<!-- 092 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 92</span>
+<h3>உணர்ந்த வாழ்க்கை</h3>
+<p>வாழ்வது மட்டும் வாழ்க்கையல்ல;
+வாழ்வதை உணர்வதே வாழ்க்கை;
+மழையைப் பார்த்து நனைதல்,
+அன்பை உணர்ந்து சிரித்தல்,
+மூச்சை உணர்ந்து நன்றி கூறுதல்—
+இதுவே வாழ்வின் சுவை.</p>
+<span class="song-tag">வாழ்க்கை</span>
+</article>
+
+
+<!-- 093 -->
+
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 93</span>
+<h3>கடைசி விளக்கு</h3>
+<p>விளக்குகள் பல அணைந்தாலும்
+ஒரு சிறிய தீபம் போதும்;
+நம்பிக்கை முழுவதும் அழியாது;
+ஒரு நல்ல எண்ணம் போதும்
+மனிதன் மீண்டும் எழுவதற்கு.</p>
+<span class="song-tag">நம்பிக்கை</span>
+</article>
+
+
+<!-- 094 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 94</span>
+<h3>சுயநலம்</h3>
+<p>எனக்காக மட்டும் வாழ்ந்தேன்,
+உலகம் சிறியதாக இருந்தது;
+பிறருக்காக சிறிது வாழ்ந்தேன்,
+உலகம் பெரிதானது;
+பகிர்ந்த இதயத்திற்கு
+எல்லைகளே இல்லை.</p>
+<span class="song-tag">மனிதம்</span>
+</article>
+
+
+<!-- 095 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 95</span>
+<h3>தூரம்</h3>
+<p>தூரத்தில் இருப்பவனை
+அருகில் இருப்பவன் போல நேசிக்கலாம்;
+அருகில் இருப்பவனை
+மனதில் தூரமாக்கவும் முடியும்;
+தூரம் இடத்தால் அல்ல—
+இதயத்தால் அளக்கப்படுகிறது.</p>
+<span class="song-tag">அன்பு</span>
+</article>
+
+
+<!-- 096 -->
+
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 96</span>
+<h3>இறுதி நடை</h3>
+<p>கடைசி நடை எப்போது என்று
+யாருக்கும் தெரியாது;
+அதனால் ஒவ்வொரு அடியும்
+அர்த்தமுள்ளதாக இருக்கட்டும்;
+ஒவ்வொரு சந்திப்பும்
+அன்புள்ளதாக இருக்கட்டும்.</p>
+<span class="song-tag">வாழ்வு</span>
+</article>
+
+
+<!-- 097 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 97</span>
+<h3>ஞானத்தின் வாசல்</h3>
+<p>கதவைத் திறக்க
+சாவி தேடினேன்;
+ஞானத்தின் கதவு
+வெளியில் இல்லை;
+“எனக்குத் தெரியும்” என்ற அகந்தை போனபோது
+வாசல் திறந்தது.</p>
+<span class="song-tag">ஞானம்</span>
+</article>
+
+
+<!-- 098 -->
+
+<article class="song-card" data-category="spiritual">
+<span class="song-number">பாடல் 98</span>
+<h3>திரும்புதல்</h3>
+<p>உலகத்தைச் சுற்றி
+பல ஆண்டுகள் நடந்தேன்;
+இறுதியில் வீட்டிற்கு திரும்பினேன்;
+வீடு என்பது இடமல்ல—
+மனம் அமைதியாகும் இடம் என்று
+அப்போது அறிந்தேன்.</p>
+<span class="song-tag">அமைதி</span>
+</article>
+
+
+<!-- 099 -->
+
+<article class="song-card" data-category="life">
+<span class="song-number">பாடல் 99</span>
+<h3>இறுதி மூச்சு</h3>
+<p>ஒருநாள் கடைசி மூச்சு வரும்;
+அதற்கு முன் வாழ்ந்து விடு;
+சொல்ல வேண்டிய அன்பைச் சொல்;
+மன்னிக்க வேண்டியதை மன்னி;
+நன்றி சொல்ல வேண்டியவரிடம்
+இன்றே நன்றி சொல்.</p>
+<span class="song-tag">வாழ்வு</span>
+</article>
+
+
+<!-- 100 -->
+
+<article class="song-card" data-category="wisdom">
+<span class="song-number">பாடல் 100</span>
+<h3>சுந்தர்ராஜனின் நிறைவு</h3>
+<p>நான் தேடிய உலகம்
+என் கண்முன்னே இருந்தது;
+நான் தேடிய இறை
+என் மூச்சில் இருந்தது;
+நான் தேடிய அமைதி
+என் உள்ளத்தில் இருந்தது;
+நான் தேடிய “நான்”
+தேடலிலேயே இருந்தது.
+
+தேடல் முடிந்ததில்லை;
+தேடுபவன் மட்டும் மாறிவிட்டான்.</p>
+<span class="song-tag">ஞானம்</span>
+</article>
 
 
     </section>
@@ -1614,7 +2123,9 @@ footer p {
 
     <div class="no-result" id="noResult">
 
-        <h3>பாடல் கிடைக்கவில்லை</h3>
+        <h3>
+            பாடல் கிடைக்கவில்லை
+        </h3>
 
         <p>
             வேறு ஒரு சொல்லைத் தேடிப் பாருங்கள்.
@@ -1632,9 +2143,9 @@ footer p {
             <div class="quote-symbol">☼</div>
 
             <p>
-                “தேடிய பாதையும் நானே,<br>
+                தேடிய பாதையும் நானே,<br>
                 தேடிய பயணியும் நானே,<br>
-                தேடிய ஞானமும் நானே.”
+                தேடிய ஞானமும் நானே.
             </p>
 
             <small>
@@ -1648,21 +2159,25 @@ footer p {
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-    <h3>அணைப்பாடி சுந்தர்ராஜனின் ஞானப் புலம்பல்கள்</h3>
+    <h3> 
+    அணைப்பாடி சுந்தர்ராஜனின் ஞானப் புலம்பல்கள்
+    </h3>
 
     <p>
-        50 தனித்துவமான சிந்தனைப் பாடல்கள்<br>
-        வாழ்க்கையைப் பார்ப்பதற்கும் • தன்னை அறிதலுக்கும்
+        100 தனித்துவமான சிந்தனைப் பாடல்கள்<br>
+        வாழ்க்கை • மனம் • அன்பு • தன்னறிவு • ஞானம்
     </p>
 
 </footer>
 
 
-<!-- BACK TO TOP -->
+<!-- TOP BUTTON -->
 
 <button id="topBtn" title="மேலே செல்ல">
     ↑
@@ -1671,26 +2186,50 @@ footer p {
 
 <script>
 
-/* ==========================================
-   CATEGORY FILTER
-========================================== */
-
-const filterButtons =
-    document.querySelectorAll(".nav-btn");
-
-const songCards =
-    document.querySelectorAll(".song-card");
+/* =====================================================
+   ELEMENTS
+===================================================== */
 
 const searchInput =
     document.getElementById("search");
 
+const songCards =
+    document.querySelectorAll(".song-card");
+
+const filterButtons =
+    document.querySelectorAll(".nav-btn");
+
 const noResult =
     document.getElementById("noResult");
 
+const visibleCount =
+    document.getElementById("visibleCount");
+
+const topBtn =
+    document.getElementById("topBtn");
+
+
+/* =====================================================
+   UPDATE COUNT
+===================================================== */
+
+function updateCount(count) {
+
+    visibleCount.textContent = count;
+
+}
+
+
+/* =====================================================
+   CATEGORY FILTER
+===================================================== */
 
 filterButtons.forEach(button => {
 
     button.addEventListener("click", () => {
+
+        const category =
+            button.dataset.category;
 
         filterButtons.forEach(btn => {
             btn.classList.remove("active");
@@ -1698,22 +2237,23 @@ filterButtons.forEach(button => {
 
         button.classList.add("active");
 
-        const category =
-            button.dataset.category;
-
         searchInput.value = "";
 
-        let visible = 0;
+        let count = 0;
 
         songCards.forEach(card => {
 
+            const cardCategory =
+                card.dataset.category;
+
             if (
                 category === "all" ||
-                card.dataset.category === category
+                cardCategory === category
             ) {
 
                 card.style.display = "block";
-                visible++;
+
+                count++;
 
             } else {
 
@@ -1723,17 +2263,19 @@ filterButtons.forEach(button => {
 
         });
 
+        updateCount(count);
+
         noResult.style.display =
-            visible === 0 ? "block" : "none";
+            count === 0 ? "block" : "none";
 
     });
 
 });
 
 
-/* ==========================================
+/* =====================================================
    SEARCH
-========================================== */
+===================================================== */
 
 searchInput.addEventListener("input", () => {
 
@@ -1741,10 +2283,6 @@ searchInput.addEventListener("input", () => {
         searchInput.value
             .trim()
             .toLowerCase();
-
-    /*
-       When searching, show all categories.
-    */
 
     filterButtons.forEach(btn => {
         btn.classList.remove("active");
@@ -1754,9 +2292,7 @@ searchInput.addEventListener("input", () => {
         .querySelector('[data-category="all"]')
         .classList.add("active");
 
-
-    let visible = 0;
-
+    let count = 0;
 
     songCards.forEach(card => {
 
@@ -1766,7 +2302,8 @@ searchInput.addEventListener("input", () => {
         if (text.includes(keyword)) {
 
             card.style.display = "block";
-            visible++;
+
+            count++;
 
         } else {
 
@@ -1776,20 +2313,17 @@ searchInput.addEventListener("input", () => {
 
     });
 
+    updateCount(count);
 
     noResult.style.display =
-        visible === 0 ? "block" : "none";
+        count === 0 ? "block" : "none";
 
 });
 
 
-/* ==========================================
+/* =====================================================
    BACK TO TOP
-========================================== */
-
-const topBtn =
-    document.getElementById("topBtn");
-
+===================================================== */
 
 window.addEventListener("scroll", () => {
 
@@ -1816,9 +2350,9 @@ topBtn.addEventListener("click", () => {
 });
 
 
-/* ==========================================
-   CARD FADE-IN
-========================================== */
+/* =====================================================
+   CARD ANIMATION
+===================================================== */
 
 const observer =
     new IntersectionObserver(
@@ -1829,6 +2363,7 @@ const observer =
                 if (entry.isIntersecting) {
 
                     entry.target.style.opacity = "1";
+
                     entry.target.style.transform =
                         "translateY(0)";
 
@@ -1842,7 +2377,7 @@ const observer =
 
         },
         {
-            threshold: 0.1
+            threshold: 0.08
         }
     );
 
@@ -1862,10 +2397,10 @@ songCards.forEach(card => {
 });
 
 
-/* ==========================================
-   KEYBOARD SHORTCUT
-   Press "/" to search
-========================================== */
+/* =====================================================
+   KEYBOARD SEARCH
+   Press "/" to focus search
+===================================================== */
 
 document.addEventListener("keydown", event => {
 
@@ -1882,6 +2417,12 @@ document.addEventListener("keydown", event => {
 
 });
 
+
+/* =====================================================
+   INITIAL COUNT
+===================================================== */
+
+updateCount(songCards.length);
 
 </script>
 
