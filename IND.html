@@ -1,0 +1,3288 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>சுந்தர்ராஜு கற்றல் உலகம் | AI & ML Notes</title>
+
+    <meta name="description"
+          content="Machine Learning, Deep Learning, NLP, LLM, Hugging Face, Generative AI மற்றும் AI Agents பற்றிய விரிவான குறிப்புகள்.">
+
+    <style>
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #f5f7fb;
+            --card: #ffffff;
+            --text: #172033;
+            --muted: #667085;
+            --primary: #5b4bdb;
+            --primary-dark: #4338a8;
+            --secondary: #06b6d4;
+            --success: #16a34a;
+            --danger: #dc2626;
+            --border: #e4e7ec;
+            --sidebar: #111827;
+            --code: #0f172a;
+            --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        body.dark {
+            --bg: #0b1120;
+            --card: #111827;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --border: #263244;
+            --sidebar: #020617;
+            --code: #020617;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        body {
+            font-family:
+                "Noto Sans Tamil",
+                "Latha",
+                "Arial",
+                sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 21px;
+            font-weight: bold;
+
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--secondary)
+            );
+        }
+
+        .logo h1 {
+            font-size: 18px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon-btn {
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            background: var(--card);
+            color: var(--text);
+
+            cursor: pointer;
+            font-size: 18px;
+
+            transition: 0.2s;
+        }
+
+        .icon-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* =========================================================
+           SIDEBAR
+        ========================================================= */
+
+        .sidebar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            bottom: 0;
+
+            width: 280px;
+
+            background: var(--sidebar);
+            color: white;
+
+            padding: 25px 15px;
+
+            overflow-y: auto;
+
+            transition: 0.3s;
+            z-index: 900;
+        }
+
+        .sidebar-title {
+            padding: 0 12px 15px;
+
+            color: #94a3b8;
+            font-size: 12px;
+            font-weight: bold;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            padding: 12px 14px;
+            margin-bottom: 5px;
+
+            border-radius: 9px;
+
+            color: #cbd5e1;
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: linear-gradient(
+                90deg,
+                rgba(91,75,219,0.9),
+                rgba(6,182,212,0.5)
+            );
+
+            color: white;
+        }
+
+        .nav-number {
+            width: 25px;
+            height: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 7px;
+
+            background: rgba(255,255,255,0.1);
+
+            font-size: 12px;
+        }
+
+        /* =========================================================
+           MAIN
+        ========================================================= */
+
+        main {
+            margin-left: 280px;
+            padding-top: 70px;
+
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 25px 80px;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+
+            padding: 55px 45px;
+            margin-bottom: 30px;
+
+            border-radius: 25px;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(6,182,212,0.35),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #312e81,
+                    #5b21b6,
+                    #0891b2
+                );
+
+            box-shadow: var(--shadow);
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            width: 250px;
+            height: 250px;
+
+            right: -70px;
+            bottom: -100px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.08);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            padding: 6px 13px;
+            margin-bottom: 15px;
+
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.1);
+
+            font-size: 13px;
+        }
+
+        .hero h2 {
+            font-size: clamp(30px, 5vw, 52px);
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #dbeafe;
+            max-width: 700px;
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 11px 18px;
+
+            border: none;
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #4338a8;
+        }
+
+        .btn-outline {
+            color: white;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* =========================================================
+           SEARCH
+        ========================================================= */
+
+        .search-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .search-box input {
+            width: 100%;
+
+            padding: 15px 20px 15px 48px;
+
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            background: var(--card);
+            color: var(--text);
+
+            outline: none;
+
+            font-size: 15px;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(91,75,219,0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: var(--muted);
+        }
+
+        /* =========================================================
+           TOPIC CARDS
+        ========================================================= */
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 18px;
+            margin-bottom: 40px;
+        }
+
+        .topic-card {
+            padding: 22px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            box-shadow: var(--shadow);
+
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .topic-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 15px;
+
+            border-radius: 13px;
+
+            background: #ede9fe;
+            color: var(--primary);
+
+            font-size: 22px;
+        }
+
+        body.dark .topic-icon {
+            background: rgba(91,75,219,0.2);
+        }
+
+        .topic-card h3 {
+            margin-bottom: 7px;
+            font-size: 18px;
+        }
+
+        .topic-card p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
+        .section {
+            margin-top: 50px;
+            scroll-margin-top: 90px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            margin-bottom: 20px;
+        }
+
+        .section-number {
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 13px;
+
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--secondary)
+            );
+
+            font-weight: bold;
+        }
+
+        .section-heading h2 {
+            font-size: 28px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           CARDS
+        ========================================================= */
+
+        .card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            padding: 25px;
+            margin-bottom: 20px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .card h4 {
+            margin-top: 20px;
+            margin-bottom: 7px;
+        }
+
+        .card p {
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .card ul,
+        .card ol {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+
+        .card li {
+            margin: 5px 0;
+        }
+
+        /* =========================================================
+           GRID
+        ========================================================= */
+
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        /* =========================================================
+           TABLE
+        ========================================================= */
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+
+            text-align: left;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: rgba(91,75,219,0.08);
+            color: var(--primary);
+        }
+
+        /* =========================================================
+           CODE
+        ========================================================= */
+
+        pre {
+            position: relative;
+
+            margin: 15px 0;
+
+            padding: 20px;
+
+            overflow-x: auto;
+
+            border-radius: 12px;
+
+            background: var(--code);
+            color: #e2e8f0;
+
+            font-family:
+                Consolas,
+                "Courier New",
+                monospace;
+
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        code {
+            font-family:
+                Consolas,
+                "Courier New",
+                monospace;
+        }
+
+        .copy-code {
+            position: absolute;
+
+            top: 10px;
+            right: 10px;
+
+            padding: 5px 9px;
+
+            border: 1px solid #334155;
+            border-radius: 6px;
+
+            background: #1e293b;
+            color: #cbd5e1;
+
+            cursor: pointer;
+
+            font-size: 11px;
+        }
+
+        .copy-code:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* =========================================================
+           CALLOUTS
+        ========================================================= */
+
+        .callout {
+            padding: 15px 18px;
+            margin: 15px 0;
+
+            border-left: 4px solid var(--primary);
+
+            border-radius: 8px;
+
+            background: rgba(91,75,219,0.08);
+        }
+
+        .callout.success {
+            border-color: var(--success);
+            background: rgba(22,163,74,0.08);
+        }
+
+        .callout.warning {
+            border-color: #f59e0b;
+            background: rgba(245,158,11,0.08);
+        }
+
+        /* =========================================================
+           TAGS
+        ========================================================= */
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-top: 12px;
+        }
+
+        .tag {
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: rgba(91,75,219,0.1);
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* =========================================================
+           PROGRESS
+        ========================================================= */
+
+        .progress-container {
+            margin: 15px 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .progress {
+            height: 9px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background: var(--border);
+        }
+
+        .progress-bar {
+            height: 100%;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+        }
+
+        /* =========================================================
+           FAQ
+        ========================================================= */
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            margin-bottom: 10px;
+
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 18px;
+
+            display: flex;
+            justify-content: space-between;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            display: none;
+
+            padding: 0 18px 18px;
+
+            color: var(--muted);
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            margin-left: 280px;
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            border-top: 1px solid var(--border);
+
+            color: var(--muted);
+        }
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================= */
+
+        #topBtn {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 45px;
+            height: 45px;
+
+            display: none;
+
+            border: none;
+            border-radius: 50%;
+
+            color: white;
+            background: var(--primary);
+
+            cursor: pointer;
+
+            z-index: 1100;
+        }
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            main,
+            footer {
+                margin-left: 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .two-column,
+            .three-column {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 35px 25px;
+            }
+
+            .container {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .logo h1 {
+                font-size: 14px;
+            }
+        }
+
+        /* =========================================================
+           PRINT
+        ========================================================= */
+
+        @media print {
+
+            header,
+            .sidebar,
+            .search-box,
+            .hero-buttons,
+            #topBtn,
+            footer {
+                display: none !important;
+            }
+
+            main {
+                margin-left: 0;
+                padding-top: 0;
+            }
+
+            .hero {
+                color: black;
+                background: white;
+                border: 1px solid #ddd;
+            }
+
+            .card {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+    <div class="logo">
+
+        <button
+            class="icon-btn mobile-menu"
+            onclick="toggleSidebar()"
+            aria-label="Menu">
+            ☰
+        </button>
+
+        <div class="logo-icon">
+            SK
+        </div>
+
+        <h1>
+            <span>சுந்தர்ராஜு</span> கற்றல் உலகம்
+        </h1>
+
+    </div>
+
+    <div class="header-actions">
+
+        <button
+            class="icon-btn"
+            onclick="toggleDarkMode()"
+            title="Dark Mode">
+            🌙
+        </button>
+
+        <button
+            class="icon-btn"
+            onclick="window.print()"
+            title="Print">
+            🖨️
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-title">
+        AI Learning Notes
+    </div>
+
+    <a class="nav-item active" href="#home">
+        <span class="nav-number">⌂</span>
+        முகப்பு
+    </a>
+
+    <a class="nav-item" href="#ml">
+        <span class="nav-number">1</span>
+        Machine Learning
+    </a>
+
+    <a class="nav-item" href="#dl">
+        <span class="nav-number">2</span>
+        Deep Learning
+    </a>
+
+    <a class="nav-item" href="#nlp">
+        <span class="nav-number">3</span>
+        NLP
+    </a>
+
+    <a class="nav-item" href="#llm">
+        <span class="nav-number">4</span>
+        LLM
+    </a>
+
+    <a class="nav-item" href="#huggingface">
+        <span class="nav-number">5</span>
+        Hugging Face
+    </a>
+
+    <a class="nav-item" href="#genai">
+        <span class="nav-number">6</span>
+        Generative AI
+    </a>
+
+    <a class="nav-item" href="#agents">
+        <span class="nav-number">7</span>
+        AI Agents
+    </a>
+
+    <a class="nav-item" href="#roadmap">
+        <span class="nav-number">8</span>
+        Learning Roadmap
+    </a>
+
+    <a class="nav-item" href="#faq">
+        <span class="nav-number">?</span>
+        FAQ
+    </a>
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main>
+
+<div class="container">
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            🚀 AI • ML • DL • NLP • LLM • GenAI • Agents
+        </div>
+
+        <h2>
+            சுந்தர்ராஜு கற்றல் உலகம்
+        </h2>
+
+        <p>
+            Artificial Intelligence மற்றும் Machine Learning
+            துறைகளை படிப்படியாக கற்றுக்கொள்ள உதவும்
+            தமிழ் + English technical notes.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="btn btn-primary"
+                onclick="scrollToSection('ml')">
+                கற்றலை தொடங்கு
+            </button>
+
+            <button
+                class="btn btn-outline"
+                onclick="window.print()">
+                Notes Print
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SEARCH
+========================================================= -->
+
+<div class="search-box">
+
+    <span class="search-icon">
+        🔍
+    </span>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Notes-ஐ search செய்யவும்... உதாரணம்: Transformer, CNN, RAG"
+        onkeyup="searchNotes()">
+
+</div>
+
+
+<!-- =========================================================
+     TOPIC CARDS
+========================================================= -->
+
+<div class="topic-grid">
+
+    <div class="topic-card"
+         onclick="scrollToSection('ml')">
+
+        <div class="topic-icon">
+            🤖
+        </div>
+
+        <h3>Machine Learning</h3>
+
+        <p>
+            Data, algorithms, supervised,
+            unsupervised மற்றும் reinforcement learning.
+        </p>
+
+    </div>
+
+
+    <div class="topic-card"
+         onclick="scrollToSection('dl')">
+
+        <div class="topic-icon">
+            🧠
+        </div>
+
+        <h3>Deep Learning</h3>
+
+        <p>
+            Neural Networks, CNN, RNN,
+            LSTM மற்றும் Transformers.
+        </p>
+
+    </div>
+
+
+    <div class="topic-card"
+         onclick="scrollToSection('nlp')">
+
+        <div class="topic-icon">
+            💬
+        </div>
+
+        <h3>NLP</h3>
+
+        <p>
+            Text processing, tokenization,
+            embeddings மற்றும் language understanding.
+        </p>
+
+    </div>
+
+
+    <div class="topic-card"
+         onclick="scrollToSection('llm')">
+
+        <div class="topic-icon">
+            🧩
+        </div>
+
+        <h3>LLM</h3>
+
+        <p>
+            Large Language Models,
+            attention, prompting மற்றும் RAG.
+        </p>
+
+    </div>
+
+
+    <div class="topic-card"
+         onclick="scrollToSection('huggingface')">
+
+        <div class="topic-icon">
+            🤗
+        </div>
+
+        <h3>Hugging Face</h3>
+
+        <p>
+            Models, datasets, transformers,
+            pipelines மற்றும் inference.
+        </p>
+
+    </div>
+
+
+    <div class="topic-card"
+         onclick="scrollToSection('genai')">
+
+        <div class="topic-icon">
+            ✨
+        </div>
+
+        <h3>Generative AI</h3>
+
+        <p>
+            Text, image, audio, code generation
+            மற்றும் foundation models.
+        </p>
+
+    </div>
+
+
+    <div class="topic-card"
+         onclick="scrollToSection('agents')">
+
+        <div class="topic-icon">
+            🕵️
+        </div>
+
+        <h3>AI Agents</h3>
+
+        <p>
+            Tools, planning, memory,
+            workflows மற்றும் agentic systems.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MACHINE LEARNING
+========================================================= -->
+
+<section class="section searchable" id="ml">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            01
+        </div>
+
+        <div>
+            <h2>Machine Learning</h2>
+            <p>தரவிலிருந்து pattern கற்றுக்கொள்ளும் முறை</p>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Machine Learning என்றால் என்ன?</h3>
+
+        <p>
+            Machine Learning என்பது explicit programming இல்லாமல்
+            data-விலிருந்து patterns மற்றும் relationships-ஐ
+            கற்றுக்கொண்டு prediction அல்லது decision செய்யும்
+            Artificial Intelligence-ன் ஒரு முக்கிய பிரிவு.
+        </p>
+
+        <div class="callout">
+            <strong>Basic idea:</strong>
+            Data → Algorithm → Training → Model → Prediction
+        </div>
+
+        <h4>Machine Learning முக்கிய வகைகள்</h4>
+
+        <ol>
+            <li>
+                <strong>Supervised Learning</strong> –
+                Label செய்யப்பட்ட data மூலம் learning.
+            </li>
+
+            <li>
+                <strong>Unsupervised Learning</strong> –
+                Labels இல்லாத data-வில் patterns கண்டறிதல்.
+            </li>
+
+            <li>
+                <strong>Semi-Supervised Learning</strong> –
+                சிறிய அளவு labeled data + அதிக unlabeled data.
+            </li>
+
+            <li>
+                <strong>Reinforcement Learning</strong> –
+                Reward மற்றும் penalty மூலம் learning.
+            </li>
+        </ol>
+
+    </div>
+
+
+    <div class="two-column">
+
+        <div class="card">
+
+            <h3>Supervised Algorithms</h3>
+
+            <ul>
+                <li>Linear Regression</li>
+                <li>Logistic Regression</li>
+                <li>Decision Tree</li>
+                <li>Random Forest</li>
+                <li>Support Vector Machine</li>
+                <li>K-Nearest Neighbors</li>
+                <li>Gradient Boosting</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Unsupervised Algorithms</h3>
+
+            <ul>
+                <li>K-Means Clustering</li>
+                <li>Hierarchical Clustering</li>
+                <li>DBSCAN</li>
+                <li>PCA</li>
+                <li>Association Rules</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Machine Learning Workflow</h3>
+
+        <ol>
+            <li>Problem Definition</li>
+            <li>Data Collection</li>
+            <li>Data Cleaning</li>
+            <li>Exploratory Data Analysis</li>
+            <li>Feature Engineering</li>
+            <li>Train / Validation / Test Split</li>
+            <li>Model Selection</li>
+            <li>Model Training</li>
+            <li>Hyperparameter Tuning</li>
+            <li>Evaluation</li>
+            <li>Deployment</li>
+            <li>Monitoring</li>
+        </ol>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Python Example – Linear Regression</h3>
+
+<pre><button class="copy-code" onclick="copyCode(this)">Copy</button><code>from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.2,
+    random_state=42
+)
+
+model = LinearRegression()
+
+model.fit(X_train, y_train)
+
+predictions = model.predict(X_test)
+
+mse = mean_squared_error(
+    y_test,
+    predictions
+)
+
+print("MSE:", mse)</code></pre>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Important Evaluation Metrics</h3>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Metrics</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Regression</td>
+                        <td>MAE, MSE, RMSE, R²</td>
+                        <td>Prediction error அளவிடுதல்</td>
+                    </tr>
+
+                    <tr>
+                        <td>Classification</td>
+                        <td>Accuracy</td>
+                        <td>Correct predictions</td>
+                    </tr>
+
+                    <tr>
+                        <td>Classification</td>
+                        <td>Precision</td>
+                        <td>Predicted positives-ல் correct positives</td>
+                    </tr>
+
+                    <tr>
+                        <td>Classification</td>
+                        <td>Recall</td>
+                        <td>Actual positives-ல் கண்டறிந்த positives</td>
+                    </tr>
+
+                    <tr>
+                        <td>Classification</td>
+                        <td>F1 Score</td>
+                        <td>Precision + Recall balance</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DEEP LEARNING
+========================================================= -->
+
+<section class="section searchable" id="dl">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            02
+        </div>
+
+        <div>
+            <h2>Deep Learning</h2>
+            <p>Neural Networks அடிப்படையிலான learning</p>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Deep Learning என்றால் என்ன?</h3>
+
+        <p>
+            Deep Learning என்பது பல layers கொண்ட artificial
+            neural networks மூலம் complex representations-ஐ
+            data-விலிருந்து கற்றுக்கொள்ளும் Machine Learning
+            அணுகுமுறை.
+        </p>
+
+        <div class="callout">
+            Input → Hidden Layers → Output
+        </div>
+
+    </div>
+
+
+    <div class="three-column">
+
+        <div class="card">
+            <h3>ANN</h3>
+            <p>
+                General-purpose neural network.
+                Tabular மற்றும் பல வகையான data-களுக்கு பயன்படும்.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>CNN</h3>
+            <p>
+                Images மற்றும் spatial patterns-க்கு
+                மிகவும் பயன்படும் neural architecture.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>RNN</h3>
+            <p>
+                Sequential data மற்றும் time-series
+                processing-க்கு பயன்படுத்தப்படும் architecture.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>CNN முக்கிய Concepts</h3>
+
+        <ul>
+            <li>Convolution</li>
+            <li>Kernel / Filter</li>
+            <li>Feature Map</li>
+            <li>Padding</li>
+            <li>Stride</li>
+            <li>Pooling</li>
+            <li>Flattening</li>
+            <li>Fully Connected Layer</li>
+        </ul>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Activation Functions</h3>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <tr>
+                    <th>Function</th>
+                    <th>Common Use</th>
+                </tr>
+
+                <tr>
+                    <td>ReLU</td>
+                    <td>Hidden layers</td>
+                </tr>
+
+                <tr>
+                    <td>Sigmoid</td>
+                    <td>Binary output</td>
+                </tr>
+
+                <tr>
+                    <td>Softmax</td>
+                    <td>Multi-class probability</td>
+                </tr>
+
+                <tr>
+                    <td>Tanh</td>
+                    <td>Some recurrent architectures</td>
+                </tr>
+
+                <tr>
+                    <td>GELU</td>
+                    <td>Transformer architectures</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>PyTorch Basic Neural Network</h3>
+
+<pre><button class="copy-code" onclick="copyCode(this)">Copy</button><code>import torch
+import torch.nn as nn
+
+class NeuralNetwork(nn.Module):
+
+    def __init__(self):
+        super().__init__()
+
+        self.network = nn.Sequential(
+            nn.Linear(10, 64),
+            nn.ReLU(),
+            nn.Linear(64, 32),
+            nn.ReLU(),
+            nn.Linear(32, 2)
+        )
+
+    def forward(self, x):
+        return self.network(x)
+
+model = NeuralNetwork()
+
+print(model)</code></pre>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Training Concepts</h3>
+
+        <ul>
+            <li>Forward Propagation</li>
+            <li>Loss Function</li>
+            <li>Backpropagation</li>
+            <li>Gradient Descent</li>
+            <li>Optimizer</li>
+            <li>Learning Rate</li>
+            <li>Batch Size</li>
+            <li>Epoch</li>
+            <li>Regularization</li>
+            <li>Dropout</li>
+            <li>Batch Normalization</li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NLP
+========================================================= -->
+
+<section class="section searchable" id="nlp">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            03
+        </div>
+
+        <div>
+            <h2>Natural Language Processing</h2>
+            <p>Human language-ஐ computer புரிந்துகொள்ள உதவும் AI field</p>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>NLP என்றால் என்ன?</h3>
+
+        <p>
+            Natural Language Processing என்பது மனிதர்கள் பயன்படுத்தும்
+            natural language-ஐ computers process, understand,
+            analyze மற்றும் generate செய்ய உதவும் AI துறை.
+        </p>
+
+    </div>
+
+
+    <div class="two-column">
+
+        <div class="card">
+
+            <h3>Traditional NLP Pipeline</h3>
+
+            <ol>
+                <li>Text Collection</li>
+                <li>Cleaning</li>
+                <li>Tokenization</li>
+                <li>Stopword Handling</li>
+                <li>Stemming</li>
+                <li>Lemmatization</li>
+                <li>Feature Extraction</li>
+                <li>Model Training</li>
+            </ol>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>NLP Applications</h3>
+
+            <ul>
+                <li>Sentiment Analysis</li>
+                <li>Text Classification</li>
+                <li>Machine Translation</li>
+                <li>Named Entity Recognition</li>
+                <li>Question Answering</li>
+                <li>Summarization</li>
+                <li>Chatbots</li>
+                <li>Information Extraction</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Tokenization</h3>
+
+        <p>
+            Text-ஐ model process செய்யக்கூடிய சிறிய units-ஆக
+            பிரிப்பது tokenization.
+        </p>
+
+<pre><button class="copy-code" onclick="copyCode(this)">Copy</button><code>from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained(
+    "bert-base-uncased"
+)
+
+text = "Machine learning is powerful."
+
+tokens = tokenizer.tokenize(text)
+
+print(tokens)</code></pre>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Word Embeddings</h3>
+
+        <p>
+            Words அல்லது tokens-ஐ numerical vectors ஆக
+            represent செய்வதே embeddings.
+        </p>
+
+        <div class="callout">
+            Word → Token → Vector → Model
+        </div>
+
+        <div class="tags">
+            <span class="tag">Word2Vec</span>
+            <span class="tag">GloVe</span>
+            <span class="tag">FastText</span>
+            <span class="tag">Contextual Embeddings</span>
+            <span class="tag">Transformer Embeddings</span>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Transformer Architecture</h3>
+
+        <p>
+            Modern NLP மற்றும் LLM systems-ன் அடிப்படை architecture.
+        </p>
+
+        <div class="callout success">
+
+            முக்கிய concepts:
+            <strong>
+                Self-Attention,
+                Multi-Head Attention,
+                Positional Encoding,
+                Feed Forward Network,
+                Residual Connections,
+                Layer Normalization
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     LLM
+========================================================= -->
+
+<section class="section searchable" id="llm">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            04
+        </div>
+
+        <div>
+            <h2>Large Language Models</h2>
+            <p>Large-scale language understanding மற்றும் generation</p>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>LLM என்றால் என்ன?</h3>
+
+        <p>
+            Large Language Model என்பது மிகப்பெரிய அளவிலான text
+            data-வில் train செய்யப்பட்ட neural language model.
+            இது text generation, summarization, reasoning,
+            translation, coding போன்ற பல tasks-ஐ செய்யக்கூடும்.
+        </p>
+
+        <div class="callout">
+            Text → Tokens → Embeddings → Transformer → Output Tokens
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Transformer முக்கிய பகுதிகள்</h3>
+
+        <div class="two-column">
+
+            <div>
+
+                <h4>Encoder</h4>
+
+                <ul>
+                    <li>Input understanding</li>
+                    <li>Bidirectional context</li>
+                    <li>Representation learning</li>
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h4>Decoder</h4>
+
+                <ul>
+                    <li>Autoregressive generation</li>
+                    <li>Next-token prediction</li>
+                    <li>Text generation</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>LLM Training Stages</h3>
+
+        <ol>
+
+            <li>
+                <strong>Pretraining</strong> –
+                மிகப்பெரிய text corpus-ல் language patterns கற்றல்.
+            </li>
+
+            <li>
+                <strong>Instruction Tuning</strong> –
+                instructions-ஐ follow செய்ய model-ஐ fine-tune செய்தல்.
+            </li>
+
+            <li>
+                <strong>Preference Alignment</strong> –
+                மனித feedback அல்லது preference data மூலம்
+                response behavior-ஐ align செய்தல்.
+            </li>
+
+            <li>
+                <strong>Evaluation</strong> –
+                accuracy, safety, reasoning மற்றும் task performance
+                போன்றவற்றை மதிப்பீடு செய்தல்.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Prompt Engineering</h3>
+
+        <p>
+            LLM-க்கு clear மற்றும் useful instructions வழங்கி
+            தேவையான output பெறும் முறைகள் prompt engineering-ல் அடங்கும்.
+        </p>
+
+        <h4>Prompt Structure</h4>
+
+<pre><code>Role
++
+Context
++
+Task
++
+Constraints
++
+Output Format
++
+Examples (optional)</code></pre>
+
+        <h4>Example</h4>
+
+<pre><code>Role:
+You are an experienced Python teacher.
+
+Task:
+Explain recursion.
+
+Constraints:
+Use simple Tamil + English.
+
+Output:
+1. Definition
+2. Example
+3. Python code
+4. Common mistakes</code></pre>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>RAG – Retrieval Augmented Generation</h3>
+
+        <p>
+            External documents அல்லது knowledge sources-ல் இருந்து
+            relevant information retrieve செய்து அதை LLM context-ஆக
+            வழங்கி answer உருவாக்கும் architecture RAG.
+        </p>
+
+        <div class="callout">
+            Documents → Chunking → Embeddings → Vector DB
+            → Retrieval → Context → LLM → Answer
+        </div>
+
+        <h4>RAG Components</h4>
+
+        <ul>
+            <li>Document Loader</li>
+            <li>Text Splitter</li>
+            <li>Embedding Model</li>
+            <li>Vector Database</li>
+            <li>Retriever</li>
+            <li>Prompt Template</li>
+            <li>LLM</li>
+            <li>Response Evaluation</li>
+        </ul>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>LLM Parameters</h3>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <tr>
+                    <th>Parameter</th>
+                    <th>Meaning</th>
+                </tr>
+
+                <tr>
+                    <td>Temperature</td>
+                    <td>Output randomness / diversity</td>
+                </tr>
+
+                <tr>
+                    <td>Top-p</td>
+                    <td>Probability mass based sampling</td>
+                </tr>
+
+                <tr>
+                    <td>Max Tokens</td>
+                    <td>Output token limit</td>
+                </tr>
+
+                <tr>
+                    <td>Context Window</td>
+                    <td>Model process செய்யக்கூடிய context அளவு</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     HUGGING FACE
+========================================================= -->
+
+<section class="section searchable" id="huggingface">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            05
+        </div>
+
+        <div>
+            <h2>Hugging Face</h2>
+            <p>Open ML ecosystem மற்றும் model tooling</p>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Hugging Face என்றால் என்ன?</h3>
+
+        <p>
+            Hugging Face ecosystem-ல் pretrained models,
+            datasets, tokenizers மற்றும் ML development tools
+            கிடைக்கின்றன.
+        </p>
+
+        <div class="tags">
+
+            <span class="tag">Transformers</span>
+            <span class="tag">Datasets</span>
+            <span class="tag">Tokenizers</span>
+            <span class="tag">Hub</span>
+            <span class="tag">Spaces</span>
+            <span class="tag">Inference</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Transformers Pipeline</h3>
+
+<pre><button class="copy-code" onclick="copyCode(this)">Copy</button><code>from transformers import pipeline
+
+classifier = pipeline(
+    "sentiment-analysis"
+)
+
+result = classifier(
+    "I love machine learning!"
+)
+
+print(result)</code></pre>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Text Generation Example</h3>
+
+<pre><button class="copy-code" onclick="copyCode(this)">Copy</button><code>from transformers import pipeline
+
+generator = pipeline(
+    "text-generation",
+    model="gpt2"
+)
+
+result = generator(
+    "Artificial intelligence",
+    max_new_tokens=50
+)
+
+print(result)</code></pre>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Hugging Face Learning Concepts</h3>
+
+        <ol>
+            <li>Model Hub</li>
+            <li>Model Card</li>
+            <li>Tokenizer</li>
+            <li>Pipeline</li>
+            <li>Dataset</li>
+            <li>Fine-tuning</li>
+            <li>Inference</li>
+            <li>Spaces</li>
+            <li>Quantization</li>
+            <li>PEFT / LoRA</li>
+        </ol>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GENERATIVE AI
+========================================================= -->
+
+<section class="section searchable" id="genai">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            06
+        </div>
+
+        <div>
+            <h2>Generative AI</h2>
+            <p>புதிய content உருவாக்கும் AI systems</p>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Generative AI என்றால் என்ன?</h3>
+
+        <p>
+            Existing patterns-ஐ கற்றுக்கொண்டு புதிய text,
+            images, audio, video அல்லது code போன்ற content-ஐ
+            generate செய்யும் AI systems Generative AI எனப்படும்.
+        </p>
+
+    </div>
+
+
+    <div class="three-column">
+
+        <div class="card">
+
+            <h3>Text</h3>
+
+            <ul>
+                <li>Chatbots</li>
+                <li>Summarization</li>
+                <li>Translation</li>
+                <li>Content Generation</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Image</h3>
+
+            <ul>
+                <li>Text-to-Image</li>
+                <li>Image Editing</li>
+                <li>Image Generation</li>
+                <li>Design Assistance</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Code</h3>
+
+            <ul>
+                <li>Code Generation</li>
+                <li>Debugging</li>
+                <li>Code Explanation</li>
+                <li>Testing Assistance</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Generative AI Architecture</h3>
+
+        <div class="callout">
+
+            User Prompt
+            →
+            Prompt Processing
+            →
+            Foundation Model
+            →
+            Generation
+            →
+            Safety / Validation
+            →
+            Output
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Fine-Tuning vs RAG</h3>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <tr>
+                    <th>Fine-Tuning</th>
+                    <th>RAG</th>
+                </tr>
+
+                <tr>
+                    <td>Model behavior / task adaptation</td>
+                    <td>External knowledge retrieval</td>
+                </tr>
+
+                <tr>
+                    <td>Requires training process</td>
+                    <td>Knowledge can be updated externally</td>
+                </tr>
+
+                <tr>
+                    <td>Useful for style / task patterns</td>
+                    <td>Useful for organization-specific documents</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>GenAI Application Ideas</h3>
+
+        <ul>
+            <li>AI Study Assistant</li>
+            <li>Document Q&A</li>
+            <li>Customer Support Bot</li>
+            <li>Code Assistant</li>
+            <li>Meeting Summarizer</li>
+            <li>Knowledge Base Assistant</li>
+            <li>Content Assistant</li>
+            <li>Research Assistant</li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     AI AGENTS
+========================================================= -->
+
+<section class="section searchable" id="agents">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            07
+        </div>
+
+        <div>
+            <h2>AI Agents</h2>
+            <p>LLM + Tools + Memory + Planning + Actions</p>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>AI Agent என்றால் என்ன?</h3>
+
+        <p>
+            ஒரு goal-ஐ அடைய language model-ஐ reasoning,
+            planning மற்றும் external tools உடன் இணைத்து
+            பல steps-ல் actions எடுக்கக்கூடிய software system-ஐ
+            AI Agent என அழைக்கலாம்.
+        </p>
+
+        <div class="callout">
+            Goal → Reason → Plan → Tool → Observe → Reason → Action
+        </div>
+
+    </div>
+
+
+    <div class="two-column">
+
+        <div class="card">
+
+            <h3>Agent Components</h3>
+
+            <ul>
+                <li>LLM</li>
+                <li>Instructions</li>
+                <li>Tools</li>
+                <li>Memory</li>
+                <li>Planning</li>
+                <li>State</li>
+                <li>Observations</li>
+                <li>Actions</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Common Agent Tools</h3>
+
+            <ul>
+                <li>Web Search</li>
+                <li>Calculator</li>
+                <li>Database</li>
+                <li>Python Runtime</li>
+                <li>API Calls</li>
+                <li>File System</li>
+                <li>Knowledge Base</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Simple Agent Loop</h3>
+
+<pre><code>while not goal_completed:
+
+    observation = observe()
+
+    plan = llm(
+        goal,
+        observation
+    )
+
+    action = select_tool(plan)
+
+    result = execute(action)
+
+    memory.store(result)</code></pre>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Agent Architecture</h3>
+
+        <div class="callout">
+
+            <strong>User Goal</strong>
+            ↓
+            <br>
+            <strong>Agent / LLM</strong>
+            ↓
+            <br>
+            Planning
+            ↓
+            <br>
+            Tool Selection
+            ↓
+            <br>
+            Tool Execution
+            ↓
+            <br>
+            Observation
+            ↓
+            <br>
+            Memory / State
+            ↓
+            <br>
+            Final Response
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>RAG Agent</h3>
+
+        <p>
+            Agent-க்கு knowledge retrieval tool கொடுக்கும்போது,
+            தேவையான நேரத்தில் documents அல்லது vector database-ல்
+            இருந்து information தேடி பயன்படுத்த முடியும்.
+        </p>
+
+<pre><code>User Question
+      ↓
+Agent
+      ↓
+Need Knowledge?
+   ↙       ↘
+ Yes       No
+ ↓          ↓
+Retriever   Tool / Reasoning
+ ↓
+Documents
+ ↓
+Context
+ ↓
+LLM
+ ↓
+Answer</code></pre>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Agent Design Principles</h3>
+
+        <ol>
+            <li>Clear goal definition</li>
+            <li>Minimal but useful tools</li>
+            <li>Structured tool inputs</li>
+            <li>Validation of tool results</li>
+            <li>State management</li>
+            <li>Observability</li>
+            <li>Error handling</li>
+            <li>Human approval where necessary</li>
+            <li>Security boundaries</li>
+            <li>Evaluation and testing</li>
+        </ol>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>AI Agent Project Ideas</h3>
+
+        <div class="three-column">
+
+            <div class="card">
+                <h3>📚 Study Agent</h3>
+                <p>
+                    Notes search செய்து questions,
+                    summaries மற்றும் quizzes உருவாக்குதல்.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🔎 Research Agent</h3>
+                <p>
+                    Sources collect செய்து information
+                    organize செய்யும் assistant.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>💻 Coding Agent</h3>
+                <p>
+                    Code எழுதுதல், test செய்தல்,
+                    errors analyze செய்தல்.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ROADMAP
+========================================================= -->
+
+<section class="section searchable" id="roadmap">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            08
+        </div>
+
+        <div>
+            <h2>AI Learning Roadmap</h2>
+            <p>Beginner முதல் Advanced வரை</p>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Recommended Learning Path</h3>
+
+        <div class="progress-container">
+
+            <div class="progress-label">
+                <span>1. Python Programming</span>
+                <span>Foundation</span>
+            </div>
+
+            <div class="progress">
+                <div
+                    class="progress-bar"
+                    style="width: 100%">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-label">
+                <span>2. Mathematics & Statistics</span>
+                <span>Foundation</span>
+            </div>
+
+            <div class="progress">
+                <div
+                    class="progress-bar"
+                    style="width: 90%">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-label">
+                <span>3. Machine Learning</span>
+                <span>Core</span>
+            </div>
+
+            <div class="progress">
+                <div
+                    class="progress-bar"
+                    style="width: 75%">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-label">
+                <span>4. Deep Learning</span>
+                <span>Core</span>
+            </div>
+
+            <div class="progress">
+                <div
+                    class="progress-bar"
+                    style="width: 60%">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-label">
+                <span>5. NLP & Transformers</span>
+                <span>Advanced</span>
+            </div>
+
+            <div class="progress">
+                <div
+                    class="progress-bar"
+                    style="width: 50%">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-label">
+                <span>6. LLM & RAG</span>
+                <span>Advanced</span>
+            </div>
+
+            <div class="progress">
+                <div
+                    class="progress-bar"
+                    style="width: 40%">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-label">
+                <span>7. Generative AI</span>
+                <span>Advanced</span>
+            </div>
+
+            <div class="progress">
+                <div
+                    class="progress-bar"
+                    style="width: 30%">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-label">
+                <span>8. AI Agents</span>
+                <span>Advanced</span>
+            </div>
+
+            <div class="progress">
+                <div
+                    class="progress-bar"
+                    style="width: 20%">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Project-Based Learning</h3>
+
+        <ol>
+            <li>House Price Prediction</li>
+            <li>Customer Churn Prediction</li>
+            <li>Image Classification</li>
+            <li>Sentiment Analysis</li>
+            <li>Document Summarizer</li>
+            <li>PDF Question Answering</li>
+            <li>RAG Chatbot</li>
+            <li>AI Study Assistant</li>
+            <li>Tool-Using AI Agent</li>
+            <li>Multi-step Research Assistant</li>
+        </ol>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     QUICK REFERENCE
+========================================================= -->
+
+<section class="section searchable">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            ★
+        </div>
+
+        <div>
+            <h2>Quick Reference</h2>
+            <p>Important concepts ஒரே இடத்தில்</p>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Topic</th>
+                        <th>Important Concepts</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>ML</td>
+                        <td>
+                            Regression, Classification,
+                            Clustering, Evaluation
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>DL</td>
+                        <td>
+                            Neural Networks, CNN, RNN,
+                            LSTM, Transformers
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>NLP</td>
+                        <td>
+                            Tokenization, Embeddings,
+                            NER, Sentiment, Attention
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>LLM</td>
+                        <td>
+                            Tokens, Attention,
+                            Pretraining, Fine-tuning,
+                            Prompting
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Hugging Face</td>
+                        <td>
+                            Transformers, Hub,
+                            Datasets, Pipelines
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>GenAI</td>
+                        <td>
+                            Foundation Models,
+                            RAG, Fine-tuning
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Agents</td>
+                        <td>
+                            Tools, Planning,
+                            Memory, Actions, State
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="section searchable" id="faq">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            ?
+        </div>
+
+        <div>
+            <h2>Frequently Asked Questions</h2>
+            <p>அடிக்கடி கேட்கப்படும் கேள்விகள்</p>
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div
+            class="faq-question"
+            onclick="toggleFAQ(this)">
+
+            AI கற்க முதலில் என்ன தெரிந்திருக்க வேண்டும்?
+
+            <span>+</span>
+
+        </div>
+
+        <div class="faq-answer">
+
+            Python programming, basic mathematics,
+            statistics மற்றும் data handling தெரிந்திருப்பது
+            நல்ல foundation ஆக இருக்கும்.
+
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div
+            class="faq-question"
+            onclick="toggleFAQ(this)">
+
+            Machine Learning மற்றும் Deep Learning வேறுபாடு என்ன?
+
+            <span>+</span>
+
+        </div>
+
+        <div class="faq-answer">
+
+            Deep Learning என்பது neural networks அடிப்படையிலான
+            Machine Learning-ன் ஒரு முக்கிய அணுகுமுறை.
+            Traditional ML-ல் feature engineering முக்கியமாக
+            இருக்கலாம்; deep models பல representations-ஐ
+            தானாக கற்றுக்கொள்ள முடியும்.
+
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div
+            class="faq-question"
+            onclick="toggleFAQ(this)">
+
+            LLM மற்றும் Generative AI ஒன்றா?
+
+            <span>+</span>
+
+        </div>
+
+        <div class="faq-answer">
+
+            ஒன்றல்ல. LLM என்பது language-ஐ process/generate
+            செய்யும் ஒரு வகை foundation model. Generative AI என்பது
+            text, image, audio, video, code போன்ற புதிய content
+            உருவாக்கும் broader category.
+
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div
+            class="faq-question"
+            onclick="toggleFAQ(this)">
+
+            RAG ஏன் பயன்படுத்தப்படுகிறது?
+
+            <span>+</span>
+
+        </div>
+
+        <div class="faq-answer">
+
+            External documents அல்லது knowledge base-ல் இருந்து
+            relevant information retrieve செய்து model-க்கு
+            context வழங்குவதற்காக RAG பயன்படுத்தப்படுகிறது.
+
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div
+            class="faq-question"
+            onclick="toggleFAQ(this)">
+
+            AI Agent மற்றும் Chatbot வேறுபாடு என்ன?
+
+            <span>+</span>
+
+        </div>
+
+        <div class="faq-answer">
+
+            சாதாரண chatbot பெரும்பாலும் user prompt-க்கு response
+            உருவாக்கும். Agent system-கள் goal-ஐ அடைய tools,
+            planning, state, memory மற்றும் actions போன்றவற்றை
+            பயன்படுத்தி பல steps செயல்படக்கூடும்.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <p>
+        © <span id="year"></span>
+        <strong>சுந்தர்ராஜு கற்றல் உலகம்</strong>
+    </p>
+
+    <p>
+        Learn • Build • Experiment • Share 🚀
+    </p>
+
+</footer>
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button
+    id="topBtn"
+    onclick="scrollToTop()"
+    title="Back to top">
+    ↑
+</button>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    /* =========================================================
+       DARK MODE
+    ========================================================= */
+
+    function toggleDarkMode() {
+
+        document.body.classList.toggle("dark");
+
+        const isDark =
+            document.body.classList.contains("dark");
+
+        localStorage.setItem(
+            "darkMode",
+            isDark ? "enabled" : "disabled"
+        );
+    }
+
+
+    /* Load saved theme */
+
+    if (
+        localStorage.getItem("darkMode") === "enabled"
+    ) {
+
+        document.body.classList.add("dark");
+
+    }
+
+
+    /* =========================================================
+       SIDEBAR
+    ========================================================= */
+
+    function toggleSidebar() {
+
+        const sidebar =
+            document.getElementById("sidebar");
+
+        sidebar.classList.toggle("open");
+
+    }
+
+
+    /* =========================================================
+       SCROLL TO SECTION
+    ========================================================= */
+
+    function scrollToSection(id) {
+
+        const element =
+            document.getElementById(id);
+
+        if (!element) return;
+
+        element.scrollIntoView({
+            behavior: "smooth"
+        });
+
+        /* Close mobile sidebar */
+
+        document
+            .getElementById("sidebar")
+            .classList.remove("open");
+    }
+
+
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    const topBtn =
+        document.getElementById("topBtn");
+
+
+    window.addEventListener("scroll", function() {
+
+        if (window.scrollY > 500) {
+
+            topBtn.style.display = "block";
+
+        } else {
+
+            topBtn.style.display = "none";
+
+        }
+
+        updateActiveNavigation();
+
+    });
+
+
+    function scrollToTop() {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    /* =========================================================
+       ACTIVE NAVIGATION
+    ========================================================= */
+
+    function updateActiveNavigation() {
+
+        const sections =
+            document.querySelectorAll(
+                ".section, #home"
+            );
+
+        const navItems =
+            document.querySelectorAll(
+                ".nav-item"
+            );
+
+        let current = "";
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop - 130;
+
+            if (
+                window.scrollY >= sectionTop
+            ) {
+
+                current = section.id;
+
+            }
+
+        });
+
+
+        navItems.forEach(item => {
+
+            item.classList.remove("active");
+
+            const href =
+                item.getAttribute("href");
+
+            if (href === "#" + current) {
+
+                item.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    /* =========================================================
+       SEARCH NOTES
+    ========================================================= */
+
+    function searchNotes() {
+
+        const input =
+            document
+                .getElementById("searchInput")
+                .value
+                .toLowerCase()
+                .trim();
+
+        const sections =
+            document.querySelectorAll(
+                ".searchable"
+            );
+
+        sections.forEach(section => {
+
+            const text =
+                section.innerText.toLowerCase();
+
+            if (
+                input === "" ||
+                text.includes(input)
+            ) {
+
+                section.style.display = "";
+
+            } else {
+
+                section.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+
+    /* =========================================================
+       COPY CODE
+    ========================================================= */
+
+    function copyCode(button) {
+
+        const pre =
+            button.parentElement;
+
+        const code =
+            pre.querySelector("code");
+
+        const text =
+            code.innerText;
+
+        navigator.clipboard
+            .writeText(text)
+            .then(() => {
+
+                const oldText =
+                    button.innerText;
+
+                button.innerText =
+                    "Copied!";
+
+                setTimeout(() => {
+
+                    button.innerText =
+                        oldText;
+
+                }, 1500);
+
+            })
+            .catch(() => {
+
+                alert(
+                    "Code copy செய்ய முடியவில்லை."
+                );
+
+            });
+
+    }
+
+
+    /* =========================================================
+       FAQ
+    ========================================================= */
+
+    function toggleFAQ(question) {
+
+        const item =
+            question.parentElement;
+
+        item.classList.toggle("open");
+
+        const icon =
+            question.querySelector("span");
+
+        if (item.classList.contains("open")) {
+
+            icon.textContent = "−";
+
+        } else {
+
+            icon.textContent = "+";
+
+        }
+
+    }
+
+
+    /* =========================================================
+       KEYBOARD SHORTCUT
+    ========================================================= */
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            /*
+             Ctrl + K
+             Search
+            */
+
+            if (
+                event.ctrlKey &&
+                event.key.toLowerCase() === "k"
+            ) {
+
+                event.preventDefault();
+
+                const search =
+                    document.getElementById(
+                        "searchInput"
+                    );
+
+                search.focus();
+
+            }
+
+
+            /*
+             Escape
+             Close sidebar
+            */
+
+            if (event.key === "Escape") {
+
+                document
+                    .getElementById("sidebar")
+                    .classList.remove("open");
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       ACTIVE NAV CLICK
+    ========================================================= */
+
+    document
+        .querySelectorAll(".nav-item")
+        .forEach(item => {
+
+            item.addEventListener(
+                "click",
+                function() {
+
+                    document
+                        .querySelectorAll(
+                            ".nav-item"
+                        )
+                        .forEach(nav =>
+                            nav.classList.remove(
+                                "active"
+                            )
+                        );
+
+                    this.classList.add("active");
+
+                }
+            );
+
+        });
+
+
+    /* =========================================================
+       INITIALIZATION
+    ========================================================= */
+
+    updateActiveNavigation();
+
+</script>
+
+</body>
+</html>
