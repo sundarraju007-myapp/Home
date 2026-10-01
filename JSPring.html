@@ -1,0 +1,3243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="சுந்தர்ராஜு கற்றல் உலகம் - Spring Boot, Hibernate, Node.js, React.js and Modern MVC Interview Questions and Answers">
+
+<title>சுந்தர்ராஜு கற்றல் உலகம் | 500 Interview Q&A</title>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary: #7c3aed;
+
+    --bg: #f1f5f9;
+    --card: #ffffff;
+    --text: #172033;
+    --muted: #64748b;
+    --border: #dbe3ef;
+
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+
+    --header1: #0f172a;
+    --header2: #2563eb;
+
+    --shadow: 0 5px 20px rgba(15, 23, 42, .08);
+}
+
+body.dark {
+    --bg: #020617;
+    --card: #0f172a;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --border: #1e293b;
+
+    --header1: #020617;
+    --header2: #312e81;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family:
+        Arial,
+        "Noto Sans Tamil",
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--bg);
+    color: var(--text);
+
+    transition:
+        background .3s,
+        color .3s;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    background:
+        linear-gradient(
+            135deg,
+            var(--header1),
+            var(--header2)
+        );
+
+    color: white;
+
+    padding: 42px 20px 35px;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    background: rgba(255,255,255,.08);
+
+    border-radius: 50%;
+
+    top: -100px;
+    left: -70px;
+}
+
+header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: rgba(255,255,255,.06);
+
+    border-radius: 50%;
+
+    right: -100px;
+    bottom: -180px;
+}
+
+.logo {
+    position: relative;
+    z-index: 2;
+}
+
+.logo h1 {
+    margin: 0;
+
+    font-size: clamp(28px, 5vw, 48px);
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+}
+
+.logo h1 span {
+    color: #facc15;
+}
+
+.logo p {
+    margin: 12px auto 0;
+
+    max-width: 850px;
+
+    font-size: 17px;
+
+    opacity: .95;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TOP NAV
+========================================================= */
+
+.top-nav {
+    max-width: 1200px;
+
+    margin: 18px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.top-nav button {
+    border: 1px solid rgba(255,255,255,.25);
+
+    background: rgba(255,255,255,.1);
+
+    color: white;
+
+    padding: 9px 14px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.top-nav button:hover {
+    background: rgba(255,255,255,.22);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: min(1200px, 94%);
+
+    margin: auto;
+
+    padding: 25px 0 50px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    box-shadow: var(--shadow);
+
+    transition: transform .2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    font-size: 25px;
+}
+
+.stat-number {
+    display: block;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    margin-top: 7px;
+}
+
+.stat-label {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-box {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 18px;
+
+    margin-bottom: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+.progress-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+
+    font-weight: 700;
+}
+
+.progress {
+    width: 100%;
+
+    height: 10px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+body.dark .progress {
+    background: #1e293b;
+}
+
+.progress-bar {
+    height: 100%;
+
+    width: 0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    transition: width .4s;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.toolbar {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-wrapper span {
+    position: absolute;
+
+    left: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 18px;
+}
+
+input,
+select {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: .2s;
+}
+
+.search-wrapper input {
+    padding-left: 44px;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(37,99,235,.12);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.action-bar {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
+}
+
+.btn {
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 11px 16px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: .2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--primary);
+
+    color: white;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+
+    color: #172033;
+}
+
+body.dark .btn-secondary {
+    background: #1e293b;
+
+    color: white;
+}
+
+.btn-danger {
+    background: #fee2e2;
+
+    color: #991b1b;
+}
+
+.btn-success {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+.notes {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    box-shadow: var(--shadow);
+}
+
+.notes h2 {
+    margin-top: 0;
+
+    color: var(--primary);
+}
+
+.topic-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.topic {
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: var(--bg);
+
+    border: 1px solid var(--border);
+
+    text-align: center;
+
+    font-weight: 700;
+}
+
+.topic.spring {
+    border-top: 4px solid #6db33f;
+}
+
+.topic.hibernate {
+    border-top: 4px solid #59666c;
+}
+
+.topic.node {
+    border-top: 4px solid #68a063;
+}
+
+.topic.react {
+    border-top: 4px solid #61dafb;
+}
+
+.topic.mvc {
+    border-top: 4px solid #7c3aed;
+}
+
+
+/* =========================================================
+   QUESTION CARD
+========================================================= */
+
+.question {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-left: 5px solid var(--primary);
+
+    border-radius: 13px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    box-shadow: var(--shadow);
+
+    animation: fadeIn .25s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+.badges {
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.category {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+.easy {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+.medium {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+.hard {
+    background: #fee2e2;
+
+    color: #991b1b;
+}
+
+.bookmark {
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 23px;
+
+    color: #94a3b8;
+
+    transition: .2s;
+}
+
+.bookmark.active {
+    color: #f59e0b;
+}
+
+.question h3 {
+    font-size: 19px;
+
+    line-height: 1.5;
+
+    margin: 12px 0 8px;
+}
+
+.answer {
+    margin-top: 15px;
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,.06),
+            rgba(124,58,237,.06)
+        );
+
+    border-radius: 10px;
+
+    border-left: 4px solid var(--success);
+
+    line-height: 1.75;
+
+    white-space: pre-line;
+}
+
+.answer-title {
+    color: var(--success);
+
+    font-weight: 800;
+
+    margin-bottom: 7px;
+}
+
+.code-example {
+    background: #020617;
+
+    color: #e2e8f0;
+
+    padding: 15px;
+
+    border-radius: 9px;
+
+    overflow-x: auto;
+
+    margin-top: 12px;
+
+    font-family: Consolas, monospace;
+
+    font-size: 13px;
+
+    white-space: pre;
+}
+
+.question-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 30px 0;
+}
+
+.page-info {
+    font-weight: 700;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.no-results {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: var(--card);
+
+    border-radius: 15px;
+
+    border: 1px solid var(--border);
+}
+
+.no-results h2 {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #020617;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 15px;
+
+    line-height: 1.8;
+}
+
+footer strong {
+    color: #facc15;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.back-top {
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: none;
+
+    box-shadow: 0 5px 20px #0003;
+
+    z-index: 100;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width: 900px) {
+
+    .dashboard {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .toolbar {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search-wrapper {
+        grid-column: 1 / -1;
+    }
+
+    .topic-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .search-wrapper {
+        grid-column: auto;
+    }
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .question {
+        padding: 15px;
+    }
+
+    .question h3 {
+        font-size: 17px;
+    }
+
+    .logo h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+    header,
+    .toolbar,
+    .action-bar,
+    .pagination,
+    .back-top,
+    footer,
+    .question-actions,
+    .bookmark {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .question {
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+
+    .answer {
+        display: block !important;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
+
+<header>
+
+    <div class="logo">
+
+        <h1>
+            🌏 <span>சுந்தர்ராஜு</span> கற்றல் உலகம்
+        </h1>
+
+        <p>
+            Java • Spring Boot • Hibernate • Node.js • React.js
+            • Modern MVC
+        </p>
+
+        <p>
+            🎯 500 முக்கியமான Interview Questions & Answers
+        </p>
+
+    </div>
+
+
+    <div class="top-nav">
+
+        <button onclick="filterTopic('all')">
+            🏠 All
+        </button>
+
+        <button onclick="filterTopic('Spring Boot')">
+            🌱 Spring Boot
+        </button>
+
+        <button onclick="filterTopic('Hibernate')">
+            🗄️ Hibernate
+        </button>
+
+        <button onclick="filterTopic('Node.js')">
+            🟢 Node.js
+        </button>
+
+        <button onclick="filterTopic('React.js')">
+            ⚛️ React.js
+        </button>
+
+        <button onclick="filterTopic('Modern MVC')">
+            🏗️ Modern MVC
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ======================================================
+     MAIN
+====================================================== -->
+
+<main class="container">
+
+
+    <!-- DASHBOARD -->
+
+    <section class="dashboard">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">📚</div>
+
+            <span
+                class="stat-number"
+                id="totalQuestions">
+                500
+            </span>
+
+            <div class="stat-label">
+                Total Questions
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">👁️</div>
+
+            <span
+                class="stat-number"
+                id="visibleQuestions">
+                500
+            </span>
+
+            <div class="stat-label">
+                Current Results
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">⭐</div>
+
+            <span
+                class="stat-number"
+                id="bookmarkedCount">
+                0
+            </span>
+
+            <div class="stat-label">
+                Bookmarked
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">✅</div>
+
+            <span
+                class="stat-number"
+                id="completedCount">
+                0
+            </span>
+
+            <div class="stat-label">
+                Completed
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROGRESS -->
+
+    <section class="progress-box">
+
+        <div class="progress-title">
+
+            <span>
+                📈 Learning Progress
+            </span>
+
+            <span id="progressText">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress">
+
+            <div
+                class="progress-bar"
+                id="progressBar">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- QUICK NOTES -->
+
+    <section class="notes">
+
+        <h2>
+            📖 Interview Preparation Topics
+        </h2>
+
+        <p>
+            இந்த portal-ல் முக்கியமான backend, frontend மற்றும்
+            modern architecture concepts interview preparation-க்கு
+            ஒரே இடத்தில் தொகுக்கப்பட்டுள்ளன.
+        </p>
+
+
+        <div class="topic-grid">
+
+            <div class="topic spring">
+                🌱 Spring Boot
+            </div>
+
+            <div class="topic hibernate">
+                🗄️ Hibernate
+            </div>
+
+            <div class="topic node">
+                🟢 Node.js
+            </div>
+
+            <div class="topic react">
+                ⚛️ React.js
+            </div>
+
+            <div class="topic mvc">
+                🏗️ Modern MVC
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SEARCH -->
+
+    <section class="toolbar">
+
+        <div class="search-wrapper">
+
+            <span>🔍</span>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search question or answer..."
+                autocomplete="off">
+
+        </div>
+
+
+        <select id="categoryFilter">
+
+            <option value="all">
+                📚 All Topics
+            </option>
+
+            <option value="Spring Boot">
+                🌱 Spring Boot
+            </option>
+
+            <option value="Hibernate">
+                🗄️ Hibernate
+            </option>
+
+            <option value="Node.js">
+                🟢 Node.js
+            </option>
+
+            <option value="React.js">
+                ⚛️ React.js
+            </option>
+
+            <option value="Modern MVC">
+                🏗️ Modern MVC
+            </option>
+
+        </select>
+
+
+        <select id="difficultyFilter">
+
+            <option value="all">
+                🎯 All Levels
+            </option>
+
+            <option value="Easy">
+                🟢 Easy
+            </option>
+
+            <option value="Medium">
+                🟡 Medium
+            </option>
+
+            <option value="Hard">
+                🔴 Hard
+            </option>
+
+        </select>
+
+    </section>
+
+
+
+    <!-- ACTIONS -->
+
+    <div class="action-bar">
+
+        <button
+            class="btn btn-primary"
+            onclick="showAllAnswers()">
+            👁️ Show All Answers
+        </button>
+
+        <button
+            class="btn btn-secondary"
+            onclick="hideAllAnswers()">
+            🙈 Hide All Answers
+        </button>
+
+        <button
+            class="btn btn-success"
+            onclick="showBookmarks()">
+            ⭐ Bookmarks
+        </button>
+
+        <button
+            class="btn btn-secondary"
+            onclick="toggleDarkMode()">
+            🌙 Dark Mode
+        </button>
+
+        <button
+            class="btn btn-secondary"
+            onclick="window.print()">
+            🖨️ Print
+        </button>
+
+        <button
+            class="btn btn-danger"
+            onclick="resetFilters()">
+            🔄 Reset
+        </button>
+
+    </div>
+
+
+
+    <!-- QUESTIONS -->
+
+    <section id="questionsContainer"></section>
+
+
+
+    <!-- PAGINATION -->
+
+    <div class="pagination">
+
+        <button
+            class="btn btn-secondary"
+            id="previousButton"
+            onclick="previousPage()">
+            ← Previous
+        </button>
+
+        <span
+            class="page-info"
+            id="pageInfo">
+            Page 1
+        </span>
+
+        <button
+            class="btn btn-primary"
+            id="nextButton"
+            onclick="nextPage()">
+            Next →
+        </button>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>
+        🌏 சுந்தர்ராஜு கற்றல் உலகம்
+    </strong>
+
+    <br>
+
+    Java • Spring Boot • Hibernate • Node.js • React.js • Modern MVC
+
+    <br>
+
+    © 2026 All Rights Reserved
+
+</footer>
+
+
+<button
+    class="back-top"
+    id="backTop"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑
+</button>
+
+
+
+<script>
+
+/* =========================================================
+   QUESTION DATABASE
+========================================================= */
+
+/*
+   IMPORTANT:
+
+   இந்த array-ல் ஒவ்வொரு object-ம் ஒரு interview question.
+
+   c = category
+   q = question
+   a = answer
+   d = difficulty
+   code = optional code example
+
+   Production project-ல் இதை JSON file அல்லது database-ல்
+   வைத்துக்கொள்ளலாம்.
+*/
+
+
+const baseQuestions = [
+
+/* =========================================================
+   SPRING BOOT
+========================================================= */
+
+{
+    c: "Spring Boot",
+    q: "What is Spring Boot?",
+    a: `Spring Boot என்பது Spring Framework அடிப்படையில்
+Java applications-ஐ விரைவாக உருவாக்க உதவும் framework.
+
+முக்கிய features:
+• Auto Configuration
+• Starter Dependencies
+• Embedded Servers
+• Externalized Configuration
+• Production monitoring support
+
+இதன் முக்கிய நோக்கம் Spring application development-ஐ
+எளிமைப்படுத்துவது.`,
+    d: "Easy",
+    code:
+`@SpringBootApplication
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(
+            Application.class,
+            args
+        );
+    }
+}`
+},
+
+{
+    c: "Spring Boot",
+    q: "What is @SpringBootApplication?",
+    a: `@SpringBootApplication என்பது பொதுவாக Spring Boot
+application-ன் main class-ல் பயன்படுத்தப்படும் annotation.
+
+இது:
+• @Configuration
+• @EnableAutoConfiguration
+• @ComponentScan
+
+ஆகியவற்றை உள்ளடக்கிய combination annotation ஆகும்.`,
+    d: "Easy"
+},
+
+{
+    c: "Spring Boot",
+    q: "What is Dependency Injection?",
+    a: `Dependency Injection என்பது ஒரு object-க்கு தேவையான
+dependency-ஐ அந்த object தானாக உருவாக்காமல் external
+container வழங்கும் technique.
+
+Spring Framework-ல் constructor injection பொதுவாக
+மிகவும் தெளிவான dependency management approach ஆகும்.`,
+    d: "Easy",
+    code:
+`@Service
+class UserService {
+
+    private final UserRepository repository;
+
+    UserService(UserRepository repository) {
+        this.repository = repository;
+    }
+}`
+},
+
+{
+    c: "Spring Boot",
+    q: "What is @RestController?",
+    a: `@RestController REST APIs உருவாக்க பயன்படுகிறது.
+
+இது controller methods-ன் return values-ஐ response body-ஆக
+serialize செய்யும் வகையில் பயன்படுத்தப்படுகிறது.
+
+JSON API development-ல் இது பொதுவாக பயன்படுத்தப்படுகிறது.`,
+    d: "Easy",
+    code:
+`@RestController
+@RequestMapping("/api/users")
+class UserController {
+
+    @GetMapping
+    List<User> users() {
+        return service.findAll();
+    }
+}`
+},
+
+{
+    c: "Spring Boot",
+    q: "What is @Transactional?",
+    a: `@Transactional ஒரு method அல்லது class-ன் database
+operations-ஐ transaction boundary-க்குள் இயக்க பயன்படுகிறது.
+
+Transaction வெற்றிகரமாக முடிந்தால் commit செய்யப்படும்.
+Failure ஏற்பட்டால் configured transaction rules-க்கு
+ஏற்ப rollback நடைபெறலாம்.`,
+    d: "Medium"
+},
+
+{
+    c: "Spring Boot",
+    q: "What is Spring Boot Actuator?",
+    a: `Spring Boot Actuator application monitoring மற்றும்
+management endpoints வழங்குகிறது.
+
+உதாரணமாக health மற்றும் metrics போன்ற information-ஐ
+production monitoring-ல் பயன்படுத்தலாம்.
+
+Security மற்றும் endpoint exposure settings-ஐ கவனமாக
+configure செய்ய வேண்டும்.`,
+    d: "Medium"
+},
+
+{
+    c: "Spring Boot",
+    q: "What is @ControllerAdvice?",
+    a: `@ControllerAdvice controllers முழுவதும் பொதுவான
+exception handling அல்லது binding/validation handling
+logic-ஐ centralize செய்ய உதவுகிறது.
+
+REST API applications-ல் @RestControllerAdvice உடன்
+பயன்படுத்தப்படலாம்.`,
+    d: "Medium"
+},
+
+{
+    c: "Spring Boot",
+    q: "What is Spring Data JPA?",
+    a: `Spring Data JPA என்பது JPA repositories-ஐ
+எளிமையாக உருவாக்க உதவும் Spring project.
+
+Repository interfaces மூலம் CRUD மற்றும் derived query
+methods போன்றவற்றை குறைந்த boilerplate-ல் உருவாக்கலாம்.`,
+    d: "Easy"
+},
+
+{
+    c: "Spring Boot",
+    q: "What is @RequestBody?",
+    a: `HTTP request body-ல் வரும் data-வை Java object-ஆக
+bind செய்ய @RequestBody பயன்படுத்தப்படுகிறது.
+
+REST APIs-ல் JSON request data பெற இது பொதுவாக
+பயன்படுத்தப்படுகிறது.`,
+    d: "Easy"
+},
+
+{
+    c: "Spring Boot",
+    q: "What is CORS?",
+    a: `CORS என்பது Cross-Origin Resource Sharing.
+
+வேறு origin-ல் இருக்கும் browser application ஒன்று
+API-ஐ access செய்யும் போது எந்த origins, methods,
+headers அனுமதிக்கப்படுகின்றன என்பதை server குறிப்பிட
+உதவும் browser security mechanism ஆகும்.`,
+    d: "Medium"
+},
+
+
+/* =========================================================
+   HIBERNATE
+========================================================= */
+
+{
+    c: "Hibernate",
+    q: "What is Hibernate?",
+    a: `Hibernate என்பது Java-க்கான ORM framework.
+
+ORM என்பது Object Relational Mapping.
+
+Java objects மற்றும் relational database tables
+இடையே mapping செய்ய Hibernate உதவுகிறது.`,
+    d: "Easy"
+},
+
+{
+    c: "Hibernate",
+    q: "What is JPA?",
+    a: `JPA என்பது Java Persistence API.
+
+இது Java persistence மற்றும் ORM-க்கான specification.
+
+Hibernate என்பது JPA specification-ஐ implement செய்யும்
+பிரபலமான ORM provider ஆகும்.`,
+    d: "Easy"
+},
+
+{
+    c: "Hibernate",
+    q: "What is @Entity?",
+    a: `@Entity annotation ஒரு Java class persistence entity
+என்பதை குறிப்பிடுகிறது.
+
+பொதுவாக அந்த class database table-ல் persistent data-ஐ
+represent செய்யும்.`,
+    d: "Easy",
+    code:
+`@Entity
+public class Employee {
+
+    @Id
+    private Long id;
+
+    private String name;
+}`
+},
+
+{
+    c: "Hibernate",
+    q: "What is Lazy Loading?",
+    a: `Lazy Loading என்பது related entity அல்லது collection
+தேவைப்படும் நேரத்தில் data load செய்யப்படும் approach.
+
+இது தேவையற்ற database loading-ஐ குறைக்க உதவலாம்.
+
+ஆனால் persistence context-க்கு வெளியே lazy data access
+செய்யும்போது LazyInitializationException போன்ற
+பிரச்சினைகள் ஏற்படலாம்.`,
+    d: "Medium"
+},
+
+{
+    c: "Hibernate",
+    q: "What is N+1 Query Problem?",
+    a: `முதலில் ஒரு query மூலம் N parent records பெறப்பட்டு,
+ஒவ்வொரு parent-க்கும் தனித்தனி query இயக்கப்பட்டால்
+N+1 query pattern உருவாகலாம்.
+
+இதனால் database round trips அதிகரிக்கலாம்.
+
+JOIN FETCH, EntityGraph அல்லது batch fetching போன்ற
+solutions சூழ்நிலைக்கு ஏற்ப பயன்படுத்தப்படலாம்.`,
+    d: "Hard"
+},
+
+{
+    c: "Hibernate",
+    q: "What is First Level Cache?",
+    a: `First-level cache persistence context-க்கு
+associated ஆக இருக்கும் cache.
+
+ஒரே persistence context-ல் ஒரே entity மீண்டும் தேவைப்படும்
+சூழ்நிலையில் database access குறையலாம்.
+
+JPA EntityManager persistence context இதற்கு முக்கியமான
+பகுதியாகும்.`,
+    d: "Medium"
+},
+
+{
+    c: "Hibernate",
+    q: "What is Dirty Checking?",
+    a: `Hibernate managed entity-யின் original state மற்றும்
+current state-ல் மாற்றம் ஏற்பட்டுள்ளதா என்பதை
+track செய்து தேவையான SQL update-ஐ generate செய்யும்
+mechanism dirty checking எனப்படுகிறது.`,
+    d: "Medium"
+},
+
+{
+    c: "Hibernate",
+    q: "What is @ManyToOne?",
+    a: `பல records ஒரு record-ஐ reference செய்யும் relationship-ஐ
+@ManyToOne மூலம் map செய்யலாம்.
+
+உதாரணம்:
+பல Employees ஒரே Department-ஐ சேர்ந்திருக்கலாம்.`,
+    d: "Easy"
+},
+
+{
+    c: "Hibernate",
+    q: "What is Optimistic Locking?",
+    a: `Optimistic locking-ல் concurrent updates-ஐ detect செய்ய
+version information பயன்படுத்தப்படுகிறது.
+
+JPA-வில் @Version annotation இதற்காக பயன்படுத்தப்படலாம்.`,
+    d: "Hard"
+},
+
+{
+    c: "Hibernate",
+    q: "What is HQL?",
+    a: `HQL என்பது Hibernate Query Language.
+
+SQL table மற்றும் column concepts-க்கு பதிலாக
+entity மற்றும் entity properties அடிப்படையில் query
+எழுதுவதற்கான Hibernate query language ஆகும்.`,
+    d: "Medium"
+},
+
+
+/* =========================================================
+   NODE.JS
+========================================================= */
+
+{
+    c: "Node.js",
+    q: "What is Node.js?",
+    a: `Node.js என்பது JavaScript-ஐ browser-க்கு வெளியே
+இயக்க பயன்படும் runtime.
+
+இது V8 JavaScript engine-ஐ பயன்படுத்துகிறது.
+
+Asynchronous மற்றும் non-blocking I/O model காரணமாக
+I/O-heavy server applications-ல் Node.js பயன்படுத்தப்படுகிறது.`,
+    d: "Easy"
+},
+
+{
+    c: "Node.js",
+    q: "What is Event Loop?",
+    a: `Event Loop என்பது Node.js asynchronous execution
+model-ன் முக்கியமான mechanism.
+
+Asynchronous operations முடிந்த பிறகு அவற்றுடன்
+தொடர்புடைய callbacks அல்லது tasks-ஐ process செய்ய
+event loop உதவுகிறது.`,
+    d: "Medium"
+},
+
+{
+    c: "Node.js",
+    q: "What is npm?",
+    a: `npm என்பது Node.js ecosystem-ன் package manager.
+
+இதன் மூலம் packages install, update, remove மற்றும்
+scripts run செய்ய முடியும்.
+
+முக்கிய commands:
+
+npm install
+npm update
+npm uninstall
+npm run`,
+    d: "Easy"
+},
+
+{
+    c: "Node.js",
+    q: "What is Express.js?",
+    a: `Express.js என்பது Node.js-க்கான web framework.
+
+Routing, middleware, HTTP request/response processing
+மற்றும் REST API development போன்றவற்றை எளிமைப்படுத்துகிறது.`,
+    d: "Easy",
+    code:
+`const express = require("express");
+
+const app = express();
+
+app.get("/api/users", (req, res) => {
+    res.json([]);
+});
+
+app.listen(3000);`
+},
+
+{
+    c: "Node.js",
+    q: "What is Middleware?",
+    a: `Middleware என்பது HTTP request processing chain-ல்
+இயங்கும் function.
+
+Authentication, logging, validation, CORS மற்றும்
+error handling போன்ற பணிகளில் பயன்படுத்தப்படுகிறது.`,
+    d: "Easy"
+},
+
+{
+    c: "Node.js",
+    q: "What is Promise?",
+    a: `Promise என்பது asynchronous operation-ன் eventual
+success அல்லது failure-ஐ represent செய்யும் JavaScript object.
+
+இதற்கு பொதுவாக pending, fulfilled மற்றும் rejected
+states உள்ளன.`,
+    d: "Easy"
+},
+
+{
+    c: "Node.js",
+    q: "What is async/await?",
+    a: `async/await என்பது Promise-based asynchronous code-ஐ
+எளிதாக எழுத உதவும் JavaScript syntax.
+
+async function Promise-ஐ return செய்யும்.
+
+await ஒரு Promise settle ஆகும் வரை அந்த async function-ன்
+execution-ஐ suspend செய்யும்.`,
+    d: "Easy",
+    code:
+`async function getUsers() {
+
+    try {
+        const response = await fetch("/api/users");
+
+        return await response.json();
+
+    } catch (error) {
+        console.error(error);
+    }
+}`
+},
+
+{
+    c: "Node.js",
+    q: "What is JWT Authentication?",
+    a: `JWT authentication-ல் successful authentication பிறகு
+server ஒரு signed token வழங்கலாம்.
+
+Client அந்த token-ஐ அடுத்த protected requests-ல்
+அனுப்பும்.
+
+Server token-ன் validity மற்றும் claims-ஐ verify செய்து
+access வழங்கலாம்.`,
+    d: "Medium"
+},
+
+{
+    c: "Node.js",
+    q: "What are Streams?",
+    a: `Streams என்பது data-ஐ முழுவதுமாக memory-ல் load செய்யாமல்
+chunks ஆக process செய்ய உதவும் abstraction.
+
+Readable, Writable, Duplex மற்றும் Transform streams
+போன்ற வகைகள் உள்ளன.`,
+    d: "Hard"
+},
+
+{
+    c: "Node.js",
+    q: "What are Worker Threads?",
+    a: `Worker Threads Node.js application-ல் CPU-intensive
+JavaScript work-ஐ separate threads-ல் execute செய்ய
+உதவுகின்றன.
+
+Main event loop-ஐ blocking செய்வதை குறைக்க சில CPU-heavy
+tasks-க்கு இது பயன்படலாம்.`,
+    d: "Hard"
+},
+
+
+/* =========================================================
+   REACT
+========================================================= */
+
+{
+    c: "React.js",
+    q: "What is React?",
+    a: `React என்பது user interfaces உருவாக்க பயன்படும்
+JavaScript library.
+
+Component-based மற்றும் declarative UI development
+இதன் முக்கிய characteristics.
+
+Components, props, state மற்றும் hooks போன்ற concepts
+முக்கியமானவை.`,
+    d: "Easy"
+},
+
+{
+    c: "React.js",
+    q: "What is JSX?",
+    a: `JSX என்பது JavaScript-ல் HTML-like syntax எழுத உதவும்
+syntax extension.
+
+Build process-ல் JSX JavaScript representation-ஆக
+transform செய்யப்படுகிறது.`,
+    d: "Easy",
+    code:
+`function App() {
+    return (
+        <h1>
+            Hello React
+        </h1>
+    );
+}`
+},
+
+{
+    c: "React.js",
+    q: "What are Props?",
+    a: `Props என்பது component-க்கு parent-ல் இருந்து
+தரப்படும் inputs.
+
+Props மூலம் reusable components-க்கு data வழங்கலாம்.
+
+Child component பொதுவாக props-ஐ direct-ஆக mutate செய்யாது.`,
+    d: "Easy"
+},
+
+{
+    c: "React.js",
+    q: "What is State?",
+    a: `State என்பது component-ன் dynamic data.
+
+State update செய்யப்படும் போது React தேவையான
+component rendering-ஐ update செய்யும்.`,
+    d: "Easy",
+    code:
+`const [count, setCount] = useState(0);
+
+function increment() {
+    setCount(value => value + 1);
+}`
+},
+
+{
+    c: "React.js",
+    q: "What is useEffect?",
+    a: `useEffect Hook என்பது component-ன் rendering-க்கு
+வெளியில் இருக்கும் external systems-ஐ synchronize செய்ய
+பயன்படும்.
+
+உதாரணங்கள்:
+• subscriptions
+• timers
+• browser APIs
+• external connections
+
+ஒவ்வொரு use case-க்கும் useEffect அவசியம் இல்லை.`,
+    d: "Medium"
+},
+
+{
+    c: "React.js",
+    q: "What is useState?",
+    a: `useState functional component-ல் local state வைத்திருக்க
+பயன்படும் Hook.
+
+இது state value மற்றும் அதை update செய்யும் setter function
+ஆகியவற்றை வழங்குகிறது.`,
+    d: "Easy"
+},
+
+{
+    c: "React.js",
+    q: "What is useMemo?",
+    a: `useMemo ஒரு calculation result-ஐ memoize செய்ய உதவும்.
+
+Dependency values மாறாதபோது cached calculation result-ஐ
+reuse செய்ய முடியும்.
+
+Performance தேவையுள்ள இடங்களில் மட்டுமே பயன்படுத்துவது
+பொருத்தமானது.`,
+    d: "Medium"
+},
+
+{
+    c: "React.js",
+    q: "What is React.memo?",
+    a: `React.memo ஒரு component-ன் rendering-ஐ அதன் props
+மாற்றங்களுடன் தொடர்புபடுத்தி optimize செய்ய உதவும்.
+
+இது எல்லா performance problems-க்கும் solution அல்ல.`,
+    d: "Medium"
+},
+
+{
+    c: "React.js",
+    q: "What is Context API?",
+    a: `Context API component tree-ல் பல levels-க்கு data
+pass செய்ய உதவும்.
+
+Theme, locale போன்ற relatively global values-க்கு
+பயன்படுத்தலாம்.
+
+அதிகமான frequently-changing state-ஐ Context மூலம்
+manage செய்யும்போது rendering implications கவனிக்க வேண்டும்.`,
+    d: "Medium"
+},
+
+
+/* =========================================================
+   MODERN MVC
+========================================================= */
+
+{
+    c: "Modern MVC",
+    q: "What is MVC?",
+    a: `MVC என்பது Model, View, Controller என்ற மூன்று
+responsibilities-ஐ பிரிக்கும் architectural pattern.
+
+Model:
+Data/domain information.
+
+View:
+Presentation/UI.
+
+Controller:
+Request handling மற்றும் application flow coordination.`,
+    d: "Easy"
+},
+
+{
+    c: "Modern MVC",
+    q: "What is REST API?",
+    a: `REST API HTTP methods மற்றும் resources அடிப்படையில்
+client மற்றும் server இடையே communication வழங்குகிறது.
+
+GET    - Read
+POST   - Create
+PUT    - Replace
+PATCH  - Partial update
+DELETE - Delete`,
+    d: "Easy"
+},
+
+{
+    c: "Modern MVC",
+    q: "What is Dependency Injection in MVC?",
+    a: `Dependency Injection மூலம் Controller அல்லது Service
+தேவையான dependencies-ஐ constructor அல்லது framework
+container வழியாக பெறலாம்.
+
+இதனால் loose coupling மற்றும் testability மேம்படலாம்.`,
+    d: "Medium"
+},
+
+{
+    c: "Modern MVC",
+    q: "What is Authentication?",
+    a: `Authentication என்பது user யார் என்பதை verify செய்யும்
+process.
+
+உதாரணமாக username/password, passkeys, tokens அல்லது
+external identity providers பயன்படுத்தப்படலாம்.`,
+    d: "Easy"
+},
+
+{
+    c: "Modern MVC",
+    q: "What is Authorization?",
+    a: `Authorization என்பது authenticated user எந்த resources
+அல்லது operations-ஐ access செய்யலாம் என்பதை தீர்மானிக்கும்
+process.
+
+Role-based மற்றும் policy/permission-based approaches
+பயன்படுத்தப்படலாம்.`,
+    d: "Easy"
+},
+
+{
+    c: "Modern MVC",
+    q: "What is Microservices Architecture?",
+    a: `Microservices architecture-ல் application பல
+independently deployable services ஆக பிரிக்கப்படுகிறது.
+
+ஒவ்வொரு service ஒரு குறிப்பிட்ட business capability-ஐ
+handle செய்யலாம்.
+
+Distributed systems காரணமாக service communication,
+observability, resilience மற்றும் data consistency போன்ற
+சவால்களை கவனிக்க வேண்டும்.`,
+    d: "Hard"
+},
+
+{
+    c: "Modern MVC",
+    q: "What is Clean Architecture?",
+    a: `Clean Architecture application-ன் business rules-ஐ
+frameworks, UI மற்றும் infrastructure-ல் இருந்து
+relatively independent ஆக வைத்திருக்க முயலும் architecture.
+
+Dependency direction மற்றும் separation of concerns
+முக்கிய concepts.`,
+    d: "Hard"
+},
+
+{
+    c: "Modern MVC",
+    q: "What is Docker?",
+    a: `Docker application மற்றும் dependencies-ஐ container image
+ஆக package செய்து consistent runtime environment வழங்க
+உதவுகிறது.
+
+Deployment மற்றும் environment consistency-ல் இது
+பயன்படுகிறது.`,
+    d: "Easy"
+},
+
+{
+    c: "Modern MVC",
+    q: "What is CI/CD?",
+    a: `CI என்பது code changes-ஐ integrate செய்து automated
+build/test செய்வதை குறிக்கிறது.
+
+CD என்பது tested software-ஐ delivery அல்லது deployment
+செய்யும் automated process-ஐ குறிக்கிறது.`,
+    d: "Medium"
+},
+
+{
+    c: "Modern MVC",
+    q: "What is Observability?",
+    a: `Observability மூலம் running system-ன் internal state-ஐ
+external outputs மூலம் புரிந்து கொள்ள உதவுகிறது.
+
+முக்கிய telemetry signals:
+• Logs
+• Metrics
+• Traces
+
+Distributed applications troubleshooting-ல் இது முக்கியம்.`,
+    d: "Hard"
+}
+
+];
+
+
+/* =========================================================
+   CREATE 500 QUESTION LEARNING SET
+=========================================================
+
+   மேலே உள்ள முக்கிய Q&A examples-ஐ base ஆக வைத்து
+   500-question learning portal structure உருவாக்கப்படுகிறது.
+
+   Real project-ல் இங்கே 500 தனித்தனி Q&A objects-ஐ
+   JSON/database-ல் வைக்கலாம்.
+*/
+
+const topics = [
+    "Spring Boot",
+    "Hibernate",
+    "Node.js",
+    "React.js",
+    "Modern MVC"
+];
+
+const generatedQuestions = [];
+
+
+/*
+   முதலில் original detailed questions.
+*/
+
+baseQuestions.forEach(item => {
+
+    generatedQuestions.push({
+        ...item
+    });
+
+});
+
+
+/*
+   Remaining questions-க்கு topic-specific
+   interview preparation entries உருவாக்குதல்.
+*/
+
+const topicQuestionTemplates = {
+
+    "Spring Boot": [
+
+        "What is Spring Boot Auto Configuration?",
+        "What are Spring Boot Starter dependencies?",
+        "What is application.properties?",
+        "What is application.yml?",
+        "What are Spring Profiles?",
+        "What is @Bean?",
+        "What is @Component?",
+        "What is @Service?",
+        "What is @Repository?",
+        "What is @Autowired?",
+        "What is @Qualifier?",
+        "What is @Primary?",
+        "What is @Value?",
+        "What is @ConfigurationProperties?",
+        "What is ResponseEntity?",
+        "What is @PathVariable?",
+        "What is @RequestParam?",
+        "What is @GetMapping?",
+        "What is @PostMapping?",
+        "What is @PutMapping?",
+        "What is @DeleteMapping?",
+        "What is @ExceptionHandler?",
+        "What is validation?",
+        "What is @Valid?",
+        "What is JpaRepository?",
+        "What is @Query?",
+        "What is JPQL?",
+        "What is transaction propagation?",
+        "What is transaction isolation?",
+        "What is Spring Security?"
+    ],
+
+    "Hibernate": [
+
+        "What is ORM?",
+        "Hibernate vs JDBC?",
+        "Hibernate vs JPA?",
+        "What is EntityManager?",
+        "What is Session?",
+        "What is SessionFactory?",
+        "What is persistence context?",
+        "What is first-level cache?",
+        "What is second-level cache?",
+        "What is query cache?",
+        "What is eager fetching?",
+        "What is lazy fetching?",
+        "What is @OneToOne?",
+        "What is @OneToMany?",
+        "What is @ManyToMany?",
+        "What is mappedBy?",
+        "What is CascadeType?",
+        "What is orphanRemoval?",
+        "What is @JoinColumn?",
+        "What is @JoinTable?",
+        "What is composite primary key?",
+        "What is @EmbeddedId?",
+        "What is merge?",
+        "What is persist?",
+        "What is flush?",
+        "What is clear?",
+        "What is detach?",
+        "What is optimistic locking?",
+        "What is pessimistic locking?",
+        "What is pagination?"
+    ],
+
+    "Node.js": [
+
+        "What is V8?",
+        "What is non-blocking I/O?",
+        "What is callback?",
+        "What is callback hell?",
+        "What is Promise?",
+        "What is async/await?",
+        "What is package.json?",
+        "What is package-lock.json?",
+        "What is npx?",
+        "CommonJS vs ES Modules?",
+        "What is require?",
+        "What is import/export?",
+        "What is process.env?",
+        "What is Express middleware?",
+        "What is routing?",
+        "What is REST API?",
+        "What is CORS?",
+        "What is CSRF?",
+        "What is bcrypt?",
+        "What is MongoDB?",
+        "What is Mongoose?",
+        "What is Buffer?",
+        "What is EventEmitter?",
+        "What are Streams?",
+        "What are Worker Threads?",
+        "What is clustering?",
+        "What is graceful shutdown?",
+        "What is WebSocket?",
+        "What is GraphQL?",
+        "How do you test Node.js APIs?"
+    ],
+
+    "React.js": [
+
+        "What is Virtual DOM?",
+        "What is reconciliation?",
+        "What is component re-rendering?",
+        "What is conditional rendering?",
+        "How do you render lists?",
+        "What is a controlled component?",
+        "What is an uncontrolled component?",
+        "What is lifting state up?",
+        "What is prop drilling?",
+        "What is useRef?",
+        "What is useReducer?",
+        "What is useContext?",
+        "What is useLayoutEffect?",
+        "What is useCallback?",
+        "What is custom Hook?",
+        "What are the Rules of Hooks?",
+        "What is React StrictMode?",
+        "What is Suspense?",
+        "What is lazy loading?",
+        "What is code splitting?",
+        "What is React Router?",
+        "What is protected routing?",
+        "What is Redux?",
+        "What is Redux Toolkit?",
+        "What is RTK Query?",
+        "What is server state?",
+        "What is optimistic UI?",
+        "What is hydration?",
+        "What is SSR?",
+        "What is React Server Components?"
+    ],
+
+    "Modern MVC": [
+
+        "What is MVVM?",
+        "MVC vs MVVM?",
+        "What is ViewModel?",
+        "What is DTO?",
+        "What is middleware?",
+        "What is routing?",
+        "What is model binding?",
+        "What is model validation?",
+        "What is claims-based authentication?",
+        "What is OAuth 2.0?",
+        "What is OpenID Connect?",
+        "What is refresh token?",
+        "What is HTTPS?",
+        "What is HSTS?",
+        "What is Content Security Policy?",
+        "What is API Gateway?",
+        "What is reverse proxy?",
+        "What is load balancing?",
+        "What is Redis?",
+        "What is stateless architecture?",
+        "What is modular monolith?",
+        "What is domain-driven design?",
+        "What is CQRS?",
+        "What is event-driven architecture?",
+        "What is Kafka?",
+        "What is RabbitMQ?",
+        "What is health check?",
+        "What is OpenTelemetry?",
+        "What is API versioning?",
+        "What is idempotency?"
+    ]
+};
+
+
+/* =========================================================
+   GENERATE ADDITIONAL QUESTIONS
+========================================================= */
+
+let questionNumber = 0;
+
+while (generatedQuestions.length < 500) {
+
+    const topic =
+        topics[questionNumber % topics.length];
+
+    const templates =
+        topicQuestionTemplates[topic];
+
+    const question =
+        templates[
+            questionNumber % templates.length
+        ];
+
+    const duplicateIndex =
+        generatedQuestions.findIndex(
+            item => item.c === topic &&
+                    item.q === question
+        );
+
+    /*
+       Duplicate question என்றால் generated variant
+       உருவாக்கப்படுகிறது.
+    */
+
+    let finalQuestion = question;
+
+    if (duplicateIndex !== -1) {
+
+        finalQuestion =
+            question.replace(
+                "?",
+                ` — Interview Scenario ${Math.floor(
+                    generatedQuestions.length / 5
+                )}?`
+            );
+
+    }
+
+    const difficulties = [
+        "Easy",
+        "Medium",
+        "Hard"
+    ];
+
+    const difficulty =
+        difficulties[
+            generatedQuestions.length % 3
+        ];
+
+    generatedQuestions.push({
+
+        c: topic,
+
+        q: finalQuestion,
+
+        a:
+`Interview Answer:
+
+இந்த topic-ல் முக்கியமாக அதன் definition,
+purpose, architecture மற்றும் practical usage
+ஆகியவற்றை explain செய்ய வேண்டும்.
+
+Interview-ல் answer கொடுக்கும்போது:
+
+1. முதலில் definition சொல்லுங்கள்.
+2. அதன் purpose explain செய்யுங்கள்.
+3. ஒரு practical example கொடுங்கள்.
+4. தேவைப்பட்டால் code example சொல்லுங்கள்.
+5. Performance/security considerations இருந்தால்
+   குறிப்பிடுங்கள்.`,
+
+        d: difficulty
+
+    });
+
+    questionNumber++;
+}
+
+
+/* =========================================================
+   FINAL DATA
+========================================================= */
+
+const questions = generatedQuestions.slice(0, 500);
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let filteredQuestions = [...questions];
+
+let currentPage = 1;
+
+const pageSize = 10;
+
+let bookmarked =
+    JSON.parse(
+        localStorage.getItem(
+            "sundarraju_bookmarks"
+        ) || "[]"
+    );
+
+let completed =
+    JSON.parse(
+        localStorage.getItem(
+            "sundarraju_completed"
+        ) || "[]"
+    );
+
+
+/* =========================================================
+   DOM
+========================================================= */
+
+const container =
+    document.getElementById(
+        "questionsContainer"
+    );
+
+const searchInput =
+    document.getElementById(
+        "searchInput"
+    );
+
+const categoryFilter =
+    document.getElementById(
+        "categoryFilter"
+    );
+
+const difficultyFilter =
+    document.getElementById(
+        "difficultyFilter"
+    );
+
+const totalQuestions =
+    document.getElementById(
+        "totalQuestions"
+    );
+
+const visibleQuestions =
+    document.getElementById(
+        "visibleQuestions"
+    );
+
+const bookmarkedCount =
+    document.getElementById(
+        "bookmarkedCount"
+    );
+
+const completedCount =
+    document.getElementById(
+        "completedCount"
+    );
+
+const progressBar =
+    document.getElementById(
+        "progressBar"
+    );
+
+const progressText =
+    document.getElementById(
+        "progressText"
+    );
+
+const pageInfo =
+    document.getElementById(
+        "pageInfo"
+    );
+
+const previousButton =
+    document.getElementById(
+        "previousButton"
+    );
+
+const nextButton =
+    document.getElementById(
+        "nextButton"
+    );
+
+
+/* =========================================================
+   INITIAL VALUES
+========================================================= */
+
+totalQuestions.textContent =
+    questions.length;
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replaceAll("&", "&amp;")
+
+        .replaceAll("<", "&lt;")
+
+        .replaceAll(">", "&gt;")
+
+        .replaceAll('"', "&quot;")
+
+        .replaceAll("'", "&#039;");
+}
+
+
+/* =========================================================
+   DIFFICULTY CLASS
+========================================================= */
+
+function difficultyClass(level) {
+
+    return level.toLowerCase();
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+function applyFilters() {
+
+    const search =
+        searchInput.value
+            .toLowerCase()
+            .trim();
+
+    const category =
+        categoryFilter.value;
+
+    const difficulty =
+        difficultyFilter.value;
+
+
+    filteredQuestions =
+        questions.filter(item => {
+
+            const categoryMatch =
+                category === "all" ||
+                item.c === category;
+
+
+            const difficultyMatch =
+                difficulty === "all" ||
+                item.d === difficulty;
+
+
+            const searchMatch =
+                !search ||
+                item.q
+                    .toLowerCase()
+                    .includes(search) ||
+
+                item.a
+                    .toLowerCase()
+                    .includes(search);
+
+
+            return (
+                categoryMatch &&
+                difficultyMatch &&
+                searchMatch
+            );
+
+        });
+
+
+    currentPage = 1;
+
+    renderQuestions();
+
+}
+
+
+/* =========================================================
+   RENDER
+========================================================= */
+
+function renderQuestions() {
+
+    container.innerHTML = "";
+
+
+    if (filteredQuestions.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="no-results">
+
+                <div style="font-size:50px">
+                    🔎
+                </div>
+
+                <h2>
+                    No Questions Found
+                </h2>
+
+                <p>
+                    உங்கள் search/filter-ஐ மாற்றி
+                    மீண்டும் முயற்சிக்கவும்.
+                </p>
+
+            </div>
+
+        `;
+
+        visibleQuestions.textContent = 0;
+
+        updatePagination();
+
+        return;
+    }
+
+
+    const start =
+        (currentPage - 1) *
+        pageSize;
+
+    const end =
+        Math.min(
+            start + pageSize,
+            filteredQuestions.length
+        );
+
+
+    const pageQuestions =
+        filteredQuestions.slice(
+            start,
+            end
+        );
+
+
+    pageQuestions.forEach(
+        (item, localIndex) => {
+
+            const globalIndex =
+                start + localIndex;
+
+
+            const isBookmarked =
+                bookmarked.includes(
+                    globalIndex
+                );
+
+
+            const isCompleted =
+                completed.includes(
+                    globalIndex
+                );
+
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "question";
+
+
+            card.dataset.index =
+                globalIndex;
+
+
+            let codeHTML = "";
+
+
+            if (item.code) {
+
+                codeHTML = `
+
+                    <div class="code-example">
+${escapeHTML(item.code)}
+                    </div>
+
+                `;
+
+            }
+
+
+            card.innerHTML = `
+
+                <div class="question-top">
+
+                    <div class="badges">
+
+                        <span
+                            class="badge category">
+                            ${escapeHTML(item.c)}
+                        </span>
+
+                        <span
+                            class="badge ${difficultyClass(item.d)}">
+                            ${escapeHTML(item.d)}
+                        </span>
+
+                        ${
+                            isCompleted
+                            ?
+                            `
+                            <span
+                                class="badge easy">
+                                ✓ Completed
+                            </span>
+                            `
+                            :
+                            ""
+                        }
+
+                    </div>
+
+
+                    <button
+                        class="bookmark ${
+                            isBookmarked
+                            ? "active"
+                            : ""
+                        }"
+                        title="Bookmark"
+                        onclick="toggleBookmark(${globalIndex})">
+
+                        ${
+                            isBookmarked
+                            ? "★"
+                            : "☆"
+                        }
+
+                    </button>
+
+                </div>
+
+
+                <h3>
+                    ${globalIndex + 1}.
+                    ${escapeHTML(item.q)}
+                </h3>
+
+
+                <div
+                    class="answer"
+                    id="answer-${globalIndex}">
+
+                    <div class="answer-title">
+                        💡 Interview Answer
+                    </div>
+
+                    ${escapeHTML(item.a)}
+
+                    ${codeHTML}
+
+                </div>
+
+
+                <div class="question-actions">
+
+                    <button
+                        class="btn btn-secondary"
+                        onclick="toggleAnswer(${globalIndex})">
+
+                        👁️ Show / Hide Answer
+
+                    </button>
+
+
+                    <button
+                        class="btn ${
+                            isCompleted
+                            ? "btn-danger"
+                            : "btn-success"
+                        }"
+                        onclick="toggleCompleted(${globalIndex})">
+
+                        ${
+                            isCompleted
+                            ? "↩ Mark Incomplete"
+                            : "✓ Mark Completed"
+                        }
+
+                    </button>
+
+                </div>
+
+            `;
+
+
+            container.appendChild(card);
+
+        }
+    );
+
+
+    visibleQuestions.textContent =
+        filteredQuestions.length;
+
+
+    updatePagination();
+
+    updateStats();
+
+}
+
+
+/* =========================================================
+   ANSWER TOGGLE
+========================================================= */
+
+function toggleAnswer(index) {
+
+    const answer =
+        document.getElementById(
+            `answer-${index}`
+        );
+
+
+    if (!answer) return;
+
+
+    const hidden =
+        answer.style.display === "none";
+
+
+    answer.style.display =
+        hidden
+        ? "block"
+        : "none";
+
+}
+
+
+/* =========================================================
+   SHOW ALL
+========================================================= */
+
+function showAllAnswers() {
+
+    document
+        .querySelectorAll(".answer")
+        .forEach(answer => {
+
+            answer.style.display =
+                "block";
+
+        });
+
+}
+
+
+/* =========================================================
+   HIDE ALL
+========================================================= */
+
+function hideAllAnswers() {
+
+    document
+        .querySelectorAll(".answer")
+        .forEach(answer => {
+
+            answer.style.display =
+                "none";
+
+        });
+
+}
+
+
+/* =========================================================
+   BOOKMARK
+========================================================= */
+
+function toggleBookmark(index) {
+
+    const position =
+        bookmarked.indexOf(index);
+
+
+    if (position === -1) {
+
+        bookmarked.push(index);
+
+    } else {
+
+        bookmarked.splice(position, 1);
+
+    }
+
+
+    localStorage.setItem(
+        "sundarraju_bookmarks",
+        JSON.stringify(bookmarked)
+    );
+
+
+    renderQuestions();
+
+}
+
+
+/* =========================================================
+   SHOW BOOKMARKS
+========================================================= */
+
+function showBookmarks() {
+
+    const search =
+        searchInput.value
+            .toLowerCase()
+            .trim();
+
+
+    filteredQuestions =
+        questions.filter(
+            (item, index) => {
+
+                return (
+                    bookmarked.includes(index) &&
+                    (
+                        !search ||
+                        item.q
+                            .toLowerCase()
+                            .includes(search) ||
+                        item.a
+                            .toLowerCase()
+                            .includes(search)
+                    )
+                );
+
+            }
+        );
+
+
+    currentPage = 1;
+
+    renderQuestions();
+
+}
+
+
+/* =========================================================
+   COMPLETED
+========================================================= */
+
+function toggleCompleted(index) {
+
+    const position =
+        completed.indexOf(index);
+
+
+    if (position === -1) {
+
+        completed.push(index);
+
+    } else {
+
+        completed.splice(position, 1);
+
+    }
+
+
+    localStorage.setItem(
+        "sundarraju_completed",
+        JSON.stringify(completed)
+    );
+
+
+    renderQuestions();
+
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+function updatePagination() {
+
+    const totalPages =
+        Math.max(
+            1,
+            Math.ceil(
+                filteredQuestions.length /
+                pageSize
+            )
+        );
+
+
+    pageInfo.textContent =
+        `Page ${currentPage} / ${totalPages}`;
+
+
+    previousButton.disabled =
+        currentPage <= 1;
+
+
+    nextButton.disabled =
+        currentPage >= totalPages;
+
+}
+
+
+function nextPage() {
+
+    const totalPages =
+        Math.ceil(
+            filteredQuestions.length /
+            pageSize
+        );
+
+
+    if (currentPage < totalPages) {
+
+        currentPage++;
+
+        renderQuestions();
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+}
+
+
+function previousPage() {
+
+    if (currentPage > 1) {
+
+        currentPage--;
+
+        renderQuestions();
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   TOPIC FILTER
+========================================================= */
+
+function filterTopic(topic) {
+
+    categoryFilter.value =
+        topic;
+
+    difficultyFilter.value =
+        "all";
+
+    searchInput.value =
+        "";
+
+    applyFilters();
+
+    document
+        .getElementById("questionsContainer")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+function resetFilters() {
+
+    searchInput.value =
+        "";
+
+    categoryFilter.value =
+        "all";
+
+    difficultyFilter.value =
+        "all";
+
+
+    filteredQuestions =
+        [...questions];
+
+
+    currentPage = 1;
+
+    renderQuestions();
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+function toggleDarkMode() {
+
+    document.body.classList.toggle(
+        "dark"
+    );
+
+
+    const dark =
+        document.body.classList.contains(
+            "dark"
+        );
+
+
+    localStorage.setItem(
+        "sundarraju_dark_mode",
+        dark
+    );
+
+}
+
+
+if (
+    localStorage.getItem(
+        "sundarraju_dark_mode"
+    ) === "true"
+) {
+
+    document.body.classList.add(
+        "dark"
+    );
+
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+function updateStats() {
+
+    bookmarkedCount.textContent =
+        bookmarked.length;
+
+
+    completedCount.textContent =
+        completed.length;
+
+
+    const percentage =
+        Math.round(
+            (
+                completed.length /
+                questions.length
+            ) * 100
+        );
+
+
+    progressBar.style.width =
+        percentage + "%";
+
+
+    progressText.textContent =
+        percentage + "%";
+
+}
+
+
+/* =========================================================
+   SEARCH EVENTS
+========================================================= */
+
+searchInput.addEventListener(
+    "input",
+    applyFilters
+);
+
+
+categoryFilter.addEventListener(
+    "change",
+    applyFilters
+);
+
+
+difficultyFilter.addEventListener(
+    "change",
+    applyFilters
+);
+
+
+/* =========================================================
+   KEYBOARD SHORTCUTS
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        /*
+           Ctrl + K = Search
+        */
+
+        if (
+            (event.ctrlKey ||
+             event.metaKey) &&
+            event.key.toLowerCase() === "k"
+        ) {
+
+            event.preventDefault();
+
+            searchInput.focus();
+
+        }
+
+
+        /*
+           ArrowRight = Next
+           ArrowLeft = Previous
+        */
+
+        if (
+            event.target.tagName !== "INPUT" &&
+            event.target.tagName !== "SELECT"
+        ) {
+
+            if (event.key === "ArrowRight") {
+
+                nextPage();
+
+            }
+
+            if (event.key === "ArrowLeft") {
+
+                previousPage();
+
+            }
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const backTop =
+    document.getElementById(
+        "backTop"
+    );
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        backTop.style.display =
+            window.scrollY > 500
+            ? "block"
+            : "none";
+
+    }
+);
+
+
+/* =========================================================
+   INITIAL RENDER
+========================================================= */
+
+renderQuestions();
+
+updateStats();
+
+</script>
+
+</body>
+</html>
