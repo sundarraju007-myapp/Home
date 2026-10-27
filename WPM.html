@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sundarraju Aanmiga Kattral Ulagam – Workplace Management: 200 Thoughts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0f1720;
+  --deep:#162331;
+  --peacock:#1f8a8a;
+  --gold:#f2b84b;
+  --cream:#eef2f5;
+  --muted:#9fb0bf;
+  --card:#15212d;
+  --line:rgba(238,242,245,.14);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+:root[data-theme="light"]{
+  --night:#f5f8fa;
+  --deep:#e3ecf1;
+  --peacock:#17717a;
+  --gold:#9a6200;
+  --cream:#14212b;
+  --muted:#526371;
+  --card:#ffffff;
+  --line:rgba(20,33,43,.15);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--cream);font-family:var(--sans);line-height:1.65}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+header.top{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px clamp(16px,4vw,48px);border-bottom:1px solid var(--line);
+}
+.brand{font-family:var(--serif);font-weight:700;font-size:clamp(1rem,2.4vw,1.35rem);color:var(--gold);margin:0}
+.theme-btn{background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;color:var(--muted)}
+.theme-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+.hero{
+  position:relative;overflow:hidden;
+  padding:clamp(28px,6vw,72px) clamp(16px,4vw,48px);
+  background:
+    radial-gradient(900px 500px at 85% 0%, rgba(31,138,138,.32), transparent 60%),
+    linear-gradient(180deg,var(--deep),var(--night));
+  border-bottom:1px solid var(--line);
+}
+.feather{
+  position:absolute;right:-70px;top:-70px;width:380px;height:380px;border-radius:50%;
+  background:
+    radial-gradient(circle, rgba(242,184,75,.9) 0 2.5px, transparent 3.5px) 0 0/34px 34px;
+  -webkit-mask-image:radial-gradient(circle, #000 25%, transparent 68%);
+  mask-image:radial-gradient(circle, #000 25%, transparent 68%);
+  opacity:.55;pointer-events:none;
+}
+.hero-inner{position:relative;max-width:920px;margin:0 auto}
+.hero h1{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.9rem);line-height:1.2;margin:0 0 6px}
+.hero .sub{color:var(--muted);margin:0 0 28px;font-size:1.05rem}
+.saying{
+  background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);
+  border-radius:10px;padding:clamp(18px,3vw,32px);box-shadow:0 18px 40px rgba(0,0,0,.22);
+}
+.saying .meta{color:var(--gold);font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin:0 0 8px}
+.saying .text{font-family:var(--serif);font-size:clamp(1.3rem,3.4vw,2rem);line-height:1.4;margin:0;min-height:2.6em}
+.saying .text.swap{animation:swap .35s ease}
+@keyframes swap{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{background:transparent;border:1px solid var(--line);border-radius:8px;padding:8px 16px;cursor:pointer;transition:background .15s,border-color .15s}
+.btn:hover{border-color:var(--gold);background:rgba(242,184,75,.1)}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:#10202c;font-weight:700}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn[aria-pressed="true"]{color:var(--gold);border-color:var(--gold)}
+
+.detail{margin-top:18px;border-top:1px solid var(--line);padding-top:16px;display:grid;gap:16px}
+.detail h2{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin:0 0 4px}
+.detail p{margin:0;font-size:1.05rem;line-height:1.7}
+
+.conv{display:grid;gap:8px}
+.msg{max-width:88%;padding:9px 14px;border-radius:14px;border:1px solid var(--line);font-size:1rem;line-height:1.55}
+.msg .who{display:block;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.msg.a{justify-self:start;background:rgba(31,138,138,.16);border-top-left-radius:4px}
+.msg.b{justify-self:end;background:rgba(242,184,75,.13);border-top-right-radius:4px}
+
+.controls{position:sticky;top:0;z-index:5;background:var(--night);padding:14px clamp(16px,4vw,48px);border-bottom:1px solid var(--line)}
+.controls-in{max-width:1100px;margin:0 auto;display:grid;gap:12px}
+.search{width:100%;padding:11px 16px;border-radius:8px;border:1px solid var(--line);background:var(--card)}
+.search::placeholder{color:var(--muted)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:none;border-radius:999px;padding:5px 14px;cursor:pointer;color:var(--muted);white-space:nowrap}
+.chip:hover{border-color:var(--peacock);color:var(--cream)}
+.chip[aria-pressed="true"]{background:var(--peacock);border-color:var(--peacock);color:#fff}
+.count{color:var(--muted);font-size:.92rem;margin:0}
+
+main{max-width:1100px;margin:0 auto;padding:24px clamp(16px,4vw,48px) 56px}
+.grid{list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr))}
+.item{position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 16px 14px;cursor:pointer;display:flex;flex-direction:column;gap:8px}
+.item:hover{border-color:var(--peacock)}
+.item.active{border-color:var(--gold)}
+.item .no{font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.item .no span:last-child{color:var(--muted);font-weight:500;text-transform:none;letter-spacing:0}
+.item p{margin:0;font-family:var(--serif);font-size:1.12rem;line-height:1.45}
+.fav{background:none;border:none;cursor:pointer;font-size:1.15rem;line-height:1;color:var(--muted);padding:2px 4px;border-radius:4px}
+.fav[aria-pressed="true"]{color:#e0577a}
+details.more{border-top:1px dashed var(--line);padding-top:8px}
+details.more summary{cursor:pointer;color:var(--peacock);font-weight:500;list-style-position:inside}
+:root:not([data-theme="light"]) details.more summary{color:#6fd0d0}
+details.more h3{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin:10px 0 4px}
+details.more p{font-family:var(--sans);font-size:.95rem;line-height:1.6;color:var(--cream)}
+details.more .conv{margin-top:2px}
+.empty{text-align:center;color:var(--muted);padding:48px 0}
+
+footer{border-top:1px solid var(--line);padding:22px clamp(16px,4vw,48px);text-align:center;color:var(--muted);font-size:.9rem}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--gold);color:#10202c;padding:8px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s;font-weight:700;z-index:10}
+.toast.show{opacity:1;transform:translateX(-50%)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (max-width:600px){.feather{width:260px;height:260px;right:-90px;top:-90px}.msg{max-width:96%}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <p class="brand">Sundarraju Aanmiga Kattral Ulagam</p>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch light or dark theme">☀ / ☾</button>
+</header>
+
+<section class="hero" aria-labelledby="pageTitle">
+  <div class="feather" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <h1 id="pageTitle">Workplace Management: 200 Thoughts</h1>
+    <p class="sub">Practical ideas for leaders, managers and teams – each with a sample conversation</p>
+
+    <article class="saying" aria-live="polite">
+      <p class="meta" id="meta"></p>
+      <p class="text" id="text"></p>
+      <div class="detail">
+        <div><h2>Meaning</h2><p id="meaning"></p></div>
+        <div><h2>In conversation</h2><div class="conv" id="conv"></div></div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="prev" type="button">‹ Previous</button>
+        <button class="btn primary" id="rand" type="button">Random thought</button>
+        <button class="btn" id="next" type="button">Next ›</button>
+        <button class="btn" id="heroFav" type="button" aria-pressed="false">♥ Favourite</button>
+        <button class="btn" id="copy" type="button">Copy</button>
+        <button class="btn" id="share" type="button">Share</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div class="controls">
+  <div class="controls-in">
+    <input class="search" id="search" type="search" placeholder="Search thoughts, meanings or conversations…" aria-label="Search">
+    <div class="chips" id="chips" role="group" aria-label="Categories"></div>
+    <p class="count" id="count"></p>
+  </div>
+</div>
+
+<main>
+  <ul class="grid" id="grid"></ul>
+  <p class="empty" id="empty" hidden>No matching thoughts. Try another word.</p>
+</main>
+
+<footer>
+  © Sundarraju Aanmiga Kattral Ulagam • Practical workplace management thoughts with sample conversations
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ---------- Data: 10 categories × 20 = 200 thoughts ----------
+   Each row: [thought, meaning, conversation]
+   Conversation lines are separated by \n and written as "Speaker: “text”". */
+const CATS = ["Leadership","Communication","Delegation & Ownership","Feedback & Coaching","Teamwork & Culture","Time & Priorities","Decisions & Problem-Solving","Conflict & Tough Talks","Motivation & Recognition","Growth & Integrity"];
+const RAW = [
+["Lead by example before you lead by instruction.","People copy what you do far more than what you say. Your daily behaviour sets the real standard.","Manager: “I was late to today’s stand-up. That’s on me; I’ll be early tomorrow.”\nEmployee: “Thanks for owning it. It makes it easier for the rest of us to be on time too.”"],
+["A leader’s first job is clarity.","Teams struggle more with vagueness than with hard work. State the goal, the reason and the finish line.","Manager: “Here’s the goal: cut response time to under four hours by month-end. Customers are leaving over delays.”\nEmployee: “Clear. I’ll start with the oldest open tickets.”"],
+["Authority is given; trust is earned.","A title gets compliance, but only consistent fairness and honesty earn real commitment.","Employee: “Why should I trust this new plan?”\nManager: “Fair question. Let me show you the data and what I’ll change if it doesn’t work.”"],
+["Be the calm in the room.","When pressure rises, the team reads your face first. Steady behaviour lets others think clearly.","Employee: “The client just escalated. This is a disaster!”\nManager: “Let’s breathe. Tell me the facts and we’ll take one step at a time.”"],
+["Hire for attitude, train for skill.","Skills can be taught; curiosity, honesty and drive are much harder to build.","Recruiter: “His résumé is thin, but he asks great questions.”\nManager: “Then let’s hire him. We can teach the tools.”"],
+["Say “I don’t know” when you don’t know.","Admitting limits builds credibility and invites the team to contribute their expertise.","Employee: “Will this approach scale?”\nManager: “I don’t know yet. Can you and Priya test it and tell me what you find?”"],
+["Serve your team and they will serve your customers.","Leaders who remove obstacles for their people create better service for customers.","Manager: “What’s slowing you down this week?”\nEmployee: “Approvals take three days. I’d like to cut that.”"],
+["Take the blame, share the credit.","Protecting your team from blame and spotlighting their wins builds loyalty.","Director: “Who missed the deadline?”\nManager: “I did. I should have flagged the risk earlier. The team delivered the hard parts.”"],
+["Vision without daily habits is just a poster.","Big goals need small repeated actions. Translate the vision into weekly behaviours.","Manager: “Our vision is the best service in the city. What’s one habit that shows it?”\nEmployee: “Reply to every customer within an hour.”"],
+["Delegate outcomes, not just tasks.","Telling people the result you need gives them room to think, own and improve the method.","Manager: “I need onboarding time cut to one week. How you do it is up to you.”\nEmployee: “Great, I’ll redesign the checklist and share it on Friday.”"],
+["Listen first; decide second.","Early listening reveals facts and builds buy-in, so decisions land better.","Manager: “Before I decide, I want to hear each view.”\nEmployee: “Thank you. The vendor change affects the night shift most.”"],
+["Be consistent; surprises erode trust.","When your mood or rules change daily, people spend energy guessing instead of working.","Employee: “Last week late reports were fine, now they’re not?”\nManager: “You’re right. I’ll set one clear rule and apply it to everyone.”"],
+["Develop successors, not dependents.","A great leader builds people who can replace them, which frees the leader to grow too.","Manager: “I’d like you to run Monday’s review next week.”\nEmployee: “Really? I’ll prepare with you tomorrow.”"],
+["Make the right thing the easy thing.","Design processes so good behaviour takes less effort than shortcuts.","Employee: “People skip the safety checklist; it’s too long.”\nManager: “Then let’s shorten it to five steps on one page.”"],
+["Courage is part of the job.","Leaders must say hard things, protect principles and make unpopular calls respectfully.","Manager: “I need to tell the client we can’t deliver this scope.”\nEmployee: “That’s tough, but it’s better than missing it later.”"],
+["Care about people as people.","Remembering that staff have families, health and worries earns deep loyalty.","Manager: “How’s your father doing?”\nEmployee: “Better, thanks. I appreciate you asking.”"],
+["Your calendar shows your priorities.","Where you spend time signals what matters. Align meetings with real goals.","Employee: “You rarely join customer calls.”\nManager: “Good catch. I’m blocking two hours every week for them.”"],
+["Stay curious about your own blind spots.","Ask for feedback on your own leadership; the gaps you can’t see are the ones that hurt.","Manager: “What’s one thing I should do differently?”\nEmployee: “Give us more notice before changing priorities.”"],
+["Lead through change by explaining the why.","People accept difficult change more readily when they understand the reason.","Manager: “We’re moving to a new system because errors cost us two lakh rupees a month.”\nEmployee: “That helps. What support will we get?”"],
+["The best leaders make themselves less necessary.","If the team runs well in your absence, you have built something lasting.","Manager: “I’ll be on leave next week.”\nEmployee: “Don’t worry, we have the handover document and clear owners.”"],
+["Be clear, then be kind.","Clarity prevents confusion; kindness keeps relationships intact. You need both.","Manager: “This report needs two corrections before it goes out. Your analysis was strong.”\nEmployee: “Understood. I’ll fix those today.”"],
+["Say it simply.","Plain words travel farther than jargon. If a new joiner can’t follow, simplify.","Employee: “What does ‘synergise cross-functional deliverables’ mean?”\nManager: “Fair. It means: work with Finance so the report is ready by Friday.”"],
+["Confirm understanding; don’t assume it.","Ask people to restate the task in their own words to catch misunderstandings early.","Manager: “Just to be sure, how will you approach this?”\nEmployee: “I’ll prepare the draft, get Sam’s input and share it on Thursday.”"],
+["Silence in a meeting isn’t agreement.","Quiet people may disagree or be unsure. Invite each voice directly and safely.","Manager: “Meera, you’ve been quiet. What concerns do you see?”\nEmployee: “The timeline looks tight for testing.”"],
+["Write emails someone can act on.","Put the request and deadline first, then the background.","Manager: “Subject: Approval needed by Wednesday 5 pm – vendor contract.”\nEmployee: “That’s clear. I’ll review it today.”"],
+["Ask better questions.","Open questions reveal more than yes-or-no ones. Curiosity shows respect.","Manager: “What would make this project easier for you?”\nEmployee: “A single owner for client approvals.”"],
+["Don’t communicate only when there’s a problem.","Regular updates and appreciation make hard conversations easier later.","Manager: “Quick note: your client call went really well.”\nEmployee: “Thanks! That helps me know what to repeat.”"],
+["Listen to understand, not to reply.","Hold your response until you can restate the other person’s point accurately.","Employee: “I feel overloaded.”\nManager: “So you’re handling three projects with no backup. Did I get that right?”"],
+["Match the message to the medium.","Use chat for quick questions, email for records and face-to-face for sensitive topics.","Employee: “Should I send the feedback by email?”\nManager: “No, let’s talk in person; it’s sensitive.”"],
+["Keep meetings short and purposeful.","Every meeting should have a goal, an agenda and clear next steps.","Manager: “Goal today: decide the launch date. Twenty minutes.”\nEmployee: “Great, I’ve brought the cost numbers.”"],
+["End every meeting with who does what by when.","Without owners and dates, good discussions evaporate.","Manager: “To recap: Arjun sends the proposal on Tuesday; Divya books the venue on Wednesday.”\nEmployee: “Noted. I’ll confirm by email.”"],
+["Tone carries more than words.","The same sentence can motivate or hurt depending on tone. Check how it will land.","Manager: “My last message sounded sharp. I’m sorry; I value your work.”\nEmployee: “Thanks, I appreciate that.”"],
+["Give context, not just commands.","When people know why, they make better decisions on their own.","Manager: “Please prioritise the Chennai order because it’s our biggest renewal.”\nEmployee: “Understood. I’ll move the other task to Thursday.”"],
+["Repeat important messages.","People hear things differently and at different times. Say it more than once, in more than one way.","Manager: “I’ll repeat the safety rule in the huddle and put it on the board.”\nEmployee: “Good, that will help the new joiners too.”"],
+["Be transparent about what you can’t share.","Honest limits (“I can’t share that yet”) are better than silence or spin.","Employee: “Are layoffs coming?”\nManager: “I can’t share details yet. I promise you’ll hear it from me first.”"],
+["Praise in public, correct in private.","Public praise motivates; private correction protects dignity.","Manager: “Everyone, Karthik’s fix saved us two days.”\nEmployee: “Thank you!”\nManager: “Karthik, one small point on your code review. Got a minute later?”"],
+["Use “I” statements in tough talks.","Describe your view and its impact without blaming; it keeps people open.","Manager: “I felt worried when the report arrived late because the client was waiting.”\nEmployee: “I understand. Let me explain what happened.”"],
+["Don’t hide behind email.","Complex or emotional matters need voice or face. Text hides tone.","Employee: “I’ll email my disagreement.”\nManager: “Let’s speak instead; five minutes can save five emails.”"],
+["Share bad news early.","Early warnings give everyone time to respond. Late surprises cost trust and money.","Employee: “I’m going to miss Friday’s deadline.”\nManager: “Thanks for telling me today. Let’s see what we can reduce.”"],
+["Communication is what the listener understands.","Your message succeeds only when the other person gets it. Adjust until they do.","Manager: “Let me say that differently.”\nEmployee: “Yes please, the example helps.”"],
+["Delegate with clarity: outcome, deadline, authority.","Say what “done” looks like, by when, and what decisions the person can make.","Manager: “Own the vendor onboarding, finish by the 30th, and approve up to fifty thousand rupees.”\nEmployee: “Got it.”"],
+["Ownership beats supervision.","When people feel the work is theirs, they care about quality without being watched.","Manager: “This module is yours end to end.”\nEmployee: “I’ll set my own checkpoints and update you weekly.”"],
+["Don’t take a task back at the first sign of difficulty.","Coaching through struggle builds capability; rescuing builds dependence.","Employee: “I’m stuck on the budget model.”\nManager: “What have you tried? Let’s think it through together.”"],
+["Match the task to the person’s growth.","Stretch assignments stretch people, but not past breaking point.","Manager: “I’d like you to present to the client with Anita beside you.”\nEmployee: “That’s a great chance; I’ll prepare.”"],
+["Check progress; don’t control.","Agree checkpoints in advance so follow-ups feel supportive, not suspicious.","Manager: “Shall we sync on Wednesday about the draft?”\nEmployee: “Yes, I’ll bring the first version.”"],
+["Accept different ways of doing it.","If the outcome is right, don’t insist on your method. Variety of approach improves solutions.","Manager: “I’d have done it another way, but your approach works well.”\nEmployee: “Thanks! I’ll document it for others.”"],
+["Give authority that matches the responsibility.","Responsibility without authority creates frustration.","Employee: “I’m responsible for delivery but can’t approve overtime.”\nManager: “Fair. I’ll give you approval up to ten hours a week.”"],
+["Name a single owner.","Shared responsibility often means no responsibility. Name one person.","Manager: “Who owns the client escalation?”\nEmployee: “I do, with Ravi supporting.”"],
+["Own your mistakes quickly.","Quick admission reduces damage and sets a culture of honesty.","Employee: “I sent the wrong file to the client.”\nManager: “Thanks for telling me right away. Let’s send the correction and apologise.”"],
+["Don’t hoard knowledge.","Documenting and sharing what you know protects the team when you’re away.","Manager: “Please write down the month-end steps.”\nEmployee: “Sure, I’ll create a simple guide this week.”"],
+["Trust, but agree on checkpoints.","Trust is not blind; it is clarity with room to act.","Manager: “I trust you on this. Let’s just agree to review at midweek.”\nEmployee: “That works.”"],
+["Ask “What do you need from me?”","This simple question turns supervision into support.","Manager: “What do you need from me to finish this on time?”\nEmployee: “Access to the sales data and one hour with Finance.”"],
+["Let people finish what they start.","Constantly shifting priorities cause half-done work and demotivation.","Employee: “I’ve been switched across three tasks this week.”\nManager: “Sorry. Let’s lock this one until completion.”"],
+["Pass on the credit with the task.","When you delegate, also give visibility to the person who does the work.","Manager: “Please present your analysis to the leadership team.”\nEmployee: “Thank you for the opportunity.”"],
+["Support the decisions you delegated.","If you override decisions in public, people stop deciding.","Manager: “Priya made that call, and I support it.”\nEmployee: “Thank you for backing me.”"],
+["Define “done”.","Different people imagine different finish lines. Write acceptance criteria.","Manager: “Done means tested, documented and reviewed by QA.”\nEmployee: “Clear, I’ll add that to my checklist.”"],
+["Start small when trust is new.","Give smaller tasks first; increase scope as reliability grows.","Manager: “Let’s start with this single report; then we’ll look at the dashboard.”\nEmployee: “Happy to begin there.”"],
+["Keep handovers short and structured.","A brief handover (goal, deadline, support) saves rework.","Manager: “Five minutes: goal, deadline, who to ask for help.”\nEmployee: “Perfect.”"],
+["Recognise the person who rescued the day, then fix the process.","Heroics hide process gaps; thank the person and fix the cause.","Manager: “Thank you for staying late. Let’s prevent this crunch next time.”\nEmployee: “Yes, earlier planning would help.”"],
+["Delegation is a gift of growth.","Trusting someone with real work builds confidence and loyalty.","Employee: “Thank you for trusting me with this.”\nManager: “You’ve earned it. Show me what you can do.”"],
+["Feedback is a gift when given with care.","Specific, kind and timely feedback helps people improve faster.","Manager: “Your slides were clear; the numbers on page four need a source.”\nEmployee: “Thanks, I’ll add it.”"],
+["Be specific, not general.","“Good job” or “be better” teaches nothing. Mention the observable behaviour.","Manager: “When you summarised the client’s concern, the meeting got calmer.”\nEmployee: “Good to know. I’ll do that more.”"],
+["Give feedback soon after the event.","Fresh feedback is relevant; old feedback feels like an ambush.","Manager: “Got two minutes to talk about this morning’s call?”\nEmployee: “Sure.”"],
+["Separate behaviour from identity.","Say “this report had errors”, not “you are careless”.","Manager: “The report had three errors. Let’s review the checklist.”\nEmployee: “I’ll double-check next time.”"],
+["Ask before telling.","Invite self-reflection first: “How do you think it went?”","Manager: “How did you feel the presentation went?”\nEmployee: “I rushed the last part.”"],
+["Balance praise and correction.","People need to know what to keep doing as well as what to change.","Manager: “Your customer empathy is excellent. Work on keeping calls shorter.”\nEmployee: “Fair point.”"],
+["Coach with questions.","Questions help people find their own solutions and own them.","Manager: “What options do you see?”\nEmployee: “I could automate the report or ask for extra help.”"],
+["Choose one improvement focus at a time.","Too many points overwhelm. Pick the most important change.","Manager: “This month, let’s focus on meeting deadlines.”\nEmployee: “Understood.”"],
+["Receive feedback with thanks.","When you thank people for feedback, they will keep giving it.","Employee: “You interrupt me in meetings.”\nManager: “Thank you for telling me. I’ll work on it.”"],
+["Don’t wait for the annual review.","Frequent short conversations beat one big yearly surprise.","Manager: “Let’s do a quick monthly check-in.”\nEmployee: “That would help me.”"],
+["Describe the impact, not just the act.","Showing consequences makes feedback meaningful.","Manager: “When the file was late, the client call was delayed by a day.”\nEmployee: “I see. I’ll send drafts earlier.”"],
+["Praise effort and strategy, not only talent.","It encourages learning and resilience.","Manager: “I liked how you tested three options before deciding.”\nEmployee: “Thanks, it took extra time but helped.”"],
+["Coach; don’t rescue.","Let people try; step in only when the risk is high.","Employee: “Can you fix this for me?”\nManager: “Let’s walk through it. What do you think is the first step?”"],
+["Make feedback two-way.","Ask: “How can I support you better?”","Manager: “Is there anything I can do differently to help you?”\nEmployee: “Faster approvals would help.”"],
+["Agree on next steps.","End feedback with a clear plan and a follow-up date.","Manager: “Let’s try this approach for two weeks and check in.”\nEmployee: “Agreed.”"],
+["Don’t surprise people in reviews.","Nothing in a formal review should be new to the employee.","Employee: “I didn’t know my reporting was an issue.”\nManager: “That’s on me; I should have raised it earlier.”"],
+["Notice progress, not just perfection.","Recognising improvement keeps motivation alive.","Manager: “Your reports are fifty percent faster than last quarter.”\nEmployee: “Thank you!”"],
+["Use examples from real work.","Concrete cases make learning stick.","Manager: “In the Delhi order, you called the customer proactively. That’s the style I want.”\nEmployee: “I’ll keep doing that.”"],
+["Mentor with stories of your own mistakes.","Sharing failures makes you human and lowers fear of mistakes.","Manager: “I once sent a wrong quote to a client. Here’s what I learned.”\nEmployee: “That helps; I feel better about my slip.”"],
+["Coaching is a habit, not an event.","Small consistent coaching moments change performance more than rare workshops.","Manager: “I’ll set fifteen minutes every Friday for a development talk.”\nEmployee: “That would be valuable.”"],
+["Teams win when trust is higher than ego.","Without trust, people protect themselves instead of helping each other.","Employee: “I’m not sure I can finish this alone.”\nTeammate: “Tell me what you need; I’ve got time.”"],
+["Psychological safety is productivity.","People who feel safe to speak up spot problems earlier.","Manager: “If you see a risk, say it; no one gets blamed for raising it.”\nEmployee: “Then I want to flag the supplier delay.”"],
+["Celebrate small wins.","Recognising progress builds energy for long projects.","Manager: “We closed ten tickets today! Let’s share the win.”\nTeammate: “Great job, everyone.”"],
+["Disagree openly, commit together.","Debate is healthy before a decision; unity matters after.","Manager: “I know some of you disagree, but we’ve decided. Let’s make it work.”\nEmployee: “I’ll back it and watch the risks.”"],
+["Culture is what you tolerate.","The behaviour you ignore becomes the norm. Address it kindly but quickly.","Employee: “He keeps interrupting people.”\nManager: “Thanks. I’ll speak to him and set meeting norms.”"],
+["Diverse views make better decisions.","Different backgrounds reveal blind spots and ideas.","Manager: “Let’s hear from someone in operations too.”\nEmployee: “I think the process step will fail at the warehouse.”"],
+["Help others without being asked.","Offering help builds goodwill and keeps the whole team moving.","Teammate: “You look swamped; can I take the data entry?”\nEmployee: “That would be great, thanks!”"],
+["Respect everyone’s time.","Start and end meetings on time. Be prepared. Reply promptly.","Manager: “We’ll finish by 3:30 sharp.”\nEmployee: “Thanks, I have a client call after.”"],
+["Share information freely.","Hoarding information creates power games; sharing creates alignment.","Manager: “Here’s the full client brief; please share it with the team.”\nEmployee: “Will do.”"],
+["Set team agreements.","Agree on communication hours, response times and meeting rules.","Manager: “Let’s agree on response times: urgent within an hour, others the same day.”\nEmployee: “Works for us.”"],
+["Include remote and new teammates.","Make sure nobody is left out of conversations or decisions.","Manager: “Let’s ask Sana, who’s dialling in, first.”\nEmployee: “Thanks, I wanted to add something.”"],
+["Welcome new joiners with care.","A good first week shapes loyalty and speed of learning.","Manager: “Here’s your buddy, your first-week plan and a team lunch tomorrow.”\nNew joiner: “That’s so helpful, thank you.”"],
+["Handle gossip quickly.","Redirect gossip into direct, respectful conversation.","Employee: “Did you hear about Raj?”\nTeammate: “Let’s not talk behind his back. If it’s a concern, tell him or the manager.”"],
+["Make it safe to fail small.","Experimentation needs permission to fail without punishment.","Manager: “Try the new process on one batch. If it fails, we learn.”\nEmployee: “Thanks, I’ll track the results.”"],
+["Share the workload fairly.","Unfair distribution breeds resentment. Review it regularly.","Employee: “I seem to get most of the urgent tasks.”\nManager: “Let’s review and rebalance next sprint.”"],
+["Appreciate the invisible work.","Support, coordination and quality checks often go unnoticed but keep things running.","Manager: “Thank you for keeping our records clean; it saves us hours.”\nEmployee: “That means a lot.”"],
+["Build rituals that connect.","Short regular rituals (stand-ups, retros, tea breaks) build team bonds.","Manager: “Fridays: a ten-minute wins-and-learnings session.”\nEmployee: “Great idea.”"],
+["Collaboration is a skill.","Listening, sharing credit and giving clear handoffs can be practised.","Employee: “How can we work better with the design team?”\nManager: “Let’s agree on a shared timeline and a weekly sync.”"],
+["Don’t let one star damage the team.","A brilliant but toxic person costs more than they contribute.","Manager: “Your results are strong, but how you treat colleagues must change.”\nEmployee: “I understand. I’ll improve.”"],
+["Great culture is built daily.","Small behaviours, repeated, become the culture.","Manager: “Let’s each greet, thank and help someone today.”\nEmployee: “Agreed.”"],
+["Priorities are choices, not wishes.","If everything is urgent, nothing is. Decide what to do first and what to drop.","Employee: “I have five urgent tasks.”\nManager: “Let’s rank them by customer impact and deadline.”"],
+["Protect deep-work time.","Uninterrupted blocks help complex tasks. Guard them like meetings.","Employee: “I need two hours without interruptions.”\nManager: “Take ten to twelve tomorrow; I’ll tell the team.”"],
+["Say no kindly to protect your yes.","Declining low-value requests makes room for what matters.","Teammate: “Can you also take this request?”\nEmployee: “Not this week; I’m committed to the launch. Can it wait?”"],
+["Plan the day before it starts.","Ten minutes of planning saves hours of reacting.","Manager: “What are your top three for tomorrow?”\nEmployee: “Client proposal, approvals and team sync.”"],
+["Do the important before the urgent.","Important but non-urgent tasks (planning, training) prevent future fires.","Manager: “Let’s book time for training now, not after mistakes pile up.”\nEmployee: “Agreed.”"],
+["Estimate with honesty.","Padding hides inefficiency; optimism hides risk. Estimate realistically.","Manager: “How long do you really need?”\nEmployee: “Five days, plus one for review.”"],
+["Break big tasks into small steps.","Small steps reduce overwhelm and show progress.","Employee: “This project feels huge.”\nManager: “Let’s split it into weekly milestones.”"],
+["Limit work in progress.","Too many open tasks slow everything. Finish before starting.","Manager: “A maximum of three tasks in progress per person.”\nEmployee: “That will help me focus.”"],
+["Meetings are expensive.","Multiply attendees by time; make sure the value exceeds the cost.","Manager: “Do we need all ten people for this?”\nEmployee: “Only three; I’ll share the notes.”"],
+["Buffer time is not waste.","Slack absorbs surprises. Fully packed schedules always break.","Employee: “My calendar has no gaps.”\nManager: “Add buffers; surprises will come.”"],
+["Deadlines need dates, not “soon”.","Specific dates drive action; vague words drift.","Manager: “When exactly can you share the draft?”\nEmployee: “Thursday noon.”"],
+["Track commitments visibly.","Visible boards reduce forgetfulness and misunderstandings.","Manager: “Let’s put it on the team board.”\nEmployee: “Done; owners and dates are added.”"],
+["Batch similar tasks.","Grouping emails, calls and approvals saves switching time.","Employee: “I check email every ten minutes.”\nManager: “Try three set times a day.”"],
+["Handle interruptions with a system.","Define what truly deserves interruption and what can wait.","Manager: “Only production issues should interrupt; everything else, send a message.”\nEmployee: “Clear.”"],
+["Do the hardest task when your energy is high.","Use your best hours for demanding work.","Employee: “I’m sharpest in the morning.”\nManager: “Then schedule analysis in the morning and calls in the afternoon.”"],
+["Review the week every Friday.","Reflection shows what worked, what slipped and what to fix.","Manager: “What went well this week, and what will you change?”\nEmployee: “I completed the report; I’ll plan reviews earlier.”"],
+["Don’t confuse busy with productive.","Activity isn’t achievement. Measure results.","Manager: “Which of today’s tasks moved our key goal?”\nEmployee: “The client demo prep did.”"],
+["Respect time zones and personal hours.","Burnout grows when work invades personal time.","Manager: “Please don’t reply after 8 pm unless it’s urgent.”\nEmployee: “Thank you.”"],
+["Use deadlines to focus, not to frighten.","Reasonable pressure helps; fear reduces quality.","Manager: “The deadline is Friday. Tell me early if you see a risk.”\nEmployee: “Will do.”"],
+["Time saved is only valuable if used well.","Automation should free time for higher-value work, not more busywork.","Manager: “Now that reports are automated, spend that time on customer visits.”\nEmployee: “Great.”"],
+["Define the problem before solving it.","A clear problem statement avoids wasted effort.","Manager: “What exactly is the problem?”\nEmployee: “Orders are delayed because approvals take two days.”"],
+["Use facts first, then judgement.","Data informs; experience interprets. Use both.","Manager: “Numbers show a fifteen percent drop. What does your experience say?”\nEmployee: “It’s the new pricing.”"],
+["Ask “why” five times.","Repeated why-questions uncover root causes, not symptoms.","Manager: “Why did the shipment fail?”\nEmployee: “Labelling error. The template changed, and nobody was trained on it.”"],
+["Decide with about seventy percent of the information.","Waiting for certainty is costly; move when you have enough.","Manager: “We have most of the data. Let’s decide and review in a month.”\nEmployee: “Fine; I’ll track the results.”"],
+["Make reversible decisions fast.","Small, reversible choices don’t need long debate.","Employee: “Which font for the template?”\nManager: “Pick one; we can change it later.”"],
+["Slow down for irreversible decisions.","Big, hard-to-undo choices deserve research and consultation.","Manager: “Let’s consult Legal and Finance before signing this contract.”\nEmployee: “I’ll compile the questions.”"],
+["Seek the opposite view.","Invite someone to argue against the decision to expose risks.","Manager: “Can someone play devil’s advocate?”\nEmployee: “Okay, what if vendor costs rise by twenty percent?”"],
+["Fix the process, not the person.","Most failures come from unclear processes, not bad people.","Manager: “The error recurs because the form is confusing; let’s redesign it.”\nEmployee: “Good idea.”"],
+["Prototype before perfecting.","A small test teaches more than a long plan.","Manager: “Try it with one customer first.”\nEmployee: “I’ll collect feedback.”"],
+["Write decisions down.","Recording the what and why prevents later confusion.","Manager: “I’ll record the decision and reasons in our log.”\nEmployee: “Thanks, it helps new joiners.”"],
+["Consider second-order effects.","Ask “and then what?” to see the downstream impact.","Manager: “If we cut support hours, what happens to complaints?”\nEmployee: “They’ll rise, and so will refunds.”"],
+["Involve those affected.","People support what they help create.","Manager: “Before we change shifts, let’s hear from the team.”\nEmployee: “Night staff have transport issues.”"],
+["Use checklists for repeated tasks.","Checklists reduce errors even for experts.","Manager: “Let’s create a pre-launch checklist.”\nEmployee: “I’ll draft it today.”"],
+["Beware of sunk costs.","Past spending shouldn’t trap future choices.","Employee: “We’ve spent so much on this tool.”\nManager: “True, but is it helping us now?”"],
+["Pilot before you scale.","Small experiments reduce risk.","Manager: “Run the pilot in one branch for a month.”\nEmployee: “Will share results.”"],
+["Know your decision rights.","Clarify who decides, who advises and who is informed.","Employee: “Who approves this budget?”\nManager: “I decide; Finance advises; you’re informed.”"],
+["Ask “what would change my mind?”","Defining what evidence would change a decision keeps you open.","Manager: “What would make us reconsider?”\nEmployee: “If customer complaints double.”"],
+["Beat the problem, not each other.","Frame problems as shared challenges, not blame games.","Manager: “Let’s focus on how to fix this, not who caused it.”\nEmployee: “Agreed.”"],
+["Learn from near-misses.","Almost-failures reveal weaknesses cheaply.","Manager: “We almost shipped the wrong batch. What did we learn?”\nEmployee: “Add a second check.”"],
+["Review decisions later.","Revisit major decisions to learn what worked and what didn’t.","Manager: “Three months on, was the decision right?”\nEmployee: “Mostly, but we underestimated training.”"],
+["Address issues early, kindly and directly.","Small issues grow when ignored. Early honest talk keeps relationships healthy.","Manager: “I noticed the handovers are late. Can we talk about it?”\nEmployee: “Yes, there’s a reason.”"],
+["Assume positive intent first.","Most people aren’t trying to cause harm; start with curiosity.","Manager: “I’m sure you had reasons; help me understand.”\nEmployee: “Thanks; I was waiting for approval.”"],
+["Stay on the issue, not the person.","Criticising character triggers defence; discussing facts allows solutions.","Manager: “Let’s talk about the missed deadlines, not blame.”\nEmployee: “Fine.”"],
+["Listen to both sides.","Hear each person fully before forming a view.","Manager: “Let me hear each of you separately first.”\nEmployee: “Thank you for listening.”"],
+["Find shared interests.","Behind opposing positions often lie common goals.","Manager: “You both want the client happy. How can we achieve that together?”\nEmployee: “Let’s split the tasks.”"],
+["Don’t avoid the hard conversation.","Avoidance leads to resentment and bigger blow-ups.","Employee: “I’ve been delaying telling him.”\nManager: “Let’s plan what to say and do it this week.”"],
+["Prepare, then speak.","Know your facts, purpose and desired outcome before a hard talk.","Manager: “Goal: agree how to improve quality. Facts: three errors this month.”\nEmployee: “Clear.”"],
+["Choose a private, calm setting.","Dignity and privacy help people hear difficult things.","Manager: “Can we speak in the small meeting room?”\nEmployee: “Sure.”"],
+["Use neutral language.","Words like “always” and “never” inflame; use specific incidents.","Manager: “Twice this week the report was late.”\nEmployee: “I see.”"],
+["Acknowledge emotions.","Naming feelings reduces tension: “I can see this is frustrating.”","Manager: “I can see you’re upset about the change.”\nEmployee: “Yes, I felt unheard.”"],
+["Apologise when you’re wrong.","A sincere apology repairs trust quickly.","Manager: “I was wrong to snap in the meeting. I’m sorry.”\nEmployee: “Thank you.”"],
+["Agree on a way forward.","End conflicts with clear commitments from each side.","Manager: “So you’ll share updates by ten, and you’ll confirm approvals by noon?”\nEmployee: “Yes.”"],
+["Escalate with care.","If you can’t resolve it, involve the next level respectfully and transparently.","Employee: “We couldn’t agree. Can we bring in the director?”\nManager: “Yes, let’s share the facts together.”"],
+["Pick your battles.","Not every difference needs a fight; focus on what truly matters.","Manager: “The formatting can differ; the numbers must be right.”\nEmployee: “Agreed.”"],
+["Don’t take it personally.","Feedback and conflict are about work; keep your self-worth separate.","Employee: “He criticised my plan.”\nManager: “It’s about the plan, not you; let’s improve it.”"],
+["Be firm on standards, soft on people.","You can hold the line while showing respect.","Manager: “Quality is non-negotiable, and I’ll help you get there.”\nEmployee: “Thank you.”"],
+["Manage underperformance early.","Delay hurts the person, the team and the business.","Manager: “Targets have been missed for two months. Let’s create a support plan.”\nEmployee: “I’d appreciate that.”"],
+["Give the other person a way to save face.","Respect for dignity reduces defensiveness.","Manager: “Anyone could have missed that; let’s fix it.”\nEmployee: “I’ll double-check.”"],
+["Silence can escalate conflict.","Unspoken tension spreads. Name it gently.","Manager: “I sense some tension. Shall we clear the air?”\nEmployee: “Yes, please.”"],
+["After a conflict, rebuild.","Follow up with a small positive gesture to restore trust.","Manager: “Thanks for talking it through. Coffee later?”\nEmployee: “Sure.”"],
+["People work best for purpose, not just pay.","Connecting tasks to impact gives meaning.","Manager: “Your work helps two thousand customers get faster support.”\nEmployee: “That’s motivating.”"],
+["Recognition should be specific and timely.","Say what was done, why it mattered and thank the person.","Manager: “Your late-night fix saved the client launch. Thank you.”\nEmployee: “Happy to help.”"],
+["Autonomy motivates.","Giving choice in how to work increases ownership.","Manager: “You choose how to structure the project.”\nEmployee: “I’ll start with a prototype.”"],
+["Mastery motivates.","People enjoy getting better at skills that matter.","Manager: “Which skill would you like to develop this quarter?”\nEmployee: “Data analysis.”"],
+["Show how work connects.","Knowing where their work fits helps people care.","Manager: “Your report feeds the finance forecast.”\nEmployee: “I’ll take extra care.”"],
+["Ask what motivates each person.","Different people value different rewards.","Manager: “What energises you at work?”\nEmployee: “Solving customer problems.”"],
+["Fair pay is a foundation.","Underpayment drains motivation; fairness builds trust.","Employee: “Is my pay in line with the role?”\nManager: “Let’s review market data together.”"],
+["Give challenge with support.","Stretch goals plus help build confidence.","Manager: “This target is ambitious, and I’ll support you.”\nEmployee: “Thank you.”"],
+["Celebrate effort and learning.","Not every effort wins, but learning deserves recognition.","Manager: “The pilot didn’t hit target, but we learned a lot. Thank you.”\nEmployee: “We’ll apply it next time.”"],
+["Say thank you often.","Gratitude costs nothing and lifts morale.","Manager: “Thanks for covering for Ravi.”\nEmployee: “Anytime.”"],
+["Avoid empty praise.","Insincere compliments reduce trust. Be genuine.","Manager: “Your customer notes were very thorough.”\nEmployee: “Thank you.”"],
+["Offer growth paths.","People stay where they can see a future.","Manager: “Let’s map your path to team lead.”\nEmployee: “I’d love that.”"],
+["Give feedback on strengths too.","Building on strengths accelerates growth.","Manager: “You’re great at explaining complex ideas; let’s use that.”\nEmployee: “I’d like to train new joiners.”"],
+["Treat burnout seriously.","Exhaustion reduces quality and joy. Watch workloads and offer rest.","Manager: “You’ve worked long hours; take a day off.”\nEmployee: “Thank you; I need it.”"],
+["Let people see the impact of their work.","Share customer stories and results.","Manager: “Here’s the customer’s thank-you email.”\nEmployee: “That made my day.”"],
+["Reward teamwork, not just heroes.","Recognise collaborative behaviour.","Manager: “This award goes to the whole team.”\nEmployee: “Thank you!”"],
+["Small gestures matter.","A handwritten note or a personal thank-you is remembered.","Manager: “I left a thank-you note on your desk.”\nEmployee: “That’s so kind.”"],
+["Be flexible when you can.","Trust and flexibility improve loyalty.","Employee: “Can I work from home on Fridays?”\nManager: “Let’s try it for a month and see.”"],
+["Link goals to personal aspirations.","Help people see how company goals serve their own growth.","Manager: “Leading this project will build your management skills.”\nEmployee: “That’s what I wanted.”"],
+["Motivation is sustained by respect.","Respect makes people feel valued and keeps them engaged.","Manager: “Your opinion matters here.”\nEmployee: “Thank you for saying so.”"],
+["Integrity is doing the right thing when no one is watching.","Consistent honesty builds a reputation that lasts.","Employee: “Nobody would notice the error.”\nManager: “We will, and it’s the right thing to correct it.”"],
+["Keep your promises.","Reliability builds trust faster than brilliance.","Manager: “I said I’d send the feedback by Friday, and here it is.”\nEmployee: “Thank you.”"],
+["Learn something every week.","Small habitual learning compounds over time.","Manager: “What did you learn this week?”\nEmployee: “A faster way to build reports.”"],
+["Change is easier when people help shape it.","Involve people early; they will support what they co-create.","Manager: “How should we roll out the new process?”\nEmployee: “Start with a small group.”"],
+["Ask for help early.","Asking is a strength; waiting turns small problems into crises.","Employee: “I’m stuck and need help.”\nManager: “Thanks for asking; let’s fix it.”"],
+["Don’t blame; learn.","After failures, ask what we can learn, not who is guilty.","Manager: “Let’s run a blameless review.”\nEmployee: “Good idea.”"],
+["Be honest with yourself.","Self-awareness about strengths and limits accelerates growth.","Manager: “Where do you feel least confident?”\nEmployee: “Presenting to senior leaders.”"],
+["Think long term.","Short-term shortcuts can damage long-term value.","Manager: “Skipping testing may save a day now but cost weeks later.”\nEmployee: “Right.”"],
+["Treat customers and colleagues with equal respect.","How you treat people reflects who you are.","Manager: “Our tone with vendors should be as respectful as with clients.”\nEmployee: “Agreed.”"],
+["Protect confidentiality.","Trust depends on discretion with sensitive information.","Employee: “Can I share salary details with a friend?”\nManager: “No, that’s confidential.”"],
+["Be adaptable.","Flexibility helps in uncertain times.","Manager: “Priorities have changed; let’s adjust.”\nEmployee: “Okay, I’ll replan.”"],
+["Mistakes are tuition.","Every mistake is a lesson if you reflect on it.","Manager: “What did this mistake teach us?”\nEmployee: “To verify numbers earlier.”"],
+["Give back.","Mentor others and share knowledge to strengthen the community.","Manager: “Would you mentor a new joiner?”\nEmployee: “Happy to.”"],
+["Balance ambition with humility.","Aim high while staying open to feedback.","Manager: “You’re ambitious; stay curious too.”\nEmployee: “Will do.”"],
+["Own your development.","Don’t wait to be trained; seek learning.","Employee: “I’m taking a course on analytics.”\nManager: “Great; let’s apply it to our projects.”"],
+["Welcome feedback from every direction.","Peers, juniors and customers all offer insight.","Manager: “I’d like your feedback on my communication.”\nEmployee: “I’ll share some thoughts.”"],
+["Ethics before targets.","Meeting goals by unethical means destroys long-term trust.","Employee: “We can hit the target by bending the rules.”\nManager: “We won’t. We’ll find an honest way.”"],
+["Leave things better than you found them.","Improve processes, documents and relationships as you pass through.","Manager: “Before you move teams, document your work.”\nEmployee: “Of course.”"],
+["Gratitude and humility make great colleagues.","Remember those who helped you along the way.","Employee: “Thank you for guiding me.”\nManager: “It was a pleasure.”"],
+["Management is the art of helping people do their best work.","Clarity, care, trust and growth together create results and a good workplace.","Manager: “How can I help you do your best work?”\nEmployee: “Clear priorities and honest feedback.”"]
+];
+const DATA = CATS.map((n, i) => ({ n, s: RAW.slice(i * 20, i * 20 + 20) }));
+const ALL = [];
+DATA.forEach((c, ci) => c.s.forEach(r => ALL.push({ id: ALL.length + 1, cat: ci, text: r[0], meaning: r[1], conv: r[2] })));
+if (ALL.length !== 200) console.warn("Expected 200 thoughts, found", ALL.length);
+
+const $ = id => document.getElementById(id);
+const grid = $("grid"), chipsBox = $("chips");
+let current = 0, catFilter = -1, query = "", favs = new Set();
+
+try { favs = new Set(JSON.parse(localStorage.getItem("wp200_favs") || "[]")); } catch (e) {}
+const saveFavs = () => { try { localStorage.setItem("wp200_favs", JSON.stringify([...favs])); } catch (e) {} };
+
+function toast(msg){
+  const t = $("toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 1600);
+}
+
+/* Build chat bubbles from "Speaker: “text”" lines */
+function renderConv(box, convText){
+  box.textContent = "";
+  let first = null;
+  convText.split("\n").forEach(line => {
+    const k = line.indexOf(":");
+    const who = k > -1 ? line.slice(0, k).trim() : "";
+    const said = k > -1 ? line.slice(k + 1).trim() : line.trim();
+    const base = who.replace(/\s*\(.*\)\s*$/, "");
+    if (first === null) first = base;
+    const d = document.createElement("div");
+    d.className = "msg " + (base === first ? "a" : "b");
+    const w = document.createElement("span"); w.className = "who"; w.textContent = who;
+    d.append(w, document.createTextNode(said));
+    box.appendChild(d);
+  });
+}
+
+function showHero(i, animate = true){
+  current = (i + ALL.length) % ALL.length;
+  const s = ALL[current];
+  $("meta").textContent = `Thought ${s.id} of ${ALL.length} • ${CATS[s.cat]}`;
+  const tx = $("text");
+  tx.textContent = s.text;
+  if (animate){ tx.classList.remove("swap"); void tx.offsetWidth; tx.classList.add("swap"); }
+  $("meaning").textContent = s.meaning;
+  renderConv($("conv"), s.conv);
+  $("heroFav").setAttribute("aria-pressed", favs.has(s.id));
+  document.querySelectorAll(".item").forEach(el => el.classList.toggle("active", Number(el.dataset.id) === s.id));
+}
+
+function toggleFav(id){
+  favs.has(id) ? favs.delete(id) : favs.add(id);
+  saveFavs(); renderChips(); render(); showHero(current, false);
+}
+
+function render(){
+  const q = query.trim().toLowerCase();
+  const list = ALL.filter(s =>
+    (catFilter === -1 || (catFilter === -2 ? favs.has(s.id) : s.cat === catFilter)) &&
+    (!q || (s.text + " " + s.meaning + " " + s.conv).toLowerCase().includes(q) || String(s.id) === q));
+  grid.textContent = "";
+  const frag = document.createDocumentFragment();
+  list.forEach(s => {
+    const li = document.createElement("li");
+    li.className = "item" + (s.id === ALL[current].id ? " active" : "");
+    li.dataset.id = s.id; li.tabIndex = 0;
+
+    const head = document.createElement("div"); head.className = "no";
+    const a = document.createElement("span"); a.textContent = "Thought " + s.id;
+    const b = document.createElement("span"); b.textContent = CATS[s.cat];
+    head.append(a, b);
+
+    const p = document.createElement("p"); p.textContent = s.text;
+
+    const det = document.createElement("details"); det.className = "more";
+    const sm = document.createElement("summary"); sm.textContent = "Meaning & conversation";
+    const h1 = document.createElement("h3"); h1.textContent = "Meaning";
+    const p1 = document.createElement("p"); p1.textContent = s.meaning;
+    const h2 = document.createElement("h3"); h2.textContent = "In conversation";
+    const cv = document.createElement("div"); cv.className = "conv"; renderConv(cv, s.conv);
+    det.append(sm, h1, p1, h2, cv);
+    det.addEventListener("click", e => e.stopPropagation());
+    det.addEventListener("keydown", e => e.stopPropagation());
+
+    const fav = document.createElement("button");
+    fav.className = "fav"; fav.type = "button"; fav.textContent = "♥";
+    fav.setAttribute("aria-label", "Add to favourites");
+    fav.setAttribute("aria-pressed", favs.has(s.id));
+    fav.style.alignSelf = "flex-end";
+    fav.addEventListener("click", e => { e.stopPropagation(); toggleFav(s.id); });
+
+    li.append(head, p, det, fav);
+    const open = () => { showHero(s.id - 1); window.scrollTo({ top: 0, behavior: "smooth" }); };
+    li.addEventListener("click", open);
+    li.addEventListener("keydown", e => { if (e.key === "Enter") open(); });
+    frag.appendChild(li);
+  });
+  grid.appendChild(frag);
+  $("empty").hidden = list.length > 0;
+  $("count").textContent = `${list.length} thought${list.length === 1 ? "" : "s"} shown`;
+}
+
+function renderChips(){
+  chipsBox.textContent = "";
+  const defs = [{ v: -1, t: `All (${ALL.length})` }]
+    .concat(CATS.map((c, i) => ({ v: i, t: c })))
+    .concat([{ v: -2, t: `♥ Favourites (${favs.size})` }]);
+  defs.forEach(d => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = d.t;
+    b.setAttribute("aria-pressed", catFilter === d.v);
+    b.addEventListener("click", () => { catFilter = d.v; renderChips(); render(); });
+    chipsBox.appendChild(b);
+  });
+}
+
+$("prev").onclick = () => showHero(current - 1);
+$("next").onclick = () => showHero(current + 1);
+$("rand").onclick = () => { let n; do { n = Math.floor(Math.random() * ALL.length); } while (n === current); showHero(n); };
+$("heroFav").onclick = () => toggleFav(ALL[current].id);
+$("search").addEventListener("input", e => { query = e.target.value; render(); });
+
+function shareText(){
+  const s = ALL[current];
+  return `“${s.text}”\n\nMeaning: ${s.meaning}\n\nIn conversation:\n${s.conv}\n\n— Workplace Management Thoughts (${s.id}/200)\nSundarraju Aanmiga Kattral Ulagam`;
+}
+$("copy").onclick = async () => {
+  try { await navigator.clipboard.writeText(shareText()); toast("Copied to clipboard"); }
+  catch (e) {
+    const ta = document.createElement("textarea"); ta.value = shareText();
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); toast("Copied to clipboard"); } catch (_) { toast("Could not copy"); }
+    ta.remove();
+  }
+};
+$("share").onclick = async () => {
+  if (navigator.share){ try { await navigator.share({ text: shareText() }); } catch (e) {} }
+  else $("copy").click();
+};
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "INPUT") return;
+  if (e.key === "ArrowRight") showHero(current + 1);
+  if (e.key === "ArrowLeft") showHero(current - 1);
+});
+
+const root = document.documentElement;
+try { const t = localStorage.getItem("wp200_theme"); if (t) root.dataset.theme = t; } catch (e) {}
+$("themeBtn").onclick = () => {
+  const next = root.dataset.theme === "light" ? "dark" : "light";
+  root.dataset.theme = next;
+  try { localStorage.setItem("wp200_theme", next); } catch (e) {}
+};
+
+/* Start with today's thought */
+const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 864e5);
+renderChips();
+render();
+showHero(dayOfYear % ALL.length, false);
+</script>
+</body>
+</html>
