@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>சுந்தரராஜு-அனிதா நிலங்கள் பற்றிய விவரங்கள்</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@500;700;800&family=Noto+Sans+Tamil:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#e9efe6; --surface:#fbfcf8; --ink:#13241d; --muted:#5a6b62;
+    --deep:#0f3b2e; --leaf:#2f7a55; --saffron:#d98e1f; --rule:#cbd8cd; --tint:#f0f5ee;
+    --serif:'Noto Serif Tamil',Georgia,serif; --sans:'Noto Sans Tamil',system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-print]){
+      --bg:#0d1914; --surface:#14261f; --ink:#e6f0e9; --muted:#9db3a6;
+      --deep:#7fd1a6; --leaf:#5fb88a; --saffron:#f0b44a; --rule:#27443a; --tint:#183128;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;
+    background-image:
+      linear-gradient(var(--rule) 1px,transparent 1px),
+      linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+    background-size:44px 44px;background-position:-1px -1px}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(14px,4vw,40px)}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;background:var(--deep);color:#f3f8f4;border-radius:22px;
+    padding:clamp(22px,5vw,48px);overflow:hidden;isolation:isolate}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+    background:repeating-linear-gradient(115deg,transparent 0 26px,rgba(255,255,255,.05) 26px 27px)}
+  .hero::after{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;
+    border-radius:50%;border:34px solid var(--saffron);opacity:.9;z-index:-1}
+  .hero h1{font-family:var(--serif);font-weight:800;margin:0;max-width:20ch;
+    font-size:clamp(1.55rem,5vw,2.9rem);line-height:1.35;text-wrap:balance}
+  .hero p{margin:12px 0 0;color:#c4dccf;max-width:52ch}
+  .toolbar{margin-top:22px}
+  .btn{font:inherit;font-weight:600;display:inline-flex;gap:10px;align-items:center;
+    padding:11px 20px;border:0;border-radius:999px;cursor:pointer;
+    background:var(--saffron);color:#2a1a00;box-shadow:0 6px 18px rgba(0,0,0,.25);
+    transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.3)}
+  .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .btn svg{width:18px;height:18px}
+
+  /* ---------- Summary ---------- */
+  .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:-26px 18px 0;position:relative}
+  .stat{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:14px 18px;
+    box-shadow:0 10px 24px -14px rgba(15,59,46,.45)}
+  .stat small{display:block;color:var(--muted);font-size:.82rem}
+  .stat b{font-family:var(--serif);font-size:1.7rem;color:var(--deep);line-height:1.3}
+  .stat b span{font-family:var(--sans);font-size:.85rem;font-weight:500;color:var(--muted);margin-left:4px}
+  .stat.hl{background:var(--saffron);border-color:var(--saffron)}
+  .stat.hl small,.stat.hl b,.stat.hl b span{color:#2a1a00}
+
+  /* ---------- Village ---------- */
+  .village{margin-top:34px;background:var(--surface);border:1px solid var(--rule);
+    border-radius:20px;padding:clamp(16px,3vw,28px);break-inside:avoid}
+  .v-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .badge{flex:none;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;
+    background:var(--deep);color:#fff;font-family:var(--serif);font-weight:800;font-size:1.2rem}
+  .v-head h2{font-family:var(--serif);font-weight:700;margin:0;font-size:1.35rem;line-height:1.3}
+  .v-head h2 small{display:block;font-family:var(--sans);font-weight:400;font-size:.85rem;color:var(--muted)}
+  .v-total{margin-left:auto;text-align:right;font-size:.85rem;color:var(--muted)}
+  .v-total b{display:block;font-family:var(--serif);font-size:1.3rem;color:var(--leaf)}
+
+  /* proportional parcel strip */
+  .strip{display:flex;gap:4px;height:58px;margin:20px 0 6px;border-radius:12px;overflow:hidden}
+  .seg{position:relative;display:flex;flex-direction:column;justify-content:center;padding:0 10px;
+    min-width:0;color:#fff;font-size:.78rem;line-height:1.25;cursor:default;
+    background:hsl(var(--h) 45% var(--l));transition:flex-grow .2s,filter .2s}
+  .seg:hover{filter:brightness(1.12)}
+  .seg b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .seg span{opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .strip-cap{font-size:.78rem;color:var(--muted);margin:0 0 14px}
+
+  /* table */
+  .table-scroll{overflow-x:auto;border-radius:12px;border:1px solid var(--rule)}
+  table{width:100%;border-collapse:collapse}
+  th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--rule)}
+  thead th{background:var(--tint);font-weight:600;font-size:.85rem;color:var(--muted);white-space:nowrap}
+  tbody tr:nth-child(even){background:color-mix(in srgb,var(--tint) 55%,transparent)}
+  tbody tr:hover{background:color-mix(in srgb,var(--saffron) 14%,transparent)}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  td .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;
+    background:hsl(var(--h) 45% var(--l))}
+  td.cent{font-weight:600;color:var(--leaf)}
+  tfoot td{font-weight:700;background:var(--tint);border-bottom:0}
+  tfoot td.cent{color:var(--deep)}
+
+  .note{margin:30px 4px 0;font-size:.85rem;color:var(--muted);
+    border-left:4px solid var(--saffron);padding-left:12px}
+
+  /* ---------- Mobile: rows become cards ---------- */
+  @media (max-width:640px){
+    .summary{margin:-22px 6px 0}
+    .v-total{margin-left:0;text-align:left;width:100%}
+    .strip{height:46px}.seg span{display:none}
+    .table-scroll{border:0}
+    table,tbody,tr,td,tfoot{display:block}
+    thead{display:none}
+    tbody tr{border:1px solid var(--rule);border-radius:14px;margin-bottom:10px;padding:6px 0;background:var(--surface)!important}
+    td{display:flex;justify-content:space-between;gap:12px;border:0;padding:5px 14px;text-align:right}
+    td::before{content:attr(data-l);color:var(--muted);font-size:.82rem;text-align:left}
+    tfoot tr{display:flex;justify-content:space-between;border-radius:14px;padding:10px 14px;background:var(--tint)}
+    tfoot td{display:block;padding:0;background:none}
+    tfoot td::before{content:none}
+    tfoot td.pad{display:none}
+  }
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+
+  /* ---------- Print / Save as PDF ---------- */
+  @media print{
+    @page{size:A4 portrait;margin:12mm}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    :root{--bg:#fff;--surface:#fff}
+    body{background:#fff;font-size:11pt}
+    .toolbar{display:none}
+    .hero{border-radius:12px;padding:20px}
+    .hero::after{width:150px;height:150px;border-width:22px}
+    .summary{margin-top:-18px}
+    .village{break-inside:avoid;margin-top:22px;box-shadow:none}
+    .table-scroll{overflow:visible}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <h2>சுந்தரராஜு-அனிதா நிலங்கள் பற்றிய விவரங்கள்</h2>
+    <p>பட்டா, புல எண் மற்றும் உட்பிரிவு வாரியான நில விவரம் — ஹெக்டேர்-ஏர் மற்றும் சென்ட் அளவுகளுடன்.</p>
+    <div class="toolbar">
+      <button class="btn" id="pdfBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 20h16"/></svg>
+        PDF ஆக பதிவிறக்கு
+      </button>
+    </div>
+  </header>
+
+  <section class="summary" id="summary" aria-label="மொத்த விவரம்"></section>
+  <main id="villages"></main>
+
+  <p class="note">குறிப்பு: 1 ஏர் = 100 ச.மீ = 2.47105 சென்ட்; 1 ஹெக்டேர் = 100 ஏர்.
+  சென்ட் மதிப்புகள் இரண்டு தசம இடங்களுக்கு முழுமையாக்கப்பட்டுள்ளன.</p>
+</div>
+
+<script>
+  // Area is written as hectare-are, e.g. "0-20.00"
+  const OWNER = "ராமசாமி மகன் சுந்தரராஜு";
+  const data = [
+    { village: "சரடமங்கலம்", no: 1, rows: [
+      { patta: 1705, owner: OWNER, pula: 9,   sub: "6",   area: "0-20.00" },
+      { patta: 1779, owner: OWNER, pula: 59,  sub: "10B", area: "0-25.68" }
+    ]},
+    { village: "அயினாபுரம்", no: 2, rows: [
+      { patta: 1932, owner: OWNER, pula: 175, sub: "2B", area: "0-12.00" },
+      { patta: 1932, owner: OWNER, pula: 175, sub: "4A", area: "0-8.00"  },
+      { patta: 1932, owner: OWNER, pula: 326, sub: "4A", area: "0-4.50"  },
+      { patta: 1801, owner: OWNER, pula: 174, sub: "1B", area: "0-5.67"  }
+    ]}
+  ];
+
+  const CENT_PER_ARE = 2.47105;
+  const fmt = n => n.toFixed(2);
+  const ares = s => { const [h,a] = s.split("-"); return parseFloat(h)*100 + parseFloat(a); };
+  const cents = s => ares(s) * CENT_PER_ARE;
+
+  const root = document.getElementById("villages");
+  let gAre = 0, gCent = 0, gParcels = 0, pattas = new Set();
+
+  data.forEach((v, vi) => {
+    let tAre = 0, tCent = 0;
+    const baseHue = vi === 0 ? 150 : 175;       // green family, slightly different per village
+    v.rows.forEach(r => { tAre += ares(r.area); tCent += cents(r.area); pattas.add(r.patta); });
+    gAre += tAre; gCent += tCent; gParcels += v.rows.length;
+
+    const style = i => `--h:${baseHue + i*6};--l:${26 + (i*7)%22}%`;
+
+    const segs = v.rows.map((r,i) => `
+      <div class="seg" style="flex:${ares(r.area)} 1 0;${style(i)}" title="புல எண் ${r.pula} / ${r.sub} — ${fmt(cents(r.area))} சென்ட்">
+        <b>${r.pula}/${r.sub}</b><span>${fmt(cents(r.area))} சென்ட்</span>
+      </div>`).join("");
+
+    const rows = v.rows.map((r,i) => `
+      <tr>
+        <td data-l="வ.எண்">${i+1}</td>
+        <td data-l="பட்டா எண்">${r.patta}</td>
+        <td data-l="உரிமையாளர்">${r.owner}</td>
+        <td class="num" data-l="புல எண்"><span class="dot" style="${style(i)}"></span>${r.pula}</td>
+        <td data-l="உட்பிரிவு">${r.sub}</td>
+        <td class="num" data-l="ஹெக்-ஏர்">${r.area}</td>
+        <td class="num cent" data-l="சென்ட்">${fmt(cents(r.area))}</td>
+      </tr>`).join("");
+
+    root.insertAdjacentHTML("beforeend", `
+      <section class="village">
+        <div class="v-head">
+          <div class="badge">${v.no}</div>
+          <h2>${v.village}<small>வருவாய் கிராமம் - ${v.no}</small></h2>
+          <div class="v-total"><b>${fmt(tCent)} சென்ட்</b>0-${fmt(tAre)} ஹெக்-ஏர்</div>
+        </div>
+        <div class="strip" role="img" aria-label="புல வாரியான பரப்பளவு விகிதம்">${segs}</div>
+        <p class="strip-cap">பட்டைகளின் அகலம் ஒவ்வொரு உட்பிரிவின் பரப்பளவுக்கு விகிதாசாரமானது.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr>
+              <th>வ.எண்</th><th>பட்டா எண்</th><th>உரிமையாளர் பெயர்</th>
+              <th class="num">புல எண்</th><th>உட்பிரிவு</th>
+              <th class="num">ஹெக்-ஏர்</th><th class="num">சென்ட்</th>
+            </tr></thead>
+            <tbody>${rows}</tbody>
+            <tfoot><tr>
+              <td colspan="5">மொத்தம்</td>
+              <td class="num">0-${fmt(tAre)}</td>
+              <td class="num cent">${fmt(tCent)}</td>
+            </tr></tfoot>
+          </table>
+        </div>
+      </section>`);
+  });
+
+  document.getElementById("summary").innerHTML = `
+    <div class="stat hl"><small>மொத்த பரப்பளவு</small><b>${fmt(gCent)}<span>சென்ட்</span></b></div>
+    <div class="stat"><small>ஹெக்டேர்-ஏர்</small><b>0-${fmt(gAre)}</b></div>
+    <div class="stat"><small>கிராமங்கள்</small><b>${data.length}</b></div>
+    <div class="stat"><small>பட்டா / உட்பிரிவுகள்</small><b>${pattas.size}<span>/ ${gParcels}</span></b></div>`;
+
+  // Opens the print dialog; choose "Save as PDF" (keeps Tamil text perfectly rendered).
+  document.getElementById("pdfBtn").addEventListener("click", () => {
+    document.documentElement.setAttribute("data-print", "1");   // force light colors for the PDF
+    window.print();
+  });
+  window.addEventListener("afterprint", () => document.documentElement.removeAttribute("data-print"));
+</script>
+</body>
+</html>
