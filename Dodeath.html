@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sundarraju Learning World</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#171a33;--bg2:#20244a;--ink:#ece6d8;--mute:#a9a8bd;--line:rgba(236,230,216,.16);
+  --ember:#e8a24f;--sage:#8fc2a8;--card:rgba(255,255,255,.05);
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;--sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --bg:#f1ede3;--bg2:#e3ddcc;--ink:#1d2040;--mute:#5d5f7a;--line:rgba(29,32,64,.2);--ember:#a85d0c;--sage:#2f7058;--card:rgba(29,32,64,.05);color-scheme:light}}
+:root[data-theme="light"]{--bg:#f1ede3;--bg2:#e3ddcc;--ink:#1d2040;--mute:#5d5f7a;--line:rgba(29,32,64,.2);--ember:#a85d0c;--sage:#2f7058;--card:rgba(29,32,64,.05);color-scheme:light}
+:root[data-theme="dark"]{--bg:#171a33;--bg2:#20244a;--ink:#ece6d8;--mute:#a9a8bd;--line:rgba(236,230,216,.16);--ember:#e8a24f;--sage:#8fc2a8;--card:rgba(255,255,255,.05);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.02rem/1.6 var(--sans);min-height:100vh}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px 60px}
+
+/* hero: the eclipse */
+.hero{position:relative;padding:56px 0 34px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.hero h1{font:800 clamp(2.3rem,7vw,4.4rem)/1 var(--serif);letter-spacing:-.02em;margin:0 0 14px;font-variation-settings:"opsz" 144}
+.hero p{margin:0;color:var(--mute);max-width:46ch;font-size:1.05rem}
+.hero p b{color:var(--ink);font-weight:600}
+.eclipse{width:clamp(110px,22vw,190px);aspect-ratio:1;border-radius:50%;position:relative;
+  background:radial-gradient(circle at 50% 50%,var(--ember) 0 46%,transparent 47%);
+  box-shadow:0 0 70px 10px color-mix(in srgb,var(--ember) 45%,transparent);animation:breathe 7s ease-in-out infinite}
+.eclipse::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--bg);transform:translateX(0);animation:cover 14s ease-in-out infinite alternate;
+  clip-path:circle(46% at 50% 50%)}
+@keyframes cover{from{transform:translateX(-62%)}to{transform:translateX(6%)}}
+@keyframes breathe{50%{box-shadow:0 0 110px 22px color-mix(in srgb,var(--ember) 35%,transparent)}}
+.toolbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:12px 0;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.tab{background:none;border:1px solid transparent;border-radius:999px;padding:8px 18px;color:var(--mute);transition:.2s}
+.tab[aria-selected=true]{background:var(--ink);color:var(--bg);font-weight:600}
+.tab:hover:not([aria-selected=true]){border-color:var(--line);color:var(--ink)}
+.spacer{flex:1}
+.icon{border:1px solid var(--line);border-radius:50%;width:38px;height:38px;background:none}
+section{display:none;padding-top:26px}
+section.on{display:block}
+
+/* ideas */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.search{flex:1 1 220px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;color:var(--ink);font:inherit}
+.chip{border:1px solid var(--line);background:none;border-radius:10px;padding:8px 14px;color:var(--mute)}
+.chip[aria-pressed=true]{border-color:var(--sage);color:var(--sage)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.idea{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--ember);border-radius:4px 16px 16px 4px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.idea[data-t=life]{border-left-color:var(--sage)}
+.idea[data-t=world]{border-left-color:#9aa4ff}
+.idea h3{font:600 1.25rem/1.2 var(--serif);margin:0}
+.idea p{margin:0;color:var(--mute)}
+.idea details{margin-top:auto}
+.idea summary{cursor:pointer;color:var(--ember);font-weight:500;padding-top:6px;list-style:none}
+.idea summary::-webkit-details-marker{display:none}
+.idea summary::before{content:"+ ";display:inline-block;transition:transform .25s}
+.idea details[open] summary::before{content:"− "}
+.idea details div{padding-top:8px;border-top:1px dashed var(--line);margin-top:8px;animation:open .3s ease}
+@keyframes open{from{opacity:0;transform:translateY(-4px)}}
+.idea .more{margin:8px 0 0;color:var(--ink)}.idea .ex{margin:10px 0 0;padding:8px 12px;border-left:2px solid var(--sage);background:var(--card);border-radius:0 8px 8px 0;color:var(--ink);font-size:.95rem}.idea .ex b{color:var(--sage)}
+.tag{font-size:.8rem;color:var(--mute)}
+.empty{color:var(--mute);padding:30px 0}
+
+/* flashcards */
+.deck{max-width:560px;margin:0 auto;text-align:center}
+.card{perspective:1200px;height:280px;width:100%;background:none;border:0;padding:0}
+.card .in{position:relative;width:100%;height:100%;transition:transform .7s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.card.flip .in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:22px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:28px;font:600 1.35rem/1.35 var(--serif)}
+.front{background:linear-gradient(160deg,var(--bg2),var(--bg))}
+.back{background:var(--ember);color:#171a33;transform:rotateY(180deg);font:500 1.08rem/1.5 var(--sans)}
+.nav{display:flex;justify-content:center;gap:12px;align-items:center;margin-top:18px;color:var(--mute)}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:9px 18px}
+.btn.pri{background:var(--ember);color:#171a33;border-color:var(--ember);font-weight:600}
+.score{margin-top:12px;color:var(--sage)}
+
+/* notes */
+.noteform{display:grid;gap:10px;max-width:680px}
+.noteform textarea,.noteform input{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--ink);font:inherit;width:100%}
+.noteform textarea{min-height:120px;resize:vertical}
+.notes{display:grid;gap:12px;margin-top:24px;max-width:680px}
+.note{border-left:3px solid var(--sage);background:var(--card);padding:12px 16px;border-radius:4px 12px 12px 4px}
+.note h4{margin:0 0 4px;font:600 1.05rem var(--serif)}
+.note p{margin:0 0 8px;white-space:pre-wrap}
+.note button{background:none;border:0;color:var(--mute);padding:0;text-decoration:underline}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);color:var(--mute);font-size:.88rem;max-width:70ch}
+@media (max-width:620px){.hero{grid-template-columns:1fr}.eclipse{order:-1;width:100px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <h1>Sundarraju Learning World</h1>
+      <p>A study companion for <b>The Denial of Death</b> by Ernest Becker. Key ideas in plain words, flashcards to test yourself, and a notebook for your own reflections.</p>
+    </div>
+    <div class="eclipse" aria-hidden="true"></div>
+  </header>
+
+  <nav class="toolbar" role="tablist" aria-label="Sections">
+    <button class="tab" role="tab" aria-selected="true" data-tab="ideas">Key ideas</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="cards">Flashcards</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="notes">My notes</button>
+    <span class="spacer"></span>
+    <button class="icon" id="theme" aria-label="Switch light or dark theme">◐</button>
+  </nav>
+
+  <section id="ideas" class="on">
+    <div class="filters">
+      <input class="search" id="q" type="search" placeholder="Search ideas, e.g. heroism, love, repression" aria-label="Search ideas">
+      <button class="chip" data-f="self" aria-pressed="false">The self</button>
+      <button class="chip" data-f="life" aria-pressed="false">Love &amp; life</button>
+      <button class="chip" data-f="world" aria-pressed="false">Society &amp; faith</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="cards">
+    <div class="deck">
+      <button class="card" id="card" aria-label="Flip flashcard"><div class="in"><div class="face front" id="fq"></div><div class="face back" id="fa"></div></div></button>
+      <div class="nav">
+        <button class="btn" id="prev">Previous</button>
+        <span id="pos"></span>
+        <button class="btn" id="next">Next</button>
+      </div>
+      <div class="nav">
+        <button class="btn pri" id="know">I knew it</button>
+        <button class="btn" id="again">Review again</button>
+        <button class="btn" id="shuf">Shuffle</button>
+      </div>
+      <div class="score" id="score"></div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <form class="noteform" id="nf" onsubmit="return false">
+      <input id="nt" placeholder="Title, e.g. Where I see a hero project in my own life" maxlength="120" aria-label="Note title">
+      <textarea id="nb" placeholder="Write your reflection or your own favourite lines from the book…" aria-label="Note text"></textarea>
+      <div><button class="btn pri" id="save" type="button">Save note</button></div>
+    </form>
+    <div class="notes" id="nl"></div>
+  </section>
+
+  <footer>The summaries here are written in my own words as study aids, not extracts of the book’s text. For Becker’s exact wording, read the original (Free Press, 1973; Pulitzer Prize for General Nonfiction, 1974) and add your favourite passages in My notes.</footer>
+</div>
+
+<script>
+const IDEAS=[
+ {t:'self',h:'Two natures in one being',s:'We are symbolic minds trapped in mortal animal bodies.',d:'Becker’s starting point: humans can imagine the future, name themselves and dream of infinity, yet they decay and die like any creature. Living with that gap is the root tension of human life.',m:'This is why a sunset can move us to tears while a cold or a birthday reminds us that time is running out. Becker says we cannot simply pick one side: we are always both.',e:'You plan a ten-year career path (the symbolic mind), then wake with back pain that quietly says your body has its own schedule (the animal).'},
+ {t:'self',h:'Death anxiety drives behaviour',s:'Much ordinary striving is a buffer against awareness of mortality.',d:'Becker argues that fear of death is a main engine of action, mostly out of sight. We rarely feel it directly because we build routines, goals and identities that keep it away from consciousness.',m:'The anxiety is seldom felt as fear of dying. It shows up as the urge to be productive, admired, safe or busy, so we mistake it for ordinary ambition.',e:'Someone works late every night to get promoted, and feels uneasy and restless during a free weekend with nothing to achieve.'},
+ {t:'self',h:'Repression as a way to function',s:'Not facing death constantly is what lets us get on with the day.',d:'Denial is not just a weakness. Selective blindness allows people to work, love and plan. The cost appears when the denial becomes rigid and shrinks a person’s life.',m:'Becker does not say we should stare at death all day. Some denial is healthy; the trouble is when it hardens into avoiding anything that reminds us of limits.',e:'A surgeon needs to forget death while operating, but a person who refuses to write a will or see a doctor is using the same tool in a harmful way.'},
+ {t:'self',h:'Character as a defence',s:'Personality is partly a shield built in childhood.',d:'Drawing on Freud and Rank, Becker treats character as a structure of habits that protects the child from feeling helpless. A "vital lie" about our own safety and importance keeps it standing.',m:'Early habits such as pleasing others, being tough or staying in control worked as protection when we were small. Later they become our personality, and changing them feels dangerous.',e:'A child who was praised only for top marks grows into an adult who cannot rest, because being less than excellent feels like losing safety.'},
+ {t:'world',h:'Heroism and immortality projects',s:'We seek to matter beyond death through work, status, family and cause.',d:'People want to feel like a significant contributor to something that outlasts them. Culture supplies the scripts for this, so everyday ambitions double as symbolic ways to live on.',m:'The project may be literal (a family name, a book, a company) or symbolic (belonging to a faith, party or tradition). Each says: I was here and it counted.',e:'A teacher who dreams that former students will remember her, or a founder who wants his company to keep his name after he is gone.'},
+ {t:'world',h:'Culture as a hero system',s:'Societies give their members a shared story of what makes a life worthy.',d:'Each culture defines how to be a good, valuable person. Following the script brings self-esteem, which acts as protection from anxiety.',m:'The rules differ, but the function is the same: show people how to be a worthy member. Meeting the standard gives self-esteem, which works like emotional armour.',e:'In one community a hero is the earner who supports many relatives; in another, the monk who renounces possessions. Both feel they are living well.'},
+ {t:'world',h:'Why clashes of belief turn violent',s:'Another group’s worldview threatens the certainty of mine.',d:'If my hero system is how I cope with mortality, a rival system raises doubt. Becker links this to scapegoating and conflict, where people try to prove that their own story is the true one.',m:'Becker suggests that tolerating a different worldview means admitting mine might not be the only truth. That is unsettling, so some people attack it instead.',e:'Fans, nations or political camps who treat disagreement as an insult to who they are, not just a difference of opinion.'},
+ {t:'life',h:'Transference and the search for a saviour',s:'We hand our need for protection to leaders, parents, partners.',d:'Building on Freud and Kierkegaard, Becker says people attach their longing for a source of power to figures around them. This can give strength, or lead to dependence and worship of the wrong people.',m:'We look for someone strong enough to take away our fear. The danger is giving that person our own judgement and courage.',e:'Followers who obey a charismatic leader without question, or a person who stays in a harmful relationship because the partner feels like their protector.'},
+ {t:'life',h:'Romantic love as a substitute for God',s:'We ask a partner to supply meaning that once came from religion.',d:'When the sacred recedes, a lover is expected to redeem the self. No person can carry that weight, which explains disappointment and resentment in relationships.',m:'The beloved is asked to be everything: lover, healer, meaning. When the partner shows ordinary flaws, the person feels betrayed, though the demand was impossible.',e:'Early in a relationship someone says, you complete me; years later they complain that the partner no longer makes them feel special or whole.'},
+ {t:'life',h:'Creatureliness and shame of the body',s:'The body reminds us that we are not purely spiritual beings.',d:'Becker explores how bodily functions and sexuality unsettle our symbolic self-image. Cultural rules around the body are one way to manage that discomfort.',m:'Our bodies tie us to nature and decay, so rules about cleanliness, modesty and taboo help us feel more than animals. Becker sees this as part of the denial of death.',e:'Feeling embarrassed by sweat, illness or ageing, and the huge industry that promises to hide them.'},
+ {t:'life',h:'Fear of life and fear of death',s:'Rank’s insight: some people refuse life itself to avoid risk and separation.',d:'A person can shrink back from experience to stay safe, living half-fully. Others overidentify with the group and lose individuality. Healthy living needs courage to stand out and to accept limits.',m:'Rank pictured two poles: clinging to the group and losing yourself, or breaking away and feeling alone and exposed. A good life is a balance, not an escape from either fear.',e:'Someone stays in a safe job they dislike because change is scary (fear of life), while another rebels in every setting just to feel separate.'},
+ {t:'self',h:'Neurosis as a narrowing',s:'Kierkegaard’s view: too small a world can be a way of hiding.',d:'Becker reads many psychological troubles as the cost of shrinking life to a manageable size. Anxiety then is the price of staying open to possibility.',m:'The smaller the world, the less anxiety, but also the less living. Becker sees treating illness partly as helping people widen that world again.',e:'A person with panic attacks who stops using lifts, trains and crowds, so their life slowly shrinks to a few safe places.'},
+ {t:'world',h:'Faith and the leap',s:'Meaning may rest on trust in something larger, not on proof.',d:'Becker’s late chapters turn toward Kierkegaard and religious experience. Accepting that we are small and dependent can be a base for courage, without pretending to full control.',m:'For Becker, courage may come from trusting that our lives fit into a bigger meaning, even though we cannot prove it. The point is humility, not certainty.',e:'A person who loses a loved one and carries on because their faith, or a sense of belonging to something larger, makes the loss bearable.'},
+ {t:'life',h:'What therapy can and cannot do',s:'It cannot erase the human condition, but can help us face it.',d:'Becker is sceptical that any therapy removes mortality anxiety. Its realistic aim is to help someone live with less self-deception and invest in work that feels worthwhile.',m:'Therapy can loosen the grip of old defences and the vital lie. It cannot give immortality, so Becker values honesty and meaningful work over cures.',e:'After therapy, someone no longer needs to be admired by everyone, and chooses a modest job in which they feel useful.'}
+];
+const CARDS=[
+ ['What are the "two natures" Becker describes?','A symbolic, self-aware mind and a mortal animal body, and the tension between them.'],
+ ['What is an immortality (hero) project?','Any pursuit by which a person tries to feel significant beyond death: work, family, status, cause.'],
+ ['Why is repression useful?','It lets us function daily without being overwhelmed by awareness of mortality.'],
+ ['What is the "vital lie"?','The comforting illusion of safety and importance that supports a person’s character.'],
+ ['How does Becker explain conflict between groups?','Different worldviews threaten each side’s sense of meaning, so people defend their hero system, sometimes violently.'],
+ ['Why does romantic love disappoint, in Becker’s view?','We expect a partner to give the redemption once sought from God, which no person can supply.'],
+ ['What is transference here?','Directing the need for a protective power onto parents, leaders or lovers.'],
+ ['What did Rank say about fear of life?','Some people avoid living fully to avoid risk, separation and eventual loss.'],
+ ['What is the realistic aim of therapy for Becker?','Less self-deception and the ability to live meaningfully, not a cure for mortality.'],
+ ['Who is Becker most indebted to?','Freud, Otto Rank and Kierkegaard.']
+];
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+let filt=null;
+function esc(x){return x.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function renderIdeas(){
+  const q=$('#q').value.trim().toLowerCase();
+  const list=IDEAS.filter(i=>(!filt||i.t===filt)&&(!q||(i.h+i.s+i.d+(i.m||'')+(i.e||'')).toLowerCase().includes(q)));
+  const lab={self:'The self',life:'Love & life',world:'Society & faith'};
+  $('#grid').innerHTML=list.length?list.map(i=>`<article class="idea" data-t="${i.t}"><span class="tag">${lab[i.t]}</span><h3>${i.h}</h3><p>${i.s}</p><details><summary>Read more</summary><div>${i.d}<p class="more">${i.m||''}</p><p class="ex"><b>Example:</b> ${i.e||''}</p></div></details></article>`).join(''):'<p class="empty">No ideas match. Try a shorter word or clear the filter.</p>';
+}
+$('#q').oninput=renderIdeas;
+$$('.chip').forEach(c=>c.onclick=()=>{const on=c.getAttribute('aria-pressed')==='true';$$('.chip').forEach(x=>x.setAttribute('aria-pressed','false'));c.setAttribute('aria-pressed',String(!on));filt=on?null:c.dataset.f;renderIdeas()});
+$$('.tab').forEach(t=>t.onclick=()=>{$$('.tab').forEach(x=>x.setAttribute('aria-selected',String(x===t)));$$('section').forEach(s=>s.classList.toggle('on',s.id===t.dataset.tab))});
+$('#theme').onclick=()=>{const r=document.documentElement;const dark=(r.dataset.theme||(matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'))==='dark';r.dataset.theme=dark?'light':'dark'};
+
+// flashcards
+let deck=CARDS.map((c,i)=>i),pos=0,known=new Set();
+function showCard(){const c=CARDS[deck[pos]];$('#card').classList.remove('flip');$('#fq').textContent=c[0];$('#fa').textContent=c[1];$('#pos').textContent=(pos+1)+' of '+deck.length;$('#score').textContent=known.size?`You knew ${known.size} of ${CARDS.length}`:'Tap the card to see the answer'}
+$('#card').onclick=()=>$('#card').classList.toggle('flip');
+$('#next').onclick=()=>{pos=(pos+1)%deck.length;showCard()};
+$('#prev').onclick=()=>{pos=(pos-1+deck.length)%deck.length;showCard()};
+$('#know').onclick=()=>{known.add(deck[pos]);$('#next').click()};
+$('#again').onclick=()=>{known.delete(deck[pos]);$('#next').click()};
+$('#shuf').onclick=()=>{deck.sort(()=>Math.random()-.5);pos=0;showCard()};
+
+// notes
+let notes=[];
+try{notes=JSON.parse(localStorage.getItem('slw-notes')||'[]')}catch(e){notes=[]}
+function persist(){try{localStorage.setItem('slw-notes',JSON.stringify(notes))}catch(e){}}
+function renderNotes(){$('#nl').innerHTML=notes.length?notes.map((n,i)=>`<div class="note"><h4>${esc(n.t||'Untitled')}</h4><p>${esc(n.b)}</p><button data-i="${i}">Delete</button></div>`).join(''):'<p class="empty">No notes yet. Write what a chapter made you think about.</p>';
+  $$('.note button').forEach(b=>b.onclick=()=>{notes.splice(+b.dataset.i,1);persist();renderNotes()})}
+$('#save').onclick=()=>{const b=$('#nb').value.trim();if(!b){$('#nb').focus();return}notes.unshift({t:$('#nt').value.trim(),b});$('#nt').value='';$('#nb').value='';persist();renderNotes()};
+renderIdeas();showCard();renderNotes();
+</script>
+</body>
+</html>
