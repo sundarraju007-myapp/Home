@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>சுந்தர்ராஜு கற்றல் உலகம்</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Noto Sans Tamil","Latha",Arial,sans-serif; background:#f0fff4; color:#263238; line-height:1.8; }
+header { background:linear-gradient(120deg,#087f5b,#38b000); color:#fff; text-align:center; padding:30px 15px; }
+header h1 { font-size:30px; }
+nav { background:#064e3b; text-align:center; padding:14px; position:sticky; top:0; z-index:10; }
+nav a { color:#fff; text-decoration:none; margin:10px; }
+.hero { text-align:center; padding:40px 15px; background:#d8f3dc; }
+.container { max-width:1100px; margin:auto; padding:30px 15px; }
+.section-title { text-align:center; color:#087f5b; margin-bottom:25px; font-size:26px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+.card,.info { background:#fff; border-radius:15px; padding:20px; box-shadow:0 3px 12px #0001; }
+.card { text-align:center; }
+.emoji { font-size:45px; }
+.card h3,.info h3,.box h3 { color:#087f5b; margin:8px; }
+.search-box { display:block; width:100%; max-width:500px; margin:0 auto 25px; padding:13px; border:2px solid #38b000; border-radius:25px; font-size:16px; }
+.table-wrap { overflow-x:auto; background:#fff; padding:12px; border-radius:15px; box-shadow:0 3px 12px #0001; }
+table { width:100%; border-collapse:collapse; min-width:650px; }
+th,td { border:1px solid #cde5d4; padding:12px; text-align:center; vertical-align:middle; }
+th { background:#087f5b; color:#fff; }
+tr:nth-child(even) { background:#f0fff4; }
+td.pv { font-weight:bold; color:#064e3b; text-align:left; }
+td.day { font-weight:bold; background:#d8f3dc !important; }
+.tl td:nth-child(4) { text-align:left; }
+.note { background:#fff8e1; border-left:4px solid #f4b400; padding:10px 15px; border-radius:8px; margin:12px 0; }
+.progress { background:#e0e0e0; height:13px; border-radius:20px; overflow:hidden; margin:7px 0 15px; }
+.progress span { display:block; height:100%; background:linear-gradient(90deg,#087f5b,#38b000); }
+.box { background:#fff; border-radius:15px; padding:12px 20px; margin-bottom:15px; box-shadow:0 3px 12px #0001; }
+.li { padding-left:20px; position:relative; }
+.li::before { content:""; position:absolute; left:3px; top:13px; width:8px; height:8px; border-radius:50%; background:#38b000; }
+.chip { display:inline-block; background:#d8f3dc; color:#064e3b; border-radius:16px; padding:4px 14px; margin:4px; }
+.cb { display:inline-block; width:16px; height:16px; border:2px solid #087f5b; border-radius:4px; }
+button { background:#087f5b; color:#fff; padding:12px 25px; border:none; border-radius:25px; cursor:pointer; font-size:16px; font-family:inherit; }
+button.ghost { padding:5px 16px; font-size:14px; }
+.toolbar { text-align:center; padding:15px; background:#fff; }
+.qa { margin:12px 0; } .ans { color:#087f5b; font-weight:bold; }
+.three { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+footer { background:#064e3b; color:#fff; text-align:center; padding:25px; margin-top:30px; }
+@media(max-width:600px) { header h1 { font-size:23px; } nav a { display:inline-block; font-size:13px; margin:5px; } }
+
+/* ---------- Print / Save as PDF ---------- */
+@page { size:A4; margin:12mm; }
+@media print {
+  body { background:#fff; font-size:12px; line-height:1.6; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  nav,.toolbar,.search-box,button { display:none !important; }
+  .container { padding:10px 0; }
+  .section-title { font-size:19px; }
+  .card,.info,.box,.table-wrap { box-shadow:none; border:1px solid #cde5d4; }
+  .card,.box,tr,.qa { break-inside:avoid; }
+  .section-title { break-after:avoid; }
+  .table-wrap { overflow:visible; }
+  table { min-width:0; }
+  th,td { padding:6px 8px; }
+  .emoji { font-size:28px; }
+  .ans[hidden] { display:block !important; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🌿 சுந்தர்ராஜு கற்றல் உலகம் 🌿</h1>
+<p>ஆரோக்கியமான வாழ்க்கைக்கு ஊட்டச்சத்து கல்வி</p>
+<p>குழந்தைகளின் ஊட்டச்சத்து, வளர்ச்சி மற்றும் நல்ல பழக்கங்கள்</p>
+</header>
+
+<nav>
+<a href="#home">முகப்பு</a><a href="#proverbs">பழமொழிகள்</a><a href="#food">உணவுகள்</a><a href="#nutrition">ஊட்டச்சத்து %</a>
+<a href="#children">குழந்தைகள்</a><a href="#growth">வளர்ச்சி</a><a href="#timetable">வார அட்டவணை</a><a href="#habits">நல்ல பழக்கங்கள்</a><a href="#quiz">வினாடி வினா</a>
+</nav>
+
+<div class="toolbar"><button onclick="downloadPDF()">📄 PDF ஆகப் பதிவிறக்கு</button>
+<p style="font-size:13px;color:#555">திறக்கும் அச்சு சாளரத்தில் “Save as PDF” (PDF ஆகச் சேமி) என்பதைத் தேர்ந்தெடுக்கவும்.</p></div>
+
+<section class="hero" id="home">
+<h2>உணவே மருந்து! ஆரோக்கியமே செல்வம்!</h2>
+<p>சத்தான உணவுகளை சரியான நேரத்தில் உண்போம். தினமும் மூன்று உணவு அமர்வுகள் மூலம் ஆரோக்கியமான வாழ்க்கையை உருவாக்குவோம்.</p>
+</section>
+
+<div class="container" id="proverbs">
+<h2 class="section-title">📜 பழமொழிகளும் அவற்றின் பொருளும்</h2>
+<div class="table-wrap"><table><thead><tr><th>பழமொழி / குறள்</th><th>பொருள், கற்றுக்கொள்ளும் பாடம்</th></tr></thead><tbody><tr><td class='pv'>உணவே மருந்து, மருந்தே உணவு</td><td>சத்தான உணவை உண்டால் உடல் நலமாக இருக்கும்; சரியான உணவே பாதி மருந்து.</td></tr><tr><td class='pv'>நோயற்ற வாழ்வே குறைவற்ற செல்வம்</td><td>உடல்நலமே மிகப்பெரிய செல்வம். அதைக் காக்க நல்ல உணவு அவசியம்.</td></tr><tr><td class='pv'>நொறுங்கத் தின்றால் நூறு வயது</td><td>உணவை நன்கு மென்று, மெதுவாக உண்ண வேண்டும்; அவசரமாக விழுங்கக் கூடாது.</td></tr><tr><td class='pv'>அளவுக்கு மிஞ்சினால் அமிர்தமும் நஞ்சு</td><td>நல்ல உணவாக இருந்தாலும் அளவோடு உண்ண வேண்டும்.</td></tr><tr><td class='pv'>பசித்துப் புசி</td><td>உண்மையாகப் பசி எடுத்தபின் உண்ணுங்கள்; நேரம் தவறிய நொறுக்குத்தீனியைத் தவிர்க்கலாம்.</td></tr><tr><td class='pv'>சுத்தம் சோறு போடும்</td><td>தூய்மையாக இருந்தால் நோய் வராது; உணவுக்கு முன் கைகளைக் கழுவுவோம்.</td></tr><tr><td class='pv'>கூழானாலும் குளித்துக் குடி</td><td>எளிய உணவானாலும் தூய்மையாக இருந்து உண்ண வேண்டும்.</td></tr><tr><td class='pv'>இளமையில் கல்</td><td>சிறு வயதிலேயே கற்றுக்கொள்ளும் நல்ல பழக்கங்கள் வாழ்நாள் முழுதும் துணை நிற்கும்.</td></tr><tr><td class='pv'>“மருந்தென வேண்டாவாம் யாக்கைக்கு அருந்தியது அற்றது போற்றி உணின்” – திருக்குறள் 942</td><td>முன்பு உண்ட உணவு செரித்த பின், அளவறிந்து உண்டால் உடலுக்கு மருந்தே தேவையில்லை.</td></tr></tbody></table></div>
+</div>
+
+<div class="container" id="food">
+<h2 class="section-title">🍎 சத்தான உணவு வகைகள்</h2>
+<input class="search-box" id="search" placeholder="உணவுகளைத் தேடுங்கள்...">
+<div class="cards"><div class='card'><div class='emoji'>🍚</div><h3>அரிசி, கேழ்வரகு, கம்பு</h3><p>கார்போஹைட்ரேட் – ஆற்றல்; சிறுதானியங்களில் கூடுதல் நார்ச்சத்து, கால்சியம்</p></div><div class='card'><div class='emoji'>🥛</div><h3>பால், தயிர், மோர்</h3><p>கால்சியம், புரதம் – எலும்பு, பல் வளர்ச்சி</p></div><div class='card'><div class='emoji'>🥚</div><h3>முட்டை</h3><p>உயர்தரப் புரதம், வைட்டமின் B12, D</p></div><div class='card'><div class='emoji'>🫘</div><h3>பருப்பு, சுண்டல்</h3><p>புரதம், நார்ச்சத்து, இரும்பு, துத்தநாகம்</p></div><div class='card'><div class='emoji'>🥜</div><h3>நிலக்கடலை, எள்</h3><p>நல்ல கொழுப்பு, புரதம், இரும்பு</p></div><div class='card'><div class='emoji'>🥦</div><h3>கீரை, காய்கறிகள்</h3><p>வைட்டமின்கள், தாதுக்கள், இரும்பு, நார்ச்சத்து</p></div><div class='card'><div class='emoji'>🍌</div><h3>பழங்கள்</h3><p>வைட்டமின் C, A, பொட்டாசியம், நார்ச்சத்து</p></div><div class='card'><div class='emoji'>🐟</div><h3>மீன்</h3><p>புரதம், ஒமேகா-3 கொழுப்பு – மூளை வளர்ச்சி</p></div></div>
+</div>
+
+<div class="container" id="nutrition">
+<h2 class="section-title">💪 ஊட்டச்சத்து சதவீதம்</h2>
+<div class="info">
+<div class="note">இது கல்விக்கான ஒரு எடுத்துக்காட்டு உணவு ஆற்றல் பகிர்வு மட்டுமே. தனிநபருக்கான மருத்துவ ஊட்டச்சத்து பரிந்துரை அல்ல.</div>
+<h3>🍚 கார்போஹைட்ரேட் – 55%</h3><div class="progress"><span style="width:55%"></span></div>
+<h3>🥚 புரதச்சத்து – 15%</h3><div class="progress"><span style="width:15%"></span></div>
+<h3>🥜 கொழுப்புச்சத்து – 30%</h3><div class="progress"><span style="width:30%"></span></div>
+<p><b>வைட்டமின்கள், தாதுக்கள், நார்ச்சத்து:</b> இவை ஆற்றல் சதவீதத்தில் கணக்கிடப்படுவதில்லை; பழங்கள், காய்கறிகள், கீரை, முழுதானியங்கள் மூலம் பெற வேண்டும்.</p>
+<div class="note"><b>எளிய தட்டு யோசனை:</b> தட்டில் பாதி காய்கறி/கீரை/பழம், கால் பங்கு தானியம், கால் பங்கு புரதம் (பருப்பு, முட்டை, மீன், தயிர்).</div>
+</div></div>
+
+<div class="container" id="children">
+<h2 class="section-title">👶 குழந்தைகளுக்கான ஊட்டச்சத்து – வயதுவாரியாக</h2>
+<div class="table-wrap"><table><thead><tr><th>வயது</th><th>உணவு வழிகாட்டி</th></tr></thead><tbody><tr><td class='pv'>பிறப்பு – 6 மாதம்</td><td style='text-align:left'>தாய்ப்பால் மட்டுமே போதும். தண்ணீர், தேன், புட்டிப்பால் போன்றவை தேவையில்லை.</td></tr><tr><td class='pv'>6 மாதம் – 1 வயது</td><td style='text-align:left'>தாய்ப்பாலுடன் மசித்த, மென்மையான உணவுகள்: கேழ்வரகு கஞ்சி, பருப்புச் சாதம், மசித்த வாழைப்பழம், வேகவைத்த காய்கறி, நன்கு வேகவைத்த முட்டை. உப்பு, சர்க்கரை மிகக் குறைவாக. ஒரு வயதுக்குள் தேன் கொடுக்க வேண்டாம்.</td></tr><tr><td class='pv'>1 – 3 வயது</td><td style='text-align:left'>குடும்ப உணவை சிறு, மென்மையான துண்டுகளாகக் கொடுக்கலாம். 3 வேளை உணவு + 2 சிற்றுண்டி. பால்/தயிர், கீரை, பருப்பு சேர்க்கவும். முழு கடலை, திராட்சை போன்றவை தொண்டையில் அடைக்கலாம்; சிறு குழந்தைகளுக்கு நசுக்கிக் கொடுக்கவும்.</td></tr><tr><td class='pv'>4 – 8 வயது</td><td style='text-align:left'>வளர்ச்சி + விளையாட்டுக்கான ஆற்றல். தினமும் பால்/தயிர், ஒரு முட்டை அல்லது பருப்பு/சுண்டல், 2–3 வகை காய்கறி, ஒரு பழம். காலை உணவைத் தவிர்க்கக் கூடாது.</td></tr><tr><td class='pv'>9 – 12 வயது</td><td style='text-align:left'>வளர்ச்சி வேகமாகும் காலம். கால்சியம் (பால், கேழ்வரகு), புரதம், இரும்பு (கீரை, பேரீச்சை) அவசியம். பள்ளி நேர உணவு, சிற்றுண்டி ஆரோக்கியமாக இருக்கட்டும்.</td></tr><tr><td class='pv'>13 – 18 வயது (பதின்ம வயது)</td><td style='text-align:left'>உடல் உயரம், எடை, எலும்பு வேகமாக வளரும். பசி அதிகமாகும்; பாக்கெட் நொறுக்குத்தீனிக்குப் பதில் சுண்டல், பழம், நிலக்கடலை. பெண் பிள்ளைகளுக்கு இரும்புச்சத்து உணவுகள் (கீரை, பருப்பு, முட்டை) கூடுதலாக முக்கியம்.</td></tr></tbody></table></div>
+<div class="note">இவை பொதுவான கல்வி வழிகாட்டுதல்கள். ஒவ்வாமை, நோய் அல்லது சிறப்பு உணவுத் தேவை இருந்தால் குழந்தை நல மருத்துவரின் ஆலோசனையைப் பின்பற்றுங்கள்.</div>
+<h2 class="section-title" style="margin-top:30px">🌱 வளர்ச்சிக்குத் தேவையான சத்துக்கள்</h2>
+<div class="table-wrap"><table><thead><tr><th>சத்து</th><th>ஏன் தேவை?</th><th>உணவு ஆதாரங்கள்</th></tr></thead><tbody><tr><td class='pv'>புரதம்</td><td>தசை, உடல் திசு வளர்ச்சி, நோய் எதிர்ப்பு</td><td>முட்டை, பால், பருப்பு, சுண்டல், மீன், கோழி</td></tr><tr><td class='pv'>கால்சியம்</td><td>உறுதியான எலும்பு, பற்கள்</td><td>பால், தயிர், கேழ்வரகு, கீரை</td></tr><tr><td class='pv'>இரும்பு</td><td>இரத்தச் சோகை வராமல் தடுக்க; கவனம், சுறுசுறுப்பு</td><td>கீரை, பேரீச்சம்பழம், கம்பு, பருப்பு, முட்டை</td></tr><tr><td class='pv'>வைட்டமின் A</td><td>கண் பார்வை, தோல்</td><td>கேரட், பப்பாளி, முருங்கைக்கீரை, மஞ்சள் பூசணி</td></tr><tr><td class='pv'>வைட்டமின் C</td><td>நோய் எதிர்ப்பு; இரும்பு உறிஞ்சுதலுக்கு உதவும்</td><td>கொய்யா, நெல்லிக்காய், எலுமிச்சை, ஆரஞ்சு</td></tr><tr><td class='pv'>வைட்டமின் D</td><td>எலும்பில் கால்சியம் சேர</td><td>காலை இளவெயில், முட்டை மஞ்சள் கரு, மீன்</td></tr><tr><td class='pv'>அயோடின்</td><td>மூளை, உடல் வளர்ச்சி</td><td>அயோடின் கலந்த உப்பு (அளவோடு)</td></tr><tr><td class='pv'>துத்தநாகம்</td><td>வளர்ச்சி, காயம் ஆறுதல்</td><td>கொண்டைக்கடலை, பருப்பு, நிலக்கடலை, முழுதானியம்</td></tr><tr><td class='pv'>நார்ச்சத்து</td><td>நல்ல செரிமானம், மலச்சிக்கல் தவிர்க்க</td><td>முழுதானியம், பழங்கள், காய்கறிகள்</td></tr></tbody></table></div>
+</div>
+
+<div class="container" id="growth">
+<h2 class="section-title">📏 குழந்தையின் வளர்ச்சியைக் கவனிப்போம்</h2>
+<div class="box">
+<p class="li">உயரம், எடையை அங்கன்வாடி, பள்ளி அல்லது மருத்துவரிடம் அவ்வப்போது அளந்து, வளர்ச்சி அட்டையில் குறித்து வையுங்கள்.</p>
+<p class="li">தடுப்பூசி அட்டவணையை முறையாகப் பின்பற்றுங்கள்.</p>
+<p class="li">மற்ற குழந்தைகளுடன் ஒப்பிடுவதை விட, அந்தக் குழந்தையின் சொந்த வளர்ச்சிப் போக்கைப் பாருங்கள்.</p>
+<p class="li">எடை அல்லது உயரம் நீண்ட நாட்களாக கூடாமல் இருத்தல், அடிக்கடி சோர்வு, முகம் வெளிறுதல், தொடர்ந்து பசியின்மை இருந்தால் மருத்துவரைச் சந்திக்கவும்.</p>
+<p class="li">இரும்பு/வைட்டமின் மாத்திரை, குடற்புழு நீக்கம் போன்றவற்றை மருத்துவர் அல்லது சுகாதாரப் பணியாளர் ஆலோசனைப்படி மட்டுமே கொடுக்கவும்.</p>
+</div></div>
+
+<div class="container">
+<h2 class="section-title">⏰ தினசரி மூன்று அமர்வுகள்</h2>
+<div class="three">
+<div class="card"><div class="emoji">🌅</div><h3>Session 1 – காலை</h3><p><b>நேரம்:</b> 7:30 AM</p><p>காலை உணவு, பால், பழங்கள்.</p></div>
+<div class="card"><div class="emoji">☀️</div><h3>Session 2 – மதியம்</h3><p><b>நேரம்:</b> 1:00 PM</p><p>சாதம், பருப்பு, காய்கறிகள், கீரை.</p></div>
+<div class="card"><div class="emoji">🌙</div><h3>Session 3 – இரவு</h3><p><b>நேரம்:</b> 7:30 PM</p><p>சப்பாத்தி, காய்கறி, தயிர்.</p></div>
+</div>
+<h3 style="margin:20px 0 5px;color:#087f5b">ஆரோக்கியமான சிற்றுண்டி யோசனைகள் (காலை 11 மணி / மாலை 4:30 மணி)</h3>
+<div><span class='chip'>சுண்டல் (கொண்டைக்கடலை, பாசிப்பயறு)</span><span class='chip'>வேகவைத்த முட்டை</span><span class='chip'>வாழைப்பழம், கொய்யா, பப்பாளி</span><span class='chip'>நிலக்கடலை / எள்ளுருண்டை</span><span class='chip'>கேழ்வரகு (ராகி) கூழ் அல்லது லட்டு</span><span class='chip'>மோர், இளநீர்</span><span class='chip'>வேகவைத்த சக்கரவள்ளிக் கிழங்கு</span><span class='chip'>முளைகட்டிய பயறு சாலட்</span></div>
+</div>
+
+<div class="container" id="timetable">
+<h2 class="section-title">📅 7 நாட்கள் உணவு நேர அட்டவணை</h2>
+<div class="table-wrap"><table class="tl"><thead><tr><th>நாள்</th><th>நேரம்</th><th>அமர்வு</th><th>உணவு வகைகள்</th></tr></thead><tbody><tr><td rowspan='3' class='day'>திங்கள்</td><td>7:30 AM</td><td>காலை உணவு</td><td>இட்லி, சாம்பார், பால்</td></tr><tr><td>1:00 PM</td><td>மதிய உணவு</td><td>சாதம், கீரை, பருப்பு</td></tr><tr><td>7:30 PM</td><td>இரவு உணவு</td><td>சப்பாத்தி, காய்கறி</td></tr><tr><td rowspan='3' class='day'>செவ்வாய்</td><td>7:30 AM</td><td>காலை உணவு</td><td>தோசை, சட்னி, முட்டை</td></tr><tr><td>1:00 PM</td><td>மதிய உணவு</td><td>சாதம், சாம்பார், கேரட்</td></tr><tr><td>7:30 PM</td><td>இரவு உணவு</td><td>காய்கறி உப்புமா, தயிர்</td></tr><tr><td rowspan='3' class='day'>புதன்</td><td>7:30 AM</td><td>காலை உணவு</td><td>கேழ்வரகு கஞ்சி, வாழைப்பழம்</td></tr><tr><td>1:00 PM</td><td>மதிய உணவு</td><td>சாதம், ரசம், காய்கறி</td></tr><tr><td>7:30 PM</td><td>இரவு உணவு</td><td>சப்பாத்தி, பருப்பு</td></tr><tr><td rowspan='3' class='day'>வியாழன்</td><td>7:30 AM</td><td>காலை உணவு</td><td>பொங்கல், சாம்பார்</td></tr><tr><td>1:00 PM</td><td>மதிய உணவு</td><td>சாதம், கொண்டைக்கடலை, கீரை</td></tr><tr><td>7:30 PM</td><td>இரவு உணவு</td><td>இடியாப்பம், காய்கறி குருமா</td></tr><tr><td rowspan='3' class='day'>வெள்ளி</td><td>7:30 AM</td><td>காலை உணவு</td><td>ஓட்ஸ், பால், ஆப்பிள்</td></tr><tr><td>1:00 PM</td><td>மதிய உணவு</td><td>சாதம், பருப்பு, பீன்ஸ்</td></tr><tr><td>7:30 PM</td><td>இரவு உணவு</td><td>தோசை, சாம்பார்</td></tr><tr><td rowspan='3' class='day'>சனி</td><td>7:30 AM</td><td>காலை உணவு</td><td>சிறுதானிய இட்லி, சட்னி</td></tr><tr><td>1:00 PM</td><td>மதிய உணவு</td><td>சாதம், காய்கறி, தயிர்</td></tr><tr><td>7:30 PM</td><td>இரவு உணவு</td><td>சப்பாத்தி, கொண்டைக்கடலை</td></tr><tr><td rowspan='3' class='day'>ஞாயிறு</td><td>7:30 AM</td><td>காலை உணவு</td><td>அடை, அவியல்</td></tr><tr><td>1:00 PM</td><td>மதிய உணவு</td><td>சாதம், சாம்பார், காய்கறி</td></tr><tr><td>7:30 PM</td><td>இரவு உணவு</td><td>காய்கறி கிச்சடி, தயிர்</td></tr></tbody></table></div>
+</div>
+
+<div class="container" id="habits">
+<h2 class="section-title">🌞 நல்ல பழக்கங்கள்</h2>
+<div class='box'><h3>உணவுப் பழக்கங்கள்</h3><p class='li'>தினமும் காலை உணவை உண்ணுங்கள்; அது நாள் முழுவதும் ஆற்றல் தரும்.</p><p class='li'>ஒவ்வொரு நாளும் பழம், காய்கறி, கீரை சேர்த்துக் கொள்ளுங்கள்.</p><p class='li'>உணவை நன்கு மென்று, மெதுவாக உண்ணுங்கள்.</p><p class='li'>உணவின்போது தொலைக்காட்சி, கைபேசி பார்க்க வேண்டாம்.</p><p class='li'>குளிர்பானம், சிப்ஸ், அதிக இனிப்பு, பொரித்த உணவுகளை அவ்வப்போது மட்டும் உண்ணுங்கள்.</p><p class='li'>சாப்பிட மறுக்கும் குழந்தையை மிரட்டாமல், புதிய உணவுகளை மீண்டும் மீண்டும் அன்போடு அறிமுகப்படுத்துங்கள்.</p><p class='li'>நாள் முழுவதும் போதுமான சுத்தமான, காய்ச்சி ஆறிய அல்லது பாதுகாப்பான தண்ணீர் குடியுங்கள்.</p></div><div class='box'><h3>தூய்மைப் பழக்கங்கள்</h3><p class='li'>உணவுக்கு முன்னும், கழிப்பறை சென்ற பின்னும் சோப்புப் போட்டு கை கழுவுங்கள்.</p><p class='li'>தினமும் இரண்டு முறை பல் துலக்குங்கள்.</p><p class='li'>தினமும் குளித்து, சுத்தமான உடை அணியுங்கள்; நகங்களை வெட்டி வைத்திருங்கள்.</p><p class='li'>திறந்தவெளி, பழைய உணவைத் தவிர்த்து, சுத்தமான புதிய உணவை உண்ணுங்கள்.</p></div><div class='box'><h3>உடல் செயல்பாடு, தூக்கம்</h3><p class='li'>5–17 வயதினர் தினமும் குறைந்தது 60 நிமிடம் ஓடி, விளையாடி சுறுசுறுப்பாக இருக்க வேண்டும்.</p><p class='li'>பள்ளி வயது குழந்தைகளுக்கு இரவில் சுமார் 9–12 மணி நேரத் தூக்கம் தேவை; பதின்ம வயதினருக்கு 8–10 மணி நேரம்.</p><p class='li'>காலை இளவெயிலில் சிறிது நேரம் விளையாடுவது வைட்டமின் D பெற உதவும்.</p><p class='li'>தூங்கும் முன் கைபேசி, தொலைக்காட்சி திரைகளைத் தவிர்க்கவும்; திரை நேரத்தைக் குறைக்கவும்.</p></div><div class='box'><h3>மனம், கற்றல் பழக்கங்கள்</h3><p class='li'>தினமும் சிறிது நேரம் படிக்கவும், புதிதாக ஒன்றைக் கற்கவும் செய்யுங்கள்.</p><p class='li'>குடும்பத்துடன் அமர்ந்து உணவு உண்ணுங்கள்; அது மகிழ்ச்சியையும் பாதுகாப்பு உணர்வையும் தரும்.</p><p class='li'>உங்கள் வளர்ச்சியை மற்றவர்களுடன் ஒப்பிடாமல், நேற்றைய உங்களுடன் ஒப்பிடுங்கள்.</p><p class='li'>மனதில் கவலை, சோர்வு இருந்தால் பெரியவர்களிடம் மனம்விட்டுப் பேசுங்கள்.</p></div>
+<h2 class="section-title" style="margin-top:30px">✅ வாராந்திர பழக்க அட்டவணை</h2>
+<div class="table-wrap"><table><tr><th style='text-align:left'>பழக்கம்</th><th>தி</th><th>செ</th><th>பு</th><th>வி</th><th>வெ</th><th>ச</th><th>ஞா</th></tr><tr><td style='text-align:left'>காலை உணவு உண்டேன்</td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td></tr><tr><td style='text-align:left'>பழம் / காய்கறி / கீரை உண்டேன்</td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td></tr><tr><td style='text-align:left'>போதுமான தண்ணீர் குடித்தேன்</td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td></tr><tr><td style='text-align:left'>இரண்டு முறை பல் துலக்கினேன்</td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td></tr><tr><td style='text-align:left'>கை கழுவினேன்</td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td></tr><tr><td style='text-align:left'>60 நிமிடம் விளையாடினேன்</td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td></tr><tr><td style='text-align:left'>நேரத்தில் தூங்கினேன்</td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td></tr><tr><td style='text-align:left'>திரை நேரம் குறைவு</td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td><td><span class='cb'></span></td></tr></table></div>
+</div>
+
+<div class="container" id="quiz">
+<h2 class="section-title">🧠 ஊட்டச்சத்து வினாடி வினா</h2>
+<div class="info"><div class='qa'><p><b>1.</b> புரதச்சத்து அதிகம் உள்ள உணவு எது?</p><button class='ghost' onclick="toggleAns(this)">விடை காட்டு</button><p class='ans' hidden>விடை: முட்டை</p></div><div class='qa'><p><b>2.</b> எலும்பு, பல் உறுதிக்கு முக்கியமான சத்து எது?</p><button class='ghost' onclick="toggleAns(this)">விடை காட்டு</button><p class='ans' hidden>விடை: கால்சியம் (பால், கேழ்வரகு)</p></div><div class='qa'><p><b>3.</b> இரத்தச் சோகை வராமல் தடுக்க உதவும் உணவுகள் எவை?</p><button class='ghost' onclick="toggleAns(this)">விடை காட்டு</button><p class='ans' hidden>விடை: கீரை, பேரீச்சம்பழம், பருப்பு</p></div><div class='qa'><p><b>4.</b> “நொறுங்கத் தின்றால் நூறு வயது” என்பதன் பொருள் என்ன?</p><button class='ghost' onclick="toggleAns(this)">விடை காட்டு</button><p class='ans' hidden>விடை: உணவை நன்கு மென்று, மெதுவாக உண்ண வேண்டும்.</p></div><div class='qa'><p><b>5.</b> பள்ளி வயதினர் தினமும் எத்தனை நிமிடம் விளையாட வேண்டும்?</p><button class='ghost' onclick="toggleAns(this)">விடை காட்டு</button><p class='ans' hidden>விடை: குறைந்தது 60 நிமிடம்</p></div><div class='qa'><p><b>6.</b> ஒரு வயதுக்குள் உள்ள குழந்தைக்குக் கொடுக்கக் கூடாத இனிப்பு எது?</p><button class='ghost' onclick="toggleAns(this)">விடை காட்டு</button><p class='ans' hidden>விடை: தேன்</p></div></div>
+</div>
+
+<footer>
+<h3>🌿 சுந்தர்ராஜு கற்றல் உலகம் 🌿</h3>
+<p>ஆரோக்கியமான உணவு - மகிழ்ச்சியான வாழ்க்கை</p>
+<p>கல்வியே வளர்ச்சி! ஆரோக்கியமே செல்வம்!</p>
+<p>© 2026 அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+</footer>
+
+<script>
+// Food search
+document.getElementById("search").addEventListener("input", function () {
+  const value = this.value.toLowerCase();
+  document.querySelectorAll("#food .card").forEach(function (card) {
+    card.style.display = card.innerText.toLowerCase().includes(value) ? "block" : "none";
+  });
+});
+
+// Show / hide quiz answer
+function toggleAns(btn) {
+  const ans = btn.nextElementSibling;
+  ans.hidden = !ans.hidden;
+  btn.textContent = ans.hidden ? "விடை காட்டு" : "விடையை மறை";
+}
+
+// Download as PDF: opens the print dialog (choose "Save as PDF")
+function downloadPDF() {
+  window.print();
+}
+// Make sure all food cards are visible when printing
+window.addEventListener("beforeprint", function () {
+  document.querySelectorAll("#food .card").forEach(function (c) { c.style.display = "block"; });
+});
+</script>
+</body>
+</html>
